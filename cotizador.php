@@ -1,3 +1,6 @@
+<?php
+    include('datos.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,6 @@
     <meta name="author" content="">
     <title>Suzuki</title>
     
-    <!-- core CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -16,17 +18,9 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
-        
-    <script src="js/custom.js"></script>
-    <script type="text/javascript">
-      if(history.forward(1)){
-        location.replace( history.forward(1) );
-      }
-    </script>
+
 </head><!--/head-->
-
 <body>
-
     <header id="header">
         <div class="top-bar">
             <div class="container">
@@ -34,7 +28,7 @@
                     <div class="col-sm-6 col-xs-4">
                         <div class="top-number"><p><i class="fa fa-phone-square"></i>  (951) 144 88 05</p></div>
                     </div>
-                    <div class="col-sm-6 col-xs-8">
+                    <!-- <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -46,11 +40,10 @@
                                 </form>
                            </div>
                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
-
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -60,24 +53,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="admin.php"><img width="110" height="60" src="images/suzuki.png" alt="logo"></a>
+                    <img width="110" height="60" src="images/suzuki.png" alt="logo">
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="admin.php">Suzuki</a></li>
-                        <li><a href="motocicleta.php">Motocicletas</a></li>
-                        <li><a href="accesorio.php">Accesorios</a></li>
-                        <li class="active"><a href="cotizador.php">Cotizador</a></li>
-                        <li class="dropdown">
+                        <!-- <li><a href="#">Suzuki</a></li> -->
+                        <!-- <li><a href="motocicleta.php">Motocicletas</a></li> -->
+                        <!-- <li><a href="accesorio.php">Accesorios</a></li> -->
+                        <li class="active"><a href="#">Cotizador</a></li>
+                        <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portafolio <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Promociones</a></li>
-                                <!-- <li><a href="#">Eventos</a></li> -->
+                                <li><a href="#">Eventos</a></li>
                                 <li><a href="nosotro.php">About Us</a></li>
                                 <li><a href="contactos.php">Contacto</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a href="index.php">Cerrar Sesion</a>                      
                     </ul>
                 </div>
@@ -300,9 +293,9 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="admin.php">Suzuki</a></li>
-                        <li><a href="nosotro.php">About Us</a></li>
-                        <li><a href="contactos.php">Contacto</a></li>
+                        <!-- <li><a href="admin.php">Suzuki</a></li> -->
+                        <!-- <li><a href="nosotro.php">About Us</a></li> -->
+                        <!-- <li><a href="contactos.php">Contacto</a></li> -->
                     </ul>
                 </div>
             </div>

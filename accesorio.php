@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Suzukiiiiiiii</title>
+    <title>Suzuki</title>
     
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -15,11 +15,7 @@
     <link href="css/responsive.css" rel="stylesheet">
 
     <script src="js/custom.js"></script>
-    <script type="text/javascript">
-      if(history.forward(1)){
-        location.replace( history.forward(1) );
-      }
-    </script>
+    <script type="text/javascript" src="js/navega-null"></script>
 </head>
 <body>
 

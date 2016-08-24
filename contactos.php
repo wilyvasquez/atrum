@@ -15,11 +15,11 @@
     <link href="css/responsive.css" rel="stylesheet">
         
     <script src="js/custom.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       if(history.forward(1)){
         location.replace( history.forward(1) );
       }
-    </script>
+    </script> -->
 </head>
 <body>
 

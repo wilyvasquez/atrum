@@ -1,3 +1,10 @@
+<?php
+    include('datos.php');
+    // $user = $_POST['user'];
+    // $pass = $_POST['pass'];
+    // echo $user;
+    // echo $pass;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,19 +69,19 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="admin.php">Suzuki</a></li>
-                        <li><a href="motocicleta.php">Motocicletas</a></li>
-                        <li><a href="accesorio.php">Accesorios</a></li>
-                        <li id='oculto'><a href="cotizador.php">Cotizador</a></li>
-                        <li class="dropdown">
+                        <li class="active">Suzuki</li>
+                        <!-- <li><a href="motocicleta.php">Motocicletas</a></li> -->
+                        <!-- <li><a href="accesorio.php">Accesorios</a></li> -->
+                        <li><a href="cotizador.php">Cotizador</a></li>
+                        <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portafolio <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Promociones</a></li>
-                                <!-- <li><a href="#">Eventos</a></li> -->
+                                <li><a href="#">Eventos</a></li>
                                 <li><a href="nosotro.php">About Us</a></li>
                                 <li><a href="contacto.php">Contacto</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li><a href="logout.php">Cerrar Sesion</a>                        
                         <!-- <li><a href="contact-us.php">Contact</a></li>                         -->
                     </ul>
