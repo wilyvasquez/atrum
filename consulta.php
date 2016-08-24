@@ -29,7 +29,7 @@ if(!isset($_SESSION['userid']))
         if(verificar_login($_POST['user'],$_POST['password'],$result) == 1)
         {
             $_SESSION['userid'] = $result->idusuario;
-            header("location:index2.php");
+            header("location:admin.php");
         }
         else
         {   

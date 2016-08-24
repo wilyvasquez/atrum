@@ -58,22 +58,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index2.php"><img width="110" height="60" src="images/suzuki.png" alt="logo"></a>
+                    <a class="navbar-brand" href="admin.php"><img width="110" height="60" src="images/suzuki.png" alt="logo"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="index2.php">Suzuki</a></li>
-                        <li><a href="motocicletas2.php">Motocicletas</a></li>
-                        <li><a href="accesorios2.php">Accesorios</a></li>
-                        <li id='oculto'><a href="cotizador2.php">Cotizador</a>
+                        <li><a href="admin.php">Suzuki</a></li>
+                        <li><a href="motocicleta.php">Motocicletas</a></li>
+                        <li><a href="accesorio.php">Accesorios</a></li>
+                        <li id='oculto'><a href="cotizador.php">Cotizador</a>
                         <li class="dropdown active">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portafolio <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Promociones</a></li>
                                 <!-- <li><a href="#">Eventos</a></li> -->
-                                <li class="active"><a href="nosotros2.php">About Us</a></li>
-                                <li><a href="contacto2.php">Contacto</a></li>
+                                <li class="active"><a href="nosotro.php">About Us</a></li>
+                                <li><a href="contactos.php">Contacto</a></li>
                             </ul>
                         </li>
                         <li><a href="index.php">Cerrar Sesion</a>                      
@@ -135,9 +135,9 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="index2.php">Suzuki</a></li>
-                        <li><a href="nosotros2.php">About Us</a></li>
-                        <li><a href="contacto2.php">Contacto</a></li>
+                        <li><a href="admin.php">Suzuki</a></li>
+                        <li><a href="nosotro.php">About Us</a></li>
+                        <li><a href="contactos.php">Contacto</a></li>
                     </ul>
                 </div>
             </div>

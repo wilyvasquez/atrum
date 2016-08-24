@@ -29,7 +29,6 @@
 </head><!--/head-->
 
 <body class="homepage">
-
     <header id="header">
         <div class="top-bar">
             <div class="container">
