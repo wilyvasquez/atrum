@@ -51,9 +51,9 @@ CREATE TABLE alta_clientes
 CREATE TABLE usuarios
 (
     id_usuarios serial not null primary key,
-    usuarios varchar(30),
-    pass varchar(30),
-    permisos varchar(20)
+    usuarios varchar(10),
+    pass varchar(10),
+    permisos varchar(10)
 );
 
 CREATE TABLE credito
@@ -66,38 +66,38 @@ CREATE TABLE seguro
 (
     id_seguro serial not null primary key,
     tipo_seguro varchar(30),
-    ref_credito int
+    ref_credito int not null REFERENCES credito (id_credito) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE tasas
 (
     id_tasas serial not null primary key,
-    ref_credito int,
+    ref_credito int not null REFERENCES credito (id_credito) ON DELETE CASCADE ON UPDATE CASCADE,
     tipo_cotizacion varchar(50),
     tasa_base integer,
     tasa_inc_anual integer,
     tasa_accesorios integer,
-    costo apertura integer,
+    costo_apertura integer,
     descuento_apertura integer,
-    tasa_seguro_anual integer
-)
+    t_seguro_anual integer
+);
 
 
 CREATE TABLE anios
 (
     id_anios serial not null primary key,
-    ref_credito int,
-    anio1 int
-    anio2 int
-    anio3 int
+    ref_credito int not null REFERENCES credito (id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
+    anio1 int,
+    anio2 int,
+    anio3 int,
     anio4 int
 );
 
 CREATE TABLE cotizaciones
 (
     id_cotizaciones serial primary key not null,
-    ref_equipo int,
-    ref_personal int not null REFERENCES alta_equipo (id_equipo)ON DELETE CASCADE ON UPDATE CASCADE,
+    ref_equipo int not null REFERENCES  alta_equipo (id_equipo)ON DELETE CASCADE ON UPDATE CASCADE,
+    ref_personal int not null REFERENCES alta_personal(id_personal) ON DELETE CASCADE ON UPDATE CASCADE,
     ref_accesorios int not null REFERENCES accesorios (id_accesorios)ON DELETE CASCADE ON UPDATE CASCADE,
     ref_tasas int not null REFERENCES tasas (id_tasas)ON DELETE CASCADE ON UPDATE CASCADE,
     ref_cliente int not null REFERENCES alta_clientes (id_clientes)ON DELETE CASCADE ON UPDATE CASCADE,
