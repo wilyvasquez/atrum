@@ -86,7 +86,7 @@
                                     </li>
                                     <li>
                                         <div id="freeow-tr" class="freeow freeow-top-right" style="margin-top:5px;margin-left:10px;margin-bottom:5px">
-                                            <input class="btn btn-default" name="login" type="submit" value="login">
+                                            <input class="btn btn-default" name="login" type="submit" value="Aceptar">
                                         </div> 
                                     </li>   
                                 </form>
@@ -258,11 +258,8 @@
         </div>
     </footer><!--/#footer-->
 
-    <!-- <script type="text/javascript" src="jquery.js"></script> -->
-    <script src="js/custom.js"></script>
-    <script type="text/javascript" src="js/validaciones.js"></script>
+    <script src="js/validaciones.js"></script>
     <script src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/ocultar.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/jquery.isotope.min.js"></script>

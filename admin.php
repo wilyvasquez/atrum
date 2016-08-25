@@ -1,9 +1,5 @@
 <?php
     include('datos.php');
-    // $user = $_POST['user'];
-    // $pass = $_POST['pass'];
-    // echo $user;
-    // echo $pass;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,12 +17,6 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">    
     
-    <script src="js/custom.js"></script>
-    <script type="text/javascript">
-      if(history.forward(1)){
-        location.replace( history.forward(1) );
-      }
-    </script>
 </head><!--/head-->
 
 <body class="homepage">

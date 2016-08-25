@@ -9,17 +9,11 @@
     
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     
-    <script src="js/custom.js"></script>
-    <script type="text/javascript">
-      if(history.forward(1)){
-        location.replace( history.forward(1) );
-      }
-    </script>
 </head>
 <body>
 

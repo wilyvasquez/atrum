@@ -14,15 +14,7 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
 
-    <script src="js/custom.js"></script>
-    <!-- <script type="text/javascript">
-      if(history.forward(1)){
-        location.replace( history.forward(1) );
-      }
-    </script>
-          -->
 </head><!--/head-->
-
 <body class="homepage">
     <header id="header">
         <div class="top-bar">
@@ -47,7 +39,6 @@
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
-
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -59,7 +50,6 @@
                     </button>
                     <a class="navbar-brand" href="index.php"><img width="110" height="60" src="images/suzuki.png" alt="logo"></a>
                 </div>
-                
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Suzuki</a></li>
@@ -146,7 +136,6 @@
         </div>
     </div>
     </section>
-
     <footer id="footer" class="midnight-blue" style="margin-top:10px">
         <div class="container">
             <div class="row">
@@ -164,7 +153,8 @@
         </div>
     </footer><!--/#footer-->
 
-    <script type="text/javascript" src="js/ocultar.js"></script>
+    <script src="js/validaciones.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/jquery.isotope.min.js"></script>
