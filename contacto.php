@@ -1,8 +1,3 @@
-<?php
-    session_start();
-    include('conexion.php');
-    include('consulta.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,19 +93,9 @@
                     </ul>
                 </div>
             </div><!--/.container-->
-        </nav><!--/nav-->
-        
+        </nav><!--/nav-->    
     </header><!--/header-->
-    <!-- <div class="row col-md-12" style="height:500px">
-         <div class="margen1">
-            <center><label class="sombra2">CONTACTANOS PARA CUALQUIER DUDA O COTIZACION</label></center>
-        </div>
-        <div class="col-md-12">
-            <div class="img">
-                <center><img width="800px" height="300px" src="images/contacto.png" alt=""></center>
-            </div>
-        </div>
-    </div> -->
+
     <div class="container">
         <div class="col-md-4">
             <div class="col-md-12">

@@ -52,7 +52,6 @@
             </div><!--/.container-->
         </nav><!--/nav-->        
     </header>    
-    <!-- <section id="cotizador"> -->
     <div class="container">
       <div class="row">
             <div class="col-md-10">
@@ -248,11 +247,9 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
-                        <!-- <div class="col-lg-3 col-md-4 col-xs-6 thumb"> -->
                     <a class="thumbnail" href="#">
                         <img width=400 height=200 class="img-responsive" src="http://www.yamaha-motor.com.mx/images/motos/yz250fx_2015.jpg" alt="">
                     </a>
-                        <!-- </div> -->
                 </div>
             </div>
           </div>
@@ -267,9 +264,6 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <!-- <li><a href="admin.php">Suzuki</a></li> -->
-                        <!-- <li><a href="nosotro.php">About Us</a></li> -->
-                        <!-- <li><a href="contactos.php">Contacto</a></li> -->
                     </ul>
                 </div>
             </div>

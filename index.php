@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- <meta http-equiv="Expires" content="0" /> 
-    <meta http-equiv="Pragma" content="no-cache" /> -->
     <title>Suzuki</title>
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +17,6 @@
 </head><!--/head-->
 
 <body class="homepage">
-
     <header id="header">
         <div class="top-bar">
             <div class="container">
@@ -118,13 +115,6 @@
                                     <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a>
                                 </div>
                             </div>
-
-                           <!--  <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                <div class="slider-img">
-                                    <img src="images/slider/img1.png" class="img-responsive">
-                                </div>
-                            </div> -->
-
                         </div>
                     </div>
                 </div><!--/.item-->
@@ -139,13 +129,6 @@
                                     <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a>
                                 </div>
                             </div>
-
-                            <!-- <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                <div class="slider-img">
-                                    <img src="images/slider/img2.png" class="img-responsive">
-                                </div>
-                            </div> -->
-
                         </div>
                     </div>
                 </div><!--/.item-->
@@ -160,11 +143,6 @@
                                     <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a>
                                 </div>
                             </div>
-                            <!-- <div class="col-sm-6 hidden-xs animation animated-item-4">
-                                <div class="slider-img">
-                                    <img src="images/slider/img3.png" class="img-responsive">
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div><!--/.item-->
@@ -177,9 +155,6 @@
             <i class="fa fa-chevron-right"></i>
         </a>
     </section><!--/#main-slider-->
-
-    <!-- FINDET -->
-
     <section id="feature" >
         <div class="container">
            <div class="center wow fadeInDown">
