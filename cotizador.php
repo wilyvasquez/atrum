@@ -28,19 +28,6 @@
                     <div class="col-sm-6 col-xs-4">
                         <div class="top-number"><p><i class="fa fa-phone-square"></i>  (951) 144 88 05</p></div>
                     </div>
-                    <!-- <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            </ul>
-                            <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Buscar">
-                                    <i class="fa fa-search"></i>
-                                </form>
-                           </div>
-                       </div>
-                    </div> -->
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
@@ -58,19 +45,7 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <!-- <li><a href="#">Suzuki</a></li> -->
-                        <!-- <li><a href="motocicleta.php">Motocicletas</a></li> -->
-                        <!-- <li><a href="accesorio.php">Accesorios</a></li> -->
                         <li class="active"><a href="#">Cotizador</a></li>
-                        <!-- <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portafolio <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Promociones</a></li>
-                                <li><a href="#">Eventos</a></li>
-                                <li><a href="nosotro.php">About Us</a></li>
-                                <li><a href="contactos.php">Contacto</a></li>
-                            </ul>
-                        </li> -->
                         <li><a href="index.php">Sign Out</a>                      
                     </ul>
                 </div>
@@ -159,7 +134,6 @@
                 </div>
                 <div class="col-md-4 form-group">
                     <label for="enganche">ENGANCHE DE: </label>
-                    <!-- <input type="text" name="enganche"> -->
                     <input type="text" class="form-control"  placeholder="ENGANCHE">
                 </div>
                 <div class="col-md-4 form-group">
@@ -175,7 +149,7 @@
                 </div>
                 <div class="col-md-4 form-group">
                     <label for="fecha">FECHA DE COTIZACION: </label>
-                    <input type="date" id="fecha" name="fecha" class="form-control" value="<?php echo date('Y-md') ?>">
+                    <input type="date" id="fecha" name="fecha" class="form-control" value="<?php echo date('Y-m-d'); ?>">
                 </div>
         </div>
         <div class="row" style="margin-top:50px">
