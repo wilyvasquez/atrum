@@ -35,6 +35,16 @@ CREATE TABLE anios
     anios int,
     PRIMARY KEY (id_anios)
 );
+
+CREATE TABLE anio_credito
+(
+    id_anio_credito int NOT NULL AUTO_INCREMENT,
+    ref_anios int,
+    ref_credito int,
+    PRIMARY KEY(id_anio_credito),
+    FOREIGN KEY(ref_anios) REFERENCES anios(id_anios),
+    FOREIGN KEY(ref_credito) REFERENCES credito(id_credito)
+);
  
 CREATE TABLE alta_equipo
 (

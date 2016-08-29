@@ -73,6 +73,32 @@
       xmlhttp.open("GET","seguros.php?c="+str,true);
       xmlhttp.send();
     }
+    function showselect2(str)
+    {
+      var xmlhttp; 
+      if (str=="")
+       {
+       document.getElementById("txtHint").innerHTML="";
+      return;
+       }
+      if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+       }
+      else
+       {// code for IE6, IE5
+       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function()
+      {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+      document.getElementById("enganche").innerHTML=xmlhttp.responseText;
+      }
+      }
+      xmlhttp.open("GET","enganche.php?c="+str,true);
+      xmlhttp.send();
+    }
   </script>
 
 </head><!--/head-->
@@ -136,7 +162,7 @@
           </div>
           <div class="col-md-4">
             <label for="tipo">TIPO DE CREDITO </label>
-              <select name="credito" class="selectpicker" data-live-search="true" data-size="5" onchange="showselect1(this.value)" >
+              <select name="credito" class="selectpicker" onchange="showselect1(this.value);showselect2(this.value)">
               <option value="">Seleccione</option>
               <?php include "credito.php" ?>
               </select>
@@ -149,10 +175,10 @@
                 </select>
             <!-- </div> -->
           </div>
-          <div class="form-group col-md-5" id="seguros">
-            <!-- <div id="seguros"> -->
-              <label for="modelo">ENGANCHE DE </label>
-                <select name="seguros" class="form-control">
+          <div class="form-group col-md-5" id="enganche">
+            <!-- <div id="municipios"> -->
+              <label for="modelo">CREDITO A </label>
+                <select name="enganche" class="form-control">
                   <option value="">Seleccione</option>
                 </select>
             <!-- </div> -->
