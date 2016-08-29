@@ -51,11 +51,12 @@ CREATE TABLE alta_equipo
 
 CREATE TABLE alta_personal
 (
-    id_personal serial not null primary key,
-    nombre_com varchar(60),
+    id_personal int not null AUTO_INCREMENT,
+    nombre_asesor varchar(60),
     telefono integer,
     email varchar(50),
-    celular integer
+    celular integer,
+    PRIMARY KEY (id_personal)
 );
 
 CREATE TABLE accesorios

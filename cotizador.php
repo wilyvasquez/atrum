@@ -148,12 +148,27 @@
                   <option value="">Seleccione</option>
                 </select>
             <!-- </div> -->
-          </div>             
+          </div>
+          <div class="form-group col-md-5" id="seguros">
+            <!-- <div id="seguros"> -->
+              <label for="modelo">ENGANCHE DE </label>
+                <select name="seguros" class="form-control">
+                  <option value="">Seleccione</option>
+                </select>
+            <!-- </div> -->
+          </div>
+          <div class="col-md-4">
+            <label for="tipo">ASESOR DE VENTA </label>
+              <select name="asesor" class="selectpicker" data-live-search="true" data-size="5" onchange="showselect1(this.value)" >
+              <option value="">Seleccione</option>
+              <?php include "asesor.php" ?>
+              </select>
+          </div>
       </div>
       <div class="row col-md-5">
         <input type="text" class="form-control">
       </div>
-    </div> 
+    </div> <br><br><br>
     <!-- </section> -->
      <footer id="footer" class="midnight-blue">
         <div class="container">
