@@ -1,26 +1,53 @@
+CREATE TABLE seguro
+(
+    id_seguro int not null AUTO_INCREMENT,
+    tipo_seguro varchar(30),
+    PRIMARY KEY (id_seguro)
+);
+
+CREATE TABLE credito
+(
+    id_credito int not null AUTO_INCREMENT,
+    tipo_credito varchar(50),
+    PRIMARY KEY (id_credito)
+);
+
+CREATE TABLE segu_cre
+(
+    id_segu_cre int not null AUTO_INCREMENT,
+    ref_seguro int,
+    ref_credito int,
+    PRIMARY KEY(id_segu_cre),
+    FOREIGN KEY (ref_seguro) REFERENCES seguro(id_seguro),
+    FOREIGN KEY (ref_credito) REFERENCES credito(id_credito)
+);
+
+CREATE TABLE tipo_moto
+(
+    id_tipo INT NOT NULL AUTO_INCREMENT,
+    tipo VARCHAR(30),
+    PRIMARY KEY (id_tipo)
+);
+
+CREATE TABLE anios
+(
+    id_anios int NOT null AUTO_INCREMENT,
+    anios int,
+    PRIMARY KEY (id_anios)
+);
+ 
 CREATE TABLE alta_equipo
 (
-    id_equipo serial not null primary key,
-    tipo_equipo varchar (50),
-    modelo varchar(50),
-    anio int,
-    transmicion varchar(50),
-    tipo_motor varchar(50),
-    num_cilindros int,
-    diametro int,
-    carrera varchar(50),
-    desplazamiento varchar(50),
-    relacion_compresion varchar(50),
-    sistema_lubricacion varchar(50),
-    sistema_combustible varchar(50),
-    sistema_arranque varchar(50),
-    observaciones text,
-    costo_unidad integer,
-    seguro_amplio integer,
-    seguro_foraneo integer,
-    seguro_limitado integer,
-    foto LONGBLOB
+    id_equipo INT NOT NULL AUTO_INCREMENT,
+    modelo varchar(30),
+    privilegio   INT(2),
+    ref_tipo int,
+    ref_anios int,
+    PRIMARY KEY(id_equipo),
+    FOREIGN KEY (ref_tipo) REFERENCES tipo_moto(id_tipo),
+    FOREIGN KEY (ref_anios) REFERENCES anios(id_anios)
 );
+
 
 CREATE TABLE alta_personal
 (
@@ -56,18 +83,6 @@ CREATE TABLE usuarios
     permisos varchar(10)
 );
 
-CREATE TABLE credito
-(
-    id_credito serial not null primary key,
-    tipo_credito varchar(50)
-);
-
-CREATE TABLE seguro
-(
-    id_seguro serial not null primary key,
-    tipo_seguro varchar(30),
-    ref_credito int not null REFERENCES credito (id_credito) ON DELETE CASCADE ON UPDATE CASCADE
-);
 
 CREATE TABLE tasas
 (
@@ -80,17 +95,6 @@ CREATE TABLE tasas
     costo_apertura integer,
     descuento_apertura integer,
     t_seguro_anual integer
-);
-
-
-CREATE TABLE anios
-(
-    id_anios serial not null primary key,
-    ref_credito int not null REFERENCES credito (id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
-    anio1 int,
-    anio2 int,
-    anio3 int,
-    anio4 int
 );
 
 CREATE TABLE cotizaciones
@@ -107,3 +111,7 @@ CREATE TABLE cotizaciones
 );
 
 SELECT * from cotizaciones INNER JOIN alta_equipo ON alta_equipo.id_equipo = cotizaciones.ref_equipo;
+
+
+SELECT * FROM anios INNER JOIN alta_equipo on alta_equipo.ref_anios= anios.id_anios WHERE alta_equipo.modelo='GSX150 GIXXER SF'
+

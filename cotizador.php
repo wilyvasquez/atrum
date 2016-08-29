@@ -1,5 +1,6 @@
 <?php
     include('datos.php');
+    include("conexion.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,61 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+
+    <script type="text/javascript">
+    function showselect(str)
+    {
+      var xmlhttp; 
+      if (str=="")
+       {
+       document.getElementById("txtHint").innerHTML="";
+      return;
+       }
+      if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+       }
+      else
+       {// code for IE6, IE5
+       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function()
+      {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+      document.getElementById("municipios").innerHTML=xmlhttp.responseText;
+      }
+      }
+      xmlhttp.open("GET","municipios.php?c="+str,true);
+      xmlhttp.send();
+    }
+    function showselect1(str)
+    {
+      var xmlhttp; 
+      if (str=="")
+       {
+       document.getElementById("txtHint").innerHTML="";
+      return;
+       }
+      if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+       }
+      else
+       {// code for IE6, IE5
+       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function()
+      {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+      document.getElementById("seguros").innerHTML=xmlhttp.responseText;
+      }
+      }
+      xmlhttp.open("GET","seguros.php?c="+str,true);
+      xmlhttp.send();
+    }
+  </script>
 
 </head><!--/head-->
 <body>
@@ -54,209 +110,52 @@
     </header>    
     <div class="container">
       <div class="row">
-            <div class="col-md-10">
-                <h3><strong>COTIZADOR</strong></h3>
-            </div>
-            <div class="col-md-2" style="margin-top:20px">
-                <input class="btn btn btn-info" type="submit" value="Cotizar">                   
-            </div>
+        <div class="col-md-10">
+          <h3><strong>COTIZADOR</strong></h3>
         </div>
-        <hr>
-        <div class="row col-md-7">
-                <div class="col-md-4 form-group">
-                    <label for="tipo">TIPO DE MOTO </label>
-                    <div class="row" style="margin-left:2px">
-                      <select class="selectpicker" data-live-search="true" data-size="5" data-width="150px" data->
-                        <option>suzuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                        <option>suxuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                      </select>
-                    </div>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="modelo">MODELO </label>
-                    <select class="selectpicker" data-live-search="true" data-size="5" data-width="150px" data->
-                        <option>suzuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                        <option>suxuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                      </select>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="anio">AÑO </label><br>
-                    <select class="selectpicker" data-live-search="true" data-size="5" data-width="150px" data->
-                        <option>suzuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                        <option>suxuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                      </select>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="credito">TIPO DE CREDITO: </label>
-                    <select class="selectpicker" data-live-search="true" data-size="5" data-width="150px" data->
-                        <option>suzuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                        <option>suxuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                      </select>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="seguro">TIPO DE SEGURO: </label>
-                    <select class="selectpicker" data-live-search="true" data-size="5" data-width="150px" data->
-                        <option>suzuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                        <option>suxuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                      </select>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="credi">CREDITO A: </label>
-                    <select class="selectpicker" data-live-search="true" data-size="5" data-width="150px">
-                        <option>suzuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                        <option>suxuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                      </select>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="enganche">ENGANCHE DE: </label>
-                    <input type="text" class="form-control"  placeholder="ENGANCHE">
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="asesor">NOMBRE DEL ASESOR: </label>
-                    <select class="selectpicker" data-live-search="true" data-size="5" data-width="150px" data->
-                        <option>suzuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                        <option>suxuki</option>
-                        <option>honda</option>
-                        <option>bajaj</option>
-                      </select>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label for="fecha">FECHA DE COTIZACION: </label>
-                    <input type="date" id="fecha" name="fecha" class="form-control" value="<?php echo date('Y-m-d'); ?>">
-                </div>
+        <div class="col-md-2" style="margin-top:20px">
+          <input class="btn btn-info" type="submit" value="Cotizar">                   
         </div>
-        <div class="row" style="margin-top:50px">
-            <div class="col-md-5">
-                    <table data-toggle="table" data-click-to-select="true" data-single-select="true">
-                        <thead>
-                            <tr>
-                              <th data-checkbox="true"></th>
-                              <th></th>
-                              <th>TIEMPO</th>
-                              <th>$ VEHICULO</th>
-                              <th>$ SEGURO</th>
-                              <th>TOTAL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                              <td style="border: hidden"></td>
-                              <td>QUINCENAS</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td></td>
-                              <td>MES</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td></td>
-                              <td>AÑO</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                    </table>
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-12">
-                <h3><strong>COSTOS</strong></h3>
-              </div>
-            </div>
-            <hr>
-            <div class="row col-md-9">
-              <div class="col-md-3">
-                <label>FINANCIONAMIENTO</label>
-              </div>
-              <div class="col-md-3">
-                <input type="text" class="form-control" placeholder="FINANCIAMIENTO" disabled/>
-              </div>
-              <div class="col-md-3">
-                <label>COSTO APERTURA</label>
-              </div>
-              <div class="col-md-3 borde">
-                <input type="text" class="form-control" placeholder="COSTO APERTURA" disabled/>
-              </div>
-              <div class="col-md-3 borde">
-                    <label>COSTO MOTOCICLETA</label>              
-                  </div>
-                  <div class="col-md-3">
-                      <input type="text" class="form-control"  placeholder="COSTO MOTOCICLETA" disabled/>
-                  </div>
-                  <div class="col-md-3 borde">
-                    <label>BASE DEL CREDITO</label>              
-                  </div>
-                  <div class="col-md-3 borde">
-                      <input type="text" class="form-control"  placeholder="BASE DEL CREDITO" disabled/>
-                  </div>
-                  <div class="col-md-3 borde">
-                    <label>ENGANCHE</label>              
-                  </div>
-                  <div class="col-md-3">
-                      <input type="text" class="form-control"  placeholder="ENGANCHE" disabled/>
-                  </div>
-                  <div class="col-md-3 borde">
-                    <label>IMPORTE DEL CREDITO</label>              
-                  </div>
-                  <div class="col-md-3 borde">
-                      <input type="text" class="form-control"  placeholder="IMPORTE DEL CREDITO" disabled/>
-                  </div>
-                  <div class="col-md-3 borde">
-                    <label>SEGURO DE LA UNIDAD</label>              
-                  </div>
-                  <div class="col-md-3">
-                      <input type="text" class="form-control"  placeholder="SEGURO DE LA UNIDAD" disabled/>
-                  </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <a class="thumbnail" href="#">
-                        <img width=400 height=200 class="img-responsive" src="http://www.yamaha-motor.com.mx/images/motos/yz250fx_2015.jpg" alt="">
-                    </a>
-                </div>
-            </div>
+      </div>
+      <hr>
+      <div class="row col-md-7">
+          <div class="col-md-4">
+            <label for="tipo">TIPO DE MOTO </label>
+              <select name="estados" class="selectpicker" data-live-search="true" data-size="5" onchange="showselect(this.value)" >
+              <option value="">Seleccione</option>
+              <?php include "estados.php" ?>
+              </select>
           </div>
-        </div>  
-    </div>
+          <div class="form-group col-md-5" style="margin-left:40px" id="municipios">
+            <!-- <div id="municipios"> -->
+              <label for="modelo">MODELO </label>
+                <select name="municipios" class="form-control">
+                  <option value="">Seleccione</option>
+                </select>
+            <!-- </div> -->
+          </div>
+          <div class="col-md-4">
+            <label for="tipo">TIPO DE CREDITO </label>
+              <select name="credito" class="selectpicker" data-live-search="true" data-size="5" onchange="showselect1(this.value)" >
+              <option value="">Seleccione</option>
+              <?php include "credito.php" ?>
+              </select>
+          </div>
+          <div class="form-group col-md-5" style="margin-left:40px" id="seguros">
+            <!-- <div id="seguros"> -->
+              <label for="modelo">TIPO DE SEGURO </label>
+                <select name="seguros" class="form-control">
+                  <option value="">Seleccione</option>
+                </select>
+            <!-- </div> -->
+          </div>             
+      </div>
+      <div class="row col-md-5">
+        <input type="text" class="form-control">
+      </div>
+    </div> 
     <!-- </section> -->
-    <footer id="footer" class="midnight-blue">
+     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -268,7 +167,7 @@
                 </div>
             </div>
         </div>
-    </footer><!--/#footer-->
+    </footer>
     
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
