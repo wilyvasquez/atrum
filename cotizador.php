@@ -1,20 +1,28 @@
 <?php
     include('datos.php');
     include("conexion.php");
-    if (isset($_POST['moto'])) {
+    include("php/financiamiento.php");
+    include("php/costo_apertura.php");
+    include("php/costo_moto.php");
+    include("php/consultas.php");
+    include("php/base_credito.php");
+    include("php/enganche.php");
+    include("php/importe_de.php");
+    include("php/seguro.php");
+    // if (isset($_POST['moto'])) {
       # code...
-      $var=$_POST['moto'];
-      $enganche2=$_POST['enganche2'];
-      $enganche=$_POST['enganche'];
+      // $var=$_POST['moto'];
+      // $enganche2=$_POST['enganche2'];
+      // $enganche=$_POST['enganche'];
       ///////////////////////////////////////
-      $credito=$_POST['credito'];
+      /*$credito=$_POST['credito'];
       $query = "select * from credito where tipo_credito ='$credito'";  
       $result = mysql_query($query);  
       $registro = mysql_fetch_array($result);
       $tasa_base=$registro['tasa_base'];
       ///////////////////////////////////////
-      $municipios=$_POST['municipios'];
-      $query2 = "select * from alta_equipo where id_equipo ='$municipios'";  
+      $modelo=$_POST['modelo'];
+      $query2 = "select * from alta_equipo where id_equipo ='$modelo'";  
       $result2 = mysql_query($query2);  
       $registro2 = mysql_fetch_array($result2);
       $var=$registro2['costo_unidad'];
@@ -30,10 +38,10 @@
       $seguro=($var2*0.16);
       $suma2=$var2+$seguro;
       $suma3=($suma2*$mul);
-      $res2=$suma3+$suma2;
+      $res2=$suma3+$suma2;*/
       // $seguro2=;
       // echo $res2;
-    }
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -129,17 +137,17 @@
                 </select>
             <!-- </div> -->
           </div>
-          <div class="form-group col-md-5" id="enganche">
+          <div class="form-group col-md-5" id="plazo">
             <!-- <div id="municipios"> -->
               <label for="modelo">CREDITO A </label>
-                <select name="enganche" class="form-control">
+                <select name="plazo" class="form-control">
                   <option value="">Seleccione</option>
                 </select>
             <!-- </div> -->
           </div>
           <div class="form-group col-md-5">
             <label for="tipo">ENGANCHE </label>
-            <input type="text" name="enganche2" class="form-control" required/>
+            <input type="text" name="enganche" class="form-control" required/>
           </div>
           <div style="display:none">            
             <input type="text" name="user" value="<?= $user ?>">
@@ -180,15 +188,15 @@
       <hr>
         <div class="col-md-4" id="financiamiento">
           <label>FINANCIAMIENTO</label>
-          <input type="text" id="financiamiento" name="financiamiento" value="<?= $enganche ?> A <?= $enganche2?>% de enganche" class="form-control" disabled/>      
+          <input type="text" id="financiamiento" name="financiamiento" value="<?= $credito_a ?> A <?= $enganche_de?> % de enganche" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>COSTO APERTURA</label>
-          <input type="text" id="apertura" name="apertura" value="<?= $registro['costo_apertura'] ?>" class="form-control" disabled/>      
+          <input type="text" id="apertura" name="apertura" value="<?= $apertura['costo_apertura'] ?>" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>COSTO MOTOCICLETA</label>
-          <input type="text" id="motocicleta" name="motocicleta" value="<?= $por ?>" class="form-control" disabled/>      
+          <input type="text" id="motocicleta" name="motocicleta" value="<?= $res ?>" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>BASE DEL CREDITO</label>
@@ -196,15 +204,15 @@
         </div>
         <div class="col-md-4">
           <label>ENGANCHE DE</label>
-          <input type="text" id="enganche" name="enganche" value="<?= $enga ?>" class="form-control" disabled/>      
+          <input type="text" id="enganche" name="enganche" value="<?= $ope?>" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>IMPORTE DEL CREDITO</label>
-          <input type="text" id="importe" name="importe" value="<?= $suma ?>" class="form-control" disabled/>      
+          <input type="text" id="importe" name="importe" value="<?= $importe ?>" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>SEGURO DE LA UNIDAD</label>
-          <input type="text" id="seguro" name="seguro" value="<?= $res2 ?>" class="form-control" disabled/>      
+          <input type="text" id="seguro" name="seguro" value="<?= $seguro ?>" class="form-control" disabled/>      
         </div>
       </div>
     </div><br><br><br><br>

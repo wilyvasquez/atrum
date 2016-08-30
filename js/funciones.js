@@ -70,9 +70,9 @@ function showselect(str)
       {
       if (xmlhttp.readyState==4 && xmlhttp.status==200)
       {
-      document.getElementById("enganche").innerHTML=xmlhttp.responseText;
+      document.getElementById("plazo").innerHTML=xmlhttp.responseText;
       }
       }
-      xmlhttp.open("GET","enganche.php?c="+str,true);
+      xmlhttp.open("GET","plazo.php?c="+str,true);
       xmlhttp.send();
     }
