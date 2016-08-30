@@ -9,6 +9,10 @@ CREATE TABLE credito
 (
     id_credito int not null AUTO_INCREMENT,
     tipo_credito varchar(50),
+    tasa_base integer,
+    tasa_inc_anual integer,
+    tasa_accesorios integer,
+    costo_apertura integer,
     PRIMARY KEY (id_credito)
 );
 
