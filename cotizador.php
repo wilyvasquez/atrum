@@ -1,9 +1,9 @@
 <?php
     include('datos.php');
     include("conexion.php");
-    if (isset($_POST['estados'])) {
+    if (isset($_POST['moto'])) {
       # code...
-      $var=$_POST['estados'];
+      $var=$_POST['moto'];
       $enganche2=$_POST['enganche2'];
       $enganche=$_POST['enganche'];
       ///////////////////////////////////////
@@ -53,87 +53,6 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
 
-    <script type="text/javascript">
-    function showselect(str)
-    {
-      var xmlhttp; 
-      if (str=="")
-       {
-       document.getElementById("txtHint").innerHTML="";
-      return;
-       }
-      if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-       }
-      else
-       {// code for IE6, IE5
-       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange=function()
-      {
-      if (xmlhttp.readyState==4 && xmlhttp.status==200)
-      {
-      document.getElementById("municipios").innerHTML=xmlhttp.responseText;
-      }
-      }
-      xmlhttp.open("GET","municipios.php?c="+str,true);
-      xmlhttp.send();
-    }
-    function showselect1(str)
-    {
-      var xmlhttp; 
-      if (str=="")
-       {
-       document.getElementById("txtHint").innerHTML="";
-      return;
-       }
-      if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-       }
-      else
-       {// code for IE6, IE5
-       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange=function()
-      {
-      if (xmlhttp.readyState==4 && xmlhttp.status==200)
-      {
-      document.getElementById("seguros").innerHTML=xmlhttp.responseText;
-      }
-      }
-      xmlhttp.open("GET","seguros.php?c="+str,true);
-      xmlhttp.send();
-    }
-    function showselect2(str)
-    {
-      var xmlhttp; 
-      if (str=="")
-       {
-       document.getElementById("txtHint").innerHTML="";
-      return;
-       }
-      if (window.XMLHttpRequest)
-      {// code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-       }
-      else
-       {// code for IE6, IE5
-       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange=function()
-      {
-      if (xmlhttp.readyState==4 && xmlhttp.status==200)
-      {
-      document.getElementById("enganche").innerHTML=xmlhttp.responseText;
-      }
-      }
-      xmlhttp.open("GET","enganche.php?c="+str,true);
-      xmlhttp.send();
-    }
-  </script>
-
 </head><!--/head-->
 <body>
     <header id="header">
@@ -171,26 +90,26 @@
       <div class="row">
         <div class="col-md-10">
           <h3><strong>COTIZADOR</strong></h3>
-        </div>
+        </div><!-- 
         <div class="col-md-2" style="margin-top:20px">
-          <!-- <button onclick="javascript:pasar()" class="btn btn-info">Cotizar</button> -->
-          <!-- <input class="btn btn-info" onclick="javascript:pasar()" type="submit" value="Cotizar">                    -->
-        </div>
+          <button onclick="javascript:pasar()" class="btn btn-info">Cotizar</button>
+          <input class="btn btn-info" onclick="javascript:pasar()" type="submit" value="Cotizar">
+        </div> -->
       </div>
       <hr>
       <form action="cotizador.php" method="post">
       <div class="row col-md-7">
           <div class="col-md-4">
             <label for="tipo">TIPO DE MOTO </label>
-              <select name="estados" id="estados" class="form-control" onchange="showselect(this.value)" required/>
+              <select name="moto" class="form-control" onchange="showselect(this.value)" required/>
               <option value="">Seleccione</option>
-              <?php include "estados.php" ?>
+              <?php include "php/tipo_moto.php" ?>
               </select>
           </div>
-          <div class="form-group col-md-5" style="margin-left:40px" id="municipios">
-            <!-- <div id="municipios"> -->
+          <div class="form-group col-md-5" style="margin-left:40px" id="modelo">
+            <!-- <div id="modelo"> -->
               <label for="modelo">MODELO </label>
-                <select name="municipios" class="form-control">
+                <select name="modelo" class="form-control">
                   <option value="">Seleccione</option>
                 </select>
             <!-- </div> -->
@@ -304,7 +223,7 @@
         </div>
     </footer>
     
-    <script src="js/operaciones.js"></script>
+    <script src="js/funciones.js"></script>
     <script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
