@@ -1,5 +1,6 @@
 <?php
     include('datos.php');
+    include("php/iniciador.php");
     include("conexion.php");
     include("php/financiamiento.php");
     include("php/costo_apertura.php");
@@ -9,39 +10,6 @@
     include("php/enganche.php");
     include("php/importe_de.php");
     include("php/seguro.php");
-    // if (isset($_POST['moto'])) {
-      # code...
-      // $var=$_POST['moto'];
-      // $enganche2=$_POST['enganche2'];
-      // $enganche=$_POST['enganche'];
-      ///////////////////////////////////////
-      /*$credito=$_POST['credito'];
-      $query = "select * from credito where tipo_credito ='$credito'";  
-      $result = mysql_query($query);  
-      $registro = mysql_fetch_array($result);
-      $tasa_base=$registro['tasa_base'];
-      ///////////////////////////////////////
-      $modelo=$_POST['modelo'];
-      $query2 = "select * from alta_equipo where id_equipo ='$modelo'";  
-      $result2 = mysql_query($query2);  
-      $registro2 = mysql_fetch_array($result2);
-      $var=$registro2['costo_unidad'];
-      $var2=$registro2['seguro_limitado'];
-      $por=($var*0.16)+$var;
-      $enga=(($por*$enganche2)/100);
-      $base=($por-$enga);
-      ///////////////////////////////////////////
-      $mul=($tasa_base*12);
-      $res=($mul*$base);
-      $suma=$res+$base;
-      //////////////////////////////////////////
-      $seguro=($var2*0.16);
-      $suma2=$var2+$seguro;
-      $suma3=($suma2*$mul);
-      $res2=$suma3+$suma2;*/
-      // $seguro2=;
-      // echo $res2;
-    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,11 +66,7 @@
       <div class="row">
         <div class="col-md-10">
           <h3><strong>COTIZADOR</strong></h3>
-        </div><!-- 
-        <div class="col-md-2" style="margin-top:20px">
-          <button onclick="javascript:pasar()" class="btn btn-info">Cotizar</button>
-          <input class="btn btn-info" onclick="javascript:pasar()" type="submit" value="Cotizar">
-        </div> -->
+        </div>
       </div>
       <hr>
       <form action="cotizador.php" method="post">
@@ -154,34 +118,48 @@
             <input type="text" name="pass" value="<?= $pass ?>">
           </div>
       </div>
-      <div><br><br><br><br><br><br><br><br><br><br><br></div>
+      <div>
+      <div class="row col-md-5">
+        <table data-toggle="table" data-click-to-select="true" data-single-select="true">
+            <thead>
+              <td>
+                  <th data-checkbox="true">Opcion</th>
+                  <th>Tiempo</th>
+                  <th>$ Vehiculo</th>
+                  <th>$ Seguro</th>
+                  <th>Total</th>
+              </td>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>SEMANAS</td>
+                <td>hola</td>
+                <td>hola</td>
+                <td>hola</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>QUINCENAS</td>
+                <td>hola</td>
+                <td>hola</td>
+                <td>hola</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>MESES</td>
+                <td>hola</td>
+                <td>hola</td>
+                <td>hola</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>        
+      </div>
           <div class="col-md-4"><br>
             <input class="btn btn-info" type="submit" value="Cotizar">                   
           </div>
       </form>
-      <div class="row col-md-5">
-        <!-- <table data-toggle="table"
-               data-click-to-select="true"
-               data-single-select="true">
-            <thead>
-            <tr>
-                <th data-field="state" data-checkbox="true"></th>
-                <th data-field="name">Name</th>
-                <th data-field="stargazers_count">Stars</th>
-                <th data-field="forks_count">Forks</th>
-                <th data-field="description">Description</th>
-            </tr>
-            <tr>
-              <th>hola</th>
-              <th>hola</th>
-              <th>hola</th>
-              <th>hola</th>
-              <th>hola</th>
-            </tr>
-            <tr></tr>
-            </thead>
-        </table> -->
-      </div>
     </div>
     <div class="container">
       <div class="row col-md-8">
@@ -192,7 +170,7 @@
         </div>
         <div class="col-md-4">
           <label>COSTO APERTURA</label>
-          <input type="text" id="apertura" name="apertura" value="<?= $apertura['costo_apertura'] ?>" class="form-control" disabled/>      
+          <input type="text" id="apertura" name="apertura" value="<?= $costo ?>" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>COSTO MOTOCICLETA</label>
@@ -212,7 +190,7 @@
         </div>
         <div class="col-md-4">
           <label>SEGURO DE LA UNIDAD</label>
-          <input type="text" id="seguro" name="seguro" value="<?= $seguro ?>" class="form-control" disabled/>      
+          <input type="text" id="seguro" name="seguro" value="<?= $final?>" class="form-control" disabled/>      
         </div>
       </div>
     </div><br><br><br><br>

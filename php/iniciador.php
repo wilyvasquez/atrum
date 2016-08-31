@@ -1,0 +1,10 @@
+<?php
+	$credito_a=0; 
+	$enganche_de=0;
+	$costo=0;
+	$res=0;
+	$base=0;
+	$ope=0;
+	$importe=0;
+	$final=0;
+?>
