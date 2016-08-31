@@ -10,6 +10,7 @@
     include("php/enganche.php");
     include("php/importe_de.php");
     include("php/seguro.php");
+    include("php/tabla.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -134,23 +135,23 @@
               <tr>
                 <td></td>
                 <td>SEMANAS</td>
-                <td>hola</td>
-                <td>hola</td>
-                <td>hola</td>
+                <td><?= round($semanas,2) ?></td>
+                <td><?= round($semanas_se,2) ?></td>
+                <td><?= round($total_se,2) ?></td>
               </tr>
               <tr>
                 <td></td>
                 <td>QUINCENAS</td>
-                <td>hola</td>
-                <td>hola</td>
-                <td>hola</td>
+                <td><?= round($quincenas,2) ?></td>
+                <td><?= round($quincenas_se,2) ?></td>
+                <td><?= round($total_qui,2) ?></td>
               </tr>
               <tr>
                 <td></td>
                 <td>MESES</td>
-                <td>hola</td>
-                <td>hola</td>
-                <td>hola</td>
+                <td><?= round($meses,2) ?></td>
+                <td><?= round($meses_se,2) ?></td>
+                <td><?= round($total_mes,2) ?></td>
               </tr>
             </tbody>
         </table>
@@ -162,8 +163,8 @@
       </form>
     </div>
     <div class="container">
-      <div class="row col-md-8">
       <hr>
+      <div class="row col-md-8">
         <div class="col-md-4" id="financiamiento">
           <label>FINANCIAMIENTO</label>
           <input type="text" id="financiamiento" name="financiamiento" value="<?= $credito_a ?> A <?= $enganche_de?> % de enganche" class="form-control" disabled/>      
@@ -174,23 +175,23 @@
         </div>
         <div class="col-md-4">
           <label>COSTO MOTOCICLETA</label>
-          <input type="text" id="motocicleta" name="motocicleta" value="<?= $res ?>" class="form-control" disabled/>      
+          <input type="text" id="motocicleta" name="motocicleta" value="<?= round($res,2) ?>" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>BASE DEL CREDITO</label>
-          <input type="text" id="credito" name="credito" value="<?= $base ?>" class="form-control" disabled/>      
+          <input type="text" id="credito" name="credito" value="<?= round($base,2) ?>" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>ENGANCHE DE</label>
-          <input type="text" id="enganche" name="enganche" value="<?= $ope?>" class="form-control" disabled/>      
+          <input type="text" id="enganche" name="enganche" value="<?= round($ope,2)?>" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>IMPORTE DEL CREDITO</label>
-          <input type="text" id="importe" name="importe" value="<?= $importe ?>" class="form-control" disabled/>      
+          <input type="text" id="importe" name="importe" value="<?= round($importe,2) ?>" class="form-control" disabled/>      
         </div>
         <div class="col-md-4">
           <label>SEGURO DE LA UNIDAD</label>
-          <input type="text" id="seguro" name="seguro" value="<?= $final?>" class="form-control" disabled/>      
+          <input type="text" id="seguro" name="seguro" value="<?= round($final,2)?>" class="form-control" disabled/>      
         </div>
       </div>
     </div><br><br><br><br>
