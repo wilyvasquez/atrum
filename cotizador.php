@@ -11,6 +11,10 @@
     include("php/importe_de.php");
     include("php/seguro.php");
     include("php/tabla.php");
+
+    // echo $pass;
+    // echo $user;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
