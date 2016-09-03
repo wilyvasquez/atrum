@@ -11,10 +11,11 @@
     include("php/importe_de.php");
     include("php/seguro.php");
     include("php/tabla.php");
-
-    // echo $pass;
-    // echo $user;
-
+    if (!empty($_POST['modelo'])) {
+      # code...
+     $img=$_POST['modelo'];
+    }
+     // echo $img;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +75,7 @@
         </div>
       </div>
       <hr>
-      <form action="cotizador.php" method="post">
+      <form action="cotizador.php" method="post" enctype="multipart/form-data">
       <div class="row col-md-7">
           <div class="col-md-4">
             <label for="tipo">TIPO DE MOTO </label>
@@ -198,6 +199,13 @@
           <input type="text" id="seguro" name="seguro" value="<?= round($final,2)?>" class="form-control" disabled/>      
         </div>
       </div>
+      <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail" style="margin-left:50px; width:300px; height:200px">
+                    <form action="" method="POST" enctype="multipart/form-data" >
+                      <img src="php/foto.php?id=<?= $img ?>" style="margin-left:50px;margin-top:10px"/>
+                    </form>
+                </div>
+            </div>
     </div><br><br><br><br>
     <!-- </section> -->
      <footer id="footer" class="midnight-blue">
