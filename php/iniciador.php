@@ -7,4 +7,13 @@
 	$ope=0;
 	$importe=0;
 	$final=0;
+	$semanas=0;
+	$semanas_se=0;
+	$total_se=0;
+	$quincenas=0;
+	$quincenas_se=0;
+	$total_qui=0;
+	$meses=0;
+	$meses_se=0;
+	$total_mes=0;
 ?>

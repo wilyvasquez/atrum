@@ -1,6 +1,6 @@
 <?php
-	echo '<label for="tipo">MODELO </label>';
-	echo '<select name="modelo" class="form-control">';
+	echo '<label for="modelo">MODELO </label>';
+	echo '<select id="modelo" name="modelo" class="form-control">';
 	require ("conexion.php");
 	$consulta= "SELECT * FROM alta_equipo"; 
 	$resultado= mysql_query($consulta,$conexion) or die (mysql_error());

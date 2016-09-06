@@ -16,6 +16,23 @@ CREATE TABLE credito
     PRIMARY KEY (id_credito)
 );
 
+CREATE TABLE tiempo
+(
+    id_tiempo int not null AUTO_INCREMENT,
+    tipo_tiempo varchar(50),
+    PRIMARY KEY (id_tiempo)
+);
+
+CREATE TABLE cre_tiempo
+(
+    id_cre_tiempo int not null AUTO_INCREMENT,
+    ref_credito int,
+    ref_tiempo int,
+    PRIMARY KEY (id_cre_tiempo),
+    FOREIGN KEY (ref_credito) REFERENCES credito(id_credito),
+    FOREIGN KEY (ref_tiempo) REFERENCES tiempo(id_tiempo)
+);
+
 CREATE TABLE segu_cre
 (
     id_segu_cre int not null AUTO_INCREMENT,

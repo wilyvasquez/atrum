@@ -1,62 +1,33 @@
 function pasar()
 {
-  var estados = document.getElementById('estados').value;
-  // var sicipo = document.getElementById('sicipo').value;
-  // var rfsi = document.getElementById('rfsi').value;
-  // var factura = document.getElementById('factura').value;
-  // if(estados!="" && sicipo!="" && rfsi!="" && factura!="")
-  // {
-      var par = 
+    var par = 
     {
-      'estados' : document.getElementById('estados').value,
-      // 'sicipo' : document.getElementById('sicipo').value,
-      // 'rfsi' : document.getElementById('rfsi').value,
-      // 'tipoequipo' : document.getElementById('tipoequipo').value,
-      // 'tipotecla' : document.getElementById('tipotecla').value,
-      // 'marca' : document.getElementById('marca').value,
+      'motocicleta' : document.getElementById('motocicleta').value,
+      'nombre' : document.getElementById('nombre').value,
+      'telefono' : document.getElementById('telefono').value,
+      'moto' : document.getElementById('moto').value,
       // 'modelo' : document.getElementById('modelo').value,
-      // 'fecha' : document.getElementById('fecha').value,
-      // 'factura' : document.getElementById('factura').value,
-      // 'recurso' : document.getElementById('recurso').value,
+      // 'credito' : document.getElementById('credito').value,
+      // 'seguros' : document.getElementById('seguros').value,
+      // // 'plazo' : document.getElementById('plazo').value,
+      // // 'enganche' : document.getElementById('enganche').value,
+      // 'user' : document.getElementById('user').value,
+      // 'pass' : document.getElementById('pass').value,
     };
     $.ajax({
       data: par,
-      url: 'http://localhost/atrum/cotizador.php',
+      url: 'atrum/pdf.php',
       type: 'post',
       beforeSend: function()
       {
-      // sweetAlert("Oops...","error al guardar datos");
+        alert(document.getElementById('moto').value);
       },
       success: function(response)
       {
+        // alert(document.getElementById('modelos').value);
         // $.get("radios/"+'tablaequipo', function(htmlexterno){
         // $("#cargaexterna").html(htmlexterno);
         // });
       }
     });
-  // }
-  // else
-  // {
-  //   if(serie=="")
-  //   {
-  //   document.getElementById("serie").style.borderColor= '#E46262';
-  //   }
-  //   if (serie!="") {document.getElementById("serie").style.borderColor= '#DBD4D4';}
-  //   else(sicipo=="")
-  //   {
-  //   document.getElementById("sicipo").style.borderColor= '#E46262';
-  //   }
-  //   if (sicipo!="") {document.getElementById("sicipo").style.borderColor= '#DBD4D4';}
-  //   if(rfsi=="")
-  //   {
-  //   document.getElementById("rfsi").style.borderColor= '#E46262';
-  //   }
-  //   if (rfsi!="") {document.getElementById("rfsi").style.borderColor= '#DBD4D4';}
-  //   if(factura=="")
-  //   {
-  //   document.getElementById("factura").style.borderColor= '#E46262';
-  //   }
-  //   if (factura!="") {document.getElementById("factura").style.borderColor= '#DBD4D4';}
-      
-  // }
 }
