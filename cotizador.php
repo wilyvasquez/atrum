@@ -170,6 +170,17 @@
               </tr>
             </tbody>
         </table>
+        <div class="form-group col-md-6">
+            <label for="tiempo">TIEMPO </label>
+            <select name="tiempo" id="tiempo" class="form-control">
+              <option value="1">SEMANAS</option>
+              <option value="2">QUINCENAS</option>
+              <option value="3">MESES</option>
+            </select>
+          </div>
+          <div class="form-group col-md-1" style="margin-top:25px">
+            <input class="btn btn-info" type="submit" value="Agregar">            
+          </div>
       </div>        
       </div>
     </div>
