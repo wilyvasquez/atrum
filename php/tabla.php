@@ -28,6 +28,10 @@ if ($_POST['tiempo']==3) {
 
 echo	"<div style='display:none'>
 		<div class='col-md-4'>
+			<label>pagos</label>
+			<input type='text' id='pagos' name='pagos' value='".$_POST['tiempo']."' class='form-control'>
+		</div>
+		<div class='col-md-4'>
 			<label>modelo</label>
 			<input type='text' id='modelo' name='modelo' value='".$modelo."' class='form-control'>
 		</div>
@@ -42,7 +46,7 @@ echo	"<div style='display:none'>
 		</div>
 		<div class='col-md-4'>
 			<label>seguro</label>
-			<input type='text' id='seguro' name='seguro' value='".$precio_se."' class='form-control'>
+			<input type='text' id='seguro1' name='seguro1' value='".$precio_se."' class='form-control'>
 		</div>
 		<div class='col-md-4'>
 			<label>total</label>

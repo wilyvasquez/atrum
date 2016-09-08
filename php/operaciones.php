@@ -49,7 +49,7 @@ echo		    "<div class='col-md-4'>
 			        </div>
 			    </div>";
 echo		    "<div class='col-md-4'>
-			        <label>SEGURO UNIDAD</label>
+			        <label>SEGURO UNIDADd</label>
 			        <div class='input-group'>
 			          <span class='input-group-addon'>$</span>
 			          <input type='text' id='seguro' name='seguro' value='".$final."' class='form-control' onfocus='this.blur()'>      

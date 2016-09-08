@@ -15,6 +15,11 @@ mysql_select_db("atrum");
  	$seguros = mysql_query($query1);  
     $res = mysql_fetch_array($seguros);
     $res_seguro=$res['tipo_seguro'];
+
+    $consulta="select * from tiempo where id_tiempo='".$_POST['pagos']."'";
+ 	$var1 = mysql_query($consulta);  
+    $var2 = mysql_fetch_array($var1);
+    $tiempo=$var2['tipo_tiempo'];
 /* tenemos que generar una instancia de la clase */
         $pdf = new FPDF();
         $pdf->AddPage();
@@ -181,6 +186,11 @@ mysql_select_db("atrum");
 		$pdf->SetXY(15, 170);
 		$pdf->Cell(5, 6, 'FORMA DE PAGOS:', 0 , 1);
 
+		$pdf->SetXY(130, 175);
+		$pdf->Cell(5, 6, 'PAGOS POR ', 0 , 1);
+		$pdf->SetXY(153, 175);
+		$pdf->Cell(5, 6, $tiempo, 0 , 1);
+
 		$pdf->SetXY(60, 160);
 		$pdf->SetFont('Arial','',9);
 		$pdf->Cell(5, 6, $_POST['financiamiento'], 0 , 1);
@@ -188,7 +198,7 @@ mysql_select_db("atrum");
 		$pdf->Cell(5, 6, $res_seguro, 0 , 1);////////// tipo de seguro
 
 		$pdf->SetXY(60, 170);
-		$pdf->Cell(5, 6, 'QUINCENALES', 0 , 1);
+		$pdf->Cell(5, 6, $tiempo, 0 , 1);
 		/////////////////////////////////
 
 		$pdf->Rect(15, 180, 110 , 6, '');
@@ -245,7 +255,7 @@ mysql_select_db("atrum");
 		$pdf->Cell(5, 6, $_POST['vehiculo'], 0 , 1); ////////// pago motocicleta
 
 		$pdf->SetXY(175, 186);
-		$pdf->Cell(5, 6, $_POST['seguro'], 0 , 1);/// pagos seguro
+		$pdf->Cell(5, 6, $_POST['seguro1'], 0 , 1);/// pagos seguro
 
 		$pdf->SetXY(130, 192);
 		$pdf->SetFont('Arial','B',10);
