@@ -1,6 +1,6 @@
 <?php
-	echo '<label for="tipo">CREDITO A </label>';
-	echo '<select name="plazo" class="form-control">';
+	echo '<label for="plazo">CREDITO A </label>';
+	echo '<select id="plazo" name="plazo" class="form-control">';
 	require ("conexion.php");
 	$consulta= "SELECT * FROM credito INNER JOIN anio_credito on anio_credito.ref_credito=credito.id_credito INNER JOIN anios ON anios.id_anios=anio_credito.ref_anios WHERE credito.tipo_credito='".$_GET['c']."'"; 
 	$resultado= mysql_query($consulta,$conexion) or die (mysql_error());
