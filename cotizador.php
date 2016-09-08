@@ -9,8 +9,7 @@
     <meta name="author" content="">
     <title>Suzuki</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
+    <link rel="stylesheet" href="css/bootstrap-table.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -112,7 +111,7 @@
       </div>
       <div class="col-md-6" id="tabla">
       <center><label for="">PRECIOS</label></center>
-        <!-- <table data-toggle="table" data-click-to-select="true" data-single-select="true">
+        <table data-toggle="table" data-click-to-select="true" data-single-select="true">
             <thead>
               <td>
                   <th>Tiempo</th>
@@ -124,7 +123,7 @@
             <tbody>
               <tr>
                 <td>SEMANAS</td>
-                <td><?= round($semanas,2) ?></td>
+                <td></td>
                 <td>0</td>
                 <td>0</td>
               </tr>
@@ -141,7 +140,7 @@
                 <td>0</td>
               </tr>
             </tbody>
-        </table> -->
+        </table>
       </div>
     </div>
     <div class="container">
@@ -246,11 +245,10 @@
         </div>
     </footer>
     
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-table.min.js"></script>
     <script src="js/operaciones.js"></script>
     <script src="js/funciones.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
     <script src="js/validaciones.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>

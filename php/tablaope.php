@@ -30,8 +30,8 @@ if ($_POST['credito']=='CREDITO CASA') {
   $meses_se=0;
   $total_mes=round($meses+$meses_se,2);
 }
-echo 	'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
-    	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>';
+echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">
+    	<script src="js/bootstrap-table.min.js"></script>';
 
 echo 		"<center><label for='precio'>PRECIOS</label></center>
 			<table data-toggle='table'>

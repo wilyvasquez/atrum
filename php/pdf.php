@@ -167,7 +167,15 @@ mysql_select_db("atrum");
 		$pdf->SetFont('Arial','B',10);
 		$pdf->Cell(5, 6, 'FINANCIAMIENTO A:', 0 , 1);
 
+		$pdf->SetXY(130, 160);
+		$pdf->Cell(5, 6, 'COSTO DEL SEGURO:', 0 , 1);
+
+		$pdf->SetXY(170, 160);
+		$pdf->SetFont('Arial','',10);
+		$pdf->Cell(5, 6, $_POST['seguro'], 0 , 1);
+
 		$pdf->SetXY(15, 165);
+		$pdf->SetFont('Arial','B',10);
 		$pdf->Cell(5, 6, 'TIPO DE SEGURO:', 0 , 1);
 
 		$pdf->SetXY(15, 170);
@@ -198,7 +206,7 @@ mysql_select_db("atrum");
 
 		$pdf->SetXY(17, 186);
 		$pdf->SetFont('Arial','',8);
-		// $pdf->Cell(5, 6, $apertura['modelo'], 0 , 1);
+		$pdf->Cell(5, 6, $apertura['modelo'], 0 , 1);
 
 		$pdf->SetXY(17, 192);
 		$pdf->Cell(5, 6, utf8_decode('APERTURA DE CRÉDITO'), 0 , 1);
@@ -211,7 +219,7 @@ mysql_select_db("atrum");
 
 		$pdf->SetXY(80, 186);
 		$pdf->SetFont('Arial','',8);
-		// $pdf->Cell(5, 6, $apertura['anio'], 0 , 1);
+		$pdf->Cell(5, 6, $apertura['anio'], 0 , 1);
 
 		$pdf->SetXY(60, 192);
 		$pdf->Cell(5, 6, 'DESCUENTO DE 50%', 0 , 1);
@@ -234,10 +242,10 @@ mysql_select_db("atrum");
 
 		$pdf->SetXY(175, 180);
 		$pdf->SetFont('Arial','',8);
-		$pdf->Cell(5, 6, $_POST['motocicleta'], 0 , 1); ////////// pago motocicleta
+		$pdf->Cell(5, 6, $_POST['vehiculo'], 0 , 1); ////////// pago motocicleta
 
 		$pdf->SetXY(175, 186);
-		$pdf->Cell(5, 6, '$99.61', 0 , 1);/// apgos segur
+		$pdf->Cell(5, 6, $_POST['seguro'], 0 , 1);/// pagos seguro
 
 		$pdf->SetXY(130, 192);
 		$pdf->SetFont('Arial','B',10);
@@ -250,7 +258,7 @@ mysql_select_db("atrum");
 		$pdf->Cell(5, 6, '$206.00', 0 , 1);
 
 		$pdf->SetXY(170, 192);
-		$pdf->Cell(5, 6, '$1449.49', 0 , 1);
+		$pdf->Cell(5, 6, $_POST['total'], 0 , 1);
 
 		$pdf->Image('http://chart.googleapis.com/chart?cht=p3&chd=t:60,40&chs=250x100&chl=Hello|World',20,90,50,50,'PNG');
 		// $pdf->Image('hola.jpg',20,90,100,100,'JPG');
@@ -274,19 +282,19 @@ mysql_select_db("atrum");
 
 		$pdf->SetXY(15, 230);
 		$pdf->SetFont('Arial','',7);
-		$pdf->Cell(5, 6, utf8_decode('-PAGO DE AFILIACIÓN.'), 0 , 1);
+		$pdf->Cell(5, 6, utf8_decode('1.-PAGO DE AFILIACIÓN.'), 0 , 1);
 
 		$pdf->SetXY(15, 233);
-		$pdf->Cell(5, 6, '-CREDENCIAL DE ELECTOR IFE O INE VIGENTE.', 0 , 1);
+		$pdf->Cell(5, 6, '2.-CREDENCIAL DE ELECTOR IFE O INE VIGENTE.', 0 , 1);
 
 		$pdf->SetXY(15, 236);
-		$pdf->Cell(5, 6, '-COMPROBANTE DE DOMICILIO NO MAYOR A 3 MESES.', 0 , 1);
+		$pdf->Cell(5, 6, '3.-COMPROBANTE DE DOMICILIO NO MAYOR A 3 MESES.', 0 , 1);
 
 		$pdf->SetXY(15, 239);
-		$pdf->Cell(5, 6, '-CREDENCIAL DE SINDICALIZADO O CARTA COMPROBANTE DEL MISMO.', 0 , 1);
+		$pdf->Cell(5, 6, '4.-CREDENCIAL DE SINDICALIZADO O CARTA COMPROBANTE DEL MISMO.', 0 , 1);
 
 		$pdf->SetXY(15, 242);
-		$pdf->Cell(5, 6, utf8_decode('-RECIBIDO DE NOMINA (DOS ÚLTIMAS QUICENAS).'), 0 , 1);
+		$pdf->Cell(5, 6, utf8_decode('5.-RECIBIDO DE NOMINA (DOS ÚLTIMAS QUICENAS).'), 0 , 1);
 
 		$pdf->SetXY(120, 220);
 		$pdf->SetFont('Arial','B',8);
@@ -300,16 +308,16 @@ mysql_select_db("atrum");
 
 		$pdf->SetXY(120, 230);
 		$pdf->SetFont('Arial','',7);
-		$pdf->Cell(5, 6, '-SEGURO DE VIDA (SUZUKI FINANCIAL SERVICES).', 0 , 1);
+		$pdf->Cell(5, 6, '1.-SEGURO DE VIDA (SUZUKI FINANCIAL SERVICES).', 0 , 1);
 
 		$pdf->SetXY(120, 233);
-		$pdf->Cell(5, 6, '-15% DE DESCUENTO EN REFACCION ALTERNAS.', 0 , 1);
+		$pdf->Cell(5, 6, '2.-15% DE DESCUENTO EN REFACCION ALTERNAS.', 0 , 1);
 
 		$pdf->SetXY(120, 236);
-		$pdf->Cell(5, 6, '-10% DE DESCUENTO EN REFACCIONES ORIGINALES.', 0 , 1);
+		$pdf->Cell(5, 6, '3.-10% DE DESCUENTO EN REFACCIONES ORIGINALES.', 0 , 1);
 
 		$pdf->SetXY(120, 239);
-		$pdf->Cell(5, 6, '-20% DE DESCUENTO EN ACCESORIOS DE BOUTIQUE.', 0 , 1);
+		$pdf->Cell(5, 6, '4.-20% DE DESCUENTO EN ACCESORIOS DE BOUTIQUE.', 0 , 1);
 
 		$pdf->SetXY(15, 250);
 		$pdf->Cell(5, 6, 'JUEGO EN ORIGINAL Y COPIA.', 0 , 1);
