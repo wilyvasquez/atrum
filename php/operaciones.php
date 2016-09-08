@@ -1,18 +1,19 @@
 <?php
+$final=0;
 include("conexion.php");
 include("consultas.php");
 	///////////// costo apertura//////////////////////////////////
 	// echo '<span class="input-group-addon">$</span>';
  //    echo "<input type='text' id='resultado' name='financiamiento' value='".$costo."' class='form-control'>";
 
-echo		'<div class="col-md-4">';
+echo		'<div class="col-md-6">';
 echo        '<label>FINANCIAMIENTO</label>';
 echo        '<div class="input-group">';
 echo          '<span class="input-group-addon">$</span>';
-echo          '<input type="text" id="financiamiento" name="financiamiento" value="0" class="form-control" onfocus="this.blur()">';
+echo          "<input type='text' id='financiamiento' name='financiamiento' value='".$_POST['plazo'],'con el',$_POST['enganche']." % de enganche' class='form-control' onfocus='this.blur()'>";
 echo        '</div>';
 echo      '</div>';
-echo	'<div class="col-md-4">';
+echo	'<div class="col-md-6">';
 echo    '<label>COSTO APERTURA</label>';
 echo        '<div class="input-group" id="resultado">';
 echo          '<span class="input-group-addon">$</span>';
@@ -56,7 +57,7 @@ echo		    "<div class='col-md-4'>
 			    </div>";
 echo		    '<div class="col-md-4">
 			        <label>NOMBRE DEL CLIENTE</label>
-			          <input type="text" id="enganche" name="enganche" value="" class="form-control">
+			          <input type="text" id="nombre" name="nombre" value="" class="form-control">
 			      </div>
 			      <div class="col-md-4">
 			        <label>TELEFONO</label>

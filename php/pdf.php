@@ -6,12 +6,12 @@ include ('fpdf/fpdf.php');
 $conexion =mysql_connect("localhost","root","");
 mysql_select_db("atrum");
 	$query="select * from tipo_moto inner join alta_equipo on alta_equipo.ref_tipo= tipo_moto.id_tipo
-			where id_equipo='".$_POST['modelo1']."'";
+			where id_equipo='".$_POST['modelo']."'";
  	$result = mysql_query($query);  
     $apertura = mysql_fetch_array($result);
     $modelo=$apertura['tipo'];
 
-    $query1="select * from seguro where id_seguro='".$_POST['seguros1']."'";
+    $query1="select * from seguro where id_seguro='".$_POST['seguros']."'";
  	$seguros = mysql_query($query1);  
     $res = mysql_fetch_array($seguros);
     $res_seguro=$res['tipo_seguro'];
@@ -62,7 +62,7 @@ mysql_select_db("atrum");
 		$pdf->SetFont('Arial','B',13);
 		$pdf->Cell(5, 6, utf8_decode('TIPO DE CRÉDITO:'), 0 , 1);
 		$pdf->SetXY(165, 55);
-		$pdf->Cell(5, 6,$_POST['credito1'], 0 , 1);
+		$pdf->Cell(5, 6,$_POST['credito'], 0 , 1);
 
 		/////////// SALMON///////////////
 		// $pdf->SetFillColor(255, 255, 255);
@@ -198,7 +198,7 @@ mysql_select_db("atrum");
 
 		$pdf->SetXY(17, 186);
 		$pdf->SetFont('Arial','',8);
-		$pdf->Cell(5, 6, $apertura['modelo'], 0 , 1);
+		// $pdf->Cell(5, 6, $apertura['modelo'], 0 , 1);
 
 		$pdf->SetXY(17, 192);
 		$pdf->Cell(5, 6, utf8_decode('APERTURA DE CRÉDITO'), 0 , 1);
@@ -211,7 +211,7 @@ mysql_select_db("atrum");
 
 		$pdf->SetXY(80, 186);
 		$pdf->SetFont('Arial','',8);
-		$pdf->Cell(5, 6, $apertura['anio'], 0 , 1);
+		// $pdf->Cell(5, 6, $apertura['anio'], 0 , 1);
 
 		$pdf->SetXY(60, 192);
 		$pdf->Cell(5, 6, 'DESCUENTO DE 50%', 0 , 1);

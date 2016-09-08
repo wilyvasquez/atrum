@@ -76,7 +76,7 @@ function funciontipo(str)
       xmlhttp.open("GET","plazo.php?c="+str,true);
       xmlhttp.send();
     }
-    function showselect3(str)
+    function funciontiempo(str)
     {
       var xmlhttp; 
       if (str=="")

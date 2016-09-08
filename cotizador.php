@@ -73,7 +73,7 @@
         </div>
         <div class="col-md-6">
           <label for="">TIPO CREDITO</label>
-          <select name="credito" id="credito" class="form-control" onchange="funcioncredito(this.value);funcioncrea(this.value)" required/>
+          <select name="credito" id="credito" class="form-control" onchange="funcioncredito(this.value);funcioncrea(this.value);funciontiempo(this.value)" required/>
             <option value="">Seleccionar</option>
             <?php include "credito.php" ?>
           </select>
@@ -97,9 +97,18 @@
           <span class="input-group-addon">%</span>
         </div>
       </div>
-        <div class="col-md-2"><br>
-          <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())"  type="submit">Cotizar !</button>
-        </div>
+      <div class="col-md-3"><br>
+        <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())"  type="submit">Cotizar !</button>
+      </div>
+      <div class="col-md-6">
+          <label for="">TIEMPO</label>
+          <select name="tiempo" id="tiempo" class="form-control">
+            <option value="">Seleccionar</option>
+          </select>
+      </div>
+      <div class="col-md-3"><br>
+        <button class="btn btn-info" onclick="tabla($('#tiempo').val(),$('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())" type="submit">Agregar !</button>
+      </div>
       </div>
       <div class="col-md-6" id="tabla">
       <center><label for="">PRECIOS</label></center>
@@ -137,15 +146,18 @@
     </div>
     <div class="container">
       <hr>
-      <div class="row col-md-8" id="resultado">
-      <div class="col-md-4">
+      <!-- inicio -->
+      <div class="row col-md-8">
+      <form name="pdf" action="php/pdf.php" method="POST">
+      <div id="resultado">
+      <div class="col-md-6">
         <label>FINANCIAMIENTO</label>
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="text" id="financiamiento" name="financiamiento" value="0" class="form-control" onfocus="this.blur()">
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
           <label>COSTO APERTURA</label>
         <div class="input-group">
           <span class="input-group-addon">$</span>
@@ -189,7 +201,7 @@
       </div>
       <div class="col-md-4">
         <label>NOMBRE DEL CLIENTE</label>
-          <input type="text" id="enganche" name="enganche" value="" class="form-control">
+          <input type="text" id="cliente" name="cliente" value="" class="form-control">
       </div>
       <div class="col-md-4">
         <label>TELEFONO</label>
@@ -202,7 +214,15 @@
         <button class="btn btn-info" type="submit">Generar PDF !</button>
       </div>
       </div>
+      <div id="tablatiempo"></div>      
+      <div style="display:none">
+      <?php
+          $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+        ?>
+        <input type="text" id="fecha" name="fecha" value="<?= date('d')." de ".$meses[date('n')-1]. " de ".date('Y') ;  ?>" class="form-control">
+      </div>
       </form>
+      </div><!-- fin -->
       <div class="row col-md-4">
         <div class="thumbnail" style="width:300px; height:200px;margin-left:50px">
             <form action="" method="POST" enctype="multipart/form-data" >

@@ -1,4 +1,4 @@
-function datoscotizador(credito,modelo,enganche,seguros,moto)
+function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
 {
     var par = 
     {
@@ -6,7 +6,8 @@ function datoscotizador(credito,modelo,enganche,seguros,moto)
       "modelo" : modelo,
       "enganche" : enganche,
       "seguros" : seguros,
-      "moto" : moto
+      "moto" : moto,
+      "plazo" : plazo
     };
     $.ajax({
       data: par,
@@ -44,6 +45,33 @@ function datostabla(credito,modelo,enganche,seguros,moto)
       success: function(response)
       {
         $("#tabla").html(response);
+      }
+    });
+}
+function tabla(tiempo,credito,modelo,enganche,seguros,moto)
+{
+    var par = 
+    {
+      "tiempo" : tiempo,
+      "credito" : credito,
+      "modelo" : modelo,
+      "enganche" : enganche,
+      "seguros" : seguros,
+      "moto" : moto
+    };
+    
+    $.ajax({
+      data: par,
+      url: 'php/tabla.php',
+      type: 'post',
+      beforeSend: function()
+      {
+        // $("#resultado").html("procesando");
+      },
+      success: function(response)
+      {
+        $("#tablatiempo").html(response);
+        alert("Agregado Correctamente !");
       }
     });
 }
