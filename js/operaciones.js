@@ -1,7 +1,8 @@
 function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
 {
 
-  if(credito.length > 1) {
+  if(credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1 && seguros.length >= 1 && moto.length >= 1 && plazo.length >= 1) 
+  {
     
     var par = 
     {
@@ -17,8 +18,7 @@ function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
       url: 'php/operaciones.php',
       type: 'post',
       beforeSend: function()
-      {
-        // $("#resultado").html("procesando");
+      {        
       },
       success: function(response)
       {
@@ -28,16 +28,28 @@ function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
   }else{
     if (credito.length<1) {
       alertify.error("Falta campo Credito");
-      // alert('falta campo credito');
     }
     if (modelo.length<1) {
       alertify.error("Falta campo Modelo");
-      // alert('falta campo credito');
+    }
+    if (enganche.length<1) {
+      alertify.error("Falta campo Enganche");
+    }
+    if (seguros.length<1) {
+      alertify.error("Falta Tipo de Seguros");
+    }
+    if (moto.length<1) {
+      alertify.error("Falta Tipo de Moto");
+    }
+    if (plazo.length<1) {
+      alertify.error("Falta campo Plazo");
     }
   }
 }
 function datostabla(credito,modelo,enganche,seguros,moto)
 {
+  if(credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1 && seguros.length >= 1 && moto.length >= 1) 
+  {
     var par = 
     {
       "credito" : credito,
@@ -53,16 +65,24 @@ function datostabla(credito,modelo,enganche,seguros,moto)
       type: 'post',
       beforeSend: function()
       {
-        // $("#resultado").html("procesando");
       },
       success: function(response)
       {
         $("#tabla").html(response);
       }
-    });
+    });}else{
+    if (credito.length<1) {}
+    if (modelo.length<1) {}
+    if (enganche.length<1) {}
+    if (seguros.length<1) {}
+    if (moto.length<1) {}
+    if (plazo.length<1) {}
+  }
 }
 function tabla(tiempo,credito,modelo,enganche,seguros,moto)
-{
+{   
+  if(tiempo.length >= 1 && credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1 && seguros.length >= 1 && moto.length >= 1) 
+  {
     var par = 
     {
       "tiempo" : tiempo,
@@ -79,17 +99,28 @@ function tabla(tiempo,credito,modelo,enganche,seguros,moto)
       type: 'post',
       beforeSend: function()
       {
-        // $("#resultado").html("procesando");
       },
       success: function(response)
       {
         $("#tablatiempo").html(response);
-        alert("Agregado Correctamente !");
+        alertify.success("Agregado con Exito");
       }
-    });
+    });}else{
+    if (credito.length<1) {}
+    if (modelo.length<1) {}
+    if (enganche.length<1) {}
+    if (seguros.length<1) {}
+    if (moto.length<1) {}
+    if (tiempo.length<1) 
+      {
+        alertify.error("Error ! Sin datos");
+      }
+  }
 }
 function foto(moto)
 {
+  if(moto.length >= 1 ) 
+  {
     var par = 
     {
       "moto" : moto
@@ -100,11 +131,12 @@ function foto(moto)
       type: 'post',
       beforeSend: function()
       {
-        // $("#resultado").html("procesando");
       },
       success: function(response)
       {
         $("#foto").html(response);
       }
-    });
+    });}else{
+    if (foto.length<1) {}
+  }
 }
