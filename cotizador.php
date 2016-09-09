@@ -18,6 +18,8 @@ include('datos.php');
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alertify.core.css" />
+    <link rel="stylesheet" href="css/alertify.default.css" id="toggleCSS" />
 
 </head><!--/head-->
 <body>
@@ -269,7 +271,9 @@ include('datos.php');
         </div>
     </footer>
     
+    
     <script src="js/jquery.js"></script>
+    <script src="js/alertify.min.js"></script>
     <script src="js/bootstrap-table.min.js"></script>
     <script src="js/operaciones.js"></script>
     <script src="js/funciones.js"></script>

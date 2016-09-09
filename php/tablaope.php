@@ -45,19 +45,19 @@ echo 		"<center><label for='precio'>PRECIOS</label></center>
             </thead>
             <tbody>
               <tr>
-                <td>SEMANAS</td>
+                <td>SEMANAS (52)</td>
                 <td>".$semanas."</td>
                 <td>".$semanas_se."</td>
                 <td>".$total_se."</td>
               </tr>
               <tr>
-                <td>QUINCENAS</td>
+                <td>QUINCENAS (24)</td>
                 <td>".$quincenas."</td>
                 <td>".$quincenas_se."</td>
                 <td>".$total_qui."</td>
               </tr>
               <tr>
-                <td>MESES</td>
+                <td>MESES (12)</td>
                 <td>".$meses."</td>
                 <td>".$meses_se."</td>
                 <td>".$total_mes."</td>

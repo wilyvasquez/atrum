@@ -1,5 +1,8 @@
 function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
 {
+
+  if(credito.length > 1) {
+    
     var par = 
     {
       "credito" : credito,
@@ -22,6 +25,16 @@ function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
         $("#resultado").html(response);
       }
     });
+  }else{
+    if (credito.length<1) {
+      alertify.error("Falta campo Credito");
+      // alert('falta campo credito');
+    }
+    if (modelo.length<1) {
+      alertify.error("Falta campo Modelo");
+      // alert('falta campo credito');
+    }
+  }
 }
 function datostabla(credito,modelo,enganche,seguros,moto)
 {
