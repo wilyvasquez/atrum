@@ -35,10 +35,10 @@ mysql_select_db("atrum");
         $pdf->Ln(15);//ahora salta 15 lineas
 
         ///////////amarillo ///////////
-        $pdf->Image('fondo.jpg',30,100,150,80,'');
-        $pdf->Image('suzuki.jpg',140,10,60,30,'');
-        $pdf->Image('texto.jpg',20,20,100,10,'');
-        $pdf->Image('final.jpg',50,270,120,13,'');
+        $pdf->Image('../images/fondo.jpg',30,100,150,80,'');
+        $pdf->Image('../images/suzuki.jpg',140,10,60,30,'');
+        $pdf->Image('../images/texto.jpg',20,20,100,10,'');
+        $pdf->Image('../images/final.jpg',50,270,120,13,'');
   //       $pdf->SetFillColor(255, 255, 255);
 		// $pdf->Rect(120, 43, 80 , 6, 'F');
 		// $pdf->Line(120, 30, 115, 15);
