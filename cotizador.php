@@ -101,15 +101,6 @@ include('datos.php');
       <div class="col-md-3"><br>
         <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())"  type="submit">Cotizar !</button>
       </div>
-      <!-- <div class="col-md-6">
-          <label for="">TIEMPO</label>
-          <select name="tiempo" id="tiempo" class="form-control">
-            <option value="">Seleccionar</option>
-          </select>
-      </div>
-      <div class="col-md-3"><br>
-        <button class="btn btn-info" onclick="tabla($('#tiempo').val(),$('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())" type="submit">Agregar !</button>
-      </div> -->
       </div>
       <div class="col-md-6">
       <div id="tabla">
@@ -145,12 +136,12 @@ include('datos.php');
             </tbody>
         </table>
         </div>
-        <div class="row col-md-6">
+        <div class="row col-md-4">
           <label for="">TIEMPO</label>
           <select name="tiempo" id="tiempo" class="form-control">
             <option value="">Seleccionar</option>
           </select>
-      </div>
+        </div>
       <div class="col-md-3" style="margin-top:26px">
         <button class="btn btn-info" onclick="tabla($('#tiempo').val(),$('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())" type="submit">Agregar !</button>
       </div>
