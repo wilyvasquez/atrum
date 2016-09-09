@@ -1,4 +1,6 @@
 <?php
+include('datos.php');
+// echo $_POST['user'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,7 +101,7 @@
       <div class="col-md-3"><br>
         <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())"  type="submit">Cotizar !</button>
       </div>
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
           <label for="">TIEMPO</label>
           <select name="tiempo" id="tiempo" class="form-control">
             <option value="">Seleccionar</option>
@@ -107,9 +109,10 @@
       </div>
       <div class="col-md-3"><br>
         <button class="btn btn-info" onclick="tabla($('#tiempo').val(),$('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())" type="submit">Agregar !</button>
+      </div> -->
       </div>
-      </div>
-      <div class="col-md-6" id="tabla">
+      <div class="col-md-6">
+      <div id="tabla">
       <center><label for="">PRECIOS</label></center>
         <table data-toggle="table" data-click-to-select="true" data-single-select="true">
             <thead>
@@ -122,25 +125,35 @@
             </thead>
             <tbody>
               <tr>
-                <td>SEMANAS</td>
+                <td>SEMANAS (52)</td>
                 <td></td>
                 <td>0</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td>QUINCENAS</td>
+                <td>QUINCENAS (24)</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td>MESES</td>
+                <td>MESES (12)</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
               </tr>
             </tbody>
         </table>
+        </div>
+        <div class="row col-md-6">
+          <label for="">TIEMPO</label>
+          <select name="tiempo" id="tiempo" class="form-control">
+            <option value="">Seleccionar</option>
+          </select>
+      </div>
+      <div class="col-md-3" style="margin-top:26px">
+        <button class="btn btn-info" onclick="tabla($('#tiempo').val(),$('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())" type="submit">Agregar !</button>
+      </div>
       </div>
     </div>
     <div class="container">
@@ -149,67 +162,84 @@
       <div class="row col-md-8">
       <form name="pdf" action="php/pdf.php" method="POST">
       <div id="resultado">
-      <div class="col-md-6">
-        <label>FINANCIAMIENTO</label>
+      <div class="col-md-3">
+        <label>FINANCIAMIENTO</label>        
+      </div>
+      <div class="col-md-4">
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="text" id="financiamiento" name="financiamiento" value="0" class="form-control" onfocus="this.blur()">
         </div>
       </div>
-      <div class="col-md-6">
-          <label>COSTO APERTURA</label>
-        <div class="input-group">
-          <span class="input-group-addon">$</span>
-          <input type="text" id="apertura" name="apertura" value="0" class="form-control" onfocus="this.blur()">      
-        </div>
+      <div class="col-md-2">
+        <label>ENGANCHE</label>        
       </div>
-      <div class="col-md-4">
-          <label>COSTO MOTOCICLETA</label>
-        <div class="input-group">
-          <span class="input-group-addon">$</span>
-          <input type="text" id="motocicleta" name="motocicleta" value="0" class="form-control" onfocus="this.blur()">      
-        </div>
-      </div>
-      <div class="col-md-4">
-        <label>BASE DEL CREDITO</label>
-        <div class="input-group">
-          <span class="input-group-addon">$</span>
-          <input type="text" id="credito" name="credito" value="0" class="form-control" onfocus="this.blur()">      
-        </div>
-      </div>
-      <div class="col-md-4">
-        <label>ENGANCHE</label>
+      <div class="col-md-3">
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="text" id="enganche" name="enganche" value="0" class="form-control" onfocus="this.blur()">
         </div>
       </div>
-      <div class="col-md-4">
-        <label>IMPORTE CREDITO</label>
+      <div class="col-md-3" style="margin-top:5px">
+        <label>COSTO APERTURA</label>
+      </div>
+       <div class="col-md-3" style="margin-top:5px">
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="text" id="apertura" name="apertura" value="0" class="form-control" onfocus="this.blur()">   </div>
+      </div>
+      <div class="col-md-3" style="margin-top:5px">
+          <label>COSTO MOTOCICLETA</label>        
+      </div>
+      <div class="col-md-3" style="margin-top:5px">
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="text" id="motocicleta" name="motocicleta" value="0" class="form-control" onfocus="this.blur()">      
+        </div>
+      </div>
+      <div class="col-md-3" style="margin-top:5px">
+        <label>BASE DEL CREDITO</label>        
+      </div>
+      <div class="col-md-3" style="margin-top:5px">
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="text" id="credito" name="credito" value="0" class="form-control" onfocus="this.blur()">      
+        </div>
+      </div>
+      <div class="col-md-3" style="margin-top:5px">
+        <label>IMPORTE CREDITO</label>        
+      </div>
+      <div class="col-md-3" style="margin-top:5px">
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="text" id="importe" name="importe" value="0" class="form-control" onfocus="this.blur()">      
         </div>
       </div>
-      <div class="col-md-4">
-        <label>SEGURO UNIDAD</label>
+      <div class="col-md-3" style="margin-top:5px">
+        <label>SEGURO UNIDAD</label>        
+      </div>
+      <div class="col-md-3" style="margin-top:5px">
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="text" id="seguro" name="seguro" value="0" class="form-control" onfocus="this.blur()">      
         </div>
       </div>
-      <div class="col-md-4">
-        <label>NOMBRE DEL CLIENTE</label>
-          <input type="text" id="cliente" name="cliente" value="" class="form-control">
+      <div class="col-md-3" style="margin-top:5px">
+        <label>TELEFONO</label>        
       </div>
-      <div class="col-md-4">
-        <label>TELEFONO</label>
+      <div class="col-md-3" style="margin-top:5px">
         <div class="input-group">
           <span class="input-group-addon">#</span>
           <input type="text" id="telefono" name="telefono" value="" class="form-control"> 
         </div>
       </div>
-      <div class="col-md-2"><br>
+      <div class="col-md-3" style="margin-top:5px">
+        <label>NOMBRE DEL CLIENTE</label>        
+      </div>
+      <div class="col-md-4" style="margin-top:5px">
+          <input type="text" id="cliente" name="cliente" value="" class="form-control">
+      </div>
+      <div class="col-md-offset-2 col-md-2" style="margin-top:5px">
         <button class="btn btn-info" type="submit">Generar PDF !</button>
       </div>
       </div>
@@ -219,6 +249,7 @@
           $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
         ?>
         <input type="text" id="fecha" name="fecha" value="<?= date('d')." de ".$meses[date('n')-1]. " de ".date('Y') ;  ?>" class="form-control">
+        <input type="text" id="user" name="user" value="<?= $_POST['user'] ?>">
       </div>
       </form>
       </div><!-- fin -->

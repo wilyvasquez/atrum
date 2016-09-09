@@ -66,6 +66,17 @@ CREATE TABLE anio_credito
     FOREIGN KEY(ref_anios) REFERENCES anios(id_anios),
     FOREIGN KEY(ref_credito) REFERENCES credito(id_credito)
 );
+CREATE TABLE usuarios
+(
+    id_usuarios int not null,
+    usuarios varchar(10),
+    pass varchar(10),
+    permisos varchar(10),
+    ref_personal int,
+    PRIMARY KEY(id_usuarios);
+    FOREIGN KEY(ref_personal) REFERENCES alta_personal(id_personal);
+
+);
  
 CREATE TABLE alta_equipo
 (
@@ -107,13 +118,6 @@ CREATE TABLE alta_clientes
     telefono integer
 );
 
-CREATE TABLE usuarios
-(
-    id_usuarios serial not null primary key,
-    usuarios varchar(10),
-    pass varchar(10),
-    permisos varchar(10)
-);
 
 
 CREATE TABLE tasas

@@ -20,6 +20,11 @@ mysql_select_db("atrum");
  	$var1 = mysql_query($consulta);  
     $var2 = mysql_fetch_array($var1);
     $tiempo=$var2['tipo_tiempo'];
+
+    $con="select * from usuarios inner join alta_personal on alta_personal.id_personal=usuarios.ref_personal where usuarios.usuarios='".$_POST['user']."'";
+ 	$use = mysql_query($con);  
+    $var3 = mysql_fetch_array($use);    
+    // $usuario=$var3['nombre_asesor'];
 /* tenemos que generar una instancia de la clase */
         $pdf = new FPDF();
         $pdf->AddPage();
@@ -282,10 +287,16 @@ mysql_select_db("atrum");
 		// $pdf->Line(120, 30, 115, 15);
 		$pdf->SetXY(15, 220);
 		$pdf->SetFont('Arial','B',8);
-		$pdf->Cell(5, 6, 'ASESOR DE VENTAS: ROBERTO CRUZ CRUZ', 0 , 1);
+		$pdf->Cell(5, 6, 'ASESOR DE VENTAS:', 0 , 1);
+
+		$pdf->SetXY(47, 220);
+		$pdf->Cell(5, 6,$var3['nombre_asesor'], 0 , 1);
 
 		$pdf->SetXY(15, 223);
 		$pdf->Cell(5, 6, 'CORREO:', 0 , 1);
+
+		$pdf->SetXY(47, 223);
+		$pdf->Cell(5, 6,$var3['email'], 0 , 1);
 
 		$pdf->SetXY(15, 226);
 		$pdf->Cell(5, 6, 'REQUISITOS:', 0 , 1);
@@ -310,8 +321,14 @@ mysql_select_db("atrum");
 		$pdf->SetFont('Arial','B',8);
 		$pdf->Cell(5, 6, utf8_decode('TELÉFONO:'), 0 , 1);
 
+		$pdf->SetXY(140, 220);
+		$pdf->Cell(5, 6,$var3['telefono'], 0 , 1);
+
 		$pdf->SetXY(120, 223);
 		$pdf->Cell(5, 6, 'CELULAR:', 0 , 1);
+
+		$pdf->SetXY(140, 223);
+		$pdf->Cell(5, 6,$var3['celular'], 0 , 1);
 
 		$pdf->SetXY(120, 226);
 		$pdf->Cell(5, 6, 'BENEFICIOS:', 0 , 1);
