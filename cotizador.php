@@ -99,7 +99,7 @@ include('datos.php');
         </div>
       </div>
       <div class="col-md-3"><br>
-        <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())"  type="submit">Cotizar !</button>
+        <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val());foto($('#moto').val())"  type="submit">Cotizar !</button>
       </div>
       </div>
       <div class="col-md-6">
@@ -117,7 +117,7 @@ include('datos.php');
             <tbody>
               <tr>
                 <td>SEMANAS (52)</td>
-                <td></td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
               </tr>
@@ -244,13 +244,15 @@ include('datos.php');
       </div>
       </form>
       </div><!-- fin -->
-      <div class="row col-md-4">
+      <!-- <div id="foto"> -->
+        <div class="row col-md-4" id="foto">
         <div class="thumbnail" style="width:300px; height:200px;margin-left:50px">
             <form action="" method="POST" enctype="multipart/form-data" >
-              <img src="" style="margin-left:50px;margin-top:10px"/>
+              <!-- <img src="php/foto.php?id=<?= $id ?>" style="margin-left:50px;margin-top:10px"/> -->
             </form>
         </div>
       </div>
+      <!-- </div> -->
     </div><br>
     <!-- </section> -->
      <footer id="footer" class="midnight-blue">

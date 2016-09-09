@@ -75,3 +75,23 @@ function tabla(tiempo,credito,modelo,enganche,seguros,moto)
       }
     });
 }
+function foto(moto)
+{
+    var par = 
+    {
+      "moto" : moto
+    };
+    $.ajax({
+      data: par,
+      url: 'php/id_moto.php',
+      type: 'post',
+      beforeSend: function()
+      {
+        // $("#resultado").html("procesando");
+      },
+      success: function(response)
+      {
+        $("#foto").html(response);
+      }
+    });
+}

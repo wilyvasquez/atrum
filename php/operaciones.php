@@ -78,7 +78,7 @@ echo "<div class='col-md-3'>
         <label>NOMBRE DEL CLIENTE</label>        
       </div>
       <div class='col-md-4' style='margin-top:5px'>
-          <input type='text' id='cliente' name='cliente' value='' class='form-control'>
+          <input type='text' id='nombre' name='nombre' value='' class='form-control'>
       </div>
       <div class='col-md-offset-2 col-md-2' style='margin-top:5px'>
         <button class='btn btn-info' type='submit'>Generar PDF !</button>
