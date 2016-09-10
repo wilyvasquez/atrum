@@ -52,19 +52,4 @@ include("conexion.php");
     $operacion=($vari*12)*($opera);
     $final=round($operacion+$opera);
     }
-
-    /////////////////// TABLA /////////////////////////////
-
-    // $semanas=round($importe/52,2);
-    // $quincenas=round($importe/24,2);
-    // $meses=round($importe/12,2);
-    // /////////////////// seguro /////////////
-    // $semanas_se=round($final/52,2);
-    // $quincenas_se=($final/24);
-    // $meses_se=($final/12);
-
-    // /////////////////// totales ////////////
-    // $total_se=round($semanas+$semanas_se,2);
-    // $total_qui=($quincenas+$quincenas_se);
-    // $total_mes=($meses+$meses_se);
 ?>

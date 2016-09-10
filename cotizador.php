@@ -1,6 +1,5 @@
 <?php
 include('datos.php');
-// echo $_POST['user'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -155,8 +154,7 @@ include('datos.php');
       </div>
     </div>
     <div class="container">
-      <hr>
-      <!-- inicio -->
+      <hr><!-- inicio -->
       <div class="row col-md-8">
       <form name="pdf" action="php/pdf.php" method="POST">
       <div id="resultado">
@@ -251,17 +249,13 @@ include('datos.php');
       </div>
       </form>
       </div><!-- fin -->
-      <!-- <div id="foto"> -->
         <div class="row col-md-4" id="foto">
         <div class="thumbnail" style="width:300px; height:200px;margin-left:50px">
             <form action="" method="POST" enctype="multipart/form-data" >
-              <!-- <img src="php/foto.php?id=<?= $id ?>" style="margin-left:50px;margin-top:10px"/> -->
             </form>
         </div>
       </div>
-      <!-- </div> -->
     </div><br>
-    <!-- </section> -->
      <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
@@ -275,8 +269,7 @@ include('datos.php');
             </div>
         </div>
     </footer>
-    
-    
+
     <script src="js/jquery.js"></script>
     <script src="js/alertify.min.js"></script>
     <script src="js/bootstrap-table.min.js"></script>
