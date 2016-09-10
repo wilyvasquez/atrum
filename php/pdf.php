@@ -1,9 +1,11 @@
 <?php
 
 include ('fpdf/fpdf.php');
-
-$conexion =mysql_connect("localhost","root","");
-mysql_select_db("atrum");
+	
+	if (!empty($_POST['modelo'])) {
+		# code...
+	$conexion =mysql_connect("localhost","root","");
+	mysql_select_db("atrum");
 	$query="select * from tipo_moto inner join alta_equipo on alta_equipo.ref_tipo= tipo_moto.id_tipo
 			where id_equipo='".$_POST['modelo']."'";
  	$result = mysql_query($query);  
@@ -23,14 +25,10 @@ mysql_select_db("atrum");
     $con="select * from usuarios inner join alta_personal on alta_personal.id_personal=usuarios.ref_personal where usuarios.usuarios='".$_POST['user']."'";
  	$use = mysql_query($con);  
     $var3 = mysql_fetch_array($use);    
-    // $usuario=$var3['nombre_asesor'];
-/* tenemos que generar una instancia de la clase */
+    
         $pdf = new FPDF();
         $pdf->AddPage();
 
-/* seleccionamos el tipo, estilo y tamaño de la letra a utilizar */
-		// $pdf->SetMargins(10,50);
-        // $pdf->SetFont('Helvetica', 'B', 14);
         $pdf->Ln(15);//ahora salta 15 lineas
 
         ///////////amarillo ///////////
@@ -38,19 +36,15 @@ mysql_select_db("atrum");
         $pdf->Image('../images/suzuki.jpg',140,10,60,30,'');
         $pdf->Image('../images/texto.jpg',20,20,100,10,'');
         $pdf->Image('../images/final.jpg',50,270,120,13,'');
-  //       $pdf->SetFillColor(255, 255, 255);
-		// $pdf->Rect(120, 43, 80 , 6, 'F');
-		// $pdf->Line(120, 30, 115, 15);
+
 		$pdf->SetXY(118, 43);
 		$pdf->SetFont('Arial','',10);
 		$pdf->Cell(5, 6, utf8_decode('Oaxaca de Juárez., a'), 0 , 1);
 		$pdf->SetXY(153, 43);
 		$pdf->Cell(5, 6,$_POST['fecha'], 0 , 1);
 
-		///////////azul//////////
-		// $pdf->SetFillColor(255, 255, 255);
-		// $pdf->Rect(10, 43, 105, 25, 'F');
-		// $pdf->Line(10, 10, 15, 15);
+		///////////azul////////// 
+
 		$pdf->SetXY(15, 50);
 		$pdf->SetFont('Arial','',11);
 		$pdf->Cell(15, 6, $_POST['nombre'], 0 , 1); /////////////// nombre cliente
@@ -64,9 +58,7 @@ mysql_select_db("atrum");
 		$pdf->SetFont('Arial','B',11);
 		$pdf->Cell(20, 6, 'P R E S E N T E', 0 , 1);
 		///////////verde ///////////
-  //       $pdf->SetFillColor(255, 255, 255);
-		// $pdf->Rect(123, 55, 77 , 5, 'F');
-		// $pdf->Line(120, 30, 115, 15);
+
 		$pdf->SetXY(122, 55);
 		$pdf->SetFont('Arial','B',13);
 		$pdf->Cell(5, 6, utf8_decode('TIPO DE CRÉDITO:'), 0 , 1);
@@ -74,18 +66,14 @@ mysql_select_db("atrum");
 		$pdf->Cell(5, 6,$_POST['credito'], 0 , 1);
 
 		/////////// SALMON///////////////
-		// $pdf->SetFillColor(255, 255, 255);
-		// $pdf->Rect(148, 60, 52 , 8, 'F');
-		// $pdf->Line(120, 30, 115, 15);
+	
 		$pdf->SetXY(143, 60);
 		$pdf->SetFont('Arial','',10);
 		$pdf->Cell(5, 6, utf8_decode('NÚMERO DE COTIZACIÓN:123'), 0 , 1);
 
 
 		///////////// ROSA //////////////
-		// $pdf->SetFillColor(255, 255, 255);
-		// $pdf->Rect(10, 75, 190, 80, 'F');
-		// $pdf->Line(10, 10, 15, 15);
+
 		$pdf->SetXY(15, 75);
 		$pdf->SetFont('Arial','',11);
 		$pdf->Cell(15, 6, utf8_decode('En atención a su amable  solicitud tenemos el gusto de presentar la siguiente cotización.'), 0 , 1);
@@ -169,9 +157,6 @@ mysql_select_db("atrum");
 		$pdf->Cell(15, 6, $apertura['sistema_arranque'], 0 , 1);
 		/////////////////////////////////
 
-		// $pdf->SetFillColor(255, 255, 255);
-		// $pdf->Rect(10, 160, 190 , 50, 'F');
-		// $pdf->Line(120, 30, 115, 15);
 		$pdf->SetXY(15, 160);
 		$pdf->SetFont('Arial','B',10);
 		$pdf->Cell(5, 6, 'FINANCIAMIENTO A:', 0 , 1);
@@ -211,7 +196,6 @@ mysql_select_db("atrum");
 
 		$pdf->Rect(130, 180, 60 , 6, '');
 		$pdf->Rect(130, 186, 60 , 6, '');
-		// $pdf->Line(120, 30, 115, 15);
 		////////////////////////////////////
 
 		$pdf->SetXY(17, 180);
@@ -275,15 +259,9 @@ mysql_select_db("atrum");
 		$pdf->Cell(5, 6, $_POST['total'], 0 , 1);
 
 		$pdf->Image('http://chart.googleapis.com/chart?cht=p3&chd=t:60,40&chs=250x100&chl=Hello|World',20,90,50,50,'PNG');
-		// $pdf->Image('hola.jpg',20,90,100,100,'JPG');
-		// $pdf->Image('chart.png',10,8,33,30);
-		
 
 		//////////////////////////////////////
 
-		// $pdf->SetFillColor(255, 255, 255);
-		// $pdf->Rect(10, 220, 190 , 40, 'F');
-		// $pdf->Line(120, 30, 115, 15);
 		$pdf->SetXY(15, 220);
 		$pdf->SetFont('Arial','B',8);
 		$pdf->Cell(5, 6, 'ASESOR DE VENTAS:', 0 , 1);
@@ -355,16 +333,14 @@ mysql_select_db("atrum");
 		$pdf->Cell(5, 6, '*DIA DE ENTREGA DE LA UNIDAD.', 0 , 1);
 
 		//////////////////////////////////////
-		// $pdf->Write (7,"HOLA ESTOY GENERANDO MI PRIMER PDF  ","http://programarenphp.wordpress.com");
 		$pdf->Ln();
-		// $pdf->Write (7,$_POST['nombre']);
 		$pdf->Ln(); //salto de linea
-		// $pdf->Cell(60,7,$_POST['direccion'],1,0,'C');
 		$pdf->Ln(15);//ahora salta 15 lineas 
-		// $pdf->SetTextColor('255','0','0');//para imprimir en rojo 
-		// $pdf->Multicell(190,7,$_POST['tel']."\n esta es la prueba del multicell",1,'R');
-		// $pdf->Line(0,160,300,160);//impresión de linea
         $pdf->Output("pdf.pdf",'D');
 		echo "<script language='javascript'>window.open('pdf.pdf','_self','');</script>";//para ver el archivo pdf generado
 		exit;
+	}else{
+		echo "dejaste campos vacios";
+	}
+
 	?>

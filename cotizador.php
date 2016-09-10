@@ -252,8 +252,8 @@ include('datos.php');
       </div><!-- fin -->
         <div class="row col-md-4" id="foto">
         <div class="thumbnail" style="width:300px; height:200px;margin-left:50px">
-            <form action="" method="POST" enctype="multipart/form-data" >
-            </form>
+            <!-- <form action="" method="POST" enctype="multipart/form-data" >
+            </form> -->
         </div>
       </div>
     </div><br>
