@@ -30,6 +30,11 @@ include('datos.php');
                     <div class="col-sm-6 col-xs-4">
                         <div class="top-number"><p><i class="fa fa-phone-square"></i>  (951) 144 88 05</p></div>
                     </div>
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <div class="top-number"><p><?= $nom_usu ?></p></div>
+                       </div>
+                    </div>
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
@@ -47,7 +52,7 @@ include('datos.php');
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Cotizador</a></li>
-                        <li><a href="index.php">Sign Out</a>                      
+                        <li><a href="index.php">Salir</a>                      
                     </ul>
                 </div>
             </div><!--/.container-->

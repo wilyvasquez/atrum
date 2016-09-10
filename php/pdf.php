@@ -1,6 +1,5 @@
 <?php
-/* http://programarenphp.wordpress.com */
-/* incluimos primeramente el archivo que contiene la clase fpdf */
+
 include ('fpdf/fpdf.php');
 
 $conexion =mysql_connect("localhost","root","");
