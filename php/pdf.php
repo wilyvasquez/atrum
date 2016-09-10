@@ -25,7 +25,7 @@ include ('fpdf/fpdf.php');
     $con="select * from usuarios inner join alta_personal on alta_personal.id_personal=usuarios.ref_personal where usuarios.usuarios='".$_POST['user']."'";
  	$use = mysql_query($con);  
     $var3 = mysql_fetch_array($use);    
-    
+
         $pdf = new FPDF();
         $pdf->AddPage();
 
@@ -340,7 +340,8 @@ include ('fpdf/fpdf.php');
 		echo "<script language='javascript'>window.open('pdf.pdf','_self','');</script>";//para ver el archivo pdf generado
 		exit;
 	}else{
-		echo "dejaste campos vacios";
+		echo "Error al generar el PDF...!";
+		echo " Dejaste campos vacios";
 	}
 
 	?>
