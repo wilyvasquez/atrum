@@ -71,14 +71,14 @@ echo "<div class='col-md-3'>
       <div class='col-md-3' style='margin-top:5px'>
         <div class='input-group'>
           <span class='input-group-addon'>#</span>
-          <input type='text' id='telefono' name='telefono' value='' class='form-control' required/> 
+          <input type='text' id='telefono' name='telefono' value='' class='form-control' onkeypress='numeros()' required/> 
         </div>
       </div>
       <div class='col-md-3' style='margin-top:5px'>
         <label>NOMBRE DEL CLIENTE</label>        
       </div>
       <div class='col-md-4' style='margin-top:5px'>
-          <input type='text' id='nombre' name='nombre' value='' class='form-control' required/>
+          <input type='text' id='nombre' name='nombre' value='' class='form-control' onkeypress='letras()' required/>
       </div>
       <div class='col-md-offset-2 col-md-2' style='margin-top:5px'>
         <button class='btn btn-info' type='submit'>Generar PDF !</button>
