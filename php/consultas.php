@@ -1,6 +1,10 @@
 <?php
 include("conexion.php");
     $plazo=$_POST['plazo'];
+    $consul = "select * from anios where id_anios ='$plazo'";  
+    $plazo1 = mysql_query($consul);  
+    $resulta = mysql_fetch_array($plazo1);
+    $meses1=$resulta['meses'];
 	///////////////////// CREDITO //////////////
     $apertura=$_POST['credito'];
 	$query = "select * from credito where tipo_credito ='$apertura'";  
@@ -29,8 +33,10 @@ include("conexion.php");
 
     ////////////////// IMPORTE //////////////////////
     $a =$apertura["tasa_base"];
-    $tem=((($plazo*12)*$a)*$base);
+    // echo $meses;
+    $tem=((($meses1*1)*$a)*$base);
     $importe=round($base+$tem,2); ///importe del credito
+    // echo $importe;
 
     ////////////////// SEGURO DE LA UNIDAD //////////////
     if (!empty($_POST["seguros"])) {

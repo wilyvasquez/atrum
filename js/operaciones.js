@@ -1,7 +1,7 @@
 function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
 {
 
-  if(credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1 && seguros.length >= 1 && moto.length >= 1 && plazo.length >= 1) 
+  if(credito.length >= 1 && modelo.length >= 1&& enganche>= 1) 
   {
     
     var par = 
@@ -35,20 +35,20 @@ function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
     if (enganche.length<1) {
       alertify.error("Falta campo Enganche");
     }
-    if (seguros.length<1) {
-      alertify.error("Falta Tipo de Seguros");
-    }
-    if (moto.length<1) {
-      alertify.error("Falta Tipo de Moto");
-    }
-    if (plazo.length<1) {
-      alertify.error("Falta campo Plazo");
-    }
+    // if (seguros.length<1) {
+    //   alertify.error("Falta Tipo de Seguros");
+    // }
+    // if (moto.length<1) {
+    //   alertify.error("Falta Tipo de Moto");
+    // }
+    // if (plazo.length<1) {
+    //   alertify.error("Falta campo Plazo");
+    // }
   }
 }
 function datostabla(credito,modelo,enganche,seguros,moto,plazo)
 {
-  if(credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1 && seguros.length >= 1 && moto.length >= 1) 
+  if(credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1) 
   {
     var par = 
     {
@@ -83,7 +83,7 @@ function datostabla(credito,modelo,enganche,seguros,moto,plazo)
 }
 function tabla(tiempo,credito,modelo,enganche,seguros,moto,plazo)
 {   
-  if(tiempo.length >= 1 && credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1 && seguros.length >= 1 && moto.length >= 1) 
+  if(tiempo.length >= 1 && credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1) 
   {
     var par = 
     {

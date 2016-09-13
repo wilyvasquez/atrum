@@ -26,7 +26,8 @@ if ($_POST['credito']=='SUZUCREDIT') {
 }
 if ($_POST['credito']=='CREDITO CASA') {
   # code...
-  $meses=round($importe/12,2);
+  echo $importe;
+  $meses=round($importe/$meses1,2);
   $meses_se=0;
   $total_mes=round($meses+$meses_se,2);
 }
