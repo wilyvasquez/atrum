@@ -106,7 +106,7 @@ include('datos.php');
         </div>
       </div>
       <div class="col-md-3"><br>
-        <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val());foto($('#moto').val())"  type="submit">Cotizar !</button>
+        <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());foto($('#moto').val())"  type="submit">Cotizar !</button>
       </div>
       </div>
       <div class="col-md-6">
@@ -150,7 +150,7 @@ include('datos.php');
           </select>
         </div>
       <div class="col-md-3" style="margin-top:26px">
-        <button class="btn btn-info" onclick="tabla($('#tiempo').val(),$('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val())" type="submit">Agregar !</button>
+        <button class="btn btn-info" onclick="tabla($('#tiempo').val(),$('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val())" type="submit">Agregar !</button>
       </div>
       </div>
     </div>
@@ -234,7 +234,7 @@ include('datos.php');
         <label>NOMBRE DEL CLIENTE</label>        
       </div>
       <div class="col-md-4" style="margin-top:5px">
-          <input type="text" id="cliente" name="cliente" value="" class="form-control" onkeypress='letras()' required/>
+          <input type="text" id="nombre" name="nombre" value="" class="form-control" onkeypress='letras()' required/>
       </div>
       <div class="col-md-offset-2 col-md-2" style="margin-top:5px">
         <button class="btn btn-info" type="submit">Generar PDF !</button>

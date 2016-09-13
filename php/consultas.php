@@ -1,5 +1,6 @@
 <?php
 include("conexion.php");
+    $plazo=$_POST['plazo'];
 	///////////////////// CREDITO //////////////
     $apertura=$_POST['credito'];
 	$query = "select * from credito where tipo_credito ='$apertura'";  
@@ -27,27 +28,26 @@ include("conexion.php");
     $ope=round(($res*$enganche)/100,2);
 
     ////////////////// IMPORTE //////////////////////
-
     $a =$apertura["tasa_base"];
-    $tem=((12*$a)*$base);
-    $importe=round($base+$tem,2);
+    $tem=((($plazo*12)*$a)*$base);
+    $importe=round($base+$tem,2); ///importe del credito
 
     ////////////////// SEGURO DE LA UNIDAD //////////////
     if (!empty($_POST["seguros"])) {
         # code...
     $seg=$_POST["seguros"];
-    $moto=$_POST["moto"];
+    
     $query = "select * from seguro where id_seguro ='$seg'";  
     $result = mysql_query($query);  
     $apertura2 = mysql_fetch_array($result);    
     $seguro=$apertura2['tipo_seguro'];
 
-    $select = "select * from alta_equipo where id_equipo='$moto'";  
+    $select = "select * from alta_equipo where id_equipo='$modelo'";  
     $alta = mysql_query($select);  
     $resultado = mysql_fetch_array($alta);
     $segu=$resultado[$seguro];
-    $opera=($segu*0.16)+($segu);
 
+    $opera=($segu*0.16)+($segu);
     $vari=$apertura['tasa_base'];    
     $operacion=($vari*12)*($opera);
     $final=round($operacion+$opera);

@@ -5,19 +5,19 @@ include("consultas.php");
 // echo $seguro; 
 if ($_POST['credito']=='CREDINOMINA') {
   # code...
-  $quincenas=round($importe/24,2);
-  $quincenas_se=round($final/24,2);
+  $quincenas=round($importe/(24*$plazo),2);
+  $quincenas_se=round($final/(24*$plazo),2);
   $total_qui=round($quincenas+$quincenas_se,2);
 }
 if ($_POST['credito']=='SUZUCREDIT') {
   # code...
-  $semanas=round($importe/52,2);
-  $quincenas=round($importe/24,2);
-  $meses=round($importe/12,2);
+  $semanas=round($importe/(52*$plazo),2);
+  $quincenas=round($importe/(24*$plazo),2);
+  $meses=round($importe/(12*$plazo),2);
   /////////////////// seguro /////////////
-  $semanas_se=round($final/52,2);
-  $quincenas_se=round($final/24,2);
-  $meses_se=round($final/12,2);
+  $semanas_se=round($final/(52*$plazo),2);
+  $quincenas_se=round($final/(24*$plazo),2);
+  $meses_se=round($final/(12*$plazo),2);
 
   /////////////////// totales ////////////
   $total_se=round($semanas+$semanas_se,2);

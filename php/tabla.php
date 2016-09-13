@@ -1,5 +1,6 @@
 <?php
 // include("conexion.php");
+$plazo1=1;
 include("consultas.php");
 
 // echo "hola";

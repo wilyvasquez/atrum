@@ -2,7 +2,6 @@
 $final=0;
 include("conexion.php");
 include("consultas.php");
-
 echo "<div class='col-md-3'>
         <label>FINANCIAMIENTO</label>        
      </div>

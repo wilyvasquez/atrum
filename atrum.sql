@@ -68,13 +68,13 @@ CREATE TABLE anio_credito
 );
 CREATE TABLE usuarios
 (
-    id_usuarios int not null,
+    id_usuarios int not null AUTO_INCREMENT,
     usuarios varchar(10),
     pass varchar(10),
     permisos varchar(10),
     ref_personal int,
-    PRIMARY KEY(id_usuarios);
-    FOREIGN KEY(ref_personal) REFERENCES alta_personal(id_personal);
+    PRIMARY KEY(id_usuarios),
+    FOREIGN KEY(ref_personal) REFERENCES alta_personal(id_personal)
 
 );
  
@@ -82,12 +82,26 @@ CREATE TABLE alta_equipo
 (
     id_equipo INT NOT NULL AUTO_INCREMENT,
     modelo varchar(30),
-    privilegio   INT(2),
     ref_tipo int,
-    ref_anios int,
+    costo_unidad float,
+    amplio float,
+    basico float,
+    limitado float,
+    motor varchar(50),
+    trasmision varchar(50),
+    tipo_motor varchar(50),
+    numero_cilindros varchar(50),
+    diametro varchar(50),
+    carrera varchar(50),
+    desplazamiento varchar(50),
+    relacion_compresion varchar(50),
+    sistema_lubricacion varchar(50),
+    sistema_combustible varchar(50),
+    sistema_arranque varchar(50),
+    tipo_img char,
+    foto mediumblob,
     PRIMARY KEY(id_equipo),
-    FOREIGN KEY (ref_tipo) REFERENCES tipo_moto(id_tipo),
-    FOREIGN KEY (ref_anios) REFERENCES anios(id_anios)
+    FOREIGN KEY (ref_tipo) REFERENCES tipo_moto(id_tipo)
 );
 
 

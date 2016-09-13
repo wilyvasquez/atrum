@@ -46,7 +46,7 @@ function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
     }
   }
 }
-function datostabla(credito,modelo,enganche,seguros,moto)
+function datostabla(credito,modelo,enganche,seguros,moto,plazo)
 {
   if(credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1 && seguros.length >= 1 && moto.length >= 1) 
   {
@@ -56,7 +56,8 @@ function datostabla(credito,modelo,enganche,seguros,moto)
       "modelo" : modelo,
       "enganche" : enganche,
       "seguros" : seguros,
-      "moto" : moto
+      "moto" : moto,
+      "plazo" : plazo
     };
     
     $.ajax({
@@ -65,6 +66,7 @@ function datostabla(credito,modelo,enganche,seguros,moto)
       type: 'post',
       beforeSend: function()
       {
+        // alert(plazo);
       },
       success: function(response)
       {
@@ -79,7 +81,7 @@ function datostabla(credito,modelo,enganche,seguros,moto)
     if (plazo.length<1) {}
   }
 }
-function tabla(tiempo,credito,modelo,enganche,seguros,moto)
+function tabla(tiempo,credito,modelo,enganche,seguros,moto,plazo)
 {   
   if(tiempo.length >= 1 && credito.length >= 1 && modelo.length >= 1 && enganche.length >= 1 && seguros.length >= 1 && moto.length >= 1) 
   {
@@ -90,7 +92,8 @@ function tabla(tiempo,credito,modelo,enganche,seguros,moto)
       "modelo" : modelo,
       "enganche" : enganche,
       "seguros" : seguros,
-      "moto" : moto
+      "moto" : moto,
+      "plazo" : plazo
     };
     
     $.ajax({
@@ -99,6 +102,7 @@ function tabla(tiempo,credito,modelo,enganche,seguros,moto)
       type: 'post',
       beforeSend: function()
       {
+        // alert(plazo);
       },
       success: function(response)
       {
@@ -139,4 +143,65 @@ function foto(moto)
     });}else{
     if (foto.length<1) {}
   }
+}
+
+function equipo()
+{
+    $.ajax({
+      data: null,
+      url: 'php/alta_equipo',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        $("#alta_equipo").html(response);
+      }
+    });
+}
+function personal()
+{
+    $.ajax({
+      data: null,
+      url: 'php/alta_personal.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        $("#alta_personal").html(response);
+      }
+    });
+}
+function credito()
+{
+    $.ajax({
+      data: null,
+      url: 'php/alta_credito.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        $("#alta_credito").html(response);
+      }
+    });
+}
+function seguros()
+{
+     $.ajax({
+      data: null,
+      url: 'php/seguro_credito.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        $("#seguro_credito").html(response);
+      }
+    });
 }
