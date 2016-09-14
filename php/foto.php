@@ -6,7 +6,8 @@ mysql_select_db("atrum") or die(mysql_error());
 if ($_GET['id'] > 0)
 {
     // Consulta de búsqueda de la imagen.
-    $consulta = "SELECT foto, tipo_img FROM alta_equipo WHERE id_equipo={$_GET['id']}";
+    $id=$_GET['id'];
+    $consulta = "SELECT foto, tipo_img FROM alta_equipo WHERE id_equipo=$id";
     $resultado = @mysql_query($consulta) or die(mysql_error());
     $datos = mysql_fetch_assoc($resultado);
 

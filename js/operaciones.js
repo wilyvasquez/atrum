@@ -135,6 +135,7 @@ function foto(moto)
       type: 'post',
       beforeSend: function()
       {
+        // alert(moto);
       },
       success: function(response)
       {

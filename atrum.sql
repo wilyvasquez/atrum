@@ -165,3 +165,7 @@ SELECT * from cotizaciones INNER JOIN alta_equipo ON alta_equipo.id_equipo = cot
 
 SELECT * FROM anios INNER JOIN alta_equipo on alta_equipo.ref_anios= anios.id_anios WHERE alta_equipo.modelo='GSX150 GIXXER SF'
 
+    SELECT * FROM credito 
+    INNER JOIN anio_credito on anio_credito.ref_credito=credito.id_credito 
+    INNER JOIN anios ON anios.id_anios=anio_credito.ref_anios 
+    WHERE credito.tipo_credito=

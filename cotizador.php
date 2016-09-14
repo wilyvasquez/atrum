@@ -106,7 +106,7 @@ include('datos.php');
         </div>
       </div>
       <div class="col-md-3"><br>
-        <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());foto($('#moto').val())"  type="submit">Cotizar !</button>
+        <button class="btn btn-info" onclick="datoscotizador($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());datostabla($('#credito').val(),$('#modelo').val(),$('#enganche').val(),$('#seguros').val(),$('#moto').val(),$('#plazo').val());foto($('#modelo').val())"  type="submit">Cotizar !</button>
       </div>
       </div>
       <div class="col-md-6">
@@ -123,19 +123,19 @@ include('datos.php');
             </thead>
             <tbody>
               <tr>
-                <td>SEMANAS (52)</td>
+                <td>SEMANAS (0)</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td>QUINCENAS (24)</td>
+                <td>QUINCENAS (0)</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td>MESES (12)</td>
+                <td>MESES (0)</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>

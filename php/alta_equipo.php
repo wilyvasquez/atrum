@@ -5,7 +5,7 @@
           <h3><strong>ALTA EQUIPO</strong></h3>
           <hr>
         </div>
-        <form action="php/registro.php" method="POST">
+        <form action="php/registro.php" method="POST" enctype="multipart/form-data">
         	<div class="col-md-4">
         	<label for="">Modelo</label>
 			<input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo">
@@ -82,6 +82,10 @@
         <div class="col-md-4">
         	<label for="">Sistema Arranque</label>
 			<input type="text" class="form-control" id="arranque" name="arranque" placeholder="Sistema Arranque">
+        </div>
+        <div class="col-md-4">
+            <label for="">Subir foto</label>
+            <input type="file" class="form-control" id="imagen" name="imagen">
         </div>        
     	<div class="col-md-4" style="margin-top:25px">
     	<button class="btn btn-info" type="submit">Subir Articulo !</button>
