@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="col-md-10">
-	<div class="row">
+	<div class="row" id="creseguro">
         <div class="col-md-12">
           <h3><strong>OTROS</strong></h3>
           <hr>
@@ -21,9 +21,7 @@
         	<label for="">Tipo Moto</label>
 			<input type="text" class="form-control" placeholder="Username">
         </div>        
-    </div><br>
-    <div>
-    	<button class="btn btn-info" type="submit">Subir Articulo !</button>
+    	<button class="btn btn-info" type="submit" style="margin-top:25px">Subir Articulo !</button>
     </div><br>
 	</div>
 </div>

@@ -1,14 +1,21 @@
 <?php
+header("Content-Type: text/html;charset=utf-8");
 $final=0;
 include("conexion.php");
 include("consultas.php");
+      $unde=$_POST['plazo'];
+      $query10 = "select * from anios where id_anios ='$unde'";
+      $result6 = mysql_query($query10);  
+      $apertura5 = mysql_fetch_array($result6);
+      $varvar = $apertura5['anios'];
+
 echo "<div class='col-md-3'>
         <label>FINANCIAMIENTO</label>        
      </div>
       <div class='col-md-4'>
         <div class='input-group'>
           <span class='input-group-addon'>$</span>
-          <input type='text' id='financiamiento' name='financiamiento' value='".$_POST['plazo'],'con el',$_POST['enganche']." % de enganche' class='form-control' onfocus='this.blur()'>
+          <input type='text' id='financiamiento' name='financiamiento' value='".$varvar,' , ',$_POST['enganche']." % de enganche' class='form-control' onfocus='this.blur()'>
         </div>
       </div>
       <div class='col-md-2'>

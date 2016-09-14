@@ -1,5 +1,7 @@
 <?php
+header("Content-Type: text/html;charset=utf-8");
 include("conexion.php");
+mysql_query("SET NAMES 'utf8'");
     $plazo=$_POST['plazo'];
     $consul = "select * from anios where id_anios ='$plazo'";  
     $plazo1 = mysql_query($consul);  

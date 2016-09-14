@@ -157,6 +157,14 @@ function equipo()
       },
       success: function(response)
       {
+        if (document.getElementById('personal')!=null) 
+        { document.getElementById('personal').style.display = 'none';} 
+
+        if (document.getElementById('altacredito')!=null) 
+        {document.getElementById('altacredito').style.display = 'none';}
+
+        if (document.getElementById('creseguro')!=null) 
+        {document.getElementById('creseguro').style.display = 'none';}
         $("#alta_equipo").html(response);
       }
     });
@@ -172,6 +180,15 @@ function personal()
       },
       success: function(response)
       {
+        if (document.getElementById('altaquipo')!=null) 
+        { document.getElementById('altaquipo').style.display = 'none';} 
+
+        if (document.getElementById('altacredito')!=null) 
+        {document.getElementById('altacredito').style.display = 'none';}
+
+        if (document.getElementById('creseguro')!=null) 
+        {document.getElementById('creseguro').style.display = 'none';}
+
         $("#alta_personal").html(response);
       }
     });
@@ -187,6 +204,15 @@ function credito()
       },
       success: function(response)
       {
+        if (document.getElementById('altaquipo')!=null) 
+        { document.getElementById('altaquipo').style.display = 'none';} 
+
+        if (document.getElementById('personal')!=null) 
+        {document.getElementById('personal').style.display = 'none';}
+
+        if (document.getElementById('creseguro')!=null) 
+        {document.getElementById('creseguro').style.display = 'none';}
+
         $("#alta_credito").html(response);
       }
     });
@@ -202,6 +228,14 @@ function seguros()
       },
       success: function(response)
       {
+        if (document.getElementById('altaquipo')!=null) 
+        { document.getElementById('altaquipo').style.display = 'none';} 
+
+        if (document.getElementById('altacredito')!=null) 
+        {document.getElementById('altacredito').style.display = 'none';}
+
+        if (document.getElementById('personal')!=null) 
+        {document.getElementById('personal').style.display = 'none';}
         $("#seguro_credito").html(response);
       }
     });

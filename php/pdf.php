@@ -24,7 +24,14 @@ include ('fpdf/fpdf.php');
 
     $con="select * from usuarios inner join alta_personal on alta_personal.id_personal=usuarios.ref_personal where usuarios.usuarios='".$_POST['user']."'";
  	$use = mysql_query($con);  
-    $var3 = mysql_fetch_array($use);    
+    $var3 = mysql_fetch_array($use);
+
+    $credito1="select * from credito where tipo_credito='".$_POST['credito']."'";
+ 	$credito2 = mysql_query($credito1);  
+    $crefinal = mysql_fetch_array($credito2);    
+
+    $aperope=($crefinal['costo_apertura']*$crefinal['descuento_aper']);
+    // $finalo=$aperope-$crefinal['costo_apertura'];
 
         $pdf = new FPDF();
         $pdf->AddPage();
@@ -164,9 +171,12 @@ include ('fpdf/fpdf.php');
 		$pdf->SetXY(130, 160);
 		$pdf->Cell(5, 6, 'COSTO DEL SEGURO:', 0 , 1);
 
-		$pdf->SetXY(170, 160);
+		$pdf->SetXY(175, 160);
 		$pdf->SetFont('Arial','',10);
 		$pdf->Cell(5, 6, $_POST['seguro'], 0 , 1);
+
+		$pdf->SetXY(170, 160);
+		$pdf->Cell(5, 6,'$', 0 , 1);
 
 		$pdf->SetXY(15, 165);
 		$pdf->SetFont('Arial','B',10);
@@ -182,7 +192,7 @@ include ('fpdf/fpdf.php');
 
 		$pdf->SetXY(60, 160);
 		$pdf->SetFont('Arial','',9);
-		$pdf->Cell(5, 6, $_POST['financiamiento'], 0 , 1);
+		$pdf->Cell(5, 6, utf8_decode($_POST['financiamiento']), 0 , 1);
 		$pdf->SetXY(60, 165);
 		$pdf->Cell(5, 6, $res_seguro, 0 , 1);////////// tipo de seguro
 
@@ -219,17 +229,27 @@ include ('fpdf/fpdf.php');
 		$pdf->SetFont('Arial','',8);
 		$pdf->Cell(5, 6, $apertura['anio'], 0 , 1);
 
-		$pdf->SetXY(60, 192);
-		$pdf->Cell(5, 6, 'DESCUENTO DE 50%', 0 , 1);
 
-		$pdf->SetXY(97, 186);
+		$pdf->SetXY(80, 192);
+		$pdf->Cell(5, 6,$crefinal['descuento_aper'], 0 , 1); //////////descuento apertura
+
+		$pdf->SetXY(55, 192);
+		$pdf->Cell(5, 6, 'DESCUENTO DE', 0 , 1);
+
+		$pdf->SetXY(85, 192);
+		$pdf->Cell(5, 6, '%', 0 , 1);
+
+		$pdf->SetXY(95, 186);
 		$pdf->Cell(5, 6,'$', 0 , 1);
 
 		$pdf->SetXY(100, 186);
 		$pdf->Cell(5, 6,$_POST['enganche'], 0 , 1);
 
+		$pdf->SetXY(95, 192);
+		$pdf->Cell(5, 6,'$', 0 , 1);
+
 		$pdf->SetXY(100, 192);
-		$pdf->Cell(5, 6, '$206.00', 0 , 1);
+		$pdf->Cell(5, 6, $aperope, 0 , 1);
 
 		$pdf->SetXY(130, 180);
 		$pdf->SetFont('Arial','B',8);
@@ -242,8 +262,14 @@ include ('fpdf/fpdf.php');
 		$pdf->SetFont('Arial','',8);
 		$pdf->Cell(5, 6, $_POST['vehiculo'], 0 , 1); ////////// pago motocicleta
 
+		$pdf->SetXY(170, 180);
+		$pdf->Cell(5, 6,'$', 0 , 1);
+
 		$pdf->SetXY(175, 186);
 		$pdf->Cell(5, 6, $_POST['seguro1'], 0 , 1);/// pagos seguro
+
+		$pdf->SetXY(170, 186);
+		$pdf->Cell(5, 6,'$', 0 , 1);
 
 		$pdf->SetXY(130, 192);
 		$pdf->SetFont('Arial','B',10);
@@ -252,11 +278,17 @@ include ('fpdf/fpdf.php');
 		$pdf->SetXY(60, 198);
 		$pdf->Cell(5, 6, 'PAGO INICIAL DE:', 0 , 1);
 
+		$pdf->SetXY(95, 198);
+		$pdf->Cell(5, 6,'$', 0 , 1);
+
 		$pdf->SetXY(100, 198);
-		$pdf->Cell(5, 6, '$206.00', 0 , 1);
+		$pdf->Cell(5, 6,$_POST['enganche']+$aperope, 0 , 1);
 
 		$pdf->SetXY(170, 192);
 		$pdf->Cell(5, 6, $_POST['total'], 0 , 1);
+
+		$pdf->SetXY(165, 192);
+		$pdf->Cell(5, 6,'$', 0 , 1);
 
 		$pdf->Image('http://chart.googleapis.com/chart?cht=p3&chd=t:60,40&chs=250x100&chl=Hello|World',20,90,50,50,'PNG');
 

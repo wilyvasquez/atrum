@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="col-md-10">
-	<div class="row">
+	<div class="row" id="personal">
         <div class="col-md-12">
           <h3><strong>ALTA PERSONAL</strong></h3>
           <hr>

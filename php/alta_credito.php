@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="col-md-10">
-	<div class="row">
+	<div class="row" id="altacredito">
         <div class="col-md-12">
           <h3><strong>CREDITO</strong></h3>
           <hr>
@@ -30,10 +30,8 @@
                 <label for="">Años</label>
                 <input type="text" id="anios" name="anios" class="form-control" placeholder="Username">
             </div> 
+    	<button class="btn btn-info" type="submit" style="margin-top:25px">Subir Personal !</button>
         </form>      
     </div><br>
     <div>
-    	<button class="btn btn-info" type="submit">Subir Personal !</button>
-    </div><br>
-	</div>
 </div>

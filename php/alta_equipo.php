@@ -1,6 +1,6 @@
 	<div class="container">
 	<div class="col-md-10">
-	<div class="row">
+	<div class="row" id="altaquipo">
         <div class="col-md-12">
           <h3><strong>ALTA EQUIPO</strong></h3>
           <hr>
@@ -22,6 +22,10 @@
 			 	<option value="<?= $registro['id_tipo'] ?>"><?= $registro['tipo'] ?></option>
 			 	<?php } ?>
           </select>
+        </div>
+        <div class="col-md-4">
+            <label for="">AÑO</label>
+            <input type="text" class="form-control" id="anio" name="anio" placeholder="Año">
         </div>
         <div class="col-md-4">
         	<label for="">Costo Unidad</label>
@@ -91,6 +95,6 @@
     	<button class="btn btn-info" type="submit">Subir Articulo !</button>
     	</div>
     </div><br>
-        </form><br>
+        </form>
 	</div>
 </div>

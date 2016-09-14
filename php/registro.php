@@ -22,18 +22,14 @@ else
         // Tipo de archivo
         $tipo = $_FILES['imagen']['type'];
 
-        // Leemos el contenido del archivo temporal en binario.
         $fp = fopen($imagen_temporal, 'r+b');
         $data = fread($fp, filesize($imagen_temporal));
         fclose($fp);
         
-        //Podríamos utilizar también la siguiente instrucción en lugar de las 3 anteriores.
-        // $data=file_get_contents($imagen_temporal);
-
-        // Escapamos los caracteres para que se puedan almacenar en la base de datos correctamente.
         $data = mysql_escape_string($data);
 
         $modelo = $_POST['modelo'];
+        $anio = $_POST['anio'];
 		$tipo1 = $_POST['tipo'];
 		$costo = $_POST['costo'];
 		$amplio = $_POST['amplio'];
@@ -51,7 +47,7 @@ else
 		$combustible = $_POST['combustible'];
 		$arranque = $_POST['arranque'];
 		
-	mysql_query("INSERT INTO alta_equipo VALUES ('id','$modelo', '$tipo1','$costo','$amplio','$basico','$limitado','$motor','$trasmision','$timo','$cilindros','$diametro','$carrera','$desplazamiento','$compresion','$lubricacion','$combustible','$arranque','$tipo','$data')");
+	mysql_query("INSERT INTO alta_equipo VALUES ('id','$modelo','$anio', '$tipo1','$costo','$amplio','$basico','$limitado','$motor','$trasmision','$timo','$cilindros','$diametro','$carrera','$desplazamiento','$compresion','$lubricacion','$combustible','$arranque','$tipo','$data')");
 
 		header("Location: ../admin.php");
 
