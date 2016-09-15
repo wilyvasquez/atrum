@@ -107,10 +107,10 @@
         <div class="row text-center">
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="http://img.autocosmos.com/noticias/fotosprinc/24572_26123451872.jpg" alt="">
+                    <img src="https://s3.amazonaws.com/suzuki-motos/bikes/versions/colors/b1061a82f26b1ade2cc3c3290335c58dd0ffb0d7.png" width="120" height="300">
                     <div class="caption cuadro">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3>SCOOTER AN125</h3>
+                        <p>Mejor resistencia y mas ligeros, garantiza uan frenada mas segura y confiable</p>
                         <p>
                             <a href="#" class="btn btn-primary">Consular !</a>
                         </p>
@@ -120,10 +120,10 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="http://i38.tinypic.com/2zej7gg.jpg" alt="">
+                    <img src="https://s3.amazonaws.com/suzuki-motos/bikes/versions/colors/c9bcb612bf8c175699357b1630ef606168eb21a0.png" width="110" height="300">
                     <div class="caption cuadro ">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3>SCOOTER BURGMAN</h3>
+                        <p>Mayor economia en combustible y menor vibracion,frenado de emergencia.</p>
                         <p>
                             <a href="#" class="btn btn-primary">Consular !</a>
                         </p>
@@ -133,10 +133,10 @@
 
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="http://visionauto.com.ar/wp-content/uploads/2013/12/Duke-200-509x300.jpg" alt="">
+                    <img src="http://visionauto.com.ar/wp-content/uploads/2013/12/Duke-200-509x300.jpg">
                     <div class="caption cuadro">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3>SCOOTER LET´S</h3>
+                        <p>Ofrece una luz potente para amyor visibilidad, conduccion sencilla.</p>
                         <p>
                             <a href="#" class="btn btn-primary">Consular !</a>
                         </p>
