@@ -1,6 +1,6 @@
 <div class="container">
-	<div class="col-md-10">
-	<div class="row" id="creseguro">
+	<div class="col-md-10" id="creseguro">
+	<div class="row">
         <div class="col-md-12">
           <h3><strong>OTROS</strong></h3>
           <hr>
@@ -23,5 +23,9 @@
         </div>        
     	<button class="btn btn-info" type="submit" style="margin-top:25px">Subir Articulo !</button>
     </div><br>
+    <div class="row col-md-12">
+        <button class="btn btn-success" type="submit">Actualizar Articulo !</button>
+        <button class="btn btn-danger" type="submit">Cancelar !</button>
+    </div>
 	</div>
 </div>

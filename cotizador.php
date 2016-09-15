@@ -31,7 +31,7 @@ include('datos.php');
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
-                            <div class="top-number"><p><?= $nom_usu ?></p></div>
+                            <div class="top-number"><p>Welcome: <?= $nom_usu ?></p></div>
                        </div>
                     </div>
                 </div>

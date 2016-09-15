@@ -1,6 +1,6 @@
 	<div class="container">
-	<div class="col-md-10">
-	<div class="row" id="altaquipo">
+	<div class="col-md-10" id="altaquipo">
+	<div class="row">
         <div class="col-md-12">
           <h3><strong>ALTA EQUIPO</strong></h3>
           <hr>
@@ -8,7 +8,7 @@
         <form action="php/registro.php" method="POST" enctype="multipart/form-data">
         	<div class="col-md-4">
         	<label for="">Modelo</label>
-			<input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo">
+			<input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo" required/>
         </div>
         <div class="col-md-4">
           <label for="">TIPO</label>
@@ -29,19 +29,19 @@
         </div>
         <div class="col-md-4">
         	<label for="">Costo Unidad</label>
-			<input type="text" class="form-control" id="costo" name="costo" placeholder="Costo Unidad">
+			<input type="text" class="form-control" id="costo" name="costo" placeholder="Costo Unidad" required/>
         </div>
         <div class="col-md-4">
         	<label for="">Costo seguro amplio</label>
-			<input type="text" class="form-control" id="amplio" name="amplio" placeholder="Costo Seguro Amplio">
+			<input type="text" class="form-control" id="amplio" name="amplio" placeholder="Costo Seguro Amplio" required/>
         </div>
         <div class="col-md-4">
         	<label for="">Costo seguro basico</label>
-			<input type="text" class="form-control" id="basico" name="basico" placeholder="Costo Seguro Basico">
+			<input type="text" class="form-control" id="basico" name="basico" placeholder="Costo Seguro Basico" required/>
         </div>
         <div class="col-md-4">
         	<label for="">Costo seguro limitado</label>
-			<input type="text" class="form-control" id="limitado" name="limitado" placeholder="Costo Seguro Limitado">
+			<input type="text" class="form-control" id="limitado" name="limitado" placeholder="Costo Seguro Limitado" required/>
         </div>
         <div class="col-md-4">
         	<label for="">Motor</label>
@@ -94,7 +94,11 @@
     	<div class="col-md-4" style="margin-top:25px">
     	<button class="btn btn-info" type="submit">Subir Articulo !</button>
     	</div>
-    </div><br>
         </form>
+        <div class="row col-md-12"><br>
+            <button class="btn btn-success" type="submit">Actualizar Articulo !</button>
+            <button class="btn btn-danger" type="submit">Cancelar !</button>
+        </div>
+    </div><br>
 	</div>
 </div>

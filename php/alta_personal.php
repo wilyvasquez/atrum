@@ -1,6 +1,6 @@
 <div class="container">
-	<div class="col-md-10">
-	<div class="row" id="personal">
+	<div class="col-md-10" id="personal">
+	<div class="row">
         <div class="col-md-12">
           <h3><strong>ALTA PERSONAL</strong></h3>
           <hr>
@@ -8,7 +8,7 @@
         <form action="php/registro.php" method="POST">
             <div class="col-md-4">
             <label for="">Nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Username">
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Username" required/>
             </div>
             <div class="col-md-4">
                 <label for="">Telefono</label>
@@ -20,24 +20,28 @@
             </div>
             <div class="col-md-4">
                 <label for="">Correo</label>
-                <input type="text" id="correo" name="correo" class="form-control" placeholder="Username">
+                <input type="text" id="correo" name="correo" class="form-control" placeholder="Username" required/>
             </div>
             <div class="col-md-4">
                 <label for="">Usuario</label>
-                <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Username">
+                <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Username" required/>
             </div>
             <div class="col-md-4">
                 <label for="">Password</label>
-                <input type="text" id="contrasenia" name="contrasenia" class="form-control" placeholder="Username">
+                <input type="text" id="contrasenia" name="contrasenia" class="form-control" placeholder="Username" required/>
             </div>
             <div class="col-md-4">
                 <label for="">Permisos</label>
-                <input type="text" id="permisos" name="permisos" class="form-control" placeholder="Username">
+                <input type="text" id="permisos" name="permisos" class="form-control" placeholder="Username" required/>
             </div> 
             <div>
             	<button class="btn btn-info" type="submit" style="margin-top:25px">Subir Personal !</button>
             </div>
         </form>      
     </div><br>
+        <div class="row col-md-12">
+            <button class="btn btn-success" type="submit">Actualizar Articulo !</button>
+            <button class="btn btn-danger" type="submit">Cancelar !</button>
+        </div>
 	</div>
-</div>
+</div><br>

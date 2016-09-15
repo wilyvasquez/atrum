@@ -120,7 +120,9 @@ else
 				$credito = $_POST['credito'];
 				$base = $_POST['base'];
 				$apertura = $_POST['apertura'];
-				mysql_query("INSERT INTO credito VALUES ('id_credito','$credito', '$base','$apertura')");
+				$descuento = $_POST['descuento'];
+				mysql_query("INSERT INTO credito VALUES ('id_credito','$credito', '$base','$apertura','$descuento')");
+				header("Location: ../admin.php");
 			}
 
 			if (!empty($_POST['seguros'])) {

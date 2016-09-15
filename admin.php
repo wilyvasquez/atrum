@@ -1,6 +1,3 @@
-<?php
-// include('datos.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,10 +48,17 @@
                 </div>                
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#" onclick="equipo()">Alta Equipo</a></li>
-                        <li class="active"><a href="#" onclick="personal()">Alta Personal</a></li>
+                        <!-- <li class="active"><a href="#" onclick="equipo()">Alta Equipo</a></li> -->
+                        <!-- <li class="active"><a href="#" onclick="personal()">Alta Personal</a></li> -->
+                        <li class="active" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alta de Datos <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" onclick="equipo()">Alta Equipo</a></li>
+                                <li><a href="#" onclick="personal()">Alta Personal</a></li>
+                                <li><a href="#" onclick="credito()">Creditos</a></li>
+                            </ul>
+                        </li>
                         <!-- <li class="active"><a href="#" onclick="usuarios()">Alta Usuarios</a></li> -->
-                        <li class="active"><a href="#" onclick="credito()">Creditos</a></li>
                         <li class="active"><a href="#" onclick="seguros()">Seguros</a></li>
                         <li><a href="index.php">Salir</a>                      
                     </ul>
