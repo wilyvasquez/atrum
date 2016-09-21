@@ -92,7 +92,10 @@ include ('fpdf/fpdf.php');
 		$pdf->SetXY(85, 90);
 		$pdf->SetFont('Arial','',8.5);
 		$pdf->Cell(15, 6, 'TIPO DE MOTO:', 0 , 1);
-
+		?> 
+		<label><input type="text/submit/hidden/button/etc" name="" value="">HOLA</label>
+		<input type="button" name="" value="">
+		<?php 
 		$pdf->SetXY(85, 95);
 		$pdf->Cell(15, 6, 'MOTOR:', 0 , 1);
 

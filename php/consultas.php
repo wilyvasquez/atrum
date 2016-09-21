@@ -35,7 +35,7 @@ mysql_query("SET NAMES 'utf8'");
 
     ////////////////// IMPORTE //////////////////////
     $a =$apertura["tasa_base"];
-    // echo $meses;
+    // echo $a;
     $tem=((($meses1*1)*$a)*$base);
     $importe=round($base+$tem,2); ///importe del credito
     // echo $importe;

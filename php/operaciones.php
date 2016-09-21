@@ -87,6 +87,6 @@ echo "<div class='col-md-3'>
           <input type='text' id='nombre' name='nombre' value='' class='form-control' onkeypress='letras()' required/>
       </div>
       <div class='col-md-offset-2 col-md-2' style='margin-top:5px'>
-        <button class='btn btn-info' type='submit'>Generar PDF !</button>
+        <button class='btn btn-info' onclick='pdf()' type='submit'>Generar PDFF !</button>
       </div>"
 ?>

@@ -1,5 +1,5 @@
 <?php
-include('datos.php');
+include("datos.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -156,7 +156,7 @@ include('datos.php');
     <div class="container">
       <hr><!-- inicio -->
       <div class="row col-md-8">
-      <form name="pdf" action="php/pdf.php" method="POST">
+      <form name="pdf" action="pdf.php" method="POST">
       <div id="resultado">
       <div class="col-md-3">
         <label>FINANCIAMIENTO</label>        
@@ -244,7 +244,7 @@ include('datos.php');
       <?php
           $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
         ?>
-        <input type="text" id="fecha" name="fecha" value="<?= date('d')." de ".$meses[date('n')-1]. " de ".date('Y') ;  ?>" class="form-control">
+        <input type="text" id="fecha" name="fecha" value="<?= date('d')." de ".$meses[date('n')-1]. " de ".date('Y')?>" class="form-control">
         <input type="text" id="user" name="user" value="<?= $_POST['user'] ?>">
       </div>
       </form>

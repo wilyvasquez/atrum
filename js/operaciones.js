@@ -1,3 +1,7 @@
+function datos(){
+  alert("hola");
+  window.open("pdf.php","pdf","fullscreen=yes");
+}
 function datoscotizador(credito,modelo,enganche,seguros,moto,plazo)
 {
 

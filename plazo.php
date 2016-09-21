@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: text/html;charset=utf-8");
 	echo '<label for="plazo">CREDITO A </label>';
-	echo '<select id="plazo1" name="plazo1" class="form-control">';
+	echo '<select id="plazo" name="plazo" class="form-control">';
 	require ("conexion.php");
 	mysql_query("SET NAMES 'utf8'");
 	$consulta= "SELECT * FROM credito INNER JOIN anio_credito on anio_credito.ref_credito=credito.id_credito INNER JOIN anios ON anios.id_anios=anio_credito.ref_anios WHERE credito.tipo_credito='".$_GET['c']."'"; 

@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $contrasenha = "";
-$BD = "atrum";
+$BD = "atrumbd";
 $conexion = @mysql_connect($servidor, $usuario, $contrasenha);
 if (!$conexion) {
     die('<strong>No pudo conectarse:</strong> ' . mysql_error());

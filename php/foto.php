@@ -1,7 +1,7 @@
 <?php
 // Conexion a la base de datos
 mysql_connect("localhost", "root", "") or die(mysql_error());
-mysql_select_db("atrum") or die(mysql_error());
+mysql_select_db("atrumbd") or die(mysql_error());
 
 if ($_GET['id'] > 0)
 {
