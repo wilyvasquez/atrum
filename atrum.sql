@@ -1,92 +1,8 @@
-CREATE TABLE seguro
+CREATE TABLE moto
 (
-    id_seguro int not null AUTO_INCREMENT,
-    tipo_seguro varchar(30),
-    PRIMARY KEY (id_seguro)
-);
-
-CREATE TABLE credito
-(
-    id_credito int not null AUTO_INCREMENT,
-    tipo_credito varchar(50),
-    tasa_base integer,
-    tasa_inc_anual integer,
-    tasa_accesorios integer,
-    costo_apertura integer,
-    PRIMARY KEY (id_credito)
-);
-
-CREATE TABLE tiempo
-(
-    id_tiempo int not null AUTO_INCREMENT,
-    tipo_tiempo varchar(50),
-    PRIMARY KEY (id_tiempo)
-);
-
-CREATE TABLE cre_tiempo
-(
-    id_cre_tiempo int not null AUTO_INCREMENT,
-    ref_credito int,
-    ref_tiempo int,
-    PRIMARY KEY (id_cre_tiempo),
-    FOREIGN KEY (ref_credito) REFERENCES credito(id_credito),
-    FOREIGN KEY (ref_tiempo) REFERENCES tiempo(id_tiempo)
-);
-
-CREATE TABLE segu_cre
-(
-    id_segu_cre int not null AUTO_INCREMENT,
-    ref_seguro int,
-    ref_credito int,
-    PRIMARY KEY(id_segu_cre),
-    FOREIGN KEY (ref_seguro) REFERENCES seguro(id_seguro),
-    FOREIGN KEY (ref_credito) REFERENCES credito(id_credito)
-);
-
-CREATE TABLE tipo_moto
-(
-    id_tipo INT NOT NULL AUTO_INCREMENT,
-    tipo VARCHAR(30),
-    PRIMARY KEY (id_tipo)
-);
-
-CREATE TABLE anios
-(
-    id_anios int NOT null AUTO_INCREMENT,
-    anios int,
-    PRIMARY KEY (id_anios)
-);
-
-CREATE TABLE anio_credito
-(
-    id_anio_credito int NOT NULL AUTO_INCREMENT,
-    ref_anios int,
-    ref_credito int,
-    PRIMARY KEY(id_anio_credito),
-    FOREIGN KEY(ref_anios) REFERENCES anios(id_anios),
-    FOREIGN KEY(ref_credito) REFERENCES credito(id_credito)
-);
-CREATE TABLE usuarios
-(
-    id_usuarios int not null AUTO_INCREMENT,
-    usuarios varchar(10),
-    pass varchar(10),
-    permisos varchar(10),
-    ref_personal int,
-    PRIMARY KEY(id_usuarios),
-    FOREIGN KEY(ref_personal) REFERENCES alta_personal(id_personal)
-
-);
- 
-CREATE TABLE alta_equipo
-(
-    id_equipo INT NOT NULL AUTO_INCREMENT,
+    id_moto int not null AUTO_INCREMENT,
+    tipo_moto varchar(30),
     modelo varchar(30),
-    ref_tipo int,
-    costo_unidad float,
-    amplio float,
-    basico float,
-    limitado float,
     motor varchar(50),
     trasmision varchar(50),
     tipo_motor varchar(50),
@@ -98,74 +14,112 @@ CREATE TABLE alta_equipo
     sistema_lubricacion varchar(50),
     sistema_combustible varchar(50),
     sistema_arranque varchar(50),
-    tipo_img char,
+    tipo_img char(10),
     foto mediumblob,
-    PRIMARY KEY(id_equipo),
-    FOREIGN KEY (ref_tipo) REFERENCES tipo_moto(id_tipo)
+    PRIMARY KEY (id_moto)
 );
-
-
-CREATE TABLE alta_personal
+CREATE TABLE anio_moto
 (
-    id_personal int not null AUTO_INCREMENT,
-    nombre_asesor varchar(60),
-    telefono integer,
-    email varchar(50),
-    celular integer,
-    PRIMARY KEY (id_personal)
+    id_anio_moto int not null AUTO_INCREMENT,
+    anio varchar(30),
+    PRIMARY KEY (id_anio_moto)
 );
-
-CREATE TABLE accesorios
+CREATE TABLE precio_moto
 (
-    id_accesorios serial not null primary key,
-    accesorios varchar(50),
-    precio integer,
-    cantidad int,
-    total integer
+    id_precio_moto int not null AUTO_INCREMENT,
+    precio int,
+    PRIMARY KEY (id_precio_moto)
 );
-
-CREATE TABLE alta_clientes
+CREATE TABLE moto_anio_precio
 (
-    id_clientes serial not null primary key,
-    nombre_com varchar(60),
-    num_cotizacion int,
-    telefono integer
+    id_map int not null AUTO_INCREMENT,
+    ref_moto int,
+    ref_anio int,
+    ref_precio int,
+    PRIMARY KEY (id_map),
+    FOREIGN KEY(ref_moto) REFERENCES moto(id_moto),
+    FOREIGN KEY(ref_anio) REFERENCES anio_moto(id_anio_moto),
+    FOREIGN KEY(ref_precio) REFERENCES precio_moto(id_precio_moto)
 );
-
-
-
-CREATE TABLE tasas
+CREATE TABLE tipo_seguro
 (
-    id_tasas serial not null primary key,
-    ref_credito int not null REFERENCES credito (id_credito) ON DELETE CASCADE ON UPDATE CASCADE,
-    tipo_cotizacion varchar(50),
-    tasa_base integer,
-    tasa_inc_anual integer,
-    tasa_accesorios integer,
-    costo_apertura integer,
-    descuento_apertura integer,
-    t_seguro_anual integer
+    id_seguro int not null AUTO_INCREMENT,
+    tipo_seguro varchar(30),
+    PRIMARY KEY (id_seguro)
 );
-
-CREATE TABLE cotizaciones
+CREATE TABLE tipo_credito
 (
-    id_cotizaciones serial primary key not null,
-    ref_equipo int not null REFERENCES  alta_equipo (id_equipo)ON DELETE CASCADE ON UPDATE CASCADE,
-    ref_personal int not null REFERENCES alta_personal(id_personal) ON DELETE CASCADE ON UPDATE CASCADE,
-    ref_accesorios int not null REFERENCES accesorios (id_accesorios)ON DELETE CASCADE ON UPDATE CASCADE,
-    ref_tasas int not null REFERENCES tasas (id_tasas)ON DELETE CASCADE ON UPDATE CASCADE,
-    ref_cliente int not null REFERENCES alta_clientes (id_clientes)ON DELETE CASCADE ON UPDATE CASCADE,
-    ref_credito int not null REFERENCES credito (id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
-    fecha_cotizacion date,
-    enganche integer
+    id_credito int not null AUTO_INCREMENT,
+    nombre_credito varchar(50),
+    PRIMARY KEY (id_credito)
+);
+CREATE TABLE moto_seguro
+(
+    id_moto_seguro int not null AUTO_INCREMENT,
+    ref_seguro int,
+    ref_moto int,
+    precio_seguro int,
+    PRIMARY KEY (id_moto_seguro),
+    FOREIGN KEY(ref_moto) REFERENCES moto(id_moto),
+    FOREIGN KEY(ref_seguro) REFERENCES tipo_seguro(id_seguro)
+);
+CREATE TABLE seguros
+(
+    id_seguros int not null AUTO_INCREMENT,
+    nombre_seguro varchar(30),
+    PRIMARY KEY (id_seguros)
+);
+CREATE TABLE seguro_credito
+(
+    id_seguro_credito int not null AUTO_INCREMENT,
+    ref_credito int,
+    ref_seguro int,
+    PRIMARY KEY (id_seguro_credito),
+    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito),
+    FOREIGN KEY(ref_seguro) REFERENCES tipo_seguro(id_seguro)
+);
+CREATE TABLE anios
+(
+    id_anios int not null AUTO_INCREMENT,
+    anios varchar(30),
+    meses int,
+    PRIMARY KEY (id_anios)
 );
 
-SELECT * from cotizaciones INNER JOIN alta_equipo ON alta_equipo.id_equipo = cotizaciones.ref_equipo;
+CREATE TABLE anios_credito
+(
+    id_anios_credito int not null AUTO_INCREMENT,
+    ref_credito int,
+    ref_anios int,
+    PRIMARY KEY (id_anios_credito),
+    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito),
+    FOREIGN KEY(ref_anios) REFERENCES anios(id_anios)
+);
+CREATE TABLE placas
+(
+    id_placas int not null AUTO_INCREMENT,
+    lugar_placas varchar(50),
+    precio int,
+    PRIMARY KEY (id_placas)
+);
 
 
-SELECT * FROM anios INNER JOIN alta_equipo on alta_equipo.ref_anios= anios.id_anios WHERE alta_equipo.modelo='GSX150 GIXXER SF'
 
-    SELECT * FROM credito 
-    INNER JOIN anio_credito on anio_credito.ref_credito=credito.id_credito 
-    INNER JOIN anios ON anios.id_anios=anio_credito.ref_anios 
-    WHERE credito.tipo_credito=
+/*/////////////precio moto año/////////////////*/
+SELECT * FROM moto_anio_precio INNER JOIN moto ON moto.id_moto= moto_anio_precio.ref_moto INNER JOIN anio_moto on anio_moto.id_anio_moto= moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto= moto_anio_precio.ref_precio WHERE moto_anio_precio.id_map=2
+
+-- //////////////// moto año////////////
+SELECT * FROM moto_anio_precio INNER JOIN moto on moto.id_moto=moto_anio_precio.ref_moto 
+INNER JOIN anio_moto on anio_moto.id_anio_moto= moto_anio_precio.ref_anio WHERE moto.id_moto=1
+
+-- ///////////////////// credito seguro /////////
+SELECT * FROM tipo_credito INNER JOIN seguro_credito on seguro_credito.ref_credito= tipo_credito.id_credito
+INNER JOIN seguros on seguros.id_seguros= seguro_credito.ref_seguro WHERE tipo_credito.id_credito=1
+
+-- //////////////////////credito años///////////////////////////
+SELECT * FROM anios_credito INNER JOIN tipo_credito on tipo_credito.id_credito=anios_credito.ref_credito
+INNER JOIN anios on anios.id_anios= anios_credito.ref_anios WHERE tipo_credito.id_credito=1
+
+-- //////////////////////////moto seguro///////////////////////////////////
+SELECT * FROM moto INNER JOIN moto_seguro on moto_seguro.ref_moto= moto.id_moto
+INNER JOIN tipo_seguro on tipo_seguro.id_seguro= moto_seguro.ref_seguro WHERE moto.id_moto=1

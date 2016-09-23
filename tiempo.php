@@ -1,19 +1,10 @@
 <?php
-	echo '<label for="tiempo">TIEMPO </label>';
-	echo '<select id="tiempo" name="tiempo" class="form-control">';
-	require ("conexion.php");
-	$consulta= "SELECT * FROM tiempo inner JOIN cre_tiempo on cre_tiempo.ref_tiempo=tiempo.id_tiempo
-					 INNER JOIN credito on credito.id_credito= cre_tiempo.ref_credito
-                     WHERE credito.tipo_credito='".$_GET['c']."'"; 
-	$resultado= mysql_query($consulta,$conexion) or die (mysql_error());
+	require ("php/conexion.php");
+	$consulta= "SELECT * FROM anios_credito INNER JOIN tipo_credito on tipo_credito.id_credito=anios_credito.ref_credito INNER JOIN anios on anios.id_anios= anios_credito.ref_anios WHERE tipo_credito.id_credito=1"; 
+	$resultado= mysql_query($consulta) or die (mysql_error());
 	?>
-	<!-- <option value="">Seleccione</option> -->
 	<?php
 	while($fila = mysql_fetch_array($resultado)){	
-			// if($fila['ref_tipo'] == $_GET['c']){
-				echo "<option value='".$fila['id_tiempo']."'>".$fila['tipo_tiempo']."</option>";
-			// }
+				echo "<option value='".$fila['id_anios']."'>".$fila['anios']."</option>";
 		}
-	mysql_close($conexion);
-	echo '</select>';
 ?>

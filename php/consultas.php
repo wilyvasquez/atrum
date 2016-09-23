@@ -1,63 +1,40 @@
 <?php
-header("Content-Type: text/html;charset=utf-8");
-include("conexion.php");
-mysql_query("SET NAMES 'utf8'");
-    $plazo=$_POST['plazo'];
-    $consul = "select * from anios where id_anios ='$plazo'";  
-    $plazo1 = mysql_query($consul);  
-    $resulta = mysql_fetch_array($plazo1);
-    $meses1=$resulta['meses'];
-	///////////////////// CREDITO //////////////
-    $apertura=$_POST['credito'];
-	$query = "select * from credito where tipo_credito ='$apertura'";  
-    $result = mysql_query($query);  
-    $apertura = mysql_fetch_array($result);
-    $costo=$apertura['costo_apertura'];
+      $moto=$_POST['moto'];
+      $anio=$_POST['anio'];
+      $seguro=$_POST['seguro'];
+      $placas=$_POST['placas'];
+      $credito=$_POST['credito'];
 
-    ///////////////////// COSTO MOTOCICLETA //////////
-    $modelo=$_POST['modelo'];
-    $query2 = "select * from alta_equipo where id_equipo ='$modelo'";  
-    $equipo = mysql_query($query2);  
-    $equipo = mysql_fetch_array($equipo);
-    $var=$equipo['costo_unidad'];
-    $res=round(($var*0.16)+$var,2);
+      $query10 = "SELECT * FROM moto_anio_precio INNER JOIN moto ON moto.id_moto= moto_anio_precio.ref_moto INNER JOIN anio_moto on anio_moto.id_anio_moto= moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto= moto_anio_precio.ref_precio WHERE moto_anio_precio.ref_moto=$moto AND moto_anio_precio.ref_anio=$anio";
+      $result6 = mysql_query($query10);  
+      $apertura5 = mysql_fetch_array($result6);
+      $varvar = $apertura5['precio'];
 
-    /////////////////// BASE DEL CREDITO ////////////////
+      ////////////// precio moto ////////////////
+      $iva=($varvar*0.16);
+      $ivares=$iva+$varvar;
+      ////////////////////////////////////////////
 
-    $enganche=$_POST['enganche'];
-    $ope=(($res*$enganche)/100);
-    $base=round($res-$ope,2);
+      $query="SELECT * FROM moto INNER JOIN moto_seguro ON moto_seguro.ref_moto= moto.id_moto INNER JOIN tipo_seguro ON  tipo_seguro.id_seguro=moto_seguro.ref_seguro WHERE moto.id_moto=$moto AND tipo_seguro.id_seguro=$seguro";
+      $reseguro = mysql_query($query);  
+      $var = mysql_fetch_array($reseguro);
+      $resul = $var['precio_seguro'];
 
-    /////////////////// ENGANCHE //////////////////////
+      ///////////////// precio seguro ////////////
+      $variable="SELECT * FROM tipo_credito where id_credito=$credito";
+      $resultado = mysql_query($variable);  
+      $credito1 = mysql_fetch_array($resultado);
+      $credito = $credito1['tasa_base'];
+      $base=12*$credito;
+      $resulseguro=($resul*0.16)+$resul;
+      $suma=($base*$resulseguro)+$resulseguro;
+      ////////////////////////////////////////////
 
-    $enganche=$_POST['enganche'];
-    $ope=round(($res*$enganche)/100,2);
+      $query1="SELECT * FROM placas where id_placas=$placas";
+      $result = mysql_query($query1);  
+      $var1 = mysql_fetch_array($result);
+      $placas = $var1['precio'];
 
-    ////////////////// IMPORTE //////////////////////
-    $a =$apertura["tasa_base"];
-    // echo $a;
-    $tem=((($meses1*1)*$a)*$base);
-    $importe=round($base+$tem,2); ///importe del credito
-    // echo $importe;
+      ////////////////tiempo//////////////
 
-    ////////////////// SEGURO DE LA UNIDAD //////////////
-    if (!empty($_POST["seguros"])) {
-        # code...
-    $seg=$_POST["seguros"];
-    
-    $query = "select * from seguro where id_seguro ='$seg'";  
-    $result = mysql_query($query);  
-    $apertura2 = mysql_fetch_array($result);    
-    $seguro=$apertura2['tipo_seguro'];
-
-    $select = "select * from alta_equipo where id_equipo='$modelo'";  
-    $alta = mysql_query($select);  
-    $resultado = mysql_fetch_array($alta);
-    $segu=$resultado[$seguro];
-
-    $opera=($segu*0.16)+($segu);
-    $vari=$apertura['tasa_base'];    
-    $operacion=($vari*12)*($opera);
-    $final=round($operacion+$opera);
-    }
 ?>
