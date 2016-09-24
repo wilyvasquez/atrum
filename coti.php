@@ -215,7 +215,8 @@
                         </div>
                     </div><!-- fin resultados -->
                     <div class="row col-md-5">
-                       <table data-toggle="table">
+                       <div id="tabla">
+                           <table data-toggle="table">
                             <thead>
                             <tr>
                                 <th class="col-xs-7" data-field="name">Accesorios</th>
@@ -223,7 +224,7 @@
                                 <th class="col-xs-1" data-field="forks_count">Cantidad</th>
                                 <th class="col-xs-2" data-field="description">Total</th>
                                 <th class="col-xs-1" data-field="accion">
-                                    <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal">
+                                    <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                     </button>
                                 </th>
@@ -285,6 +286,7 @@
                                 <input type="text" id="costoarti" name="costoarti" value="" class="form-control" required/>
                             </div>
                         </div>
+                       </div>
                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -316,7 +318,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-info">Save</button>
+                                <button onclick="accesorios($('#accesorios').val(),$('#precio').val(),$('#cantidad').val())" type="button" class="btn btn-info">Save</button>
                               </div>
                             </div><!-- /.modal-content -->
                           </div><!-- /.modal-dialog -->

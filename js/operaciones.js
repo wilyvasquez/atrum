@@ -92,3 +92,24 @@ function resultados(porcentaje,tiempo,moto,anio,credito)
     // }
   }
 }
+function accesorios(accesorios,precio,cantidad)
+{    
+    var par = 
+    {
+      "accesorios" : accesorios,
+      "precio" : precio,
+      "cantidad" : cantidad
+    };
+    $.ajax({
+      data: par,
+      url: 'php/accesorios.php',
+      type: 'post',
+      beforeSend: function()
+      {       
+      },
+      success: function(response)
+      {
+        $("#tabla").html(response);
+      }
+    });
+}
