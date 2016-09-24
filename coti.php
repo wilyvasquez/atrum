@@ -213,8 +213,116 @@
                         <div class="col-md-3" style="margin-top:5px">
                             <input type="text" id="nombre" name="nombre" value="" class="form-control" onkeypress='letras()' required/>
                         </div>
+                    </div><!-- fin resultados -->
+                    <div class="row col-md-5">
+                       <table data-toggle="table">
+                            <thead>
+                            <tr>
+                                <th class="col-xs-7" data-field="name">Accesorios</th>
+                                <th class="col-xs-1" data-field="stargazers_count">Precio S/I.V.A</th>
+                                <th class="col-xs-1" data-field="forks_count">Cantidad</th>
+                                <th class="col-xs-2" data-field="description">Total</th>
+                                <th class="col-xs-1" data-field="accion">
+                                    <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                    </button>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td>casco</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn-xs">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>funda</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn-xs">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>funda</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>
+                                    <button type="button" class="btn btn-default btn-xs">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    </button>
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-2">
+                            <h6>Total articulos</h6>        
+                            </div>
+                            <div class="col-md-3" style="margin-top:5px">
+                                <input type="text" id="articulos" name="articulos" value="" class="form-control" required/>
+                            </div>
+                            <div class="col-md-1">
+                                <h6>Total S/I.V.A</h6>
+                            </div>
+                            <div class="col-md-2" style="margin-top:5px">
+                                <input type="text" id="iva" name="iva" value="" class="form-control" required/>
+                            </div>
+                            <div class="col-md-1" style="margin-top:5px">
+                                <label><h6>Costo</h6></label>        
+                            </div>
+                            <div class="col-md-3" style="margin-top:5px">
+                                <input type="text" id="costoarti" name="costoarti" value="" class="form-control" required/>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Agregar Accesorio</h4>
+                              </div>
+                              <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-5" style="margin-top:5px">
+                                    <label>ACCESORIO</label>        
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <input type="text" id="accesorios" name="accesorios" value="" class="form-control" required/>
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <label>PRECIO</label>        
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <input type="text" id="precio" name="precio" value="" class="form-control" required/>
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <label>CANTIDAD</label>        
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <input type="text" id="cantidad" name="cantidad" value="" class="form-control" required/>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info">Save</button>
+                              </div>
+                            </div><!-- /.modal-content -->
+                          </div><!-- /.modal-dialog -->
+                        </div>
                     </div>
-    		</div>
+    		</div> <!-- fin row -->
     	</div>
     	</div> <!-- fin row 1 -->
     </div>

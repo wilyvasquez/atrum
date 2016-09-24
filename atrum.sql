@@ -24,6 +24,15 @@ CREATE TABLE anio_moto
     anio varchar(30),
     PRIMARY KEY (id_anio_moto)
 );
+CREATE TABLE accesorio
+(
+    id_accesorio int not null AUTO_INCREMENT,
+    nombre_accesorio varchar(30),
+    precio float,
+    cantidad int,
+    total float,
+    PRIMARY KEY (id_accesorio)
+);
 CREATE TABLE precio_moto
 (
     id_precio_moto int not null AUTO_INCREMENT,
