@@ -1,4 +1,4 @@
-function datoscotizador(moto,anio,seguro,placas,credito)
+function datoscotizador(moto,anio,seguro,placas,credito,tiempo)
 {
 
   if(moto.length >= 1 ) 
@@ -10,7 +10,8 @@ function datoscotizador(moto,anio,seguro,placas,credito)
       "anio" : anio,
       "seguro" : seguro,
       "placas" : placas,
-      "credito" : credito
+      "credito" : credito,
+      "tiempo" : tiempo
     };
     $.ajax({
       data: par,
@@ -113,7 +114,7 @@ function accesorios(accesorios,precio,cantidad)
       }
     });
 }
-function tablaprecio(moto,anio,seguro,placas,credito,porcentaje)
+function tablaprecio(moto,anio,seguro,placas,credito,porcentaje,tiempo)
 {    
     var par = 
     {
@@ -122,7 +123,8 @@ function tablaprecio(moto,anio,seguro,placas,credito,porcentaje)
       "seguro" : seguro,
       "placas" : placas,
       "credito" : credito,
-      "porcentaje" : porcentaje
+      "porcentaje" : porcentaje,
+      "tiempo" : tiempo
     };
     $.ajax({
       data: par,

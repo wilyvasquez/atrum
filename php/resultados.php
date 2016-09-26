@@ -5,6 +5,7 @@ $query2="SELECT * FROM anios where id_anios=$tiempo";
       $result = mysql_query($query2);  
       $tiempo = mysql_fetch_array($result);
       $tiempore = $tiempo['anios'];
+      $tiempomul = $tiempo['meses'];
 
       $moto=$_POST['moto'];
       $anio=$_POST['anio'];
@@ -24,7 +25,7 @@ $query2="SELECT * FROM anios where id_anios=$tiempo";
       $credito1 = mysql_fetch_array($resultado);
       $credito = $credito1['tasa_base'];
       $apertura = $credito1['costo_apertura'];
-      $importe=12*$credito;
+      $importe=($tiempomul*$credito);
       $final=($base*$importe)+$base;
 
 echo "<div class='col-md-3'>

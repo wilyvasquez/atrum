@@ -114,7 +114,7 @@
                     </div>
                     <div class="col-md-2">
                         <div style="margin-top:27px">
-                            <button class="btn btn-info" type="submit" onclick="datoscotizador($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val());resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val());tablaprecio($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#porcentaje').val());tiempo($('#credito').val())">Cotizar !</button>
+                            <button class="btn btn-info" type="submit" onclick="datoscotizador($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#tiempo').val());resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val());tablaprecio($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#porcentaje').val(),$('#tiempo').val());tiempo($('#credito').val())">Cotizar !</button>
                         </div>
                     </div>
                 </div><!-- fin modulo 1 -->
@@ -162,7 +162,7 @@
                             <input type="text" id="financiamiento" name="financiamiento" value="" class="form-control" onkeypress='letras()' onfocus="this.blur()">
                         </div>
                         <div class="col-md-3" style="margin-top:5px">
-                            <label>porcentaje</label>        
+                            <label>ENGANCHE</label>        
                         </div>
                         <div class="col-md-3" style="margin-top:5px">
                             <div class="input-group">
@@ -216,7 +216,7 @@
                     </div><!-- fin resultados -->
                     <div class="row col-md-5">
                        <div id="tabla">
-                           <table data-toggle="table">
+                           <table data-toggle="table" data-pagination="true" data-page-size="3">
                             <thead>
                             <tr>
                                 <th class="col-xs-7" data-field="name">Accesorios</th>

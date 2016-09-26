@@ -4,6 +4,7 @@
       $seguro=$_POST['seguro'];
       $placas=$_POST['placas'];
       $credito=$_POST['credito'];
+      $tiempo=$_POST['tiempo'];
 
       $query10 = "SELECT * FROM moto_anio_precio INNER JOIN moto ON moto.id_moto= moto_anio_precio.ref_moto INNER JOIN anio_moto on anio_moto.id_anio_moto= moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto= moto_anio_precio.ref_precio WHERE moto_anio_precio.ref_moto=$moto AND moto_anio_precio.ref_anio=$anio";
       $result6 = mysql_query($query10);  
@@ -20,13 +21,18 @@
       $reseguro = mysql_query($query);  
       $var = mysql_fetch_array($reseguro);
       $resul = $var['precio_seguro'];
+      ////////////////tiempo//////////////
+      $anios="SELECT * FROM anios where id_anios=$tiempo";
+      $resulanios = mysql_query($anios);  
+      $aniores = mysql_fetch_array($resulanios);
+      $resanio = $aniores['meses'];
 
       ///////////////// precio seguro ////////////
       $variable="SELECT * FROM tipo_credito where id_credito=$credito";
       $resultado = mysql_query($variable);  
       $credito1 = mysql_fetch_array($resultado);
       $credito = $credito1['tasa_base'];
-      $base=12*$credito;
+      $base=($resanio*$credito);
       $resulseguro=($resul*0.16)+$resul;
       $suma=($base*$resulseguro)+$resulseguro;
       ////////////////////////////////////////////
@@ -36,6 +42,5 @@
       $var1 = mysql_fetch_array($result);
       $placas = $var1['precio'];
 
-      ////////////////tiempo//////////////
 
 ?>
