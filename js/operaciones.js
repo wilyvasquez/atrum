@@ -158,3 +158,22 @@ function tiempo(credito)
       }
     });
 }
+function bajas(id)
+{    
+    var par = 
+    {
+      "id" : id
+    };
+    $.ajax({
+      data: par,
+      url: 'php/bajaccesorios.php',
+      type: 'post',
+      beforeSend: function()
+      {    
+      },
+      success: function(response)
+      {
+        $("#tabla").html(response);
+      }
+    });
+}

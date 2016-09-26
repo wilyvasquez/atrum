@@ -1,12 +1,20 @@
 <?php
- include("conexion.php");
- $accesorios=$_POST['accesorios'];
+include("conexion.php");
+$id=$_POST['id'];
+$query = "delete from accesorio where id_accesorio = $id";
+$result = mysql_query($query);
+
+if (!empty($accesorios)) {
+	# code...
+	$accesorios=$_POST['accesorios'];
  $precio=$_POST['precio'];
  $cantidad=$_POST['cantidad'];
  $total=$precio*$cantidad;
+ mysql_query("INSERT INTO accesorio VALUES ('id','$accesorios', '$precio','$cantidad','$total')");
+}
+
  $contador=0;
  $totalarticulo=0;
- mysql_query("INSERT INTO accesorio VALUES ('id','$accesorios', '$precio','$cantidad','$total')");
 $query='select * from accesorio';
 $result = mysql_query($query);
 echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">

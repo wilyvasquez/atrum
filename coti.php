@@ -214,6 +214,42 @@
                             <input type="text" id="nombre" name="nombre" value="" class="form-control" onkeypress='letras()' required/>
                         </div>
                     </div><!-- fin resultados -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Agregar Accesorio</h4>
+                              </div>
+                              <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-5" style="margin-top:5px">
+                                    <label>ACCESORIO</label>        
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <input type="text" id="accesorios" name="accesorios" value="" class="form-control" required/>
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <label>PRECIO</label>        
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <input type="text" id="precio" name="precio" value="" class="form-control" required/>
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <label>CANTIDAD</label>        
+                                    </div>
+                                    <div class="col-md-5" style="margin-top:5px">
+                                        <input type="text" id="cantidad" name="cantidad" value="" class="form-control" required/>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button onclick="accesorios($('#accesorios').val(),$('#precio').val(),$('#cantidad').val())" type="button" class="btn btn-info">Save</button>
+                              </div>
+                            </div><!-- /.modal-content -->
+                          </div><!-- /.modal-dialog -->
+                        </div>
                     <div class="row col-md-5">
                        <div id="tabla">
                            <table data-toggle="table" data-pagination="true" data-page-size="3">
@@ -287,7 +323,7 @@
                             </div>
                         </div>
                        </div> <!-- fin ajax accesorios -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+                        <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -320,9 +356,9 @@
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 <button onclick="accesorios($('#accesorios').val(),$('#precio').val(),$('#cantidad').val())" type="button" class="btn btn-info">Save</button>
                               </div>
-                            </div><!-- /.modal-content -->
-                          </div><!-- /.modal-dialog -->
-                        </div>
+                            </div>
+                          </div>
+                        </div> -->
                     </div>
     		</div> <!-- fin row -->
     	</div> <!-- fin 12 -->
