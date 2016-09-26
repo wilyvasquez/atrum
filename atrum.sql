@@ -62,6 +62,21 @@ CREATE TABLE tipo_credito
     nombre_credito varchar(50),
     PRIMARY KEY (id_credito)
 );
+CREATE TABLE tiempo
+(
+    id_tiempo int not null AUTO_INCREMENT,
+    tiempo varchar(50),
+    PRIMARY KEY (id_tiempo)
+);
+CREATE TABLE credito_tiempo
+(
+    id_credito_tiempo int not null AUTO_INCREMENT,
+    ref_tiempo int,
+    ref_credito int,
+    PRIMARY KEY (id_credito_tiempo),
+    FOREIGN KEY(ref_tiempo) REFERENCES tiempo(id_tiempo),
+    FOREIGN KEY(ref_credito) REFERENCES tiempo(id_tiempo)
+);
 CREATE TABLE moto_seguro
 (
     id_moto_seguro int not null AUTO_INCREMENT,

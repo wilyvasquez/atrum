@@ -37,7 +37,7 @@ echo "<table data-toggle='table' data-pagination='true'
 		        <td>".$registro['cantidad']."</td>
 		        <td>".$registro['total']."</td>
 		        <td>
-			        <button type='button' class='btn btn-default btn-xs'>
+			        <button type='button'   class='btn btn-default btn-xs'>
 			        <span class='glyphicon glyphicon-trash' aria-hidden='true'></span>
 		        </button>
 		        </td>

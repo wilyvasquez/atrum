@@ -113,3 +113,46 @@ function accesorios(accesorios,precio,cantidad)
       }
     });
 }
+function tablaprecio(moto,anio,seguro,placas,credito,porcentaje)
+{    
+    var par = 
+    {
+      "moto" : moto,
+      "anio" : anio,
+      "seguro" : seguro,
+      "placas" : placas,
+      "credito" : credito,
+      "porcentaje" : porcentaje
+    };
+    $.ajax({
+      data: par,
+      url: 'php/tabla_precios.php',
+      type: 'post',
+      beforeSend: function()
+      {    
+      },
+      success: function(response)
+      {
+        $("#tablaprecios").html(response);
+      }
+    });
+}
+function tiempo(credito)
+{    
+    var par = 
+    {
+      "credito" : credito
+    };
+    $.ajax({
+      data: par,
+      url: 'php/tiempo.php',
+      type: 'post',
+      beforeSend: function()
+      {    
+      },
+      success: function(response)
+      {
+        $("#ajaxtiempo").html(response);
+      }
+    });
+}

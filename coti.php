@@ -114,12 +114,12 @@
                     </div>
                     <div class="col-md-2">
                         <div style="margin-top:27px">
-                            <button class="btn btn-info" type="submit" onclick="datoscotizador($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val());resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val())">Cotizar !</button>
+                            <button class="btn btn-info" type="submit" onclick="datoscotizador($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val());resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val());tablaprecio($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#porcentaje').val());tiempo($('#credito').val())">Cotizar !</button>
                         </div>
                     </div>
                 </div><!-- fin modulo 1 -->
                 <div class="col-md-6" id="precios"> <!-- inicio mudulo 2 -->
-                     <div class="thumbnail col-md-6" style="width:300px; height:200px;"></div><br><br>
+                     <div class="thumbnail col-md-6" style="width:260px; height:200px"></div><br><br>
                      <div class="col-md-6"> 
                          <div class="col-md-5" style="margin-top:5px">
                             <label>COSTO</label>        
@@ -286,7 +286,7 @@
                                 <input type="text" id="costoarti" name="costoarti" value="" class="form-control" required/>
                             </div>
                         </div>
-                       </div>
+                       </div> <!-- fin ajax accesorios -->
                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -325,9 +325,58 @@
                         </div>
                     </div>
     		</div> <!-- fin row -->
-    	</div>
-    	</div> <!-- fin row 1 -->
+    	</div> <!-- fin 12 -->
+        <div class="col-md-12">
+            <div class="col-md-12"><h3><strong>PAGOS</strong></h3><hr></div>
+            <div class="col-md-offset-1 col-md-6">
+                <center><label for="">PRECIOS</label></center>
+            <div id="tablaprecios">
+                <table data-toggle="table" data-click-to-select="true" data-single-select="true">
+                <thead>
+                  <td>
+                      <th>Tiempo</th>
+                      <th>$ Vehiculo</th>
+                      <th>$ Seguro</th>
+                      <th>Total</th>
+                  </td>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>SEMANAS (0)</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>QUINCENAS (0)</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>MESES (0)</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <div>
+            <div class="row col-md-3" id="ajaxtiempo">
+              <label for="">TIEMPO</label>
+              <select name="tiempo" id="tiempo" class="form-control">
+                <option value="">Seleccionar</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-md-2" style="margin-top:27px">
+            <button type="button" class="btn btn-info">General PDF !</button>
+        </div>
     </div>
+    </div> <!-- fin row 1 -->
+    </div><br>
 	<footer id="footer">
         <div class="container">
             <div class="row">

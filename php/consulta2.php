@@ -13,7 +13,6 @@
       ////////////// precio moto ////////////////
       $iva=($varvar*0.16);
       $ivares=$iva+$varvar;
-      // echo $ivares;
       ////////////////////////////////////////////
 
       $query="SELECT * FROM moto INNER JOIN moto_seguro ON moto_seguro.ref_moto= moto.id_moto INNER JOIN tipo_seguro ON  tipo_seguro.id_seguro=moto_seguro.ref_seguro WHERE moto.id_moto=$moto AND tipo_seguro.id_seguro=$seguro";

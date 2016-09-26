@@ -6,7 +6,6 @@ $query2="SELECT * FROM anios where id_anios=$tiempo";
       $tiempo = mysql_fetch_array($result);
       $tiempore = $tiempo['anios'];
 
-
       $moto=$_POST['moto'];
       $anio=$_POST['anio'];
       $credito=$_POST['credito'];
@@ -40,7 +39,7 @@ echo "<div class='col-md-3'>
 	<div class='col-md-3' style='margin-top:5px'>
 	<div class='input-group'>
 	<span class='input-group-addon'>$</span>
-	<input type='text' id='engancheresul' name='engancheresul' value='".$enganche."' class='form-control' onfocus='this.blur()'>
+	<input type='text' id='engancheresul' name='engancheresul' value='".round($enganche,2)."' class='form-control' onfocus='this.blur()'>
 	</div>
 	</div>
 	<!-- fin row -->
@@ -50,7 +49,7 @@ echo "<div class='col-md-3'>
 	<div class='col-md-3' style='margin-top:5px'>
 	<div class='input-group'>
 	<span class='input-group-addon'>$</span>
-	<input type='text' id='apertura' name='apertura' value='".$apertura."' class='form-control' onfocus='this.blur()'>   
+	<input type='text' id='apertura' name='apertura' value='".round($apertura,2)."' class='form-control' onfocus='this.blur()'>   
 	</div>
 	</div>
 	<div class='col-md-3'>
@@ -59,7 +58,7 @@ echo "<div class='col-md-3'>
 	<div class='col-md-3' style='margin-top:5px'>
 	<div class='input-group'>
 	<span class='input-group-addon'>$</span>
-	<input type='text' id='base' name='base' value='".$base."' class='form-control' onfocus='this.blur()'>      
+	<input type='text' id='base' name='base' value='".round($base,2)."' class='form-control' onfocus='this.blur()'>      
 	</div>
 	</div>
 	<div class='col-md-3'>
@@ -68,7 +67,7 @@ echo "<div class='col-md-3'>
 	<div class='col-md-3' style='margin-top:5px'>
 	<div class='input-group'>
 	<span class='input-group-addon'>$</span>
-	<input type='text' id='importe' name='importe' value='".$final."' class='form-control' onfocus='this.blur()'>      
+	<input type='text' id='importe' name='importe' value='".round($final,2)."' class='form-control' onfocus='this.blur()'>      
 	</div>
 	</div>
 	<div class='col-md-3' style='margin-top:5px'>
