@@ -1,3 +1,21 @@
+CREATE TABLE usuario
+(
+    id_usuario int not null AUTO_INCREMENT,
+    nombre varchar(50),
+    telefono integer,
+    celular integer,
+    correo varchar(50),
+    PRIMARY KEY (id_usuario)
+);
+CREATE TABLE password
+(
+    id_password int not null AUTO_INCREMENT,
+    user integer,
+    pass varchar(50),
+    ref_usuario int,
+    PRIMARY KEY (id_password),
+    FOREIGN KEY(ref_usuario) REFERENCES usuario(id_usuario)
+);
 CREATE TABLE moto
 (
     id_moto int not null AUTO_INCREMENT,
