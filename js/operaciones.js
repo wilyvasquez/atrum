@@ -1,7 +1,7 @@
 function datoscotizador(moto,anio,seguro,placas,credito,tiempo)
 {
 
-  if(moto.length >= 1 ) 
+  if(moto.length >= 1 && placas.length >= 1 && credito.length >= 1) 
   {
     
     var par = 
@@ -18,7 +18,8 @@ function datoscotizador(moto,anio,seguro,placas,credito,tiempo)
       url: 'php/precio_moto.php',
       type: 'post',
       beforeSend: function()
-      {       
+      {    
+      alert(moto);  
       },
       success: function(response)
       {
@@ -26,30 +27,24 @@ function datoscotizador(moto,anio,seguro,placas,credito,tiempo)
       }
     });
   }else{
+    if (moto.length<1) {
+      alertify.error("Falta campo Moto");
+    }
     if (credito.length<1) {
       alertify.error("Falta campo Credito");
     }
-    if (modelo.length<1) {
-      alertify.error("Falta campo Modelo");
+    if (placas.length<1) {
+      alertify.error("Falta Tipo de Placas");
     }
-    if (enganche.length<1) {
-      alertify.error("Falta campo Enganche");
-    }
-    // if (seguros.length<1) {
-    //   alertify.error("Falta Tipo de Seguros");
-    // }
     // if (moto.length<1) {
-    //   alertify.error("Falta Tipo de Moto");
-    // }
-    // if (plazo.length<1) {
-    //   alertify.error("Falta campo Plazo");
-    // }
+    //   alertify.error("Falta Tipo de Credito");
+    // }    
   }
 }
 function resultados(porcentaje,tiempo,moto,anio,credito)
 {
 
-  if(porcentaje.length >= 1 ) 
+  if(porcentaje.length >= 1 && credito.length >= 1 && moto.length >= 1 && credito.length >= 1) 
   {
     
     var par = 
@@ -73,20 +68,20 @@ function resultados(porcentaje,tiempo,moto,anio,credito)
       }
     });
   }else{
-    if (credito.length<1) {
-      alertify.error("Falta campo Credito");
+    if (porcentaje.length<1) {
+      alertify.error("Falta campo Porcentaje");
     }
-    if (modelo.length<1) {
-      alertify.error("Falta campo Modelo");
-    }
-    if (enganche.length<1) {
-      alertify.error("Falta campo Enganche");
-    }
-    // if (seguros.length<1) {
-    //   alertify.error("Falta Tipo de Seguros");
+    // if (tiempo.length<1) {
+    //   alertify.error("Falta campo Tiempo");
     // }
     // if (moto.length<1) {
-    //   alertify.error("Falta Tipo de Moto");
+    //   alertify.error("Falta campo moto");
+    // }
+    // if (anio.length<1) {
+    //   alertify.error("Falta Tipo de Año");
+    // }
+    // if (credito.length<1) {
+    //   alertify.error("Falta Tipo de Credito");
     // }
     // if (plazo.length<1) {
     //   alertify.error("Falta campo Plazo");

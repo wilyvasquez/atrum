@@ -59,18 +59,18 @@ echo "<table data-toggle='table' data-pagination='true'
 		<h6>Total articulos</h6>        
 	    </div>
 	    <div class='col-md-3' style='margin-top:5px'>
-	    <input type='text' id='articulos' name='articulos' value='".$contador."' class='form-control' required/>
+	    <input type='text' id='articulos' name='articulos' value='".$contador."' class='form-control'onfocus='this.blur()'/>
 	    </div>
 	    <div class='col-md-1'>
 	    <h6>Total S/I.V.A</h6>
 	    </div>
 	    <div class='col-md-2' style='margin-top:5px'>
-	    <input type='text' id='iva' name='iva' value='".$totalarticulo."' class='form-control' required/>
+	    <input type='text' id='iva' name='iva' value='".$totalarticulo."' class='form-control' onfocus='this.blur()'/>
 	    </div>
 	    <div class='col-md-1' style='margin-top:5px'>
 	    <label><h6>Costo</h6></label>        
 	    </div>
 	    <div class='col-md-3' style='margin-top:5px'>
-	    <input type='text' id='costoarti' name='costoarti' value='' class='form-control' required/>
+	    <input type='text' id='costoarti' name='costoarti' value='' class='form-control' onfocus='this.blur()'/>
     </div>";
 ?>

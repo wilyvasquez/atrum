@@ -60,7 +60,7 @@
                         <div><label for="">MOTO</label></div>
                         <div>
                             <select id="moto" name="moto" onchange="funciontipo(this.value)" class="selectpicker" data-size="5" data-live-search="true">
-                              <option>Seleccionar</option>
+                              <option value="">Seleccionar</option>
                               <?php include("php/moto.php") ?>
                             </select>
                         </div> 
@@ -75,7 +75,7 @@
                         <div><label for="">TIPO DE CREDITO</label></div>
                         <div>
                             <select id="credito" name="credito" onchange="funcionseguro(this.value);funciontiempo(this.value)" class="selectpicker" data-size="5" data-live-search="true">
-                              <option>Seleccionar</option>
+                              <option value="">Seleccionar</option>
                               <?php include("php/credito.php") ?>
                             </select>
                         </div>
@@ -84,7 +84,7 @@
                         <div><label for="">TIPO DE SEGURO</label></div>
                         <div>
                             <select id="seguro" name="seguro" class="form-control">
-                              <option>Seleccionar</option>
+                              <option value="">Seleccionar</option>
                             </select>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                         <div><label for="">TIEMPO</label></div>
                         <div>
                             <select id="tiempo" name="tiempo" class="form-control">
-                              <option>Seleccionar</option>
+                              <option value="">Seleccionar</option>
                             </select>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                         <div><label for="">EMPLACAMIENTO</label></div>
                         <div>
                             <select id="placas" name="placas" class="selectpicker" data-size="5" data-live-search="true">
-                              <option>Seleccionar</option>
+                              <option value="">Seleccionar</option>
                               <?php include("php/placas.php") ?>
                             </select>
                         </div>
@@ -307,58 +307,22 @@
                             <h6>Total articulos</h6>        
                             </div>
                             <div class="col-md-3" style="margin-top:5px">
-                                <input type="text" id="articulos" name="articulos" value="" class="form-control" required/>
+                                <input type="text" id="articulos" name="articulos" value="" class="form-control" onfocus="this.blur()"/>
                             </div>
                             <div class="col-md-1">
                                 <h6>Total S/I.V.A</h6>
                             </div>
                             <div class="col-md-2" style="margin-top:5px">
-                                <input type="text" id="iva" name="iva" value="" class="form-control" required/>
+                                <input type="text" id="iva" name="iva" value="" class="form-control" onfocus="this.blur()"/>
                             </div>
                             <div class="col-md-1" style="margin-top:5px">
                                 <label><h6>Costo</h6></label>        
                             </div>
                             <div class="col-md-3" style="margin-top:5px">
-                                <input type="text" id="costoarti" name="costoarti" value="" class="form-control" required/>
+                                <input type="text" id="costoarti" name="costoarti" value="" class="form-control" onfocus="this.blur()"/>
                             </div>
                         </div>
-                       </div> <!-- fin ajax accesorios -->
-                        <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title">Agregar Accesorio</h4>
-                              </div>
-                              <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-5" style="margin-top:5px">
-                                    <label>ACCESORIO</label>        
-                                    </div>
-                                    <div class="col-md-5" style="margin-top:5px">
-                                        <input type="text" id="accesorios" name="accesorios" value="" class="form-control" required/>
-                                    </div>
-                                    <div class="col-md-5" style="margin-top:5px">
-                                        <label>PRECIO</label>        
-                                    </div>
-                                    <div class="col-md-5" style="margin-top:5px">
-                                        <input type="text" id="precio" name="precio" value="" class="form-control" required/>
-                                    </div>
-                                    <div class="col-md-5" style="margin-top:5px">
-                                        <label>CANTIDAD</label>        
-                                    </div>
-                                    <div class="col-md-5" style="margin-top:5px">
-                                        <input type="text" id="cantidad" name="cantidad" value="" class="form-control" required/>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button onclick="accesorios($('#accesorios').val(),$('#precio').val(),$('#cantidad').val())" type="button" class="btn btn-info">Save</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div> -->
+                       </div> 
                     </div>
     		</div> <!-- fin row -->
     	</div> <!-- fin 12 -->
