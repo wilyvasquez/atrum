@@ -1,5 +1,11 @@
-function datoscotizador(moto,anio,seguro,placas,credito,tiempo)
-{
+function datoscotizador()
+{ 
+  var moto = document.getElementById('moto').value;
+  var anio = document.getElementById('anio').value;
+  var seguro = document.getElementById('seguro').value;
+  var placas = document.getElementById('placas').value;
+  var credito = document.getElementById('credito').value;
+  var tiempo = document.getElementById('tiempo').value;
 
   if(moto.length >= 1 && placas.length >= 1 && credito.length >= 1) 
   {
@@ -18,8 +24,7 @@ function datoscotizador(moto,anio,seguro,placas,credito,tiempo)
       url: 'php/precio_moto.php',
       type: 'post',
       beforeSend: function()
-      {    
-      alert(moto);  
+      {     
       },
       success: function(response)
       {
@@ -34,7 +39,7 @@ function datoscotizador(moto,anio,seguro,placas,credito,tiempo)
       alertify.error("Falta campo Credito");
     }
     if (placas.length<1) {
-      alertify.error("Falta Tipo de Placas");
+      alertify.error("Falta Emplacamiento");
     }
     // if (moto.length<1) {
     //   alertify.error("Falta Tipo de Credito");
@@ -71,25 +76,12 @@ function resultados(porcentaje,tiempo,moto,anio,credito)
     if (porcentaje.length<1) {
       alertify.error("Falta campo Porcentaje");
     }
-    // if (tiempo.length<1) {
-    //   alertify.error("Falta campo Tiempo");
-    // }
-    // if (moto.length<1) {
-    //   alertify.error("Falta campo moto");
-    // }
-    // if (anio.length<1) {
-    //   alertify.error("Falta Tipo de Año");
-    // }
-    // if (credito.length<1) {
-    //   alertify.error("Falta Tipo de Credito");
-    // }
-    // if (plazo.length<1) {
-    //   alertify.error("Falta campo Plazo");
-    // }
   }
 }
 function accesorios(accesorios,precio,cantidad)
-{    
+{   
+  if(accesorios.length >= 1 && precio.length >= 1 && cantidad.length >= 1) 
+  {
     var par = 
     {
       "accesorios" : accesorios,
@@ -108,9 +100,30 @@ function accesorios(accesorios,precio,cantidad)
         $("#tabla").html(response);
       }
     });
+  }else{
+    if (accesorios.length<1) {
+      alertify.error("Falta campo Accesorios");
+    }
+    if (precio.length<1) {
+      alertify.error("Falta campo Precio");
+    }
+    if (cantidad.length<1) {
+      alertify.error("Falta campo Cantidad");
+    }
+  }
 }
-function tablaprecio(moto,anio,seguro,placas,credito,porcentaje,tiempo)
+function tablaprecio()
 {    
+  var moto = document.getElementById('moto').value;
+  var anio = document.getElementById('anio').value;
+  var seguro = document.getElementById('seguro').value;
+  var placas = document.getElementById('placas').value;
+  var credito = document.getElementById('credito').value;
+  var porcentaje = document.getElementById('porcentaje').value;
+  var tiempo = document.getElementById('tiempo').value;
+
+  if(moto.length >= 1 && credito.length >= 1 && porcentaje.length >= 1 && placas.length >= 1) 
+  {
     var par = 
     {
       "moto" : moto,
@@ -133,9 +146,14 @@ function tablaprecio(moto,anio,seguro,placas,credito,porcentaje,tiempo)
         $("#tablaprecios").html(response);
       }
     });
+  }else{
+
+  }
 }
 function tiempo(credito)
 {    
+  if(credito.length >= 1 ) 
+  {
     var par = 
     {
       "credito" : credito
@@ -152,6 +170,9 @@ function tiempo(credito)
         $("#ajaxtiempo").html(response);
       }
     });
+  }else{
+
+  }
 }
 function bajas(id)
 {    
@@ -161,7 +182,7 @@ function bajas(id)
     };
     $.ajax({
       data: par,
-      url: 'php/bajaccesorios.php',
+      url: 'php/accesorios.php',
       type: 'post',
       beforeSend: function()
       {    

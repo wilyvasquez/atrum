@@ -1,12 +1,21 @@
 <?php
  include("conexion.php");
- $accesorios=$_POST['accesorios'];
- $precio=$_POST['precio'];
- $cantidad=$_POST['cantidad'];
- $total=$precio*$cantidad;
  $contador=0;
  $totalarticulo=0;
+ if (!empty($_POST['id'])) {
+ 	# code...
+ 	$id=$_POST['id'];
+	$query = "delete from accesorio where id_accesorio = $id";
+	$result = mysql_query($query);
+ }
+if (!empty($_POST['accesorios'])) {
+	# code...
+	$accesorios=$_POST['accesorios'];
+ 	$precio=$_POST['precio'];
+ 	$cantidad=$_POST['cantidad'];
+ 	$total=$precio*$cantidad;
  mysql_query("INSERT INTO accesorio VALUES ('id','$accesorios', '$precio','$cantidad','$total')");
+}
 $query='select * from accesorio';
 $result = mysql_query($query);
 echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">
@@ -37,9 +46,9 @@ echo "<table data-toggle='table' data-pagination='true'
 		        <td>".$registro['cantidad']."</td>
 		        <td>".$registro['total']."</td>
 		        <td>
-			        <button type='button' onclick='bajas(".$registro['id_accesorio'].")' class='btn btn-default btn-xs'>
-			        <span class='glyphicon glyphicon-trash' aria-hidden='true'></span>
-		        </button>
+			        <button type='button' onclick='bajas(".$registro['id_accesorio'].");tablaprecio()' class='btn btn-default btn-xs'>
+			        	<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>
+		        	</button>
 		        </td>
 	        </tr>
 	        ";}

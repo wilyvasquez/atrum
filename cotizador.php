@@ -59,8 +59,8 @@
                     <div class="col-md-5">
                         <div><label for="">MOTO</label></div>
                         <div>
-                            <select id="moto" name="moto" onchange="funciontipo(this.value)" class="selectpicker" data-size="5" data-live-search="true">
-                              <option value="">Seleccionar</option>
+                            <select id="moto" name="moto" onchange="funciontipo(this.value)" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
+                              <!-- <option value="">Seleccionar</option> -->
                               <?php include("php/moto.php") ?>
                             </select>
                         </div> 
@@ -74,8 +74,8 @@
                     <div class="col-md-5">
                         <div><label for="">TIPO DE CREDITO</label></div>
                         <div>
-                            <select id="credito" name="credito" onchange="funcionseguro(this.value);funciontiempo(this.value)" class="selectpicker" data-size="5" data-live-search="true">
-                              <option value="">Seleccionar</option>
+                            <select id="credito" name="credito" onchange="funcionseguro(this.value);funciontiempo(this.value);funcionenganche(this.value)" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
+                              <!-- <option value="">Seleccionar</option> -->
                               <?php include("php/credito.php") ?>
                             </select>
                         </div>
@@ -97,24 +97,26 @@
                         </div>
                     </div>
                     <div class="col-md-5">
-                        <div><label for="">porcentaje</label></div>
+                        <div><label for="">ENGANCHE</label></div>
                         <div class="input-group col-md-10">
-                            <input type="text" id="porcentaje" name="porcentaje" class="form-control">
+                            <select id="porcentaje" name="porcentaje" class="form-control">
+                              <option value="">Seleccionar</option>
+                            </select>
                             <span class="input-group-addon">%</span>
                         </div>
                     </div>
                     <div class="col-md-5">
                         <div><label for="">EMPLACAMIENTO</label></div>
                         <div>
-                            <select id="placas" name="placas" class="selectpicker" data-size="5" data-live-search="true">
-                              <option value="">Seleccionar</option>
+                            <select id="placas" name="placas" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
+                              <!-- <option value="">Seleccionar</option> -->
                               <?php include("php/placas.php") ?>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div style="margin-top:27px">
-                            <button class="btn btn-info" type="submit" onclick="datoscotizador($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#tiempo').val());resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val());tablaprecio($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#porcentaje').val(),$('#tiempo').val());tiempo($('#credito').val())">Cotizar !</button>
+                            <button class="btn btn-info" type="submit" onclick="datoscotizador();resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val());tablaprecio($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#porcentaje').val(),$('#tiempo').val());tiempo($('#credito').val())">Cotizar !</button>
                         </div>
                     </div>
                 </div><!-- fin modulo 1 -->
@@ -227,25 +229,25 @@
                                     <label>ACCESORIO</label>        
                                     </div>
                                     <div class="col-md-5" style="margin-top:5px">
-                                        <input type="text" id="accesorios" name="accesorios" value="" class="form-control" required/>
+                                        <input type="text" id="accesorios" name="accesorios" value="" class="form-control" onkeypress="letras()">
                                     </div>
                                     <div class="col-md-5" style="margin-top:5px">
                                         <label>PRECIO</label>        
                                     </div>
                                     <div class="col-md-5" style="margin-top:5px">
-                                        <input type="text" id="precio" name="precio" value="" class="form-control" required/>
+                                        <input type="text" id="costoacce" name="costoacce" value="" class="form-control" onkeypress="numeros()">
                                     </div>
                                     <div class="col-md-5" style="margin-top:5px">
                                         <label>CANTIDAD</label>        
                                     </div>
                                     <div class="col-md-5" style="margin-top:5px">
-                                        <input type="text" id="cantidad" name="cantidad" value="" class="form-control" required/>
+                                        <input type="text" id="cantidad" name="cantidad" value="" class="form-control" onkeypress="numeros()">
                                     </div>
                                 </div>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button onclick="accesorios($('#accesorios').val(),$('#precio').val(),$('#cantidad').val())" type="button" class="btn btn-info">Save</button>
+                                <button onclick="accesorios($('#accesorios').val(),$('#costoacce').val(),$('#cantidad').val());tablaprecio()" type="button" class="btn btn-info">Save</button>
                               </div>
                             </div><!-- /.modal-content -->
                           </div><!-- /.modal-dialog -->
@@ -268,7 +270,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                <td>casco</td>
+                                <td>S/A</td>
                                 <td>0</td>
                                 <td>0</td>
                                 <td>0</td>
@@ -279,7 +281,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td>funda</td>
+                                <td>S/A</td>
                                 <td>0</td>
                                 <td>0</td>
                                 <td>0</td>
@@ -290,7 +292,7 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td>funda</td>
+                                <td>S/A</td>
                                 <td>0</td>
                                 <td>0</td>
                                 <td>0</td>
@@ -307,19 +309,19 @@
                             <h6>Total articulos</h6>        
                             </div>
                             <div class="col-md-3" style="margin-top:5px">
-                                <input type="text" id="articulos" name="articulos" value="" class="form-control" onfocus="this.blur()"/>
+                                <input type="text" id="articulos" name="articulos" value="0" class="form-control" onfocus="this.blur()"/>
                             </div>
                             <div class="col-md-1">
                                 <h6>Total S/I.V.A</h6>
                             </div>
                             <div class="col-md-2" style="margin-top:5px">
-                                <input type="text" id="iva" name="iva" value="" class="form-control" onfocus="this.blur()"/>
+                                <input type="text" id="iva" name="iva" value="0" class="form-control" onfocus="this.blur()"/>
                             </div>
                             <div class="col-md-1" style="margin-top:5px">
                                 <label><h6>Costo</h6></label>        
                             </div>
                             <div class="col-md-3" style="margin-top:5px">
-                                <input type="text" id="costoarti" name="costoarti" value="" class="form-control" onfocus="this.blur()"/>
+                                <input type="text" id="costoarti" name="costoarti" value="0" class="form-control" onfocus="this.blur()"/>
                             </div>
                         </div>
                        </div> 
@@ -334,27 +336,31 @@
                 <table data-toggle="table" data-click-to-select="true" data-single-select="true">
                 <thead>
                   <td>
-                      <th>Tiempo</th>
-                      <th>$ Vehiculo</th>
-                      <th>$ Seguro</th>
-                      <th>Total</th>
+                      <th class="col-xs-2">Tiempo</th>
+                      <th class="col-xs-1">$ Vehiculo</th>
+                      <th class="col-xs-1">$ Seguro</th>
+                      <th class="col-xs-1">$ Accesorios</th>
+                      <th class="col-md-1">Total</th>
                   </td>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>SEMANAS (0)</td>
+                    <td>SEMANAS</td>
                     <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>QUINCENAS (0)</td>
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>MESES (0)</td>
+                    <td>QUINCENAS</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>MESES</td>
+                    <td>0</td>
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -364,7 +370,7 @@
             </div>
         </div>
         <div>
-            <div class="row col-md-3" id="ajaxtiempo">
+            <div class="row col-md-2" id="ajaxtiempo">
               <label for="">TIEMPO</label>
               <select name="tiempo" id="tiempo" class="form-control">
                 <option value="">Seleccionar</option>
