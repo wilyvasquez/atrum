@@ -153,3 +153,122 @@ function insertartiempo()
       }
     });
 }
+function unionmoto()
+{
+  var moto = document.getElementById('moto').value;
+  var anio = document.getElementById('anio').value;
+  var costo = document.getElementById('costo').value;
+    var par = 
+    {
+      "moto" : moto,
+      "anio" : anio,
+      "costo" : costo
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/insertar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        alertify.success("Insertado Correctamente");
+        // $("#alta_personal").html(response);
+      }
+    });
+}
+function unionmotosegu()
+{
+  var tipo = document.getElementById('tipo').value;
+  var seguro = document.getElementById('seguro').value;
+  var cosegu = document.getElementById('cosegu').value;
+    var par = 
+    {
+      "tipo" : tipo,
+      "seguro" : seguro,
+      "cosegu" : cosegu
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/insertar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        alertify.success("Insertado Correctamente");
+        // $("#alta_personal").html(response);
+      }
+    });
+}
+function unioncrese()
+{
+  var credito = document.getElementById('credito').value;
+  var seguro2 = document.getElementById('seguro2').value;
+    var par = 
+    {
+      "credito" : credito,
+      "seguro2" : seguro2
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/insertar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        alertify.success("Insertado Correctamente");
+        // $("#alta_personal").html(response);
+      }
+    });
+}
+function unioncretiem()
+{
+  var credito2 = document.getElementById('credito2').value;
+  var tiempo = document.getElementById('tiempo').value;
+    var par = 
+    {
+      "credito2" : credito2,
+      "tiempo" : tiempo
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/insertar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        alertify.success("Insertado Correctamente");
+        // $("#alta_personal").html(response);
+      }
+    });
+}
+function unioncreenga()
+{
+  var credito3 = document.getElementById('credito3').value;
+  var enganche = document.getElementById('enganche').value;
+    var par = 
+    {
+      "credito3" : credito3,
+      "enganche" : enganche
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/insertar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        alertify.success("Insertado Correctamente");
+        // $("#alta_personal").html(response);
+      }
+    });
+}

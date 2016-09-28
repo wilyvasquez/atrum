@@ -20,10 +20,10 @@
             </div>
             <div class="col-md-3">
                 <label for="">Costo Motocicleta</label>
-                <input type="text" class="form-control" onkeypress='numeros()' id="costo" name="costo" placeholder="Costo Apertura">
+                <input type="text" class="form-control" onkeypress='numeros()' id="costo" name="costo" placeholder="Costo Motocicleta">
             </div>
             <div class="col-md-2">
-                <button class="btn btn-info" onclick="insertarcredito()" type="submit" style="margin-top:26px">Enviar</button>
+                <button class="btn btn-info" onclick="unionmoto()" type="submit" style="margin-top:26px">Enviar</button>
             </div>
         </div>
         <div class="col-md-12">
@@ -43,8 +43,12 @@
                     <?php include("../extras/seguro.php") ?>
                 </select>
             </div>
+            <div class="col-md-3">
+                <label for="">Costo Seguro</label>
+                <input type="text" class="form-control" onkeypress='numeros()' id="cosegu" name="cosegu" placeholder="Costo Motocicleta">
+            </div>
             <div class="col-md-2">
-                <button class="btn btn-info" onclick="insertaranios()" type="submit" style="margin-top:26px">Enviar</button>
+                <button class="btn btn-info" onclick="unionmotosegu()" type="submit" style="margin-top:26px">Enviar</button>
             </div>
         </div>
         <div class="col-md-12">
@@ -65,7 +69,7 @@
                 </select>
             </div>
             <div class="col-md-2">
-                <button class="btn btn-info" onclick="insertarseguro()" type="submit" style="margin-top:26px">Enviar</button>
+                <button class="btn btn-info" onclick="unioncrese()" type="submit" style="margin-top:26px">Enviar</button>
             </div>
         </div>
         <div class="col-md-12"><h3><strong>TIEMPO CREDITO</strong></h3><hr></div>
@@ -83,7 +87,7 @@
                 </select>
             </div>
             <div class="col-md-2">
-                <button class="btn btn-info" onclick="insertarenganche()" type="submit" style="margin-top:26px">Enviar</button>
+                <button class="btn btn-info" onclick="unioncretiem()" type="submit" style="margin-top:26px">Enviar</button>
             </div>
         </div>
         <div class="col-md-12"><h3><strong>CREDITO ENGANCHE</strong></h3><hr></div>
@@ -101,7 +105,7 @@
                 </select>
             </div>
             <div class="col-md-2">
-                <button class="btn btn-info" onkeypress='letranumero()' onclick="insertaranio()" type="submit" style="margin-top:26px">Enviar</button>
+                <button class="btn btn-info" onkeypress='unioncreenga()' onclick="insertaranio()" type="submit" style="margin-top:26px">Enviar</button>
             </div>
         </div>
     </div><br>
