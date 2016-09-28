@@ -49,19 +49,17 @@
                 </div>                
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <!-- <li class="active"><a href="#" onclick="equipo()">Alta Equipo</a></li> -->
                         <!-- <li class="active"><a href="#" onclick="personal()">Alta Personal</a></li> -->
                         <li class="active" class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CRUD DATOS <i class="fa fa-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">AGREGAR DATOS <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#" onclick="equipo()">EQUIPO</a></li>
                                 <li><a href="#" onclick="personal()">PERSONAL</a></li>
-                                <li><a href="#" onclick="agregar()">AGREGAR</a></li>
+                                <li><a href="#" onclick="agregar()">REFERENCIAS</a></li>
                                 <li><a href="#" onclick="extras()">ALTAS</a></li>
                             </ul>
                         </li>
-                        <!-- <li class="active"><a href="#" onclick="usuarios()">Alta Usuarios</a></li> -->
-                        <li class="active"><a href="#" onclick="seguros()">Seguros</a></li>
+                        <li class="active"><a href="#" onclick="actualizar()">ACTUALIZAR DATOS</a></li>
                         <li><a href="index.php">Salir</a>                      
                     </ul>
                 </div>
@@ -69,10 +67,7 @@
         </nav><!--/nav-->        
     </header>    
     <div>
-      <div id="alta_equipo"></div>
       <div id="alta_personal"></div>
-      <div id="alta_credito"></div>
-      <div id="seguro_credito"></div>
     </div>
      <footer id="footer" class="midnight-blue">
         <div class="container">

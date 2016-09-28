@@ -166,7 +166,7 @@ function unionmoto()
     };
     $.ajax({
       data: par,
-      url: 'php/equipo/insertar.php',
+      url: 'php/equipo/union.php',
       type: 'post',
       beforeSend: function()
       {
@@ -191,7 +191,7 @@ function unionmotosegu()
     };
     $.ajax({
       data: par,
-      url: 'php/equipo/insertar.php',
+      url: 'php/equipo/union.php',
       type: 'post',
       beforeSend: function()
       {
@@ -214,7 +214,7 @@ function unioncrese()
     };
     $.ajax({
       data: par,
-      url: 'php/equipo/insertar.php',
+      url: 'php/equipo/union.php',
       type: 'post',
       beforeSend: function()
       {
@@ -237,10 +237,12 @@ function unioncretiem()
     };
     $.ajax({
       data: par,
-      url: 'php/equipo/insertar.php',
+      url: 'php/equipo/union.php',
       type: 'post',
       beforeSend: function()
       {
+        alert(credito2);
+        alert(tiempo);
       },
       success: function(response)
       {
@@ -260,7 +262,30 @@ function unioncreenga()
     };
     $.ajax({
       data: par,
-      url: 'php/equipo/insertar.php',
+      url: 'php/equipo/union.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        alertify.success("Insertado Correctamente");
+        // $("#alta_personal").html(response);
+      }
+    });
+}
+function unioncreanios()
+{
+  var credi = document.getElementById('credi').value;
+  var lapso = document.getElementById('lapso').value;
+    var par = 
+    {
+      "credi" : credi,
+      "lapso" : lapso
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/union.php',
       type: 'post',
       beforeSend: function()
       {

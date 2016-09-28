@@ -72,7 +72,7 @@
                 <button class="btn btn-info" onclick="unioncrese()" type="submit" style="margin-top:26px">Enviar</button>
             </div>
         </div>
-        <div class="col-md-12"><h3><strong>TIEMPO CREDITO</strong></h3><hr></div>
+        <div class="col-md-12"><h3><strong>AÑOS CREDITO</strong></h3><hr></div>
         <div class="col-md-12">
             <div class="col-md-3">
                 <div><label for="">CREDITO</label></div>
@@ -105,7 +105,25 @@
                 </select>
             </div>
             <div class="col-md-2">
-                <button class="btn btn-info" onkeypress='unioncreenga()' onclick="insertaranio()" type="submit" style="margin-top:26px">Enviar</button>
+                <button class="btn btn-info" onclick="unioncreenga()" type="submit" style="margin-top:26px">Enviar</button>
+            </div>
+        </div>
+        <div class="col-md-12"><h3><strong>CREDITO TIEMPO</strong></h3><hr></div>
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <div><label for="">CREDITO</label></div>
+                <select id="credi" name="credi" class="form-control">
+                  <?php include("../credito.php") ?>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <div><label for="">AÑOS</label></div>
+                <select id="lapso" name="lapso" class="form-control">
+                  <?php include("../extras/tiempo.php") ?>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-info" onclick="unioncreanios()" type="submit" style="margin-top:26px">Enviar</button>
             </div>
         </div>
     </div><br>

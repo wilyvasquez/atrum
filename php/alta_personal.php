@@ -39,9 +39,5 @@
             </div>
         </form>      
     </div><br>
-        <!-- <div class="row col-md-12">
-            <button class="btn btn-success" type="submit">Actualizar Articulo !</button>
-            <button class="btn btn-danger" type="submit">Cancelar !</button>
-        </div> -->
 	</div>
 </div><br>

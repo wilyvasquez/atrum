@@ -201,15 +201,7 @@ function equipo()
       },
       success: function(response)
       {
-        if (document.getElementById('personal')!=null) 
-        { document.getElementById('personal').style.display = 'none';} 
-
-        if (document.getElementById('altacredito')!=null) 
-        {document.getElementById('altacredito').style.display = 'none';}
-
-        if (document.getElementById('creseguro')!=null) 
-        {document.getElementById('creseguro').style.display = 'none';}
-        $("#alta_equipo").html(response);
+        $("#alta_personal").html(response);
       }
     });
 }
@@ -224,15 +216,6 @@ function personal()
       },
       success: function(response)
       {
-        if (document.getElementById('altaquipo')!=null) 
-        { document.getElementById('altaquipo').style.display = 'none';} 
-
-        if (document.getElementById('altacredito')!=null) 
-        {document.getElementById('altacredito').style.display = 'none';}
-
-        if (document.getElementById('creseguro')!=null) 
-        {document.getElementById('creseguro').style.display = 'none';}
-
         $("#alta_personal").html(response);
       }
     });
@@ -248,35 +231,26 @@ function persona()
       },
       success: function(response)
       {
-        if (document.getElementById('altaquipo')!=null) 
-        { document.getElementById('altaquipo').style.display = 'none';} 
-
-        if (document.getElementById('altacredito')!=null) 
-        {document.getElementById('altacredito').style.display = 'none';}
-
-        if (document.getElementById('creseguro')!=null) 
-        {document.getElementById('creseguro').style.display = 'none';}
-
         $("#alta_personal").html(response);
       }
     });
 }
-function eliminar()
-{
-    $.ajax({
-      data: null,
-      url: 'php/equipo/operaciones.php',
-      type: 'post',
-      beforeSend: function()
-      {
-        alert("hola");
-      },
-      success: function(response)
-      {
-        $("#alta_personal").html(response);
-      }
-    });
-}
+// function eliminar()
+// {
+//     $.ajax({
+//       data: null,
+//       url: 'php/equipo/operaciones.php',
+//       type: 'post',
+//       beforeSend: function()
+//       {
+//         alert("hola");
+//       },
+//       success: function(response)
+//       {
+//         $("#alta_personal").html(response);
+//       }
+//     });
+// }
 function extras()
 {
     $.ajax({
