@@ -375,3 +375,49 @@ function actuplacas()
       }
     });
 }
+function actuequipo()
+{
+    var moto = document.getElementById('moto').value;
+    var modelo = document.getElementById('modelo').value;
+    var motor = document.getElementById('motor').value;
+    var trasmision = document.getElementById('trasmision').value;
+    var timo = document.getElementById('timo').value;
+    var cilindros = document.getElementById('cilindros').value;
+    var diametro = document.getElementById('diametro').value;
+    var carrera = document.getElementById('carrera').value;
+    var desplazamiento = document.getElementById('desplazamiento').value;
+    var compresion = document.getElementById('compresion').value;
+    var lubricacion = document.getElementById('lubricacion').value;
+    var combustible = document.getElementById('combustible').value;
+    var arranque = document.getElementById('arranque').value;
+    var par = 
+    {
+      "moto" : moto,
+      "modelo" : modelo,
+      "motor" : motor,
+      "trasmision" : trasmision,
+      "timo" : timo,
+      "cilindros" : cilindros,
+      "diametro" : diametro,
+      "carrera" : carrera,
+      "desplazamiento" : desplazamiento,
+      "compresion" : compresion,
+      "lubricacion" : lubricacion,
+      "combustible" : combustible,
+      "arranque" : arranque
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/update.php',
+      type: 'post',
+      beforeSend: function()
+      {
+        alert(moto);
+      },
+      success: function(response)
+      {
+        alertify.success("Actualizado Correctamente");
+        $("#alta_personal").html(response);
+      }
+    });
+}
