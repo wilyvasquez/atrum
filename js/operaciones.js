@@ -40,10 +40,7 @@ function datoscotizador()
     }
     if (placas.length<1) {
       alertify.error("Falta Emplacamiento");
-    }
-    // if (moto.length<1) {
-    //   alertify.error("Falta Tipo de Credito");
-    // }    
+    }   
   }
 }
 function resultados(porcentaje,tiempo,moto,anio,credito)

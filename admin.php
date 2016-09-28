@@ -55,7 +55,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#" onclick="equipo()">EQUIPO</a></li>
                                 <li><a href="#" onclick="personal()">PERSONAL</a></li>
-                                <li><a href="#" onclick="extras()">Creditos</a></li>
+                                <li><a href="#" onclick="extras()">ALTAS</a></li>
                             </ul>
                         </li>
                         <!-- <li class="active"><a href="#" onclick="usuarios()">Alta Usuarios</a></li> -->
@@ -89,6 +89,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/alertify.min.js"></script>
     <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/altadatos.js"></script>
     <script src="js/operaciones.js"></script>
     <script src="js/funciones.js"></script>
     <script src="js/validaciones.js"></script>
