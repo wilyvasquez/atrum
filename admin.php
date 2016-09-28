@@ -49,7 +49,6 @@
                 </div>                
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <!-- <li class="active"><a href="#" onclick="personal()">Alta Personal</a></li> -->
                         <li class="active" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">AGREGAR DATOS <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -59,7 +58,14 @@
                                 <li><a href="#" onclick="extras()">ALTAS</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="#" onclick="actualizar()">ACTUALIZAR DATOS</a></li>
+                        <li class="active" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACTUALIZAR DATOS <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" onclick="actualizar()">CREDITO Y PLACAS</a></li>
+                                <!-- <li><a href="#">PLACAS</a></li> -->
+                                <li><a href="#" onclick="actu_equipo()">EQUIPO</a></li>
+                            </ul>
+                        </li>
                         <li><a href="index.php">Salir</a>                      
                     </ul>
                 </div>

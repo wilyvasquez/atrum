@@ -297,3 +297,81 @@ function unioncreanios()
       }
     });
 }
+function actualizar()
+{
+    $.ajax({
+      data: null,
+      url: 'php/equipo/actualizar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        $("#alta_personal").html(response);
+      }
+    });
+}
+function actu_equipo()
+{
+    $.ajax({
+      data: null,
+      url: 'php/equipo/actu_equipo.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        $("#alta_personal").html(response);
+      }
+    });
+}
+function actucredito()
+{
+    var credito = document.getElementById('credito').value;
+    var base = document.getElementById('base').value;
+    var costo = document.getElementById('costo').value;
+    var par = 
+    {
+      "credito" : credito,
+      "base" : base,
+      "costo" : costo
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/update.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        alertify.success("Actualizado Correctamente");
+        // $("#alta_personal").html(response);
+      }
+    });
+}
+function actuplacas()
+{
+    var placa = document.getElementById('placa').value;
+    var costoape = document.getElementById('costoape').value;
+    var par = 
+    {
+      "placa" : placa,
+      "costoape" : costoape
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/update.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        alertify.success("Actualizado Correctamente");
+        // $("#alta_personal").html(response);
+      }
+    });
+}
