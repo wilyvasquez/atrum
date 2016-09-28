@@ -17,6 +17,7 @@
     <link href="css/responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="css/alertify.core.css" />
     <link rel="stylesheet" href="css/alertify.default.css" id="toggleCSS" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
 
 </head><!--/head-->
 <body>
@@ -55,6 +56,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#" onclick="equipo()">EQUIPO</a></li>
                                 <li><a href="#" onclick="personal()">PERSONAL</a></li>
+                                <li><a href="#" onclick="agregar()">AGREGAR</a></li>
                                 <li><a href="#" onclick="extras()">ALTAS</a></li>
                             </ul>
                         </li>
@@ -87,6 +89,7 @@
     </footer>
 
     <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
     <script src="js/alertify.min.js"></script>
     <script src="js/bootstrap-table.min.js"></script>
     <script src="js/altadatos.js"></script>

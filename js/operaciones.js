@@ -292,3 +292,18 @@ function extras()
       }
     });
 }
+function agregar()
+{
+    $.ajax({
+      data: null,
+      url: 'php/equipo/agregar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        $("#alta_personal").html(response);
+      }
+    });
+}
