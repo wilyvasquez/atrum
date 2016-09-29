@@ -61,7 +61,7 @@
                         <li class="active" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACTUALIZAR DATOS <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#" onclick="actualizar()">CREDITO Y PLACAS</a></li>
+                                <li><a href="#" onclick="actualizar()">CREDITO,PLACA,PRECIO</a></li>
                                 <!-- <li><a href="#">PLACAS</a></li> -->
                                 <li><a href="#" onclick="actu_equipo()">EQUIPO</a></li>
                             </ul>

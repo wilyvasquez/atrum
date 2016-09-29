@@ -29,4 +29,10 @@ if (!empty($_POST['moto'])) {
 	$arranque=$_POST['arranque'];
 	mysql_query("UPDATE moto set motor='$motor', trasmision='$trasmision', tipo_motor='$timo', numero_cilindros='$cilindros', diametro='$diametro', carrera='$carrera', desplazamiento='$desplazamiento', relacion_compresion='$compresion', sistema_lubricacion='$lubricacion', sistema_combustible='$combustible', sistema_arranque='$arranque' where id_moto='$moto'");
 }
+if (!empty($_POST['costomoto'])) {
+	# code...
+	$costomoto=$_POST['costomoto'];
+	$idprecio=$_POST['idprecio'];
+	mysql_query("UPDATE precio_moto set precio='$costomoto' where id_precio_moto='$idprecio'");
+}
 ?>

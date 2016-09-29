@@ -421,3 +421,50 @@ function actuequipo()
       }
     });
 }
+function cotiprecio()
+{
+    var moto = document.getElementById('moto').value;
+    var anio = document.getElementById('anio').value;
+    var par = 
+    {
+      "moto" : moto,
+      "anio" : anio
+    };
+    $.ajax({
+      data: par,
+      url: 'php/extras/precio_moto.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        // alertify.success("Actualizado Correctamente");
+        $("#precio").html(response);
+      }
+    });
+}
+function actupreciomoto()
+{
+    var costomoto = document.getElementById('costomoto').value;
+    var idprecio = document.getElementById('idprecio').value;
+    var par = 
+    {
+      "costomoto" : costomoto,
+      "idprecio" : idprecio
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/update.php',
+      type: 'post',
+      beforeSend: function()
+      {
+        alert(idprecio);
+      },
+      success: function(response)
+      {
+        alertify.success("Actualizado Correctamente");
+        // $("#precio").html(response);
+      }
+    });
+}

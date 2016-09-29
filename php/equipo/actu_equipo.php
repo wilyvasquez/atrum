@@ -19,10 +19,6 @@
                     <label for="">Modelo</label>
                     <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo" required/>
                 </div>
-                <!-- <div class="col-md-4">
-                  <label for="">TIPO</label>
-                  <input type="text" id="tipo" name="tipo" class="form-control" placeholder="Modelo" required/>
-                </div> -->
                 <div class="col-md-4">
                     <label for="">Motor</label>
                     <input type="text" class="form-control" id="motor" name="motor" placeholder="Motor">
