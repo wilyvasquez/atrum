@@ -241,8 +241,6 @@ function unioncretiem()
       type: 'post',
       beforeSend: function()
       {
-        alert(credito2);
-        alert(tiempo);
       },
       success: function(response)
       {

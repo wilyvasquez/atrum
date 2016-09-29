@@ -37,27 +37,27 @@ else
         $sistelubri=$_POST['lubricacion'];
         $sistecombu=$_POST['combustible'];
         $sistearran=$_POST['arranque'];
-        $anio=$_POST['anio'];
-        $costo=$_POST['costo'];
+        // $anio=$_POST['anio'];
+        // $costo=$_POST['costo'];
 
 		
-	mysql_query("INSERT INTO moto VALUES ('id','$tipo1','$modelo','$motor','$trasmision','$tipomoto','$numcilindros','$diametro','$carrera','$desplazamiento','$relacompre','$sistelubri','$sistecombu','$sistearran','$tipo','$data')");
+	$resultado=mysql_query("INSERT INTO moto VALUES ('id','$tipo1','$modelo','$motor','$trasmision','$tipomoto','$numcilindros','$diametro','$carrera','$desplazamiento','$relacompre','$sistelubri','$sistecombu','$sistearran','$tipo','$data')");
 	$ultimo = mysql_insert_id();
 
-	$query10 = "SELECT * FROM anio_moto where id_anio_moto=$anio";
-      $result6 = mysql_query($query10);  
-      $apertura5 = mysql_fetch_array($result6);
-      $anio = $apertura5['id_anio_moto'];
+	// $query10 = "SELECT * FROM anio_moto where id_anio_moto=$anio";
+ //      $result6 = mysql_query($query10);  
+ //      $apertura5 = mysql_fetch_array($result6);
+ //      $anio = $apertura5['id_anio_moto'];
 
-    mysql_query("INSERT INTO precio_moto VALUES ('id','$costo')");
-    $precio = mysql_insert_id();
-	$resultado=mysql_query("INSERT INTO moto_anio_precio VALUES ('id','$ultimo','$anio','$precio')");
+ //    mysql_query("INSERT INTO precio_moto VALUES ('id','$costo')");
+ //    $precio = mysql_insert_id();
+	// $resultado=mysql_query("INSERT INTO moto_anio_precio VALUES ('id','$ultimo','$anio','$precio')");
 
-		// header("Location: ../admin.php");
+		header("Location: ../admin.php");
 
         if ($resultado)
         {
-            echo "El archivo ha sido copiado exitosamente.";
+            // echo "El archivo ha sido copiado exitosamente.";
         }
         else
         {

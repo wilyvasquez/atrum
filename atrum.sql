@@ -2,19 +2,20 @@ CREATE TABLE usuario
 (
     id_usuario int not null AUTO_INCREMENT,
     nombre varchar(50),
-    telefono integer,
-    celular integer,
+    telefono bigint,
+    celular bigint,
     correo varchar(50),
     PRIMARY KEY (id_usuario)
 );
 CREATE TABLE password
 (
     id_password int not null AUTO_INCREMENT,
-    user integer,
+    user varchar(20),
     pass varchar(50),
+    permiso varchar(10),
     ref_usuario int,
     PRIMARY KEY (id_password),
-    FOREIGN KEY(ref_usuario) REFERENCES usuario(id_usuario)
+    FOREIGN KEY(ref_usuario) REFERENCES usuario(id_usuario)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE moto
 (
@@ -54,7 +55,7 @@ CREATE TABLE accesorio
 CREATE TABLE precio_moto
 (
     id_precio_moto int not null AUTO_INCREMENT,
-    precio int,
+    precio float,
     PRIMARY KEY (id_precio_moto)
 );
 CREATE TABLE moto_anio_precio
@@ -64,9 +65,9 @@ CREATE TABLE moto_anio_precio
     ref_anio int,
     ref_precio int,
     PRIMARY KEY (id_map),
-    FOREIGN KEY(ref_moto) REFERENCES moto(id_moto),
-    FOREIGN KEY(ref_anio) REFERENCES anio_moto(id_anio_moto),
-    FOREIGN KEY(ref_precio) REFERENCES precio_moto(id_precio_moto)
+    FOREIGN KEY(ref_moto) REFERENCES moto(id_moto)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_anio) REFERENCES anio_moto(id_anio_moto)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_precio) REFERENCES precio_moto(id_precio_moto)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE tipo_seguro
 (
@@ -78,6 +79,8 @@ CREATE TABLE tipo_credito
 (
     id_credito int not null AUTO_INCREMENT,
     nombre_credito varchar(50),
+    tasa_base float,
+    costo_apertura float,
     PRIMARY KEY (id_credito)
 );
 CREATE TABLE enganche
@@ -92,8 +95,8 @@ CREATE TABLE credito_enganche
     ref_credito int,
     ref_enganche int,
     PRIMARY KEY (id_credito_enganche),
-    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito),
-    FOREIGN KEY(ref_enganche) REFERENCES enganche(id_enganche)
+    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_enganche) REFERENCES enganche(id_enganche)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE tiempo
 (
@@ -107,18 +110,18 @@ CREATE TABLE credito_tiempo
     ref_tiempo int,
     ref_credito int,
     PRIMARY KEY (id_credito_tiempo),
-    FOREIGN KEY(ref_tiempo) REFERENCES tiempo(id_tiempo),
-    FOREIGN KEY(ref_credito) REFERENCES tiempo(id_tiempo)
+    FOREIGN KEY(ref_tiempo) REFERENCES tiempo(id_tiempo)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_credito) REFERENCES tiempo(id_tiempo)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE moto_seguro
 (
     id_moto_seguro int not null AUTO_INCREMENT,
     ref_seguro int,
     ref_moto int,
-    precio_seguro int,
+    precio_seguro float,
     PRIMARY KEY (id_moto_seguro),
-    FOREIGN KEY(ref_moto) REFERENCES moto(id_moto),
-    FOREIGN KEY(ref_seguro) REFERENCES tipo_seguro(id_seguro)
+    FOREIGN KEY(ref_moto) REFERENCES moto(id_moto)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_seguro) REFERENCES tipo_seguro(id_seguro)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE seguros
 (
@@ -132,8 +135,8 @@ CREATE TABLE seguro_credito
     ref_credito int,
     ref_seguro int,
     PRIMARY KEY (id_seguro_credito),
-    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito),
-    FOREIGN KEY(ref_seguro) REFERENCES tipo_seguro(id_seguro)
+    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_seguro) REFERENCES tipo_seguro(id_seguro)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE anios
 (
@@ -149,8 +152,8 @@ CREATE TABLE anios_credito
     ref_credito int,
     ref_anios int,
     PRIMARY KEY (id_anios_credito),
-    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito),
-    FOREIGN KEY(ref_anios) REFERENCES anios(id_anios)
+    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_anios) REFERENCES anios(id_anios)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE placas
 (

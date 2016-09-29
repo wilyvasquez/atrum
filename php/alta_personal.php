@@ -7,8 +7,8 @@
         </div>
         <form action="php/registro.php" method="POST">
             <div class="col-md-4">
-            <label for="">Nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Username" required/>
+                <label for="">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Username" required/>
             </div>
             <div class="col-md-4">
                 <label for="">Telefono</label>

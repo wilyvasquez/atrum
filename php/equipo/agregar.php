@@ -81,7 +81,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <div><label for="">TIEMPO</label></div>
+                <div><label for="">AÑOS</label></div>
                 <select id="tiempo" name="tiempo" class="form-control">
                   <?php include("../extras/anio.php") ?>
                 </select>
@@ -117,7 +117,7 @@
                 </select>
             </div>
             <div class="col-md-3">
-                <div><label for="">AÑOS</label></div>
+                <div><label for="">TIEMPO</label></div>
                 <select id="lapso" name="lapso" class="form-control">
                   <?php include("../extras/tiempo.php") ?>
                 </select>
