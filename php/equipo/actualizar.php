@@ -29,10 +29,10 @@
             </div>
         </div>
         <div class="col-md-12"><br>
-        <div><label for="">PLACAS</label></div>
+        <div><label for="">UPDATE PRECIO PLACAS</label></div>
         <hr>
             <div class="col-md-3">
-                <div><label for="">UPDATE PRECIO PLACAS</label></div>
+                <div><label for="">PLACAS</label></div>
                 <select id="placa" name="placa" class="form-control" onchange="updateplacas(this.value)">
                     <?php include("../placas.php") ?> 
                 </select>

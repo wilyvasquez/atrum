@@ -412,7 +412,6 @@ function actuequipo()
       type: 'post',
       beforeSend: function()
       {
-        alert(moto);
       },
       success: function(response)
       {
@@ -459,7 +458,6 @@ function actupreciomoto()
       type: 'post',
       beforeSend: function()
       {
-        alert(idprecio);
       },
       success: function(response)
       {
@@ -506,12 +504,27 @@ function actusegu()
       type: 'post',
       beforeSend: function()
       {
-        alert(idprecio);
       },
       success: function(response)
       {
         alertify.success("Actualizado Correctamente");
         // $("#preciose").html(response);
+      }
+    });
+}
+function eliminar()
+{
+    $.ajax({
+      data: null,
+      url: 'php/extras/eliminar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        // alertify.success("Actualizado Correctamente");
+        $("#alta_personal").html(response);
       }
     });
 }
