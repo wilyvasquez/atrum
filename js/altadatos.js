@@ -468,3 +468,50 @@ function actupreciomoto()
       }
     });
 }
+function actupreciosegu()
+{
+    var idmoto = document.getElementById('moto').value;
+    var idseguro = document.getElementById('seguro').value;
+    var par = 
+    {
+      "idmoto" : idmoto,
+      "idseguro" : idseguro
+    };
+    $.ajax({
+      data: par,
+      url: 'php/extras/seguro_moto.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        // alertify.success("Actualizado Correctamente");
+        $("#preciose").html(response);
+      }
+    });
+}
+function actusegu()
+{
+    var costoseguro = document.getElementById('costoseguro').value;
+    var idprecio = document.getElementById('idprecio').value;
+    var par = 
+    {
+      "costoseguro" : costoseguro,
+      "idprecio" : idprecio
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/update.php',
+      type: 'post',
+      beforeSend: function()
+      {
+        alert(idprecio);
+      },
+      success: function(response)
+      {
+        alertify.success("Actualizado Correctamente");
+        // $("#preciose").html(response);
+      }
+    });
+}

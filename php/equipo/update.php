@@ -35,4 +35,10 @@ if (!empty($_POST['costomoto'])) {
 	$idprecio=$_POST['idprecio'];
 	mysql_query("UPDATE precio_moto set precio='$costomoto' where id_precio_moto='$idprecio'");
 }
+if (!empty($_POST['costoseguro'])) {
+	# code...
+	$costoseguro=$_POST['costoseguro'];
+	$idprecio=$_POST['idprecio'];
+	mysql_query("UPDATE moto_seguro set precio_seguro='$costoseguro' where id_moto_seguro='$idprecio'");
+}
 ?>

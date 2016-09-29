@@ -6,7 +6,7 @@
           <hr>
         </div>
         <div class="col-md-12"><br>
-        <div><label for="">CREDITO</label></div>
+        <div><label for="">UPDATE PRECIO CREDITO</label></div>
         <hr>
             <div class="col-md-3">
                 <div><label for="">CREDITO</label></div>
@@ -32,7 +32,7 @@
         <div><label for="">PLACAS</label></div>
         <hr>
             <div class="col-md-3">
-                <div><label for="">PLACAS</label></div>
+                <div><label for="">UPDATE PRECIO PLACAS</label></div>
                 <select id="placa" name="placa" class="form-control" onchange="updateplacas(this.value)">
                     <?php include("../placas.php") ?> 
                 </select>
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="col-md-12"><br>
-        <div><label for="">MOTOS</label></div>
+        <div><label for="">UPDATE PRECIO MOTO</label></div>
         <hr>
             <div class="col-md-3">
                 <div><label for="">MOTO</label></div>
@@ -75,6 +75,36 @@
             </div>
             <div class="col-md-2">
                 <button class="btn btn-info" onclick="actupreciomoto()" type="submit" style="margin-top:26px">Update</button>
+            </div>
+        </div>
+        <div class="col-md-12"><br>
+        <div><label for="">UPDATE SEGURO MOTO</label></div>
+        <hr>
+            <div class="col-md-3">
+                <div><label for="">MOTO</label></div>
+                <select id="moto" name="moto" class="form-control">
+                    <?php include("../moto.php") ?> 
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div><label for="">SEGURO</label></div>
+                    <select id="seguro" name="seguro" class="form-control">
+                        <?php include("../extras/seguro.php") ?> 
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-info" onclick="actupreciosegu()" type="submit" style="margin-top:26px">Cotizar</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="preciose">
+                    <label for="">COSTO SEGURO</label>
+                    <input type="text" class="form-control" id="costoseguro" name="costoseguro" value="">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-info" onclick="actusegu()" type="submit" style="margin-top:26px">Update</button>
             </div>
         </div>
     </div><br>
