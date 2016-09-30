@@ -69,7 +69,7 @@
                         <li class="active" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">ELIMINAR DATOS <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#" onclick="eliminar()">CREDITO,PLACA,PRECIO</a></li>
+                                <li><a href="#" onclick="eliminar()">ELIMINAR REFERENCIAS</a></li>
                                 <!-- <li><a href="#">PLACAS</a></li> -->
                                 <li><a href="#" onclick="actu_equipo()">EQUIPO</a></li>
                             </ul>
@@ -101,6 +101,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
     <script src="js/alertify.min.js"></script>
     <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/eliminar.js"></script>
     <script src="js/altadatos.js"></script>
     <script src="js/operaciones.js"></script>
     <script src="js/funciones.js"></script>

@@ -36,8 +36,8 @@ if (!empty($_POST['credito3'])) {
 }
 if (!empty($_POST['credi'])) {
 	# code...
-	$credi=$_POST['credi'];
+	$credito=$_POST['credi'];
 	$lapso=$_POST['lapso'];
- 	mysql_query("INSERT INTO credito_tiempo VALUES ('id','$lapso','$credi')");
+ 	mysql_query("INSERT INTO credito_tiempo VALUES ('id','$lapso','$credito')");
 }
 ?>

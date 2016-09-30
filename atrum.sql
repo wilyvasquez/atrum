@@ -111,7 +111,7 @@ CREATE TABLE credito_tiempo
     ref_credito int,
     PRIMARY KEY (id_credito_tiempo),
     FOREIGN KEY(ref_tiempo) REFERENCES tiempo(id_tiempo)ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY(ref_credito) REFERENCES tiempo(id_tiempo)ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE moto_seguro
 (

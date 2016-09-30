@@ -200,7 +200,7 @@ function funtionanio(str)
       {
       if (xmlhttp.readyState==4 && xmlhttp.status==200)
       {
-      document.getElementById("anio").innerHTML=xmlhttp.responseText;
+      document.getElementById("plazo").innerHTML=xmlhttp.responseText;
       }
       }
       xmlhttp.open("GET","php/anio.php?c="+str,true);

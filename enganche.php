@@ -5,6 +5,6 @@
 	?>
 	<?php
 	while($fila = mysql_fetch_array($resultado)){	
-				echo "<option value='".$fila['enganche']."'>".$fila['enganche']."</option>";
+				echo "<option value='".$fila['id_enganche']."'>".$fila['enganche']."</option>";
 		}
 ?>
