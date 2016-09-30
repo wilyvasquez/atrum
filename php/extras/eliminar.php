@@ -103,6 +103,23 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12">
+          <h3><strong>ELIMINAR EMPLACAMIENTO</strong></h3>
+          <hr>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <div class="col-md-3"><label for="">EMPLACAMIENTO</label></div>
+                <div class="col-md-4">
+                    <select id="placa" name="placa" class="form-control" onchange="funciontipo(this.value)">
+                        <?php include("../placas.php") ?> 
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-info" onclick="eliminarplaca()" type="submit">Eliminar</button>
+                </div>
+            </div>
+        </div>
     </div><br>
     </div>
 </div>

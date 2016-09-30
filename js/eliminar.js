@@ -111,3 +111,24 @@ function eliminartiempo()
       }
     });
 }
+function eliminarplaca()
+{
+  var placa = document.getElementById('placa').value;
+  var par = 
+    {
+      "placa" : placa
+    };
+    $.ajax({
+      data: par,
+      url: 'php/equipo/eliminar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        alertify.success("Borrado Correctamente");
+        // $("#alta_personal").html(response);
+      }
+    });
+}

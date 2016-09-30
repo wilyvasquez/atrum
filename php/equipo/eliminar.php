@@ -23,4 +23,9 @@ if (!empty($_POST['credit']and$_POST['plazo'])) {
 	$plazo=$_POST['plazo'];
  	mysql_query("DELETE FROM credito_tiempo WHERE ref_tiempo=$plazo and ref_credito=$idcredito");
 }
+if (!empty($_POST['placa'])) {
+	# code...
+	echo $placa=$_POST['placa'];
+ 	mysql_query("DELETE FROM placas WHERE id_placas=$placa");
+}
 ?>
