@@ -269,7 +269,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                               <!--  <tr>
                                 <td>S/A</td>
                                 <td>0</td>
                                 <td>0</td>
@@ -301,7 +301,7 @@
                                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                     </button>
                                 </td>
-                              </tr>
+                              </tr> -->
                             </tbody>
                         </table>
                         <div class="row">

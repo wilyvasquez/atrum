@@ -34,6 +34,7 @@
       $credito = $credito1['tasa_base'];
       $base=($resanio*$credito);
       $resulseguro=($resul*0.16)+$resul;
+      // echo $base;
       $suma=($base*$resulseguro)+$resulseguro;
       ////////////////////////////////////////////
 

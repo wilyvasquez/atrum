@@ -7,8 +7,15 @@ $query2="SELECT * FROM anios where id_anios=$tiempo";
       $tiempore = $tiempo['anios'];
       $tiempomul = $tiempo['meses'];
 
+      $porce=$_POST['porcentaje'];
+      $query="SELECT * FROM enganche where id_enganche=$porce";
+      $resultado8 = mysql_query($query);  
+      $credito11 = mysql_fetch_array($resultado8);
+      $porcentaje = $credito11['enganche'];
+
       $moto=$_POST['moto'];
       $anio=$_POST['anio'];
+      // echo $anio;
       $credito=$_POST['credito'];
 
       $query10 = "SELECT * FROM moto_anio_precio INNER JOIN moto ON moto.id_moto= moto_anio_precio.ref_moto INNER JOIN anio_moto on anio_moto.id_anio_moto= moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto= moto_anio_precio.ref_precio WHERE moto_anio_precio.ref_moto=$moto AND moto_anio_precio.ref_anio=$anio";
@@ -17,7 +24,8 @@ $query2="SELECT * FROM anios where id_anios=$tiempo";
       $varvar = $apertura5['precio'];
       $iva=($varvar*0.16);
       $ivares=$iva+$varvar;
-      $enganche=$ivares*($_POST['porcentaje']/100);
+      $enganche=$ivares*($porcentaje/100);
+      // echo $_POST['porcentaje'];
       $base=$ivares-$enganche;
 
       $variable="SELECT * FROM tipo_credito where id_credito=$credito";
@@ -28,11 +36,12 @@ $query2="SELECT * FROM anios where id_anios=$tiempo";
       $importe=($tiempomul*$credito);
       $final=($base*$importe)+$base;
 
+
 echo "<div class='col-md-3'>
 	<label>FINANCIAMIENTO</label>        
 	</div>
 	<div class='col-md-9'>
-	<input type='text' id='financiamiento' name='financiamiento' value='".$tiempore,' con el ',$_POST['porcentaje']." % de enganche' class='form-control' onkeypress='letras()' onfocus='this.blur()'>
+	<input type='text' id='financiamiento' name='financiamiento' value='".$tiempore,' con el ',$porcentaje." % de enganche' class='form-control' onkeypress='letras()' onfocus='this.blur()'>
 	</div>
 	<div class='col-md-3' style='margin-top:5px'>
 	<label>ENGANCHE</label>        

@@ -5,13 +5,19 @@ include ("consultas.php");
       $anio=$_POST['anio'];
       $credito=$_POST['credito'];
 
+      $porce=$_POST['porcentaje'];
+      $query="SELECT * FROM enganche where id_enganche=$porce";
+      $resultado8 = mysql_query($query);  
+      $credito11 = mysql_fetch_array($resultado8);
+      $porcentaje = $credito11['enganche'];
+
       $query10 = "SELECT * FROM moto_anio_precio INNER JOIN moto ON moto.id_moto= moto_anio_precio.ref_moto INNER JOIN anio_moto on anio_moto.id_anio_moto= moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto= moto_anio_precio.ref_precio WHERE moto_anio_precio.ref_moto=$moto AND moto_anio_precio.ref_anio=$anio";
       $result6 = mysql_query($query10);  
       $apertura5 = mysql_fetch_array($result6);
       $varvar = $apertura5['precio'];
       $iva=($varvar*0.16);
       $ivares=$iva+$varvar;
-      $enganche=$ivares*($_POST['porcentaje']/100);
+      $enganche=$ivares*($porcentaje/100);
       $base=$ivares-$enganche;
       
   $variable="SELECT * FROM tipo_credito where id_credito=$credito";
