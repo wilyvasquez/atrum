@@ -11,7 +11,7 @@
             <div class="col-md-12">
                 <div class="col-md-3"><label for="">MOTOCICLETA</label></div>
                 <div class="col-md-4">
-                    <select id="" name="" class="form-control">
+                    <select id="" name="" class="form-control" onchange="funciontipo(this.value)">
                         <?php include("../moto.php") ?> 
                     </select>
                 </div>
@@ -23,8 +23,7 @@
                 <div class="col-md-12"><br>
                     <div class="col-md-3"><label for="">AÑO</label></div>
                     <div class="col-md-4">
-                        <select id="" name="" class="form-control">
-                            <?php include("/anio_moto.php") ?> 
+                        <select id="anio" name="anio" class="form-control">
                         </select>
                     </div>
                     <div class="col-md-2">
@@ -34,8 +33,8 @@
                 <div class="col-md-12"><br>
                     <div class="col-md-3"><label for="">SEGURO</label></div>
                     <div class="col-md-4">
-                        <select id="" name="" class="form-control">
-                            <?php include("/anio_moto.php") ?> 
+                        <select id="seguro1" name="seguro1" class="form-control">
+                            <?php include("seguro.php") ?> 
                         </select>
                     </div>
                     <div class="col-md-2">
@@ -45,13 +44,12 @@
             </div>
         </div>
         <div class="col-md-12"><br>
-        <!-- <div><label for="">PLACAS</label></div> -->
         <hr>
             <div class="col-md-12">
                 <div class="col-md-3"><label for="">CREDITO</label></div>
                 <div class="col-md-4">
-                    <select id="" name="" class="form-control">
-                        <?php include("../moto.php") ?> 
+                    <select id="" name="" class="form-control" onchange="funcionseguro(this.value);funciontiempo(this.value);funcionenganche(this.value)">
+                        <?php include("../credito.php") ?> 
                     </select>
                 </div>
                 <div class="col-md-2">
@@ -62,8 +60,7 @@
                 <div class="col-md-12"><br>
                     <div class="col-md-3"><label for="">SEGURO</label></div>
                     <div class="col-md-4">
-                        <select id="" name="" class="form-control">
-                            <?php include("/anio_moto.php") ?> 
+                        <select id="seguro" name="seguro" class="form-control">
                         </select>
                     </div>
                     <div class="col-md-2">
@@ -73,8 +70,7 @@
                 <div class="col-md-12"><br>
                     <div class="col-md-3"><label for="">AÑOS</label></div>
                     <div class="col-md-4">
-                        <select id="" name="" class="form-control">
-                            <?php include("/anio_moto.php") ?> 
+                        <select id="tiempo" name="tiempo" class="form-control">
                         </select>
                     </div>
                     <div class="col-md-2">
@@ -84,8 +80,7 @@
                 <div class="col-md-12"><br>
                     <div class="col-md-3"><label for="">ENGANCHE</label></div>
                     <div class="col-md-4">
-                        <select id="" name="" class="form-control">
-                            <?php include("/anio_moto.php") ?> 
+                        <select id="porcentaje" name="porcentaje" class="form-control">
                         </select>
                     </div>
                     <div class="col-md-2">
