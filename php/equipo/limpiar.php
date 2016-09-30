@@ -1,21 +1,6 @@
 <?php
- include("conexion.php");
- $contador=0;
- $totalarticulo=0;
- if (!empty($_POST['id'])) {
- 	# code...
- 	$id=$_POST['id'];
-	$query = "delete from accesorio where id_accesorio = $id";
-	$result = mysql_query($query);
- }
-if (!empty($_POST['accesorios'])) {
-	# code...
-	$accesorios=$_POST['accesorios'];
- 	$precio=$_POST['precio'];
- 	$cantidad=$_POST['cantidad'];
- 	$total=$precio*$cantidad;
- mysql_query("INSERT INTO accesorio VALUES ('id','$accesorios', '$precio','$cantidad','$total')");
-}
+include("../conexion.php");
+mysql_query("DELETE FROM accesorio");
 $query='select * from accesorio';
 $result = mysql_query($query);
 echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">
@@ -37,8 +22,8 @@ echo "<table data-toggle='table' data-pagination='true'
         </thead>
         <tbody>
         ";while ($registro = mysql_fetch_array($result)){
-	        $contador=$contador+1;
-	        $totalarticulo=$totalarticulo+$registro['total'];
+	        // $contador=$contador+1;
+	        // $totalarticulo=$totalarticulo+$registro['total'];
 	echo "
 	        <tr>
 		        <td>".$registro['nombre_accesorio']."</td>
@@ -46,7 +31,7 @@ echo "<table data-toggle='table' data-pagination='true'
 		        <td>".$registro['cantidad']."</td>
 		        <td>".$registro['total']."</td>
 		        <td>
-			        <button type='button' onclick='bajas(".$registro['id_accesorio'].");tablaprecio()' class='btn btn-default btn-xs'>
+			        <button type='button' class='btn btn-default btn-xs'>
 			        	<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>
 		        	</button>
 		        </td>
@@ -60,19 +45,19 @@ echo "<table data-toggle='table' data-pagination='true'
 		<h6>Total articulos</h6>        
 	    </div>
 	    <div class='col-md-2' style='margin-top:5px'>
-	    <input type='text' id='articulos' name='articulos' value='".$contador."' class='form-control' onfocus='this.blur()'/>
+	    <input type='text' id='articulos' name='articulos' value='0' class='form-control' onfocus='this.blur()'/>
 	    </div>
 	    <div class='col-md-1'>
 	    <h6>Total S/I.V.A</h6>
 	    </div>
 	    <div class='col-md-2' style='margin-top:5px'>
-	    <input type='text' id='iva' name='iva' value='".$totalarticulo."' class='form-control' onfocus='this.blur()'/>
+	    <input type='text' id='iva' name='iva' value='0' class='form-control' onfocus='this.blur()'/>
 	    </div>
 	    <div class='col-md-1' style='margin-top:5px'>
 	    <label><h6>Costo</h6></label>        
 	    </div>
 	    <div class='col-md-3' style='margin-top:5px'>
-	    <input type='text' id='costoarti' name='costoarti' value='' class='form-control' onfocus='this.blur()'/>
+	    <input type='text' id='costoarti' name='costoarti' value='0' class='form-control' onfocus='this.blur()'/>
     </div>
 		<div class='col-md-1' style='margin-top: 4px'>
         <button class='btn btn-danger' onclick='limpiar()' type='submit'>Limpiar</button>

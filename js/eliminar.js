@@ -132,3 +132,19 @@ function eliminarplaca()
       }
     });
 }
+function limpiar()
+{
+    $.ajax({
+      data: null,
+      url: 'php/equipo/limpiar.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        // alertify.success("Limpiado Correctamente");
+        $("#tabla").html(response);
+      }
+    });
+}

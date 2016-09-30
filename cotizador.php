@@ -308,7 +308,7 @@
                             <div class="col-md-2">
                             <h6>Total articulos</h6>        
                             </div>
-                            <div class="col-md-3" style="margin-top:5px">
+                            <div class="col-md-2" style="margin-top:5px">
                                 <input type="text" id="articulos" name="articulos" value="0" class="form-control" onfocus="this.blur()"/>
                             </div>
                             <div class="col-md-1">
@@ -322,6 +322,9 @@
                             </div>
                             <div class="col-md-3" style="margin-top:5px">
                                 <input type="text" id="costoarti" name="costoarti" value="0" class="form-control" onfocus="this.blur()"/>
+                            </div>
+                            <div class="col-md-1" style="margin-top: 4px">
+                                <button class="btn btn-danger" onclick="limpiar()" type="submit">Limpiar</button>
                             </div>
                         </div>
                        </div> 
@@ -401,6 +404,7 @@
     <script src="js/alertify.min.js"></script>
     <script src="js/funciones.js"></script>
     <script src="js/operaciones.js"></script>
+    <script src="js/eliminar.js"></script>
     <script src="js/bootstrap-table.min.js"></script>
     <script src="js/validaciones.js"></script>
     <script src="js/bootstrap.min.js"></script>
