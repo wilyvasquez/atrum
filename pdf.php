@@ -33,7 +33,9 @@ ob_start();
 <div style="background-image:url(images/fondo.jpg)">
 	<div><font size="2" face="sans-serif">En atencion a su amable solicitud tenemos el gusto de presentar la siguiente cotizacion</font></div>
 <div style="float:left;width:0px"><br><br>
-	<img src="images/contacto1.jpg">
+	<form action="" method="POST" enctype="multipart/form-data" >
+        <img src="php/foto.php?id=7" style="margin-left:20px;margin-top:10px"/>
+    </form>
 </div>
 <div style="float:left;width:400px;margin-left:300px">
 	<div><b><font size="2" face="sans-serif">CARACTERISTICAS TECNICAS:</font></b></div>
@@ -136,7 +138,7 @@ ob_start();
 						<thead>
 							<tr>
 								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">COSTO MOTOCICLETA</font></b></td>
-								<td><b><font size="1" face="sans-serif">var</font></b></td>
+								<td><font size="1" face="sans-serif">var</font></td>
 							</tr>
 						</thead>
 						<tbody >
@@ -148,7 +150,7 @@ ob_start();
 						<tbody style="border: thick solid;border-width: 1px">
 							<tr>
 								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">SUB TOTAL</font></b></td>
-								<td><font size="1" face="sans-serif">var</font></td>
+								<td><b><font size="1" face="sans-serif">var</font></b></td>
 							</tr>							
 						</tbody>
 					</table>
@@ -193,14 +195,14 @@ ob_start();
 						<tbody style="border: thick solid;border-width: 1px;">
 							<tr>
 								<td><b><font style="margin-left: 5px" size="1" face="sans-serif"><?= $hola['cantidad'] ?></font></b></td>
-								<td align="right"><font style="margin-right:10px" size="1" face="sans-serif"><?= $hola['cantidad'] ?></font></td>
+								<td align="right"><font size="1" face="sans-serif"><?= $hola['cantidad'] ?></font></td>
 							</tr>
 						</tbody>
 						<?php }?>
 						<tbody>
 							<tr>
 								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">SUB TOTAL</font></b></td>
-								<td align="right"><font style="margin-right:10px" size="1" face="sans-serif">var</font></td>
+								<td align="right"><b><font style="margin-right:10px" size="1" face="sans-serif">var</font></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -237,11 +239,11 @@ ob_start();
 	<b><font size="1" face="sans-serif" style="margin-left:288px">BENEFICIOS:</font></b>
 </div>
 <div>
-	<img src="images/uno.jpg" width="300px">
-	<img src="images/dos.jpg" width="250px" style="margin-left:60px">
+	<img style="position:absolute;margin-left: 20px;margin-top: 100px" src="images/uno.jpg" width="300px">
+	<img style="position:absolute;margin-left: 400px;margin-top: 100px" src="images/dos.jpg" width="250px" style="margin-left:60px">
 </div>
 <div>
-	<center><img src="images/final.jpg" width="500px"></center>
+	<center><img style="position:absolute;margin-left: 100px;margin-top: 200px" src="images/final.jpg" width="500px"></center>
 </div>
 </body>
 </html>
