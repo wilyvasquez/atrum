@@ -526,39 +526,57 @@ function eliminar()
       }
     });
 }
-function generarpdf()
-{   
-  var nombre = document.getElementById('nombre').value;
-  var telefono = document.getElementById('telefono').value;
-  window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
-  // var fecha = document.getElementById('fecha').value;
-    var par = 
-    {
-      "nombre" : nombre,
-      "telefono" : telefono,
-      // "fecha" : fecha
-    };
-    $.ajax({
-      data: par,
-      url: 'prueba.php',
-      type: 'post',
-      beforeSend: function()
-      { alert(nombre);
-      },
-      success: function(response)
-      {
-        // window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
-        // alertify.success("Actualizado Correctamente");
-        // $("#precios").html(response);
-      }
-    });
-}
+// function generarpdf()
+// {   
+//   var nombre = document.getElementById('nombre').value;
+//   var telefono = document.getElementById('telefono').value;
+//   window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
+//   // var fecha = document.getElementById('fecha').value;
+//     var par = 
+//     {
+//       "nombre" : nombre,
+//       "telefono" : telefono,
+//       // "fecha" : fecha
+//     };
+//     $.ajax({
+//       data: par,
+//       url: 'prueba.php',
+//       type: 'post',
+//       beforeSend: function()
+//       { alert(nombre);
+//       },
+//       success: function(response)
+//       {
+//         // window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
+//         // alertify.success("Actualizado Correctamente");
+//         // $("#precios").html(response);
+//       }
+//     });
+// }
 function abrir()
 {
     var nombre = document.getElementById('nombre').value;
     var telefono = document.getElementById('telefono').value;
     var fecha = document.getElementById('fecha').value;
+    var credito = document.getElementById('credito').value;
+    var moto = document.getElementById('moto').value;
+    var financiamiento = document.getElementById('financiamiento').value;
+    var seguro = document.getElementById('seguro').value;
+    var tiempo = document.getElementById('tiempo').value;
+    var anio = document.getElementById('anio').value;
+    var engancheresul = document.getElementById('engancheresul').value;
+
     opciones = "toolbar=yes,scrollbars=yes,resizable=yes,_target"
-    // alert(nombre);
-    window.open("pdf.php?nombre="+nombre+"&telefono="+telefono+"&fecha="+fecha,opciones);
+    // alert(credito);
+    window.open("pdf.php?nombre="+nombre+
+                  "&telefono="+telefono+
+                  "&fecha="+fecha+
+                  "&credito="+credito+
+                  "&moto="+moto+
+                  "&financiamiento="+financiamiento+
+                  "&seguro="+seguro+
+                  "&tiempo="+tiempo+
+                  "&anio="+anio+
+                  "&engancheresul="+engancheresul
+                  ,opciones);
 }

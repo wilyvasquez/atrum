@@ -1,5 +1,6 @@
 <?php 
 include("php/conexion.php");
+include("php/consultas_pdf.php");
 $query='select * from accesorio';
 $result = mysql_query($query);
 $query1='select * from accesorio';
@@ -21,7 +22,7 @@ ob_start();
 	<img style="margin-left:50px" src="images/texto.jpg" width="400px" height="40px">
 	<img style="margin-left:10px" src="images/suzuki.jpg" width="200px" height="90px">
 </div><br>
-<div style="margin-left:10.5cm">
+<div style="margin-left:10cm">
 	<font size="2" face="sans-serif">Oaxaca de Juarez, Oax.,a</font>
 	<font size="2" face="sans-serif"><?= $_GET['fecha'] ?></font>
 </div>
@@ -30,8 +31,8 @@ ob_start();
 <b>
 	<font size=2 face="sans-serif">CELULAR:</font>
 	<font size=2 face="sans-serif"><?= $_GET['telefono'] ?></font>
-	<font size=3 face="sans-serif" style="margin-left:350px">TIPO DE CREDITO:</font>
-	<font size=3 face="sans-serif">variable</font>	
+	<font size=2 face="sans-serif" style="margin-left:290px">TIPO DE CREDITO:</font>
+	<font size=3 face="sans-serif"><?= $credito ?></font>	
 </b>
 <div>
 	<b><font size="3">P R E S E N T E</font></b>
@@ -48,51 +49,51 @@ ob_start();
 	<div><b><font size="2" face="sans-serif">CARACTERISTICAS TECNICAS:</font></b></div>
 	<div>
 		<b><font size="1" face="sans-serif">TIPO DE MOTO:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:110px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:110px"><?= $moto['tipo_moto']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">MOTOR:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:148px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:148px"><?= $moto['motor']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">TRANSMISION:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:113px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:113px"><?= $moto['trasmision']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">TIPO DE MOTOR:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:103px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:103px"><?= $moto['tipo_motor']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">NUMERO DE CILINDROS:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:62px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:62px"><?= $moto['numero_cilindros']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">DIAMETRO:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:132px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:132px"><?= $moto['diametro']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">CARRERA:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:136px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:136px"><?= $moto['carrera']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">DESPLAZAMIENTO:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:91px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:91px"><?= $moto['desplazamiento']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">RELACION DE COMPRESION:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:41px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:41px"><?= $moto['relacion_compresion']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">SISTEMA DE LUBRICACION:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:48px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:48px"><?= $moto['sistema_lubricacion']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">SISTEMA DE COMBUSTIBLE:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:45px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:45px"><?= $moto['sistema_combustible']?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">SISTEMA DE ARRANQUE:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:61px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:61px"><?= $moto['sistema_arranque']?></font>
 	</div>
 </div>
 </div>
@@ -100,15 +101,15 @@ ob_start();
 <div>
 	<div>
 		<b><font size="1" face="sans-serif">FINANCIAMIENTO A:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:20px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:20px"><?= $_GET['financiamiento'] ?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif" >TIPO DE SEGURO:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:31px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:31px"><?= $res ?></font>
 	</div>
 	<div>
 		<b><font size="1" face="sans-serif">FORMA DE PAGOS:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:26px">variable</font>
+		<font size="1" face="sans-serif" style="margin-left:26px"><?= $res1 ?></font>
 	</div><br>
 </div>
 <div>
@@ -126,9 +127,9 @@ ob_start();
 						</thead>
 						<tbody style="border: thick solid;border-width: 1px">
 							<tr>
-								<td><font style="margin-left: 5px" size="1" face="sans-serif">var</font></td>
-								<td><font size="1" face="sans-serif">var</font></td>
-								<td align="right"><font style="margin-right: 10px" size="1" face="sans-serif">var</font></td>
+								<td><font style="margin-left: 5px" size="1" face="sans-serif"><?= $moto['modelo']?></font></td>
+								<td><font size="1" face="sans-serif"><?=  $apertura['anio'] ?></font></td>
+								<td align="right"><font style="margin-right: 10px" size="1" face="sans-serif">$ <?= $_GET['engancheresul'] ?></font></td>
 							</tr>
 						</tbody>
 						<tbody style="border: thick solid;border-width: 1px">
@@ -145,19 +146,19 @@ ob_start();
 						<thead>
 							<tr>
 								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">COSTO MOTOCICLETA</font></b></td>
-								<td><font size="1" face="sans-serif">var</font></td>
+								<td><font size="1" face="sans-serif">$ <?= $apertura['precio'] ?></font></td>
 							</tr>
 						</thead>
 						<tbody >
 							<tr>
 								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">COSTO SEGURO</font></b></td>
-								<td><font size="1" face="sans-serif">var</font></td>
+								<td><font size="1" face="sans-serif">$ <?= $resul ?></font></td>
 							</tr>
 						</tbody>
 						<tbody style="border: thick solid;border-width: 1px">
 							<tr>
 								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">SUB TOTAL</font></b></td>
-								<td><b><font size="1" face="sans-serif">var</font></b></td>
+								<td><b><font size="1" face="sans-serif">$ <?= $apertura['precio']+ $resul ?></font></b></td>
 							</tr>							
 						</tbody>
 					</table>

@@ -8,7 +8,7 @@ $resultado= mysql_query($consulta) or die (mysql_error());
 	echo "<label for=''>TIEMPO</label>";
     echo " <select name='tiempo' id='tiempo' class='form-control'>";
 while($fila = mysql_fetch_array($resultado)){
-	echo "<option value='".$fila['id_credito']."'>".$fila['tiempo']."</option>";	
+	echo "<option value='".$fila['id_tiempo']."'>".$fila['tiempo']."</option>";	
 }
     echo "</select>";
 mysql_close($conexion);
