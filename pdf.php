@@ -1,4 +1,5 @@
 <?php 
+$importe=0;
 include("php/conexion.php");
 include("php/consultas_pdf.php");
 $query='select * from accesorio';
@@ -134,9 +135,9 @@ ob_start();
 						</tbody>
 						<tbody style="border: thick solid;border-width: 1px">
 							<tr>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">APERTURA CREDITO</font></b></td>
-								<td><font size="1" face="sans-serif">var</font></td>
-								<td align="right"><font style="margin-right: 10px" size="1" face="sans-serif">var</font></td>
+								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">APERTURA DE CREDITO</font></b></td>
+								<td><font size="1" face="sans-serif">Descuento de <?= $descuento ?> %</font></td>
+								<td align="right"><font style="margin-right: 10px" size="1" face="sans-serif">$ <?= ($costo*$descuento)/100 ?></font></td>
 							</tr>			
 						</tbody>
 					</table>
@@ -170,7 +171,7 @@ ob_start();
 		<thead>
 			<tr>
 				<td>
-					<table style="border: thick solid ; border-collapse: collapse;border-width: 1px;width: 100%">
+					<table style="border: thick solid ; border-collapse: collapse;border-width: 1px;width: 428px">
 						<thead>
 							<tr>
 								<th align="left"><b><font style="margin-left: 5px" size="1" face="sans-serif">ACCESORIOS</font></b></th>
@@ -192,7 +193,7 @@ ob_start();
 					</table>
 				</td>
 				<td>
-					<table style="border: thick solid ; border-collapse: collapse;border-width: 1px;width: 50%">
+					<table style="border: thick solid ; border-collapse: collapse;border-width: 1px;width: 75%;margin-left: 140px">
 						<thead>
 							<tr>
 								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">CANTIDAD</font></b></td>
@@ -200,17 +201,20 @@ ob_start();
 							</tr>
 						</thead>
 						<?php while ($hola = mysql_fetch_array($accesorio)) { ?>
-						<tbody style="border: thick solid;border-width: 1px;">
-							<tr>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif"><?= $hola['cantidad'] ?></font></b></td>
-								<td align="right"><font size="1" face="sans-serif"><?= $hola['cantidad'] ?></font></td>
-							</tr>
-						</tbody>
-						<?php }?>
 						<tbody>
 							<tr>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">SUB TOTAL</font></b></td>
-								<td align="right"><b><font style="margin-right:10px" size="1" face="sans-serif">var</font></b></td>
+								<td><font style="margin-left: 20px" size="1" face="sans-serif"><?= $hola['cantidad'] ?></font></td>
+								<td align="left"><font style="margin-left: 20px" size="1" face="sans-serif">$ <?= $hola['total'] ?></font></td>
+							</tr>
+						</tbody>
+								<?php 
+									$importe=$importe+$hola['total'];
+								 ?>
+						<?php }?>
+						<tbody style="border: thick solid;border-width: 1px;">
+							<tr>
+								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">SUB TOTAL</font></b></td>	
+								<td align="left"><b><font style="margin-left:20px" size="1" face="sans-serif">$ <?= $importe ?></font></b></td>
 							</tr>
 						</tbody>
 					</table>
@@ -218,40 +222,34 @@ ob_start();
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td align="right">
-					<b><font size="1" face="sans-serif">PAGO INICIAL DE:</font></b>
-					<b><font style="margin-right:10px" size="1" face="sans-serif">$12123.2131</font></b>
-				</td>
-				<td align="left">
-					<b><font style="margin-left: 15px" size="1" face="sans-serif">TOTAL:</font></b>
-					<b><font style="margin-left: 40px" size="1" face="sans-serif">$12123.21</font></b>
-				</td>
-			</tr>
 		</tbody>
 	</table>
+	<b><font style="margin-left: 250px" size="2" face="sans-serif">PAGO INICIAL DE:</font></b>
+	<b><font style="" size="2" face="sans-serif">$ <?= $_GET['engancheresul']+($costo*$descuento)/100 ?></font></b>
+	<b><font style="margin-left: 90px" size="2" face="sans-serif">TOTAL:</font></b>
+	<b><font size="2" face="sans-serif">$ <?= $apertura['precio']+ $resul+$importe ?></font></b>
 </div><br>
 </div>
 <div>
 	<b><font size="1" face="sans-serif">ASESOR DE VENTAS:</font></b>
-	<font size="1" face="sans-serif">variable</font>
+	<b><font size="1" face="sans-serif">variable:</font></b>
+	<!-- <font size="1" face="sans-serif">variable</font> -->
 </div>	
 <div>
 	<b><font size="1" face="sans-serif">CORREO:</font></b>
-	<font size="1" face="sans-serif" style="margin-left:62px">variable</font>
-	<b><font size="1" face="sans-serif" style="margin-left:202px">TELEFONO:</font></b>
-	<font size="1" face="sans-serif">variable</font>
+	<b><font size="1" face="sans-serif">variable:</font></b>
+	<b><font style="margin-left: 190px" size="1" face="sans-serif">TELEFONO:</font></b>
+	<b><font size="1" face="sans-serif">variable:</font></b><br>
+	<!-- <font size="1" face="sans-serif" style="margin-left:62px">variable</font> -->
+	<!-- <b><font size="1" face="sans-serif" style="margin-left:202px">TELEFONO:</font></b> -->
+	<!-- <font size="1" face="sans-serif">variable</font> -->
 </div>
 <div>
-	<b><font size="1" face="sans-serif">REQUISITOS:</font></b>
-	<b><font size="1" face="sans-serif" style="margin-left:288px">BENEFICIOS:</font></b>
+	<!-- <b><font size="1" face="sans-serif">REQUISITOS:</font></b> -->
+	<!-- <b><font size="1" face="sans-serif" style="margin-left:288px">BENEFICIOS:</font></b> -->
 </div>
-<div>
-	<img style="position:absolute;margin-left: 20px;margin-top: 100px" src="images/uno.jpg" width="300px">
-	<img style="position:absolute;margin-left: 400px;margin-top: 100px" src="images/dos.jpg" width="250px" style="margin-left:60px">
-</div>
-<div>
-	<center><img style="position:absolute;margin-left: 100px;margin-top: 200px" src="images/final.jpg" width="500px"></center>
+<div style="background-image:url(images/final.jpg,);">
+	<!-- <center><img style="position:relative;margin-left: 60px;margin-top: 155px" src="images/final.jpg" width="500px"></center> <-->
 </div>
 </body>
 </html>

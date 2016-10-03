@@ -13,6 +13,8 @@ $anio=$_GET['anio'];
     $resul = mysql_query($query);  
     $res = mysql_fetch_array($resul);
     $credito = $res['nombre_credito'];
+    $descuento = $res['descuento_aper'];
+    $costo = $res['costo_apertura'];
 
     $query1="SELECT * FROM moto where id_moto=$moto";
     $resul1 = mysql_query($query1);  
