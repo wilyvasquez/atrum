@@ -4,6 +4,15 @@ $query='select * from accesorio';
 $result = mysql_query($query);
 $query1='select * from accesorio';
 $accesorio = mysql_query($query1);
+
+// $id = $_GET['id'];
+$id = 7;
+
+$consulta = "SELECT imagen FROM moto WHERE id_moto = $id";
+$imagen = mysql_query($consulta);
+$datos = mysql_fetch_array($imagen);
+$ruta = "php/imagenes/" . $datos['imagen'];
+
 ob_start();
 ?>
 <html>
@@ -12,15 +21,15 @@ ob_start();
 	<img style="margin-left:50px" src="images/texto.jpg" width="400px" height="40px">
 	<img style="margin-left:10px" src="images/suzuki.jpg" width="200px" height="90px">
 </div><br>
-<div style="margin-left:10cm">
+<div style="margin-left:10.5cm">
 	<font size="2" face="sans-serif">Oaxaca de Juarez, Oax.,a</font>
-	<font size="2" face="sans-serif"></font>
+	<font size="2" face="sans-serif"><?= $_GET['fecha'] ?></font>
 </div>
-<div><font size="2" face="sans-serif">variable</font></div>
+<div><font size="2" face="sans-serif"><?= $_GET['nombre'] ?></font></div>
 <div>
 <b>
 	<font size=2 face="sans-serif">CELULAR:</font>
-	<font size=2 face="sans-serif">variable</font>
+	<font size=2 face="sans-serif"><?= $_GET['telefono'] ?></font>
 	<font size=3 face="sans-serif" style="margin-left:350px">TIPO DE CREDITO:</font>
 	<font size=3 face="sans-serif">variable</font>	
 </b>
@@ -33,9 +42,7 @@ ob_start();
 <div style="background-image:url(images/fondo.jpg)">
 	<div><font size="2" face="sans-serif">En atencion a su amable solicitud tenemos el gusto de presentar la siguiente cotizacion</font></div>
 <div style="float:left;width:0px"><br><br>
-	<form action="" method="POST" enctype="multipart/form-data" >
-        <img src="php/foto.php?id=7" style="margin-left:20px;margin-top:10px"/>
-    </form>
+        <img src="<?= $ruta ?>" style="margin-left:20px;margin-top:10px"/>
 </div>
 <div style="float:left;width:400px;margin-left:300px">
 	<div><b><font size="2" face="sans-serif">CARACTERISTICAS TECNICAS:</font></b></div>

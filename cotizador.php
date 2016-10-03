@@ -206,14 +206,14 @@
                         <div class="col-md-3" style="margin-top:5px">
                             <div class="input-group">
                                 <span class="input-group-addon">#</span>
-                                <input type="text" id="telefono" name="telefono" value="" class="form-control" onkeypress="numeros()" required/> 
+                                <input type="text" id="telefono" name="telefono" value="" class="form-control" onkeypress="numeros()"> 
                             </div>
                         </div>
                         <div class="col-md-3" style="margin-top:5px">
                             <label>CLIENTE</label>        
                         </div>
                         <div class="col-md-3" style="margin-top:5px">
-                            <input type="text" id="nombre" name="nombre" value="" class="form-control" onkeypress='letras()' required/>
+                            <input type="text" id="nombre" name="nombre" value="" class="form-control" onkeypress='letras()'>
                         </div>
                     </div><!-- fin resultados -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
@@ -268,41 +268,6 @@
                                 </th>
                             </tr>
                             </thead>
-                            <tbody>
-                               <!--  <tr>
-                                <td>S/A</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>
-                                    <button type="button" class="btn btn-default btn-xs">
-                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                    </button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>S/A</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>
-                                    <button type="button" class="btn btn-default btn-xs">
-                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                    </button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>S/A</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>
-                                    <button type="button" class="btn btn-default btn-xs">
-                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                    </button>
-                                </td>
-                              </tr> -->
-                            </tbody>
                         </table>
                         <div class="row">
                             <div class="col-md-2">
@@ -381,7 +346,7 @@
             </div>
         </div>
         <div class="col-md-2" style="margin-top:27px">
-            <button type="button" class="btn btn-info">General PDF !</button>
+            <button type="button" onclick="abrir()" class="btn btn-info">General PDF !</button>
         </div>
     </div>
     </div> <!-- fin row 1 -->
@@ -402,6 +367,7 @@
 	<script src="js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
     <script src="js/alertify.min.js"></script>
+    <script src="js/altadatos.js"></script>
     <script src="js/funciones.js"></script>
     <script src="js/operaciones.js"></script>
     <script src="js/eliminar.js"></script>

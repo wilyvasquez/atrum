@@ -526,3 +526,39 @@ function eliminar()
       }
     });
 }
+function generarpdf()
+{   
+  var nombre = document.getElementById('nombre').value;
+  var telefono = document.getElementById('telefono').value;
+  window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
+  // var fecha = document.getElementById('fecha').value;
+    var par = 
+    {
+      "nombre" : nombre,
+      "telefono" : telefono,
+      // "fecha" : fecha
+    };
+    $.ajax({
+      data: par,
+      url: 'prueba.php',
+      type: 'post',
+      beforeSend: function()
+      { alert(nombre);
+      },
+      success: function(response)
+      {
+        // window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
+        // alertify.success("Actualizado Correctamente");
+        // $("#precios").html(response);
+      }
+    });
+}
+function abrir()
+{
+    var nombre = document.getElementById('nombre').value;
+    var telefono = document.getElementById('telefono').value;
+    var fecha = document.getElementById('fecha').value;
+    opciones = "toolbar=yes,scrollbars=yes,resizable=yes,_target"
+    // alert(nombre);
+    window.open("pdf.php?nombre="+nombre+"&telefono="+telefono+"&fecha="+fecha,opciones);
+}

@@ -1,5 +1,9 @@
 <?php
 include("conexion.php");
+
+$meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+$fecha=date('d').' de '.$meses[date('n')-1]. ' de '.date('Y');
+
 $tiempo=$_POST['tiempo'];
 $query2="SELECT * FROM anios where id_anios=$tiempo";
       $result = mysql_query($query2);  
@@ -94,5 +98,8 @@ echo "<div class='col-md-3'>
 	</div>
 	<div class='col-md-3' style='margin-top:5px'>
 	<input type='text' id='nombre' name='nombre' value='' class='form-control' onkeypress='letras()' required/>
+	</div>
+	<div style='display:none'>
+		<input type='text' id='fecha' name='fecha' value='".$fecha."'>
 	</div>";
 ?>

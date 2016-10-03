@@ -33,8 +33,7 @@ CREATE TABLE moto
     sistema_lubricacion varchar(50),
     sistema_combustible varchar(50),
     sistema_arranque varchar(50),
-    tipo_img char(10),
-    foto mediumblob,
+    imagen varchar(255),
     PRIMARY KEY (id_moto)
 );
 CREATE TABLE anio_moto

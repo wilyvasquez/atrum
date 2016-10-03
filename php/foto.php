@@ -1,21 +1,18 @@
 <?php
-// Conexion a la base de datos
-mysql_connect("localhost", "root", "") or die(mysql_error());
-mysql_select_db("suzuki") or die(mysql_error());
+//conexion a la base de datos
+mysql_connect("localhost", "root", "") or die(mysql_error()) ;
+mysql_select_db("suzuki") or die(mysql_error()) ;
 
-if ($_GET['id'] > 0)
-{
-    // Consulta de búsqueda de la imagen.
-    $id=$_GET['id'];
-    $consulta = "SELECT foto, tipo_img FROM moto WHERE id_moto=$id";
-    $resultado = @mysql_query($consulta) or die(mysql_error());
-    $datos = mysql_fetch_assoc($resultado);
+//si la variable imagen no ha sido definida nos dara un advertencia.
+$id = $_GET['id'];
 
-    $foto = $datos['foto']; // Datos binarios de la foto.
-    $tipo = $datos['tipo_img']; //alta_equipo Mime Tid_equipo de la foto.
-    // Mandamos las cabeceras al navegador indicando el tipo de datos que vamos a enviar.
-    header("Content-type: $tipo");
-    // A continuación enviamos el contenido binario de la foto.
-    echo $foto;
-}
+//vamos a crear nuestra consulta SQL
+$consulta = "SELECT imagen FROM moto WHERE id_moto = $id";
+$imagen = mysql_query($consulta);
+$datos = mysql_fetch_array($imagen);
+$ruta = "php/imagenes/" . $datos['imagen'];
+
+//ahora solamente debemos mostrar la imagen
+// echo "<img src='$ruta' />";
+
 ?>
