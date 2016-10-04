@@ -237,19 +237,29 @@ ob_start();
 </div>	
 <div>
 	<b><font size="1" face="sans-serif">CORREO:</font></b>
-	<b><font size="1" face="sans-serif">variable:</font></b>
+	<b><font size="1" face="sans-serif">variable</font></b>
 	<b><font style="margin-left: 190px" size="1" face="sans-serif">TELEFONO:</font></b>
-	<b><font size="1" face="sans-serif">variable:</font></b><br>
+	<b><font size="1" face="sans-serif">variable</font></b>
+	<b><font style="margin-left: 70px" size="1" face="sans-serif">CELULAR:</font></b>
+	<b><font size="1" face="sans-serif">variable</font></b><br>
+	<b><font size="1" face="sans-serif">REQUISITOS:</font></b>
+	<b><font style="margin-left: 216px" size="1" face="sans-serif">BENEFICIOS:</font></b>
 	<!-- <font size="1" face="sans-serif" style="margin-left:62px">variable</font> -->
 	<!-- <b><font size="1" face="sans-serif" style="margin-left:202px">TELEFONO:</font></b> -->
 	<!-- <font size="1" face="sans-serif">variable</font> -->
 </div>
 <div>
+	<h6>
+		1.-Pago de afiliacion<br>
+		2.-Credencial de elector IFE o INE vigente<br>
+	</h6>
+</div>
+<div>
 	<!-- <b><font size="1" face="sans-serif">REQUISITOS:</font></b> -->
 	<!-- <b><font size="1" face="sans-serif" style="margin-left:288px">BENEFICIOS:</font></b> -->
-</div>
-<div style="background-image:url(images/final.jpg,);">
-	<!-- <center><img style="position:relative;margin-left: 60px;margin-top: 155px" src="images/final.jpg" width="500px"></center> <-->
+</div><br>
+<div>
+	<img src="images/final.jpg" alt="" width="550px" style="margin-left: 80px;margin-top: 130px;position: absolute;">
 </div>
 </body>
 </html>

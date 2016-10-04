@@ -82,6 +82,29 @@ CREATE TABLE tipo_credito
     costo_apertura float,
     PRIMARY KEY (id_credito)
 );
+CREATE TABLE requisitos
+(
+    id_requisito int not null AUTO_INCREMENT,
+    requisito varchar(255),
+    PRIMARY KEY (id_requisito)
+);
+CREATE TABLE beneficios
+(
+    id_beneficios int not null AUTO_INCREMENT,
+    beneficios varchar(255),
+    PRIMARY KEY (id_beneficios)
+);
+CREATE TABLE crerebe
+(
+    id_crerebe int not null AUTO_INCREMENT,
+    ref_credito int,
+    ref_requisito int,
+    ref_beneficio int,
+    PRIMARY KEY (id_crerebe),
+    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_requisito) REFERENCES requisitos(id_requisito)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_beneficio) REFERENCES beneficios(id_beneficios)ON DELETE CASCADE ON UPDATE CASCADE
+);
 CREATE TABLE enganche
 (
     id_enganche int not null AUTO_INCREMENT,
