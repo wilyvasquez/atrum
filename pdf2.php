@@ -9,6 +9,12 @@ $consulta = "SELECT imagen FROM moto WHERE id_moto = $id";
 $imagen = mysql_query($consulta);
 $datos = mysql_fetch_array($imagen);
 $ruta = "php/imagenes/" . $datos['imagen'];
+
+$requisitos="SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON
+	beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito=8";
+$query = mysql_query($requisitos);
+$resultado = mysql_fetch_array($query);
+
         $pdf = new FPDF();
         $pdf->AddPage();
 
@@ -143,20 +149,20 @@ $ruta = "php/imagenes/" . $datos['imagen'];
 		$pdf->SetFont('Arial','B',10);
 		$pdf->Cell(5, 6, 'FINANCIAMIENTO A:', 0 , 1);
 
-		$pdf->SetXY(15, 150);
+		$pdf->SetXY(15, 149);
 		$pdf->SetFont('Arial','B',10);
 		$pdf->Cell(5, 6, 'TIPO DE SEGURO:', 0 , 1);
 
-		$pdf->SetXY(15, 155);
+		$pdf->SetXY(15, 153);
 		$pdf->Cell(5, 6, 'FORMA DE PAGOS:', 0 , 1);
 
 		$pdf->SetXY(60, 145);
 		$pdf->SetFont('Arial','',9);
 		$pdf->Cell(5, 6, utf8_decode("var"), 0 , 1);
-		$pdf->SetXY(60, 150);
-		$pdf->Cell(5, 6, "var", 0 , 1);////////// tipo de seguro
+		$pdf->SetXY(60, 149);
+		$pdf->Cell(5, 6, "var", 0 , 1);
 
-		$pdf->SetXY(60, 155);
+		$pdf->SetXY(60, 153);
 		$pdf->Cell(5, 6, "var", 0 , 1);
 		/////////////////////////////////
 
@@ -291,61 +297,53 @@ $ruta = "php/imagenes/" . $datos['imagen'];
 
 		/////////////////////////////////////
 
-		$pdf->SetXY(15, 232);
+		$pdf->SetXY(10, 232);
 		$pdf->SetFont('Arial','B',8);
 		$pdf->Cell(5, 6, 'ASESOR DE VENTAS:', 0 , 1);
 
 		$pdf->SetXY(47, 232);
 		$pdf->Cell(5, 6,"var", 0 , 1);
 
-		$pdf->SetXY(15, 235);
+		$pdf->SetXY(10, 235);
 		$pdf->Cell(5, 6, 'CORREO:', 0 , 1);
 
 		$pdf->SetXY(47, 235);
 		$pdf->Cell(5, 6,"var", 0 , 1);
 
-		$pdf->SetXY(15, 238);
+		$pdf->SetXY(10, 238);
 		$pdf->Cell(5, 6, 'REQUISITOS:', 0 , 1);
-		$pdf->SetXY(15, 241);
+		// $pdf->SetXY(15, 241);
+		$resultado = mysql_query("SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito=8");
 		$pdf->SetFont('Arial','',7);
-		$pdf->Cell(5, 6, utf8_decode('1.-PAGO DE AFILIACIÓN.'), 0 , 1);
+		$pdf->SetXY(10,243);
+		while($papel = mysql_fetch_array($resultado)){
+			$pdf->Cell(60,2.4,$papel['requisito'],0,2);
+		} 
 
-		$pdf->SetXY(15, 244);
-		$pdf->Cell(5, 6, '2.-CREDENCIAL DE ELECTOR IFE O INE VIGENTE.', 0 , 1);
-
-		$pdf->SetXY(15, 247);
-		$pdf->Cell(5, 6, '3.-COMPROBANTE DE DOMICILIO NO MAYOR A 3 MESES.', 0 , 1);
-
-		$pdf->SetXY(15, 250);
-		$pdf->Cell(5, 6, '4.-CREDENCIAL DE SINDICALIZADO O CARTA COMPROBANTE DEL MISMO.', 0 , 1);
-		$pdf->SetXY(15, 253);
-		$pdf->Cell(5, 6, '4.-CREDENCIAL DE SINDICALIZADO O CARTA COMPROBANTE DEL MISMO.', 0 , 1);
-		$pdf->SetXY(15, 256);
-		$pdf->Cell(5, 6, '4.-CREDENCIAL DE SINDICALIZADO O CARTA COMPROBANTE DEL MISMO.', 0 , 1);
-		$pdf->SetXY(15, 259);
-		$pdf->Cell(5, 6, '4.-CREDENCIAL DE SINDICALIZADO O CARTA COMPROBANTE DEL MISMO.', 0 , 1);
-		$pdf->SetXY(15, 262);
-		$pdf->Cell(5, 6, '4.-CREDENCIAL DE SINDICALIZADO O CARTA COMPROBANTE DEL MISMO.', 0 , 1);
-		$pdf->SetXY(15, 265);
-		$pdf->Cell(5, 6, '4.-CREDENCIAL DE SINDICALIZADO O CARTA COMPROBANTE DEL MISMO.', 0 , 1);
-
-		$pdf->SetXY(120, 232);
+		$pdf->SetXY(115, 232);
 		$pdf->SetFont('Arial','B',8);
 		$pdf->Cell(5, 6, utf8_decode('TELÉFONO:'), 0 , 1);
 
 		$pdf->SetXY(140, 232);
 		$pdf->Cell(5, 6,"var", 0 , 1);
 
-		$pdf->SetXY(120, 235);
+		$pdf->SetXY(115, 235);
 		$pdf->Cell(5, 6, 'CELULAR:', 0 , 1);
 
 		$pdf->SetXY(140, 235);
 		$pdf->Cell(5, 6,"var", 0 , 1);
 
-		$pdf->SetXY(120, 238);
+		$pdf->SetXY(115, 238);
 		$pdf->Cell(5, 6, 'BENEFICIOS:', 0 , 1);
+		$resultado = mysql_query("SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito=9");
+		$pdf->SetFont('Arial','',7);
+		$pdf->SetXY(115,243);
+		while($papel = mysql_fetch_array($resultado)){
+			$pdf->Cell(30,2.4,$papel['beneficios'],0,2);
+		} 
 
 		$pdf->SetXY(15,270);
+		$pdf->SetFont('Arial','B',7);
 		$pdf->Cell(5, 6, 'JUEGO EN ORIGINAL Y COPIA.', 0 , 2);
 
 		$pdf->SetXY(120,267);
