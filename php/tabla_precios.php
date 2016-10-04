@@ -35,7 +35,7 @@ include ("consultas.php");
     $segurosemanas=$suma/52;
     $seguroquincena=$suma/24;
     $seguromeses=$suma/12;
-
+    // echo $final;
     include ("precio_accesorio.php");
     $articulosema=$totalarticulo/52;
     $articuloquin=$totalarticulo/24;
@@ -79,5 +79,10 @@ include ("consultas.php");
                     <td>".round($totalmeses,2)."</td>
                   </tr>
                 </tbody>
-            </table>";
+            </table>
+            <div style='display:none'>
+              <input type='text' id='final' name='final' value='".$final."'>
+            <input type='text' id='suma' name='suma' value='".$suma."'>
+            <input type='text' id='articulos' name='articulos' value='".$totalarticulo."'>
+            </div>";
 ?>

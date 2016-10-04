@@ -1,10 +1,19 @@
 <?php
+$contador=0;
+$descuento=0;
+$pago=0;
+$semanas=0;
+$quincenas=0;
+$meses=0;
+
+$segurosemanas=0;
+$seguroquincena=0;
+$seguromeses=0;
 
 include ('fpdf/fpdf.php');
 include("php/conexion.php");
-
+include("php/consultas_pdf.php");
 $id = 7;
-
 $consulta = "SELECT imagen FROM moto WHERE id_moto = $id";
 $imagen = mysql_query($consulta);
 $datos = mysql_fetch_array($imagen);
@@ -15,10 +24,29 @@ $requisitos="SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on
 $query = mysql_query($requisitos);
 $resultado = mysql_fetch_array($query);
 
+if ($res1=='SEMANAS') {
+	# code...
+    $final=$_GET['final']/52;
+    $var2=$_GET['suma']/52;
+    $var3=$_GET['articulos']/52;
+}
+if ($res1=='QUINCENAS') {
+	# code...
+    $final=$_GET['final']/24;
+    $var2=$_GET['suma']/24;
+    $var3=$_GET['articulos']/24;
+}
+if ($res1=='MESES') {
+	# code...   
+    $final=$_GET['final']/12;
+    $var2=$_GET['suma']/12;
+    $var3=$_GET['articulos']/12;
+}
+
         $pdf = new FPDF();
         $pdf->AddPage();
 
-        $pdf->Ln(15);//ahora salta 15 lineas
+        $pdf->Ln(15);
 
         ///////////amarillo ///////////
         $pdf->Image('images/fondo.jpg',30,80,150,70,'');
@@ -26,33 +54,33 @@ $resultado = mysql_fetch_array($query);
         $pdf->Image('images/texto.jpg',20,20,100,10,'');
         $pdf->Image('images/final.jpg',45,275,120,13,'');
 
-		$pdf->SetXY(118, 43);
+		$pdf->SetXY(120, 43);
 		$pdf->SetFont('Arial','',10);
 		$pdf->Cell(5, 6, utf8_decode('Oaxaca de Juárez., a'), 0 , 1);
-		$pdf->SetXY(153, 43);
-		$pdf->Cell(5, 6,"var", 0 , 1);
+		$pdf->SetXY(156, 43);
+		$pdf->Cell(5, 6,$_GET['fecha'], 0 , 1);
 
 		///////////azul////////// 
 
 		$pdf->SetXY(15, 50);
 		$pdf->SetFont('Arial','',11);
-		$pdf->Cell(15, 6, "var", 0 , 1); /////////////// nombre cliente
+		$pdf->Cell(15, 6, $_GET['nombre'], 0 , 1); /////////////// nombre cliente
 		$pdf->SetXY(15, 55);
 		$pdf->SetFont('Arial','B',11);
 		$pdf->Cell(20, 6, 'CELULAR: ', 0 , 1);
 		$pdf->SetXY(35, 55);
 		$pdf->SetFont('Arial','',11);
-		$pdf->Cell(20, 6, "var", 0 , 1); ///////// TELEFONO CLIENTE
+		$pdf->Cell(20, 6, $_GET['telefono'], 0 , 1); ///////// TELEFONO CLIENTE
 		$pdf->SetXY(15, 60);
 		$pdf->SetFont('Arial','B',11);
 		$pdf->Cell(20, 6, 'P R E S E N T E', 0 , 1);
 		///////////verde ///////////
 
-		$pdf->SetXY(122, 55);
-		$pdf->SetFont('Arial','B',13);
+		$pdf->SetXY(110, 55);
+		$pdf->SetFont('Arial','B',12);
 		$pdf->Cell(5, 6, utf8_decode('TIPO DE CRÉDITO:'), 0 , 1);
-		$pdf->SetXY(165, 55);
-		$pdf->Cell(5, 6,"var", 0 , 1);
+		$pdf->SetXY(150, 55);
+		$pdf->Cell(5, 6,$credito, 0 , 1);
 
 		/////////// SALMON///////////////
 	
@@ -109,40 +137,40 @@ $resultado = mysql_fetch_array($query);
 
 		$pdf->SetXY(135, 80);
 		$pdf->SetFont('Arial','',8.5);
-		$pdf->Cell(15, 6, "var", 0 , 1);/////////////// TIPO DE MOTO
+		$pdf->Cell(15, 6, $moto['tipo_moto'], 0 , 1);/////////////// TIPO DE MOTO
 
 		$pdf->SetXY(135, 85);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['motor'], 0 , 1);
 
 		$pdf->SetXY(135, 90);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['trasmision'], 0 , 1);
 
 		$pdf->SetXY(135, 95);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['tipo_motor'], 0 , 1);
 
 		$pdf->SetXY(135, 100);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['numero_cilindros'], 0 , 1);
 
 		$pdf->SetXY(135, 105);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['diametro'], 0 , 1);
 
 		$pdf->SetXY(135, 110);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['carrera'], 0 , 1);
 
 		$pdf->SetXY(135, 115);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['desplazamiento'], 0 , 1);
 
 		$pdf->SetXY(135, 120);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['relacion_compresion'], 0 , 1);
 
 		$pdf->SetXY(135, 125);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['sistema_lubricacion'], 0 , 1);
 
 		$pdf->SetXY(135, 130);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['sistema_combustible'], 0 , 1);
 
 		$pdf->SetXY(135, 135);
-		$pdf->Cell(15, 6, "var", 0 , 1);
+		$pdf->Cell(15, 6, $moto['sistema_arranque'], 0 , 1);
 		/////////////////////////////////
 
 		$pdf->SetXY(15, 145);
@@ -158,12 +186,12 @@ $resultado = mysql_fetch_array($query);
 
 		$pdf->SetXY(60, 145);
 		$pdf->SetFont('Arial','',9);
-		$pdf->Cell(5, 6, utf8_decode("var"), 0 , 1);
+		$pdf->Cell(5, 6, utf8_decode($_GET['financiamiento']), 0 , 1);
 		$pdf->SetXY(60, 149);
-		$pdf->Cell(5, 6, "var", 0 , 1);
+		$pdf->Cell(5, 6, $res, 0 , 1);
 
 		$pdf->SetXY(60, 153);
-		$pdf->Cell(5, 6, "var", 0 , 1);
+		$pdf->Cell(5, 6, $res1, 0 , 1);
 		/////////////////////////////////
 
 		$pdf->Rect(15, 161, 110 , 6, '');
@@ -180,7 +208,7 @@ $resultado = mysql_fetch_array($query);
 
 		$pdf->SetXY(17, 167);
 		$pdf->SetFont('Arial','',8);
-		$pdf->Cell(5, 6, "vari", 0 , 1);
+		$pdf->Cell(5, 6, $moto['modelo'], 0 , 1);
 
 		$pdf->SetXY(17, 173);
 		$pdf->SetFont('Arial','B',8);
@@ -194,11 +222,11 @@ $resultado = mysql_fetch_array($query);
 
 		$pdf->SetXY(80, 167);
 		$pdf->SetFont('Arial','',8);
-		$pdf->Cell(5, 6, "var", 0 , 1);
+		$pdf->Cell(5, 6, $anio, 0 , 1);
 
 
 		$pdf->SetXY(80, 173);
-		$pdf->Cell(5, 6,"var", 0 , 1); //////////descuento apertura
+		$pdf->Cell(5, 6,$descuento, 0 , 1); //////////descuento apertura
 
 		$pdf->SetXY(55, 173);
 		$pdf->Cell(5, 6, 'DESCUENTO DE', 0 , 1);
@@ -210,13 +238,14 @@ $resultado = mysql_fetch_array($query);
 		$pdf->Cell(5, 6,'$', 0 , 1);
 
 		$pdf->SetXY(100, 167);
-		$pdf->Cell(5, 6,"vari", 0 , 1);
+		$pdf->Cell(5, 6,$_GET['engancheresul'], 0 , 1);
 
 		$pdf->SetXY(95, 173);
 		$pdf->Cell(5, 6,'$', 0 , 1);
 
+		$descuento=(($costo*$descuento)/100);
 		$pdf->SetXY(100, 173);
-		$pdf->Cell(5, 6, "var", 0 , 1);
+		$pdf->Cell(5, 6,$descuento, 0 , 1);
 
 		$pdf->SetXY(130, 161);
 		$pdf->SetFont('Arial','B',8);
@@ -227,13 +256,13 @@ $resultado = mysql_fetch_array($query);
 
 		$pdf->SetXY(175, 161);
 		$pdf->SetFont('Arial','',8);
-		$pdf->Cell(5, 6, "var", 0 , 1); ////////// pago motocicleta
+		$pdf->Cell(5, 6, round($final,2), 0 , 1); ////////// pago motocicleta
 
 		$pdf->SetXY(170, 161);
 		$pdf->Cell(5, 6,'$', 0 , 1);
 
 		$pdf->SetXY(175, 167);
-		$pdf->Cell(5, 6, "var", 0 , 1);/// pagos seguro
+		$pdf->Cell(5, 6, round($var2,2), 0 , 1);/// pagos seguro
 
 		$pdf->SetXY(170, 167);
 		$pdf->Cell(5, 6,'$', 0 , 1);
@@ -242,10 +271,10 @@ $resultado = mysql_fetch_array($query);
 		$pdf->SetFont('Arial','B',10);
 		$pdf->Cell(5, 6, 'SUB TOTAL:', 0 , 1);
 
-		$pdf->SetXY(175, 173);
-		$pdf->Cell(5, 6, "var", 0 , 1);
+		$pdf->SetXY(172, 173);
+		$pdf->Cell(5, 6,($apertura['precio']+$resul), 0 , 1);
 
-		$pdf->SetXY(170, 173);
+		$pdf->SetXY(169, 173);
 		$pdf->Cell(5, 6,'$', 0 , 1);
 
 		$pdf->Image($ruta,15,90,65,40,'');
@@ -266,7 +295,8 @@ $resultado = mysql_fetch_array($query);
 		} 
 		$pdf->SetX(65);
 		$pdf->SetFont('Arial','B',10);
-		$pdf->Cell(5, 6, 'PAGO INICIAL DE:', 0 , 1);
+		$pago=$_GET['engancheresul']+$descuento;
+		$pdf->Cell(5, 6, 'PAGO INICIAL DE:     $ '.$pago, 0 , 1);
 		//////////////////////////////////////
 		$consul = mysql_query("SELECT * FROM accesorio");
 		$pdf->Rect(130, 187, 60 , 6, '');
@@ -276,6 +306,7 @@ $resultado = mysql_fetch_array($query);
 		$pdf->SetXY(165,187);
 		$pdf->Cell(5, 5, 'IMPORTE', 0 , 1);
 		$pdf->SetXY(130,193);
+		$pdf->SetFont('Arial','',9);
 		while($cantidad = mysql_fetch_array($consul)){
 		$pdf->Cell(60,5,$cantidad['cantidad'],1,2);
 		} 
@@ -284,17 +315,18 @@ $resultado = mysql_fetch_array($query);
 		$pdf->SetXY(170,193);
 		while($cantidad = mysql_fetch_array($consult)){
 			$pdf->Cell(60,5,'$'.$cantidad['total'],0,2);
+			$contador=$contador+$cantidad['total'];
 		} 
 		/////////////////////////////////////////
-
+		$suma=0;
+		$suma=$contador+($apertura['precio']+$resul);
 		$pdf->SetX(130);
 		$pdf->SetFont('Arial','B',8);
-		$pdf->Cell(1, 4, 'SUB TOTAL:'.'                             '.'$'.'var', 0 , 1);
+		$pdf->Cell(1, 4, 'SUB TOTAL:'.'                             '.'$'.$contador, 0 , 1);
 		$pdf->SetFont('Arial','B',10);
 		$pdf->SetX(130);
-		$pdf->Cell(1, 4, 'TOTAL:'.'                           '.'$'.'var', 0 , 2);
+		$pdf->Cell(6, 4, 'TOTAL:'.'                           '.'$'.$suma, 0 , 2);
 		$pdf->SetX(170);
-
 		/////////////////////////////////////
 
 		$pdf->SetXY(10, 232);
@@ -356,8 +388,8 @@ $resultado = mysql_fetch_array($query);
 		$pdf->Ln();
 		$pdf->Ln(); //salto de linea
 		$pdf->Ln(15);//ahora salta 15 lineas 
-        $pdf->Output("pdf.pdf",'D');
-		echo "<script language='javascript'>window.open('pdf.pdf','_self','');</script>";//para ver el archivo pdf generado
+        $pdf->Output("pdf.pdf",'I');
+		echo "<script language='javascript'>window.open('pdf.pdf','_target','');</script>";//para ver el archivo pdf generado
 		exit;
 
 	?>

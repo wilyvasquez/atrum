@@ -15,6 +15,7 @@ $anio=$_GET['anio'];
     $credito = $res['nombre_credito'];
     $descuento = $res['descuento_aper'];
     $costo = $res['costo_apertura'];
+    $tasa = $res['tasa_base'];
 
     $query1="SELECT * FROM moto where id_moto=$moto";
     $resul1 = mysql_query($query1);  

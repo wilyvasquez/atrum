@@ -526,33 +526,32 @@ function eliminar()
       }
     });
 }
-// function generarpdf()
-// {   
-//   var nombre = document.getElementById('nombre').value;
-//   var telefono = document.getElementById('telefono').value;
-//   window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
-//   // var fecha = document.getElementById('fecha').value;
-//     var par = 
-//     {
-//       "nombre" : nombre,
-//       "telefono" : telefono,
-//       // "fecha" : fecha
-//     };
-//     $.ajax({
-//       data: par,
-//       url: 'prueba.php',
-//       type: 'post',
-//       beforeSend: function()
-//       { alert(nombre);
-//       },
-//       success: function(response)
-//       {
-//         // window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
-//         // alertify.success("Actualizado Correctamente");
-//         // $("#precios").html(response);
-//       }
-//     });
-// }
+function generarpdf()
+{   
+  var nombre = document.getElementById('nombre').value;
+  var telefono = document.getElementById('telefono').value;
+  // var fecha = document.getElementById('fecha').value;
+    var par = 
+    {
+      "nombre" : nombre,
+      "telefono" : telefono
+      // "fecha" : fecha
+    };
+    $.ajax({
+      data: par,
+      url: 'pdf2.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        // window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
+        // alertify.success("Actualizado Correctamente");
+        // $("#precios").html(response);
+      }
+    });
+}
 function abrir()
 {
     var nombre = document.getElementById('nombre').value;
@@ -565,10 +564,14 @@ function abrir()
     var tiempo = document.getElementById('tiempo').value;
     var anio = document.getElementById('anio').value;
     var engancheresul = document.getElementById('engancheresul').value;
+    var enganche = document.getElementById('porcentaje').value;
+    var suma = document.getElementById('suma').value;
+    var final = document.getElementById('final').value;
+    var articulos = document.getElementById('articulos').value;
 
     opciones = "toolbar=yes,scrollbars=yes,resizable=yes,_target"
     // alert(credito);
-    window.open("pdf.php?nombre="+nombre+
+    window.open("pdf2.php?nombre="+nombre+
                   "&telefono="+telefono+
                   "&fecha="+fecha+
                   "&credito="+credito+
@@ -577,6 +580,10 @@ function abrir()
                   "&seguro="+seguro+
                   "&tiempo="+tiempo+
                   "&anio="+anio+
-                  "&engancheresul="+engancheresul
+                  "&engancheresul="+engancheresul+
+                  "&enganche="+enganche+
+                  "&suma="+suma+
+                  "&final="+final+
+                  "&articulos="+articulos
                   ,opciones);
 }
