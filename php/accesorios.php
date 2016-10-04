@@ -16,12 +16,12 @@ if (!empty($_POST['accesorios'])) {
  	$total=$precio*$cantidad;
  mysql_query("INSERT INTO accesorio VALUES ('id','$accesorios', '$precio','$cantidad','$total')");
 }
+// data-toggle='table' data-pagination='true' data-page-size='3'
 $query='select * from accesorio';
 $result = mysql_query($query);
 echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">
     	<script src="js/bootstrap-table.min.js"></script>';
-echo "<table data-toggle='table' data-pagination='true' 
-	data-page-size='3'>
+echo "<table data-toggle='table'>
         <thead>
 	        <tr>
 	        <th class='col-xs-7' data-field='name'>Accesorios</th>
@@ -31,6 +31,9 @@ echo "<table data-toggle='table' data-pagination='true'
 	        <th class='col-xs-1' data-field='accion'>
 		        <button type='button' class='btn btn-info btn-xs' data-toggle='modal' data-target='#myModal'>
 		        <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>
+		        </button>
+		        <button type='submit' class='btn btn-danger btn-xs' onclick='limpiar();tablaprecio()'>
+		        <span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span>
 		        </button>
 	        </th>
 	        </tr>
@@ -57,7 +60,7 @@ echo "<table data-toggle='table' data-pagination='true'
         </tbody>
     </table>
     <div class='col-md-2'>
-		<h6>Total articulos</h6>        
+		<h6>Total Articulos</h6>        
 	    </div>
 	    <div class='col-md-2' style='margin-top:5px'>
 	    <input type='text' id='articulos' name='articulos' value='".$contador."' class='form-control' onfocus='this.blur()'/>
@@ -74,7 +77,8 @@ echo "<table data-toggle='table' data-pagination='true'
 	    <div class='col-md-3' style='margin-top:5px'>
 	    <input type='text' id='costoarti' name='costoarti' value='' class='form-control' onfocus='this.blur()'/>
     </div>
-		<div class='col-md-1' style='margin-top: 4px'>
-        <button class='btn btn-danger' onclick='limpiar()' type='submit'>Limpiar</button>
-        </div>";
+		";
 ?>
+<!-- <div class='col-md-1' style='margin-top: 4px'>
+        <button class='btn btn-danger' onclick='limpiar();tablaprecio()' type='submit'>Clear</button>
+        </div> -->

@@ -288,9 +288,6 @@
                             <div class="col-md-3" style="margin-top:5px">
                                 <input type="text" id="costoarti" name="costoarti" value="0" class="form-control" onfocus="this.blur()"/>
                             </div>
-                            <div class="col-md-1" style="margin-top: 4px">
-                                <button class="btn btn-danger" onclick="limpiar()" type="submit">Limpiar</button>
-                            </div>
                         </div>
                        </div> 
                     </div>

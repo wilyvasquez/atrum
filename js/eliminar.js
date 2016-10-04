@@ -143,7 +143,7 @@ function limpiar()
       },
       success: function(response)
       {
-        // alertify.success("Limpiado Correctamente");
+        alertify.success("Limpiado Correctamente");
         $("#tabla").html(response);
       }
     });

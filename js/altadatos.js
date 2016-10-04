@@ -19,7 +19,6 @@ function insertarcredito()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -42,7 +41,6 @@ function insertaranios()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -63,7 +61,6 @@ function insertarseguro()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -84,7 +81,6 @@ function insertarenganche()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -105,7 +101,6 @@ function insertaranio()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -128,7 +123,6 @@ function insertarplacas()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -149,7 +143,6 @@ function insertartiempo()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -174,7 +167,6 @@ function unionmoto()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -199,7 +191,6 @@ function unionmotosegu()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -222,7 +213,6 @@ function unioncrese()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -245,7 +235,6 @@ function unioncretiem()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -268,7 +257,6 @@ function unioncreenga()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -291,7 +279,6 @@ function unioncreanios()
       success: function(response)
       {
         alertify.success("Insertado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -346,7 +333,6 @@ function actucredito()
       success: function(response)
       {
         alertify.success("Actualizado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -369,7 +355,6 @@ function actuplacas()
       success: function(response)
       {
         alertify.success("Actualizado Correctamente");
-        // $("#alta_personal").html(response);
       }
     });
 }
@@ -436,7 +421,6 @@ function cotiprecio()
       },
       success: function(response)
       {
-        // alertify.success("Actualizado Correctamente");
         $("#precio").html(response);
       }
     });
@@ -460,7 +444,6 @@ function actupreciomoto()
       success: function(response)
       {
         alertify.success("Actualizado Correctamente");
-        // $("#precio").html(response);
       }
     });
 }
@@ -482,7 +465,6 @@ function actupreciosegu()
       },
       success: function(response)
       {
-        // alertify.success("Actualizado Correctamente");
         $("#preciose").html(response);
       }
     });
@@ -506,7 +488,6 @@ function actusegu()
       success: function(response)
       {
         alertify.success("Actualizado Correctamente");
-        // $("#preciose").html(response);
       }
     });
 }
@@ -521,39 +502,38 @@ function eliminar()
       },
       success: function(response)
       {
-        // alertify.success("Actualizado Correctamente");
         $("#alta_personal").html(response);
       }
     });
 }
-function generarpdf()
-{   
-  var nombre = document.getElementById('nombre').value;
-  var telefono = document.getElementById('telefono').value;
-  // var fecha = document.getElementById('fecha').value;
-    var par = 
-    {
-      "nombre" : nombre,
-      "telefono" : telefono
-      // "fecha" : fecha
-    };
-    $.ajax({
-      data: par,
-      url: 'pdf2.php',
-      type: 'post',
-      beforeSend: function()
-      {
-      },
-      success: function(response)
-      {
-        // window.open("prueba.php", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes");
-        // alertify.success("Actualizado Correctamente");
-        // $("#precios").html(response);
-      }
-    });
-}
+// function generarpdf()
+// {   
+//   var nombre = document.getElementById('nombre').value;
+//   var telefono = document.getElementById('telefono').value;
+//   // var fecha = document.getElementById('fecha').value;
+//     var par = 
+//     {
+//       "nombre" : nombre,
+//       "telefono" : telefono
+//       // "fecha" : fecha
+//     };
+//     $.ajax({
+//       data: par,
+//       url: 'pdf2.php',
+//       type: 'post',
+//       beforeSend: function()
+//       {
+//       },
+//       success: function(response)
+//       {
+//       }
+//     });
+// }
 function abrir()
 {
+  var nombre = document.getElementById('nombre').value;
+  var telefono = document.getElementById('telefono').value;
+if (window.fecha && nombre.length>=1 && telefono.length>=1) {
     var nombre = document.getElementById('nombre').value;
     var telefono = document.getElementById('telefono').value;
     var fecha = document.getElementById('fecha').value;
@@ -570,7 +550,6 @@ function abrir()
     var articulos = document.getElementById('articulos').value;
 
     opciones = "toolbar=yes,scrollbars=yes,resizable=yes,_target"
-    // alert(credito);
     window.open("pdf2.php?nombre="+nombre+
                   "&telefono="+telefono+
                   "&fecha="+fecha+
@@ -586,4 +565,7 @@ function abrir()
                   "&final="+final+
                   "&articulos="+articulos
                   ,opciones);
+}else{
+      if (fecha==null) {alertify.error("Faltan Campos");}
+}
 }

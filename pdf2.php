@@ -272,7 +272,7 @@ if ($res1=='MESES') {
 		$pdf->Cell(5, 6, 'SUB TOTAL:', 0 , 1);
 
 		$pdf->SetXY(172, 173);
-		$pdf->Cell(5, 6,($apertura['precio']+$resul), 0 , 1);
+		$pdf->Cell(5, 6,round($final+$var2), 0 , 1);
 
 		$pdf->SetXY(169, 173);
 		$pdf->Cell(5, 6,'$', 0 , 1);
@@ -319,13 +319,13 @@ if ($res1=='MESES') {
 		} 
 		/////////////////////////////////////////
 		$suma=0;
-		$suma=$contador+($apertura['precio']+$resul);
+		$suma=$contador+($final+$var2);
 		$pdf->SetX(130);
 		$pdf->SetFont('Arial','B',8);
 		$pdf->Cell(1, 4, 'SUB TOTAL:'.'                             '.'$'.$contador, 0 , 1);
 		$pdf->SetFont('Arial','B',10);
 		$pdf->SetX(130);
-		$pdf->Cell(6, 4, 'TOTAL:'.'                           '.'$'.$suma, 0 , 2);
+		$pdf->Cell(6, 4, 'TOTAL:'.'                           '.'$'.round($suma), 0 , 2);
 		$pdf->SetX(170);
 		/////////////////////////////////////
 
