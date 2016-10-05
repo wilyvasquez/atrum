@@ -333,14 +333,21 @@ if ($res1=='MESES') {
 		$pdf->SetFont('Arial','B',8);
 		$pdf->Cell(5, 6, 'ASESOR DE VENTAS:', 0 , 1);
 
-		$pdf->SetXY(47, 232);
-		$pdf->Cell(5, 6,"var", 0 , 1);
+		$cliente="SELECT * FROM usuario WHERE id_usuario='$usuario'";
+		$query = mysql_query($cliente);
+		$user = mysql_fetch_array($query);
+		// $var = $resultado['nombre'];
+
+		$pdf->SetXY(42, 232);
+		$pdf->SetFont('Arial','B',9);
+		$pdf->Cell(5, 6,$user['nombre'], 0 , 1);
 
 		$pdf->SetXY(10, 235);
 		$pdf->Cell(5, 6, 'CORREO:', 0 , 1);
 
-		$pdf->SetXY(47, 235);
-		$pdf->Cell(5, 6,"var", 0 , 1);
+		$pdf->SetXY(42, 235);
+		$pdf->SetFont('Arial','B',9);
+		$pdf->Cell(5, 6,$user['correo'], 0 , 1);
 
 		$pdf->SetXY(10, 238);
 		$pdf->Cell(5, 6, 'REQUISITOS:', 0 , 1);
@@ -352,17 +359,17 @@ if ($res1=='MESES') {
 		} 
 
 		$pdf->SetXY(115, 232);
-		$pdf->SetFont('Arial','B',8);
+		$pdf->SetFont('Arial','B',9);
 		$pdf->Cell(5, 6, utf8_decode('TELÉFONO:'), 0 , 1);
 
 		$pdf->SetXY(140, 232);
-		$pdf->Cell(5, 6,"var", 0 , 1);
+		$pdf->Cell(5, 6,$user['telefono'], 0 , 1);
 
 		$pdf->SetXY(115, 235);
 		$pdf->Cell(5, 6, 'CELULAR:', 0 , 1);
 
 		$pdf->SetXY(140, 235);
-		$pdf->Cell(5, 6,"var", 0 , 1);
+		$pdf->Cell(5, 6,$user['celular'], 0 , 1);
 
 		$pdf->SetXY(115, 238);
 		$pdf->Cell(5, 6, 'BENEFICIOS:', 0 , 1);

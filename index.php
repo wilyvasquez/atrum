@@ -69,17 +69,16 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <form action="cotizador.php" method="post">
+                                <div id="login">
+                                    <form action="cotizador.php" method="post">
                                     <center>
                                     <img class="img-circle" src="images/su.png" width="50px" height="50px" style="margin-top:5px">
                                     </center>
                                     <li style="margin-top:5px">
                                         <input type="text" id="user" onkeypress="letranumero()" class="form-control input" name="user" placeholder="Usuario" required/>
-                                        <!-- <label>Username</label><input name="user" type="text" > -->
                                     </li>
                                     <li style="margin-top:5px">
-                                        <input type="password" onkeypress="letranumero()" class="form-control input" name="pass" placeholder="Password" required/>
-                                        <!-- <label>Password</label><input name="password" type="password"> -->
+                                        <input type="password" onkeypress="letranumero()" class="form-control input" id="pass" name="pass" placeholder="Password" required/>
                                     </li>
                                     <li>
                                         <div id="freeow-tr" class="freeow freeow-top-right" style="margin-top:5px;margin-left:10px;margin-bottom:5px">
@@ -87,6 +86,7 @@
                                         </div> 
                                     </li>   
                                 </form>
+                                </div>
                             </ul>
                         </li>
                     </ul>

@@ -1,5 +1,9 @@
 <?php
 include('seguridad.php');
+    $user=$_GET['user'];
+    $cliente="SELECT * FROM  usuario WHERE id_usuario='$user'";
+    $clire = mysql_query($cliente);  
+    $resulcli = mysql_fetch_array($clire);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +32,8 @@ include('seguridad.php');
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
-                            <div class="top-number"><p>WELCOME: <?= $segu['nombre'] ?></p></div>
-                            <input style="display:none" type="text" id="parametro" name="parametro" value="<?= $segu['id_usuario'] ?>">
+                            <div class="top-number"><p>WELCOME: <?= $resulcli['nombre'] ?></p></div>
+                            <input style="display:none" type="text" id="parametro" name="parametro" value="<?= $user ?>">
                        </div>
                     </div>
                 </div>
@@ -49,7 +53,7 @@ include('seguridad.php');
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Cotizador</a></li>
-                        <li><a href="#">Salir</a>                      
+                        <li><a href="destroyer.php">Salir</a>                      
                     </ul>
                 </div>
             </div><!--/.container-->
