@@ -13,8 +13,14 @@ include("php/conexion.php");
 		$segu = mysql_fetch_array($query);
 	 	if($numrows!=0)
 		{	
-			$res=$segu['id_usuario'];
-			header("Location: cotizador.php?user=$res");		
+			if ($segu['permiso']==admin) {
+				# code...
+				header("Location: admin.php");		
+			}else
+			{
+				$res=$segu['id_usuario'];
+				header("Location: cotizador.php?user=$res");				
+			}
 		}else
 			{
 				header("Location: index.php");

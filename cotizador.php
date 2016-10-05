@@ -366,7 +366,7 @@ include('seguridad.php');
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" onclick="abrir()" class="btn btn-info">PDF</button>
+                <button type="button" onclick="abrir();contador()" class="btn btn-info">PDF</button>
               </div>
             </div>
           </div>

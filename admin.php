@@ -1,3 +1,6 @@
+<?php
+include('seguridad.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +77,7 @@
                                 <li><a href="#" onclick="actu_equipo()">EQUIPO</a></li>
                             </ul>
                         </li>
-                        <li><a href="index.php">Salir</a>                      
+                        <li><a href="destroyer.php">Salir</a>                      
                     </ul>
                 </div>
             </div><!--/.container-->

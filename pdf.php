@@ -19,6 +19,11 @@ $imagen = mysql_query($consulta);
 $datos = mysql_fetch_array($imagen);
 $ruta = "php/imagenes/" . $datos['imagen'];
 
+$con = "SELECT contador FROM contador";
+$con1 = mysql_query($con);
+$con2 = mysql_fetch_array($con1);
+$con3 = $con2['contador'];
+
 $requisitos="SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito='$credito'";
 $query = mysql_query($requisitos);
 $resultado = mysql_fetch_array($query);
@@ -85,7 +90,7 @@ if ($res1=='MESES') {
 	
 		$pdf->SetXY(143, 60);
 		$pdf->SetFont('Arial','',10);
-		$pdf->Cell(5, 6, utf8_decode('NÚMERO DE COTIZACIÓN:123'), 0 , 1);
+		$pdf->Cell(5, 6, utf8_decode('NÚMERO DE COTIZACIÓN:'.$con3), 0 , 1);
 
 
 		///////////// ROSA //////////////

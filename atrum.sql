@@ -7,6 +7,12 @@ CREATE TABLE usuario
     correo varchar(50),
     PRIMARY KEY (id_usuario)
 );
+CREATE TABLE contador
+(
+    id_contador int not null AUTO_INCREMENT,
+    contador int,
+    PRIMARY KEY (id_contador)
+);
 CREATE TABLE password
 (
     id_password int not null AUTO_INCREMENT,

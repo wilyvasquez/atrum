@@ -510,6 +510,21 @@ function eliminar()
       }
     });
 }
+function contador()
+{
+    $.ajax({
+      data: null,
+      url: 'php/contador.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        // $("#alta_personal").html(response);
+      }
+    });
+}
 function abrir()
 {
   var nombre = document.getElementById('nombre').value;
