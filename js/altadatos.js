@@ -305,6 +305,7 @@ function actu_equipo()
       type: 'post',
       beforeSend: function()
       {
+
       },
       success: function(response)
       {
@@ -373,6 +374,7 @@ function actuequipo()
     var lubricacion = document.getElementById('lubricacion').value;
     var combustible = document.getElementById('combustible').value;
     var arranque = document.getElementById('arranque').value;
+    var imagen = document.getElementById('imagen').value;
     var par = 
     {
       "moto" : moto,
@@ -387,7 +389,8 @@ function actuequipo()
       "compresion" : compresion,
       "lubricacion" : lubricacion,
       "combustible" : combustible,
-      "arranque" : arranque
+      "arranque" : arranque,
+      "imagen" : imagen
     };
     $.ajax({
       data: par,
@@ -395,6 +398,7 @@ function actuequipo()
       type: 'post',
       beforeSend: function()
       {
+        
       },
       success: function(response)
       {

@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-12">
             <div id="equipo">
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <label for="">Modelo</label>
                     <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Modelo" required/>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="col-md-4">
                     <label for="">Subir foto</label>
                     <input type="file" class="form-control" id="imagen" name="imagen">
-                </div>
+                </div> -->
             </div>        
             <div class="col-md-4" style="margin-top:25px">
                <button class="btn btn-info" onclick="actuequipo()" type="submit">Actualizar Equipo !</button>

@@ -66,10 +66,6 @@
         	   <button class="btn btn-info" type="submit">Subir Articulo !</button>
         	</div>
         </form>
-        <!-- <div class="row col-md-12"><br>
-            <button class="btn btn-success" type="submit">Actualizar Articulo !</button>
-            <button class="btn btn-danger" type="submit">Cancelar !</button>
-        </div> -->
     </div><br>
 	</div>
 </div>

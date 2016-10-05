@@ -1,6 +1,5 @@
 <?php
 	include("conexion.php");
-	// echo $_GET['c'];
 	$query = "SELECT * FROM tipo_credito WHERE id_credito='".$_GET['c']."'";
     $result = mysql_query($query);  
     $apertura = mysql_fetch_array($result);

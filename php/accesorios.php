@@ -56,7 +56,6 @@ echo "<table data-toggle='table'>
 		        </td>
 	        </tr>
 	        ";}
-
 	echo "
         </tbody>
     </table>
@@ -80,6 +79,3 @@ echo "<table data-toggle='table'>
     </div>
 		";
 ?>
-<!-- <div class='col-md-1' style='margin-top: 4px'>
-        <button class='btn btn-danger' onclick='limpiar();tablaprecio()' type='submit'>Clear</button>
-        </div> -->
