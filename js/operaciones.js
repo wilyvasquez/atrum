@@ -75,7 +75,7 @@ function resultados(porcentaje,tiempo,moto,anio,credito)
     }
   }
 }
-function accesorios(accesorios,precio,cantidad)
+function accesorios(accesorios,precio,cantidad,parametro)
 {   
   if(accesorios.length >= 1 && precio.length >= 1 && cantidad.length >= 1) 
   {
@@ -83,7 +83,8 @@ function accesorios(accesorios,precio,cantidad)
     {
       "accesorios" : accesorios,
       "precio" : precio,
-      "cantidad" : cantidad
+      "cantidad" : cantidad,
+      "parametro" : parametro
     };
     $.ajax({
       data: par,
@@ -118,6 +119,7 @@ function tablaprecio()
   var credito = document.getElementById('credito').value;
   var porcentaje = document.getElementById('porcentaje').value;
   var tiempo = document.getElementById('tiempo').value;
+  var parametro = document.getElementById('parametro').value;
 
   if(moto.length >= 1 && credito.length >= 1 && porcentaje.length >= 1 && placas.length >= 1) 
   {
@@ -129,7 +131,8 @@ function tablaprecio()
       "placas" : placas,
       "credito" : credito,
       "porcentaje" : porcentaje,
-      "tiempo" : tiempo
+      "tiempo" : tiempo,
+      "parametro" : parametro
     };
     $.ajax({
       data: par,
@@ -171,11 +174,12 @@ function tiempo(credito)
 
   }
 }
-function bajas(id)
+function bajas(id,parametro)
 {    
     var par = 
     {
-      "id" : id
+      "id" : id,
+      "parametro" : parametro
     };
     $.ajax({
       data: par,
@@ -235,22 +239,6 @@ function persona()
       }
     });
 }
-// function eliminar()
-// {
-//     $.ajax({
-//       data: null,
-//       url: 'php/equipo/operaciones.php',
-//       type: 'post',
-//       beforeSend: function()
-//       {
-//         alert("hola");
-//       },
-//       success: function(response)
-//       {
-//         $("#alta_personal").html(response);
-//       }
-//     });
-// }
 function extras()
 {
     $.ajax({

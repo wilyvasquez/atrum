@@ -20,13 +20,13 @@ include ("consultas.php");
       $enganche=$ivares*($porcentaje/100);
       $base=$ivares-$enganche;
       
-  $variable="SELECT * FROM tipo_credito where id_credito=$credito";
-      $resultado = mysql_query($variable);  
-      $credito1 = mysql_fetch_array($resultado);
-      $credito = $credito1['tasa_base'];
-      $apertura = $credito1['costo_apertura'];
-      $importe=12*$credito;
-      $final=($base*$importe)+$base;
+    $variable="SELECT * FROM tipo_credito where id_credito=$credito";
+    $resultado = mysql_query($variable);  
+    $credito1 = mysql_fetch_array($resultado);
+    $credito = $credito1['tasa_base'];
+    $apertura = $credito1['costo_apertura'];
+    $importe=12*$credito;
+    $final=($base*$importe)+$base;
 
     $semanas=$final/52;
     $quincenas=$final/24;
@@ -36,6 +36,7 @@ include ("consultas.php");
     $seguroquincena=$suma/24;
     $seguromeses=$suma/12;
     // echo $final;
+    $idnombre=$_POST['parametro'];
     include ("precio_accesorio.php");
     $articulosema=$totalarticulo/52;
     $articuloquin=$totalarticulo/24;

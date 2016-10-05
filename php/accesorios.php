@@ -2,6 +2,7 @@
  include("conexion.php");
  $contador=0;
  $totalarticulo=0;
+ $idnombre=$_POST['parametro'];
  if (!empty($_POST['id'])) {
  	# code...
  	$id=$_POST['id'];
@@ -14,10 +15,10 @@ if (!empty($_POST['accesorios'])) {
  	$precio=$_POST['precio'];
  	$cantidad=$_POST['cantidad'];
  	$total=$precio*$cantidad;
- mysql_query("INSERT INTO accesorio VALUES ('id','$accesorios', '$precio','$cantidad','$total')");
+ mysql_query("INSERT INTO accesorio VALUES ('id','$accesorios', '$precio','$cantidad','$total','$idnombre')");
 }
 // data-toggle='table' data-pagination='true' data-page-size='3'
-$query='select * from accesorio';
+$query="select * from accesorio where ref_usuario='$idnombre'";
 $result = mysql_query($query);
 echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">
     	<script src="js/bootstrap-table.min.js"></script>';
@@ -49,7 +50,7 @@ echo "<table data-toggle='table'>
 		        <td>".$registro['cantidad']."</td>
 		        <td>".$registro['total']."</td>
 		        <td>
-			        <button type='button' onclick='bajas(".$registro['id_accesorio'].");tablaprecio()' class='btn btn-default btn-xs'>
+			        <button type='button' onclick='bajas(".$registro['id_accesorio'].",".$idnombre.");tablaprecio()' class='btn btn-default btn-xs'>
 			        	<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>
 		        	</button>
 		        </td>

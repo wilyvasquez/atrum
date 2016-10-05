@@ -9,11 +9,8 @@
 <body>
 <div class="row">
 <div class="col-md-offset-2 col-md-8"><br>
-<!-- <P ALIGN=center>TABLA CON TODOS LOS DATOS</P> -->
 	<div id="toolbar" class="btn-group">
-	<!-- <form action="index.php" method="post"> -->
 		<input class="btn btn-default" type="submit" onclick="persona()" value="Registro">
-	<!-- </form>	 -->
 	</div>
 	<table data-toggle="table" 
 	data-pagination="true"

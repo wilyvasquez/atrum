@@ -45,11 +45,13 @@ CREATE TABLE anio_moto
 CREATE TABLE accesorio
 (
     id_accesorio int not null AUTO_INCREMENT,
-    nombre_accesorio varchar(30),
+    nombre_accesorio varchar(50),
     precio float,
     cantidad int,
     total float,
-    PRIMARY KEY (id_accesorio)
+    ref_usuario int,
+    PRIMARY KEY (id_accesorio),
+    FOREIGN KEY(ref_usuario) REFERENCES usuario(id_usuario)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE precio_moto
 (

@@ -1,3 +1,6 @@
+<?php
+include('seguridad.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +28,8 @@
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
-                            <div class="top-number"><p></p></div>
+                            <div class="top-number"><p>WELCOME: <?= $segu['nombre'] ?></p></div>
+                            <input style="display:none" type="text" id="parametro" name="parametro" value="<?= $segu['id_usuario'] ?>">
                        </div>
                     </div>
                 </div>
@@ -116,7 +120,7 @@
                     </div>
                     <div class="col-md-2">
                         <div style="margin-top:27px">
-                            <button class="btn btn-info" type="submit" onclick="datoscotizador();resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val());tablaprecio($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#porcentaje').val(),$('#tiempo').val());tiempo($('#credito').val())">Cotizar !</button>
+                            <button class="btn btn-info" type="submit" onclick="datoscotizador();resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val());tablaprecio($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#porcentaje').val(),$('#tiempo').val(),$('#parametro').val());tiempo($('#credito').val())">Cotizar !</button>
                         </div>
                     </div>
                 </div><!-- fin modulo 1 -->
@@ -200,21 +204,6 @@
                                 <input type="text" id="importe" name="importe" value="0" class="form-control" onfocus="this.blur()">      
                             </div>
                         </div>
-                        <div class="col-md-3" style="margin-top:5px">
-                            <label>TELEFONO</label>        
-                        </div>
-                        <div class="col-md-3" style="margin-top:5px">
-                            <div class="input-group">
-                                <span class="input-group-addon">#</span>
-                                <input type="text" id="telefono" name="telefono" value="" class="form-control" onkeypress="numeros()"> 
-                            </div>
-                        </div>
-                        <div class="col-md-3" style="margin-top:5px">
-                            <label>CLIENTE</label>        
-                        </div>
-                        <div class="col-md-3" style="margin-top:5px">
-                            <input type="text" id="nombre" name="nombre" value="" class="form-control" onkeypress='letras()'>
-                        </div>
                     </div><!-- fin resultados -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
                           <div class="modal-dialog" role="document">
@@ -247,7 +236,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button onclick="accesorios($('#accesorios').val(),$('#costoacce').val(),$('#cantidad').val());tablaprecio()" type="button" class="btn btn-info">Save</button>
+                                <button onclick="accesorios($('#accesorios').val(),$('#costoacce').val(),$('#cantidad').val(),$('#parametro').val());tablaprecio()" type="button" class="btn btn-info">Save</button>
                               </div>
                             </div><!-- /.modal-content -->
                           </div><!-- /.modal-dialog -->
@@ -342,8 +331,46 @@
               </select>
             </div>
         </div>
+        <!-- modal -->
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Datos Generales CLiente</h4>
+              </div>
+              <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>NOMRE CLIENTE</label>        
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="nombre" name="nombre" value="" class="form-control" onkeypress="letras()">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3" style="margin-top:5px">
+                            <label>TELEFONO</label>        
+                        </div>
+                        <div class="col-md-6" style="margin-top:5px">
+                            <div class="input-group">
+                                <span class="input-group-addon">#</span>
+                                <input type="text" maxlength="10" id="telefono" name="telefono" value="" class="form-control" onkeypress="numeros()"> 
+                            </div>
+                        </div>
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" onclick="abrir()" class="btn btn-info">PDF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fin modal -->
         <div class="col-md-2" style="margin-top:27px">
-            <button type="button" onclick="abrir()" class="btn btn-info">General PDF !</button>
+            <!-- <button type="button" onclick="abrir()" class="btn btn-info">General PDF !</button> -->
+            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#Modal">Enviar Datos </button>
         </div>
     </div>
     </div> <!-- fin row 1 -->

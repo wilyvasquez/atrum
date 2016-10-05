@@ -22,8 +22,6 @@ echo "<table data-toggle='table' data-pagination='true'
         </thead>
         <tbody>
         ";while ($registro = mysql_fetch_array($result)){
-	        // $contador=$contador+1;
-	        // $totalarticulo=$totalarticulo+$registro['total'];
 	echo "
 	        <tr>
 		        <td>".$registro['nombre_accesorio']."</td>

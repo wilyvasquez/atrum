@@ -84,21 +84,6 @@ echo "<div class='col-md-3'>
 	<input type='text' id='importe' name='importe' value='".round($final,2)."' class='form-control' onfocus='this.blur()'>      
 	</div>
 	</div>
-	<div class='col-md-3' style='margin-top:5px'>
-	<label>TELEFONO</label>        
-	</div>
-	<div class='col-md-3' style='margin-top:5px'>
-	<div class='input-group'>
-	<span class='input-group-addon'>#</span>
-	<input type='text' id='telefono' maxlength='10' name='telefono' value='' class='form-control' onkeypress='numeros()' required/> 
-	</div>
-	</div>
-	<div class='col-md-3' style='margin-top:5px'>
-	<label>CLIENTE</label>        
-	</div>
-	<div class='col-md-3' style='margin-top:5px'>
-	<input type='text' id='nombre' name='nombre' value='' class='form-control' onkeypress='letras()' required/>
-	</div>
 	<div style='display:none'>
 		<input type='text' id='fecha' name='fecha' value='".$fecha."'>
 	</div>";

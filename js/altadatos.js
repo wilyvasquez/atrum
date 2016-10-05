@@ -506,29 +506,6 @@ function eliminar()
       }
     });
 }
-// function generarpdf()
-// {   
-//   var nombre = document.getElementById('nombre').value;
-//   var telefono = document.getElementById('telefono').value;
-//   // var fecha = document.getElementById('fecha').value;
-//     var par = 
-//     {
-//       "nombre" : nombre,
-//       "telefono" : telefono
-//       // "fecha" : fecha
-//     };
-//     $.ajax({
-//       data: par,
-//       url: 'pdf2.php',
-//       type: 'post',
-//       beforeSend: function()
-//       {
-//       },
-//       success: function(response)
-//       {
-//       }
-//     });
-// }
 function abrir()
 {
   var nombre = document.getElementById('nombre').value;
@@ -548,9 +525,10 @@ if (window.fecha && nombre.length>=1 && telefono.length>=1) {
     var suma = document.getElementById('suma').value;
     var final = document.getElementById('final').value;
     var articulos = document.getElementById('articulos').value;
+    var parametro = document.getElementById('parametro').value;
 
     opciones = "toolbar=yes,scrollbars=yes,resizable=yes,_target"
-    window.open("pdf2.php?nombre="+nombre+
+    window.open("pdf.php?nombre="+nombre+
                   "&telefono="+telefono+
                   "&fecha="+fecha+
                   "&credito="+credito+
@@ -563,7 +541,8 @@ if (window.fecha && nombre.length>=1 && telefono.length>=1) {
                   "&enganche="+enganche+
                   "&suma="+suma+
                   "&final="+final+
-                  "&articulos="+articulos
+                  "&articulos="+articulos+
+                  "&parametro="+parametro
                   ,opciones);
 }else{
       if (fecha==null) {alertify.error("Faltan Campos");}

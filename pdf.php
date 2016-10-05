@@ -1,274 +1,394 @@
-<?php 
-$importe=0;
+<?php
+$contador=0;
+$descuento=0;
+$pago=0;
+$semanas=0;
+$quincenas=0;
+$meses=0;
+
+$segurosemanas=0;
+$seguroquincena=0;
+$seguromeses=0;
+
+include ('fpdf/fpdf.php');
 include("php/conexion.php");
 include("php/consultas_pdf.php");
-$query='select * from accesorio';
-$result = mysql_query($query);
-$query1='select * from accesorio';
-$accesorio = mysql_query($query1);
-
-// $id = $_GET['id'];
-$id = 7;
-
+$id = $_GET['moto'];
 $consulta = "SELECT imagen FROM moto WHERE id_moto = $id";
 $imagen = mysql_query($consulta);
 $datos = mysql_fetch_array($imagen);
 $ruta = "php/imagenes/" . $datos['imagen'];
 
-ob_start();
-?>
-<html>
-<body>
-<div>
-	<img style="margin-left:50px" src="images/texto.jpg" width="400px" height="40px">
-	<img style="margin-left:10px" src="images/suzuki.jpg" width="200px" height="90px">
-</div><br>
-<div style="margin-left:10cm">
-	<font size="2" face="sans-serif">Oaxaca de Juarez, Oax.,a</font>
-	<font size="2" face="sans-serif"><?= $_GET['fecha'] ?></font>
-</div>
-<div><font size="2" face="sans-serif"><?= $_GET['nombre'] ?></font></div>
-<div>
-<b>
-	<font size=2 face="sans-serif">CELULAR:</font>
-	<font size=2 face="sans-serif"><?= $_GET['telefono'] ?></font>
-	<font size=2 face="sans-serif" style="margin-left:290px">TIPO DE CREDITO:</font>
-	<font size=3 face="sans-serif"><?= $credito ?></font>	
-</b>
-<div>
-	<b><font size="3">P R E S E N T E</font></b>
-	<font size="1" face="sans-serif" style="margin-left:380px">NUMERO DE COTIZACION:</font>
-	<font size="1" face="sans-serif">variable</font>
-</div>
-<!-- /////////////////////////////////// -->
-<div style="background-image:url(images/fondo.jpg)">
-	<div><font size="2" face="sans-serif">En atencion a su amable solicitud tenemos el gusto de presentar la siguiente cotizacion</font></div>
-<div style="float:left;width:0px"><br><br>
-        <img src="<?= $ruta ?>" style="margin-left:20px;margin-top:10px"/>
-</div>
-<div style="float:left;width:400px;margin-left:300px">
-	<div><b><font size="2" face="sans-serif">CARACTERISTICAS TECNICAS:</font></b></div>
-	<div>
-		<b><font size="1" face="sans-serif">TIPO DE MOTO:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:110px"><?= $moto['tipo_moto']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">MOTOR:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:148px"><?= $moto['motor']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">TRANSMISION:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:113px"><?= $moto['trasmision']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">TIPO DE MOTOR:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:103px"><?= $moto['tipo_motor']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">NUMERO DE CILINDROS:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:62px"><?= $moto['numero_cilindros']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">DIAMETRO:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:132px"><?= $moto['diametro']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">CARRERA:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:136px"><?= $moto['carrera']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">DESPLAZAMIENTO:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:91px"><?= $moto['desplazamiento']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">RELACION DE COMPRESION:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:41px"><?= $moto['relacion_compresion']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">SISTEMA DE LUBRICACION:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:48px"><?= $moto['sistema_lubricacion']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">SISTEMA DE COMBUSTIBLE:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:45px"><?= $moto['sistema_combustible']?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">SISTEMA DE ARRANQUE:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:61px"><?= $moto['sistema_arranque']?></font>
-	</div>
-</div>
-</div>
-<!-- /////////////////////////////////// -->
-<div>
-	<div>
-		<b><font size="1" face="sans-serif">FINANCIAMIENTO A:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:20px"><?= $_GET['financiamiento'] ?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif" >TIPO DE SEGURO:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:31px"><?= $res ?></font>
-	</div>
-	<div>
-		<b><font size="1" face="sans-serif">FORMA DE PAGOS:</font></b>
-		<font size="1" face="sans-serif" style="margin-left:26px"><?= $res1 ?></font>
-	</div><br>
-</div>
-<div>
-	<table style="width: 100%">
-		<thead>
-			<tr>
-				<td>
-					<table style="border: thick solid ; border-collapse: collapse;border-width: 1px;width: 100%">
-						<thead>
-							<tr>
-								<th align="left"><b><font style="margin-left: 5px" size="1" face="sans-serif">MODELO</font></b></th>
-								<th><b><font size="1" face="sans-serif">AÑO</font></b></th>
-								<th align="right"><b><font size="1" face="sans-serif">ENGANCHE</font></b></th>
-							</tr>
-						</thead>
-						<tbody style="border: thick solid;border-width: 1px">
-							<tr>
-								<td><font style="margin-left: 5px" size="1" face="sans-serif"><?= $moto['modelo']?></font></td>
-								<td><font size="1" face="sans-serif"><?=  $apertura['anio'] ?></font></td>
-								<td align="right"><font style="margin-right: 10px" size="1" face="sans-serif">$ <?= $_GET['engancheresul'] ?></font></td>
-							</tr>
-						</tbody>
-						<tbody style="border: thick solid;border-width: 1px">
-							<tr>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">APERTURA DE CREDITO</font></b></td>
-								<td><font size="1" face="sans-serif">Descuento de <?= $descuento ?> %</font></td>
-								<td align="right"><font style="margin-right: 10px" size="1" face="sans-serif">$ <?= ($costo*$descuento)/100 ?></font></td>
-							</tr>			
-						</tbody>
-					</table>
-				</td>
-				<td>
-					<table style="border: thick solid ; border-collapse: collapse;border-width: 1px;width: 75%">
-						<thead>
-							<tr>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">COSTO MOTOCICLETA</font></b></td>
-								<td><font size="1" face="sans-serif">$ <?= $apertura['precio'] ?></font></td>
-							</tr>
-						</thead>
-						<tbody >
-							<tr>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">COSTO SEGURO</font></b></td>
-								<td><font size="1" face="sans-serif">$ <?= $resul ?></font></td>
-							</tr>
-						</tbody>
-						<tbody style="border: thick solid;border-width: 1px">
-							<tr>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">SUB TOTAL</font></b></td>
-								<td><b><font size="1" face="sans-serif">$ <?= $apertura['precio']+ $resul ?></font></b></td>
-							</tr>							
-						</tbody>
-					</table>
-				</td>
-			</tr>
-		</thead>
-	</table>
-	<table style="width: 100%">
-		<thead>
-			<tr>
-				<td>
-					<table style="border: thick solid ; border-collapse: collapse;border-width: 1px;width: 428px">
-						<thead>
-							<tr>
-								<th align="left"><b><font style="margin-left: 5px" size="1" face="sans-serif">ACCESORIOS</font></b></th>
-								<!-- <th><b><font size="1" face="sans-serif">PRECIO</font></b></th> -->
-							</tr>
-						</thead>
-						<tbody style="border: thick solid;border-width: 1px">
-							<tr>
-								<td><b><font style="margin-left: 20px" size="1" face="sans-serif">DESCRIPCION DEL ARTICULO</font></b></td>
-							</tr>
-						</tbody>
-						<?php while ($registro = mysql_fetch_array($result)){?>
-						<tbody style="border: thick solid;border-width: 1px">
-							<tr>
-								<td><font style="margin-left: 20px" size="1" face="sans-serif"><?= $registro['nombre_accesorio'] ?></font></td>
-							</tr>			
-						</tbody>
-						<?php }?>
-					</table>
-				</td>
-				<td>
-					<table style="border: thick solid ; border-collapse: collapse;border-width: 1px;width: 75%;margin-left: 140px">
-						<thead>
-							<tr>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">CANTIDAD</font></b></td>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">IMPORTE</font></b></td>
-							</tr>
-						</thead>
-						<?php while ($hola = mysql_fetch_array($accesorio)) { ?>
-						<tbody>
-							<tr>
-								<td><font style="margin-left: 20px" size="1" face="sans-serif"><?= $hola['cantidad'] ?></font></td>
-								<td align="left"><font style="margin-left: 20px" size="1" face="sans-serif">$ <?= $hola['total'] ?></font></td>
-							</tr>
-						</tbody>
-								<?php 
-									$importe=$importe+$hola['total'];
-								 ?>
-						<?php }?>
-						<tbody style="border: thick solid;border-width: 1px;">
-							<tr>
-								<td><b><font style="margin-left: 5px" size="1" face="sans-serif">SUB TOTAL</font></b></td>	
-								<td align="left"><b><font style="margin-left:20px" size="1" face="sans-serif">$ <?= $importe ?></font></b></td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
-	<b><font style="margin-left: 250px" size="2" face="sans-serif">PAGO INICIAL DE:</font></b>
-	<b><font style="" size="2" face="sans-serif">$ <?= $_GET['engancheresul']+($costo*$descuento)/100 ?></font></b>
-	<b><font style="margin-left: 90px" size="2" face="sans-serif">TOTAL:</font></b>
-	<b><font size="2" face="sans-serif">$ <?= $apertura['precio']+ $resul+$importe ?></font></b>
-</div><br>
-</div>
-<div>
-	<b><font size="1" face="sans-serif">ASESOR DE VENTAS:</font></b>
-	<b><font size="1" face="sans-serif">variable:</font></b>
-	<!-- <font size="1" face="sans-serif">variable</font> -->
-</div>	
-<div>
-	<b><font size="1" face="sans-serif">CORREO:</font></b>
-	<b><font size="1" face="sans-serif">variable</font></b>
-	<b><font style="margin-left: 190px" size="1" face="sans-serif">TELEFONO:</font></b>
-	<b><font size="1" face="sans-serif">variable</font></b>
-	<b><font style="margin-left: 70px" size="1" face="sans-serif">CELULAR:</font></b>
-	<b><font size="1" face="sans-serif">variable</font></b><br>
-	<b><font size="1" face="sans-serif">REQUISITOS:</font></b>
-	<b><font style="margin-left: 216px" size="1" face="sans-serif">BENEFICIOS:</font></b>
-	<!-- <font size="1" face="sans-serif" style="margin-left:62px">variable</font> -->
-	<!-- <b><font size="1" face="sans-serif" style="margin-left:202px">TELEFONO:</font></b> -->
-	<!-- <font size="1" face="sans-serif">variable</font> -->
-</div>
-<div>
-	<h6>
-		1.-Pago de afiliacion<br>
-		2.-Credencial de elector IFE o INE vigente<br>
-	</h6>
-</div>
-<div>
-	<!-- <b><font size="1" face="sans-serif">REQUISITOS:</font></b> -->
-	<!-- <b><font size="1" face="sans-serif" style="margin-left:288px">BENEFICIOS:</font></b> -->
-</div><br>
-<div>
-	<img src="images/final.jpg" alt="" width="550px" style="margin-left: 80px;margin-top: 130px;position: absolute;">
-</div>
-</body>
-</html>
-<?php
-require_once("dompdf/dompdf_config.inc.php");
-$dompdf = new DOMPDF();
-$dompdf->load_html(ob_get_clean());
-$dompdf->render();
-$pdf = $dompdf->output();
-$filename = 'nombre.pdf';
-$dompdf->stream($filename, array("Attachment" => 0));
-?>
+$requisitos="SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito='$credito'";
+$query = mysql_query($requisitos);
+$resultado = mysql_fetch_array($query);
+
+if ($res1=='SEMANAS') {
+	# code...
+    $final=$_GET['final']/52;
+    $var2=$_GET['suma']/52;
+    $var3=$_GET['articulos']/52;
+}
+if ($res1=='QUINCENAS') {
+	# code...
+    $final=$_GET['final']/24;
+    $var2=$_GET['suma']/24;
+    $var3=$_GET['articulos']/24;
+}
+if ($res1=='MESES') {
+	# code...   
+    $final=$_GET['final']/12;
+    $var2=$_GET['suma']/12;
+    $var3=$_GET['articulos']/12;
+}
+
+        $pdf = new FPDF();
+        $pdf->AddPage();
+
+        $pdf->Ln(15);
+
+        ///////////amarillo ///////////
+        $pdf->Image('images/fondo.jpg',30,80,150,70,'');
+        $pdf->Image('images/suzuki.jpg',140,10,60,30,'');
+        $pdf->Image('images/texto.jpg',20,20,100,10,'');
+        $pdf->Image('images/final.jpg',45,275,120,13,'');
+
+		$pdf->SetXY(120, 43);
+		$pdf->SetFont('Arial','',10);
+		$pdf->Cell(5, 6, utf8_decode('Oaxaca de Juárez., a'), 0 , 1);
+		$pdf->SetXY(156, 43);
+		$pdf->Cell(5, 6,$_GET['fecha'], 0 , 1);
+
+		///////////azul////////// 
+
+		$pdf->SetXY(15, 50);
+		$pdf->SetFont('Arial','',11);
+		$pdf->Cell(15, 6, $_GET['nombre'], 0 , 1); /////////////// nombre cliente
+		$pdf->SetXY(15, 55);
+		$pdf->SetFont('Arial','B',11);
+		$pdf->Cell(20, 6, 'CELULAR: ', 0 , 1);
+		$pdf->SetXY(35, 55);
+		$pdf->SetFont('Arial','',11);
+		$pdf->Cell(20, 6, $_GET['telefono'], 0 , 1); ///////// TELEFONO CLIENTE
+		$pdf->SetXY(15, 60);
+		$pdf->SetFont('Arial','B',11);
+		$pdf->Cell(20, 6, 'P R E S E N T E', 0 , 1);
+		///////////verde ///////////
+
+		$pdf->SetXY(110, 55);
+		$pdf->SetFont('Arial','B',12);
+		$pdf->Cell(5, 6, utf8_decode('TIPO DE CRÉDITO:'), 0 , 1);
+		$pdf->SetXY(150, 55);
+		$pdf->Cell(5, 6,$credito, 0 , 1);
+
+		/////////// SALMON///////////////
+	
+		$pdf->SetXY(143, 60);
+		$pdf->SetFont('Arial','',10);
+		$pdf->Cell(5, 6, utf8_decode('NÚMERO DE COTIZACIÓN:123'), 0 , 1);
+
+
+		///////////// ROSA //////////////
+
+		$pdf->SetXY(15, 65);
+		$pdf->SetFont('Arial','',11);
+		$pdf->Cell(15, 6, utf8_decode('En atención a su amable  solicitud tenemos el gusto de presentar la siguiente cotización.'), 0 , 1);
+
+		$pdf->SetXY(85, 72);
+		$pdf->SetFont('Arial','B',11);
+		$pdf->Cell(15, 6, utf8_decode('CARACTERÍSTICAS TÉCNICAS:'), 0 , 1);
+
+		$pdf->SetXY(85, 80);
+		$pdf->SetFont('Arial','',8.5);
+		$pdf->Cell(15, 6, 'TIPO DE MOTO:', 0 , 1); 
+		$pdf->SetXY(85, 85);
+		$pdf->Cell(15, 6, 'MOTOR:', 0 , 1);
+
+		$pdf->SetXY(85, 90);
+		$pdf->Cell(15, 6, utf8_decode('TRANSMISIÓN:'), 0 , 1);
+
+		$pdf->SetXY(85, 95);
+		$pdf->Cell(15, 6, 'TIPO DE MOTOR:', 0 , 1);
+
+		$pdf->SetXY(85, 100);
+		$pdf->Cell(15, 6, utf8_decode('NÚMERO DE CILINDROS:'), 0 , 1);
+
+		$pdf->SetXY(85, 105);
+		$pdf->Cell(15, 6, utf8_decode('DIÁMETRO:'), 0 , 1);
+
+		$pdf->SetXY(85, 110);
+		$pdf->Cell(15, 6, 'CARRERA:', 0 , 1);
+
+		$pdf->SetXY(85, 115);
+		$pdf->Cell(15, 6, 'DESPLAZAMIENTO:', 0 , 1);
+
+		$pdf->SetXY(85, 120);
+		$pdf->Cell(15, 6, utf8_decode('RELACION DE COMPRENSIÓN:'), 0 , 1);
+
+		$pdf->SetXY(85, 125);
+		$pdf->Cell(15, 6, 'SISTEMA DE LUBRICACION:', 0 , 1);
+
+		$pdf->SetXY(85, 130);
+		$pdf->Cell(15, 6, 'SISTEMA DE COMBUSTIBLE:', 0 , 1);
+
+		$pdf->SetXY(85, 135);
+		$pdf->Cell(15, 6, 'SISTEMA DE ARRANQUE:', 0 , 1);
+
+		$pdf->SetXY(135, 80);
+		$pdf->SetFont('Arial','',8.5);
+		$pdf->Cell(15, 6, $moto['tipo_moto'], 0 , 1);/////////////// TIPO DE MOTO
+
+		$pdf->SetXY(135, 85);
+		$pdf->Cell(15, 6, $moto['motor'], 0 , 1);
+
+		$pdf->SetXY(135, 90);
+		$pdf->Cell(15, 6, $moto['trasmision'], 0 , 1);
+
+		$pdf->SetXY(135, 95);
+		$pdf->Cell(15, 6, $moto['tipo_motor'], 0 , 1);
+
+		$pdf->SetXY(135, 100);
+		$pdf->Cell(15, 6, $moto['numero_cilindros'], 0 , 1);
+
+		$pdf->SetXY(135, 105);
+		$pdf->Cell(15, 6, $moto['diametro'], 0 , 1);
+
+		$pdf->SetXY(135, 110);
+		$pdf->Cell(15, 6, $moto['carrera'], 0 , 1);
+
+		$pdf->SetXY(135, 115);
+		$pdf->Cell(15, 6, $moto['desplazamiento'], 0 , 1);
+
+		$pdf->SetXY(135, 120);
+		$pdf->Cell(15, 6, $moto['relacion_compresion'], 0 , 1);
+
+		$pdf->SetXY(135, 125);
+		$pdf->Cell(15, 6, $moto['sistema_lubricacion'], 0 , 1);
+
+		$pdf->SetXY(135, 130);
+		$pdf->Cell(15, 6, $moto['sistema_combustible'], 0 , 1);
+
+		$pdf->SetXY(135, 135);
+		$pdf->Cell(15, 6, $moto['sistema_arranque'], 0 , 1);
+		/////////////////////////////////
+
+		$pdf->SetXY(15, 145);
+		$pdf->SetFont('Arial','B',10);
+		$pdf->Cell(5, 6, 'FINANCIAMIENTO A:', 0 , 1);
+
+		$pdf->SetXY(15, 149);
+		$pdf->SetFont('Arial','B',10);
+		$pdf->Cell(5, 6, 'TIPO DE SEGURO:', 0 , 1);
+
+		$pdf->SetXY(15, 153);
+		$pdf->Cell(5, 6, 'FORMA DE PAGOS:', 0 , 1);
+
+		$pdf->SetXY(60, 145);
+		$pdf->SetFont('Arial','',9);
+		$pdf->Cell(5, 6, utf8_decode($_GET['financiamiento']), 0 , 1);
+		$pdf->SetXY(60, 149);
+		$pdf->Cell(5, 6, $res, 0 , 1);
+
+		$pdf->SetXY(60, 153);
+		$pdf->Cell(5, 6, $res1, 0 , 1);
+		/////////////////////////////////
+
+		$pdf->Rect(15, 161, 110 , 6, '');
+		$pdf->Rect(15, 167, 110 , 6, '');
+		$pdf->Rect(15, 173, 110 , 6, '');
+
+		$pdf->Rect(130, 161, 60 , 6, '');
+		$pdf->Rect(130, 167, 60 , 6, '');
+		////////////////////////////////////
+
+		$pdf->SetXY(17, 161);
+		$pdf->SetFont('Arial','B',8);
+		$pdf->Cell(5, 6, 'MODELO', 0 , 1);
+
+		$pdf->SetXY(17, 167);
+		$pdf->SetFont('Arial','',8);
+		$pdf->Cell(5, 6, $moto['modelo'], 0 , 1);
+
+		$pdf->SetXY(17, 173);
+		$pdf->SetFont('Arial','B',8);
+		$pdf->Cell(5, 6, utf8_decode('APERTURA DE CRÉDITO'), 0 , 1);
+
+		$pdf->SetXY(80, 161);
+		$pdf->SetFont('Arial','B',8);
+		$pdf->Cell(5, 6, utf8_decode('AÑO'), 0 , 1);
+		$pdf->SetXY(100, 161);
+		$pdf->Cell(5, 6, 'ENGANCHE', 0 , 1);
+
+		$pdf->SetXY(80, 167);
+		$pdf->SetFont('Arial','',8);
+		$pdf->Cell(5, 6, $anio, 0 , 1);
+
+
+		$pdf->SetXY(80, 173);
+		$pdf->Cell(5, 6,$descuento, 0 , 1); //////////descuento apertura
+
+		$pdf->SetXY(55, 173);
+		$pdf->Cell(5, 6, 'DESCUENTO DE', 0 , 1);
+
+		$pdf->SetXY(85, 173);
+		$pdf->Cell(5, 6, '%', 0 , 1);
+
+		$pdf->SetXY(95, 167);
+		$pdf->Cell(5, 6,'$', 0 , 1);
+
+		$pdf->SetXY(100, 167);
+		$pdf->Cell(5, 6,$_GET['engancheresul'], 0 , 1);
+
+		$pdf->SetXY(95, 173);
+		$pdf->Cell(5, 6,'$', 0 , 1);
+
+		$descuento=(($costo*$descuento)/100);
+		$pdf->SetXY(100, 173);
+		$pdf->Cell(5, 6,$descuento, 0 , 1);
+
+		$pdf->SetXY(130, 161);
+		$pdf->SetFont('Arial','B',8);
+		$pdf->Cell(5, 6, 'PAGOS MOTOCICLETA', 0 , 1);
+
+		$pdf->SetXY(130, 167);
+		$pdf->Cell(5, 6, 'PAGOS DEL SEGURO', 0 , 1);
+
+		$pdf->SetXY(175, 161);
+		$pdf->SetFont('Arial','',8);
+		$pdf->Cell(5, 6, round($final,2), 0 , 1); ////////// pago motocicleta
+
+		$pdf->SetXY(170, 161);
+		$pdf->Cell(5, 6,'$', 0 , 1);
+
+		$pdf->SetXY(175, 167);
+		$pdf->Cell(5, 6, round($var2,2), 0 , 1);/// pagos seguro
+
+		$pdf->SetXY(170, 167);
+		$pdf->Cell(5, 6,'$', 0 , 1);
+
+		$pdf->SetXY(130, 173);
+		$pdf->SetFont('Arial','B',10);
+		$pdf->Cell(5, 6, 'SUB TOTAL:', 0 , 1);
+
+		$pdf->SetXY(172, 173);
+		$pdf->Cell(5, 6,round($final+$var2), 0 , 1);
+
+		$pdf->SetXY(169, 173);
+		$pdf->Cell(5, 6,'$', 0 , 1);
+
+		$pdf->Image($ruta,15,90,65,40,'');
+		////////////////////////////////////////
+		$usuario=$_GET['parametro'];
+		$consulta = mysql_query("SELECT * FROM accesorio where ref_usuario=$usuario");
+
+		$pdf->Rect(15, 181, 110 , 6, '');
+		$pdf->Rect(15, 187, 110 , 6, '');
+		$pdf->SetXY(15,181);
+		$pdf->SetFont('Arial','B',9);
+		$pdf->Cell(5, 6, 'ACCESORIOS', 0 , 1);
+		$pdf->SetXY(15,187);
+		$pdf->Cell(5, 6, 'DESCRIPCION DEL ARTICULO', 0 , 1);
+		$pdf->SetXY(15,193);
+		$pdf->SetFont('Arial','',10);
+		while($resultado = mysql_fetch_array($consulta)){
+		$pdf->Cell(110,5,$resultado['nombre_accesorio'],1,2);
+		} 
+		$pdf->SetX(65);
+		$pdf->SetFont('Arial','B',10);
+		$pago=$_GET['engancheresul']+$descuento;
+		$pdf->Cell(5, 6, 'PAGO INICIAL DE:     $ '.$pago, 0 , 1);
+		//////////////////////////////////////
+		$consul = mysql_query("SELECT * FROM accesorio where ref_usuario=$usuario");
+		$pdf->Rect(130, 187, 60 , 6, '');
+		$pdf->SetFont('Arial','B',9);
+		$pdf->SetXY(135,187);
+		$pdf->Cell(5, 6, 'CANTIDAD', 0 , 1);
+		$pdf->SetXY(165,187);
+		$pdf->Cell(5, 5, 'IMPORTE', 0 , 1);
+		$pdf->SetXY(130,193);
+		$pdf->SetFont('Arial','',9);
+		while($cantidad = mysql_fetch_array($consul)){
+		$pdf->Cell(60,5,$cantidad['cantidad'],1,2);
+		} 
+		/////////////////////////////////////////
+		$consult = mysql_query("SELECT * FROM accesorio where ref_usuario=$usuario");
+		$pdf->SetXY(170,193);
+		while($cantidad = mysql_fetch_array($consult)){
+			$pdf->Cell(60,5,'$'.$cantidad['total'],0,2);
+			$contador=$contador+$cantidad['total'];
+		} 
+		/////////////////////////////////////////
+		$suma=0;
+		$suma=$contador+($final+$var2);
+		$pdf->SetX(130);
+		$pdf->SetFont('Arial','B',8);
+		$pdf->Cell(1, 4, 'SUB TOTAL:'.'                             '.'$'.$contador, 0 , 1);
+		$pdf->SetFont('Arial','B',10);
+		$pdf->SetX(130);
+		$pdf->Cell(6, 4, 'TOTAL:'.'                           '.'$'.round($suma), 0 , 2);
+		$pdf->SetX(170);
+		/////////////////////////////////////
+
+		$pdf->SetXY(10, 232);
+		$pdf->SetFont('Arial','B',8);
+		$pdf->Cell(5, 6, 'ASESOR DE VENTAS:', 0 , 1);
+
+		$pdf->SetXY(47, 232);
+		$pdf->Cell(5, 6,"var", 0 , 1);
+
+		$pdf->SetXY(10, 235);
+		$pdf->Cell(5, 6, 'CORREO:', 0 , 1);
+
+		$pdf->SetXY(47, 235);
+		$pdf->Cell(5, 6,"var", 0 , 1);
+
+		$pdf->SetXY(10, 238);
+		$pdf->Cell(5, 6, 'REQUISITOS:', 0 , 1);
+		$resultado = mysql_query("SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito=8");
+		$pdf->SetFont('Arial','',7);
+		$pdf->SetXY(10,243);
+		while($papel = mysql_fetch_array($resultado)){
+			$pdf->Cell(60,2.4,$papel['requisito'],0,2);
+		} 
+
+		$pdf->SetXY(115, 232);
+		$pdf->SetFont('Arial','B',8);
+		$pdf->Cell(5, 6, utf8_decode('TELÉFONO:'), 0 , 1);
+
+		$pdf->SetXY(140, 232);
+		$pdf->Cell(5, 6,"var", 0 , 1);
+
+		$pdf->SetXY(115, 235);
+		$pdf->Cell(5, 6, 'CELULAR:', 0 , 1);
+
+		$pdf->SetXY(140, 235);
+		$pdf->Cell(5, 6,"var", 0 , 1);
+
+		$pdf->SetXY(115, 238);
+		$pdf->Cell(5, 6, 'BENEFICIOS:', 0 , 1);
+		$resultado = mysql_query("SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito=9");
+		$pdf->SetFont('Arial','',7);
+		$pdf->SetXY(115,243);
+		while($papel = mysql_fetch_array($resultado)){
+			$pdf->Cell(30,2.4,$papel['beneficios'],0,2);
+		} 
+
+		$pdf->SetXY(15,270);
+		$pdf->SetFont('Arial','B',7);
+		$pdf->Cell(5, 6, 'JUEGO EN ORIGINAL Y COPIA.', 0 , 2);
+
+		$pdf->SetXY(120,267);
+		$pdf->Cell(5, 6, utf8_decode('*DURANTE TODA LA VIDA DEL CRÉDITO.'), 0 , 2);
+
+		$pdf->SetXY(120,270);
+		$pdf->Cell(5, 6, '*DIA DE ENTREGA DE LA UNIDAD.', 0 , 2);
+
+		//////////////////////////////////////
+		$pdf->Ln();
+		$pdf->Ln(); //salto de linea
+		$pdf->Ln(15);//ahora salta 15 lineas 
+        $pdf->Output("pdf.pdf",'I');
+		echo "<script language='javascript'>window.open('pdf.pdf','_target','');</script>";//para ver el archivo pdf generado
+		exit;
+
+	?>
