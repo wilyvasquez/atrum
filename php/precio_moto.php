@@ -3,11 +3,19 @@ header("Content-Type: text/html;charset=utf-8");
 $final=0;
 include("conexion.php");
 include("consultas.php");
-$res=$_POST['moto'];
-$consulta = "SELECT imagen FROM moto WHERE id_moto = $res";
-$imagen = mysql_query($consulta);
-$datos = mysql_fetch_array($imagen);
-$ruta = "php/imagenes/" . $datos['imagen'];
+if (isset($_POST['moto'])) {
+    # code...
+    $res=$_POST['moto'];
+    $consulta = "SELECT imagen FROM moto WHERE id_moto = $res";
+    $imagen = mysql_query($consulta);
+    $datos = mysql_fetch_array($imagen);
+    $ruta = "php/imagenes/" . $datos['imagen'];
+}else{
+    $ruta=0;
+    $ivares=0;
+    $suma=0;
+    $placas=0;
+}
 
 echo    "<div class='thumbnail col-md-6' style='width:260px; height:200px'>
             <form action='' method='POST' enctype='multipart/form-data' >

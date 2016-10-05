@@ -99,7 +99,7 @@ include('seguridad.php');
                     <div class="col-md-3">
                         <div><label for="">TIEMPO</label></div>
                         <div>
-                            <select id="tiempo" name="tiempo" class="form-control">
+                            <select id="tiempo" name="tiempo" onchange="costomoto(this.value)" class="form-control">
                               <option value="">Seleccionar</option>
                             </select>
                         </div>

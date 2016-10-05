@@ -1,4 +1,6 @@
 <?php
+      if (isset($_POST['moto'])) {
+            # code...
       $moto=$_POST['moto'];
       $anio=$_POST['anio'];
       $seguro=$_POST['seguro'];
@@ -42,6 +44,7 @@
       $result = mysql_query($query1);  
       $var1 = mysql_fetch_array($result);
       $placas = $var1['precio'];
+      }
 
 
 ?>
