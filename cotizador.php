@@ -67,7 +67,7 @@ include('seguridad.php');
                     <div class="col-md-5">
                         <div><label for="">MOTO</label></div>
                         <div>
-                            <select id="moto" name="moto" onchange="funciontipo(this.value)" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
+                            <select id="moto" name="moto" onchange="funciontipo(this.value);costomoto(this.value);result(this.value);prueba(this.value)" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
                               <!-- <option value="">Seleccionar</option> -->
                               <?php include("php/moto.php") ?>
                             </select>
@@ -75,14 +75,14 @@ include('seguridad.php');
                     </div>
                     <div class="col-md-4">
 			          <label for="">AÑO</label>
-			          <select name="anio" id="anio" class="form-control">
+			          <select name="anio" id="anio" class="form-control" onchange="costomoto(this.value);result(this.value);prueba(this.value);costomoto(this.value);result(this.value);prueba(this.value)">
 			            <option value="">Seleccionar</option>
 			          </select>
 			        </div>
                     <div class="col-md-5">
                         <div><label for="">TIPO DE CREDITO</label></div>
                         <div>
-                            <select id="credito" name="credito" onchange="funcionseguro(this.value);funciontiempo(this.value);funcionenganche(this.value)" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
+                            <select id="credito" name="credito" onchange="funcionseguro(this.value);funciontiempo(this.value);funcionenganche(this.value);costomoto(this.value);result(this.value);prueba(this.value)" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
                               <!-- <option value="">Seleccionar</option> -->
                               <?php include("php/credito.php") ?>
                             </select>
@@ -91,7 +91,7 @@ include('seguridad.php');
                     <div class="col-md-4">
                         <div><label for="">TIPO DE SEGURO</label></div>
                         <div>
-                            <select id="seguro" name="seguro" class="form-control">
+                            <select id="seguro" name="seguro" class="form-control" onchange="costomoto(this.value);result(this.value);prueba(this.value)">
                               <option value="">Seleccionar</option>
                             </select>
                         </div>
@@ -99,7 +99,7 @@ include('seguridad.php');
                     <div class="col-md-3">
                         <div><label for="">TIEMPO</label></div>
                         <div>
-                            <select id="tiempo" name="tiempo" onchange="costomoto(this.value)" class="form-control">
+                            <select id="tiempo" name="tiempo" onchange="costomoto(this.value);result(this.value);prueba(this.value)" class="form-control">
                               <option value="">Seleccionar</option>
                             </select>
                         </div>
@@ -107,7 +107,7 @@ include('seguridad.php');
                     <div class="col-md-5">
                         <div><label for="">ENGANCHE</label></div>
                         <div class="input-group col-md-10">
-                            <select id="porcentaje" name="porcentaje" class="form-control">
+                            <select id="porcentaje" name="porcentaje" class="form-control" onchange="costomoto(this.value);result(this.value);prueba(this.value)">
                               <option value="">Seleccionar</option>
                             </select>
                             <span class="input-group-addon">%</span>
@@ -116,7 +116,7 @@ include('seguridad.php');
                     <div class="col-md-5">
                         <div><label for="">EMPLACAMIENTO</label></div>
                         <div>
-                            <select id="placas" name="placas" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
+                            <select id="placas" name="placas" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option" onchange="costomoto(this.value);result(this.value);prueba(this.value)">
                               <!-- <option value="">Seleccionar</option> -->
                               <?php include("php/placas.php") ?>
                             </select>
@@ -124,7 +124,7 @@ include('seguridad.php');
                     </div>
                     <div class="col-md-2">
                         <div style="margin-top:27px">
-                            <button class="btn btn-info" type="submit" onclick="datoscotizador();resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val());tablaprecio($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#porcentaje').val(),$('#tiempo').val(),$('#parametro').val());tiempo($('#credito').val())">Cotizar !</button>
+                            <button class="btn btn-info" type="submit" onclick="datoscotizador();resultados($('#porcentaje').val(),$('#tiempo').val(),$('#moto').val(),$('#anio').val(),$('#credito').val(),$('#placas').val());tablaprecio($('#moto').val(),$('#anio').val(),$('#seguro').val(),$('#placas').val(),$('#credito').val(),$('#porcentaje').val(),$('#tiempo').val(),$('#parametro').val());tiempo($('#credito').val())">Cotizar !</button>
                         </div>
                     </div>
                 </div><!-- fin modulo 1 -->
@@ -137,7 +137,7 @@ include('seguridad.php');
                         <div class="col-md-7" style="margin-top:5px">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" id="costo" name="costo" value="100" class="form-control" onfocus="this.blur()">      
+                                <input type="text" id="costo" name="costo" value="0" class="form-control" onfocus="this.blur()">      
                             </div>
                         </div>
                         <div class="col-md-5" style="margin-top:5px">
@@ -146,7 +146,7 @@ include('seguridad.php');
                         <div class="col-md-7" style="margin-top:5px">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" id="seguromoto" name="seguro" value="100" class="form-control" onfocus="this.blur()">      
+                                <input type="text" id="seguromoto" name="seguro" value="0" class="form-control" onfocus="this.blur()">      
                             </div>
                         </div>
                         <div class="col-md-5">
@@ -155,7 +155,7 @@ include('seguridad.php');
                         <div class="col-md-7" style="margin-top:5px">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" id="costoempla" name="costoempla" value="100" class="form-control" onfocus="this.blur()">      
+                                <input type="text" id="costoempla" name="costoempla" value="0" class="form-control" onfocus="this.blur()">      
                             </div>
                         </div>
                      </div>
@@ -298,12 +298,14 @@ include('seguridad.php');
                       <th class="col-xs-1">$ Vehiculo</th>
                       <th class="col-xs-1">$ Seguro</th>
                       <th class="col-xs-1">$ Accesorios</th>
+                      <th class="col-xs-1">$ Placas</th>
                       <th class="col-md-1">Total</th>
                   </td>
                 </thead>
                 <tbody>
                   <tr>
                     <td>SEMANAS</td>
+                    <td>0</td>
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -315,9 +317,11 @@ include('seguridad.php');
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
+                    <td>0</td>
                   </tr>
                   <tr>
                     <td>MESES</td>
+                    <td>0</td>
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
@@ -329,8 +333,8 @@ include('seguridad.php');
         </div>
         <div>
             <div class="row col-md-2" id="ajaxtiempo">
-              <label for="">TIEMPO</label>
-              <select name="tiempo" id="tiempo" class="form-control">
+              <label for="plazo">PLAZO DE PAGO</label>
+              <select name="plazo" id="plazo" class="form-control">
                 <option value="">Seleccionar</option>
               </select>
             </div>

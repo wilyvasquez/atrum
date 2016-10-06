@@ -5,7 +5,7 @@ $moto1=$_GET['moto'];
 $idmoto=$_GET['moto'];
 $idseguro=$_GET['seguro'];
 $seguro=$_GET['seguro'];
-$tiempo=$_GET['tiempo'];
+$tiempo=$_GET['plazo'];
 $anio=$_GET['anio'];
 
 

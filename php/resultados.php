@@ -1,11 +1,12 @@
 <?php
 include("conexion.php");
+if (isset($_POST['tiempo'])&&$_POST['anio']&&$_POST['porcentaje']) {
+	# code...
+	$meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+	$fecha=date('d').' de '.$meses[date('n')-1]. ' de '.date('Y');
 
-$meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-$fecha=date('d').' de '.$meses[date('n')-1]. ' de '.date('Y');
-
-$tiempo=$_POST['tiempo'];
-$query2="SELECT * FROM anios where id_anios=$tiempo";
+	$tiempo=$_POST['tiempo'];
+	$query2="SELECT * FROM anios where id_anios=$tiempo";
       $result = mysql_query($query2);  
       $tiempo = mysql_fetch_array($result);
       $tiempore = $tiempo['anios'];
@@ -39,6 +40,16 @@ $query2="SELECT * FROM anios where id_anios=$tiempo";
       $apertura = $credito1['costo_apertura'];
       $importe=($tiempomul*$credito);
       $final=($base*$importe)+$base;
+}else{
+	$tiempore=0;
+	$porcentaje=0;
+	$enganche=0;
+	$apertura=0;
+	$base=0;
+	$final=0;
+	$fecha=0;
+	$ivares=0;
+}
 
 
 echo "<div class='col-md-3'>

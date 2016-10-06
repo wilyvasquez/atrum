@@ -5,7 +5,8 @@ $pago=0;
 $semanas=0;
 $quincenas=0;
 $meses=0;
-
+$final=0;
+$var2=0;
 $segurosemanas=0;
 $seguroquincena=0;
 $seguromeses=0;
@@ -38,18 +39,21 @@ if ($res1=='SEMANAS') {
     $final=$_GET['final']/52;
     $var2=$_GET['suma']/52;
     $var3=$_GET['articulos']/52;
+    $var4=$_GET['placas']/52;
 }
 if ($res1=='QUINCENAS') {
 	# code...
     $final=$_GET['final']/24;
     $var2=$_GET['suma']/24;
     $var3=$_GET['articulos']/24;
+    $var4=$_GET['placas']/24;
 }
 if ($res1=='MESES') {
 	# code...   
     $final=$_GET['final']/12;
     $var2=$_GET['suma']/12;
     $var3=$_GET['articulos']/12;
+    $var4=$_GET['placas']/12;
 }
 
         $pdf = new FPDF();
@@ -209,6 +213,7 @@ if ($res1=='MESES') {
 
 		$pdf->Rect(130, 161, 60 , 6, '');
 		$pdf->Rect(130, 167, 60 , 6, '');
+		$pdf->Rect(130, 173, 60 , 6, '');
 		////////////////////////////////////
 
 		$pdf->SetXY(17, 161);
@@ -262,6 +267,14 @@ if ($res1=='MESES') {
 
 		$pdf->SetXY(130, 167);
 		$pdf->Cell(5, 6, 'PAGOS DEL SEGURO', 0 , 1);
+		$pdf->SetXY(130, 173);
+		$pdf->Cell(5, 6, 'PAGOS EMPLACAMIENTO', 0 , 1);
+
+		$pdf->SetXY(175, 173);
+		$pdf->SetFont('Arial','',8);
+		$pdf->Cell(5, 6, round($var4,2), 0 , 1); ///////////////pagos placas
+		$pdf->SetXY(170, 173);
+		$pdf->Cell(5, 6,'$', 0 , 1);
 
 		$pdf->SetXY(175, 161);
 		$pdf->SetFont('Arial','',8);
@@ -276,14 +289,14 @@ if ($res1=='MESES') {
 		$pdf->SetXY(170, 167);
 		$pdf->Cell(5, 6,'$', 0 , 1);
 
-		$pdf->SetXY(130, 173);
+		$pdf->SetXY(130, 178);
 		$pdf->SetFont('Arial','B',10);
 		$pdf->Cell(5, 6, 'SUB TOTAL:', 0 , 1);
 
-		$pdf->SetXY(172, 173);
-		$pdf->Cell(5, 6,round($final+$var2), 0 , 1);
+		$pdf->SetXY(172, 178);
+		$pdf->Cell(5, 6,round($final+$var2+$var4), 0 , 1);
 
-		$pdf->SetXY(169, 173);
+		$pdf->SetXY(169, 178);
 		$pdf->Cell(5, 6,'$', 0 , 1);
 
 		$pdf->Image($ruta,15,90,65,40,'');
@@ -329,7 +342,7 @@ if ($res1=='MESES') {
 		} 
 		/////////////////////////////////////////
 		$suma=0;
-		$suma=$contador+($final+$var2);
+		$suma=$contador+($final+$var2+$var4);
 		$pdf->SetX(130);
 		$pdf->SetFont('Arial','B',8);
 		$pdf->Cell(1, 4, 'SUB TOTAL:'.'                             '.'$'.$contador, 0 , 1);

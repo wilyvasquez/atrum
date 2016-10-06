@@ -1,9 +1,11 @@
 <?php
-header("Content-Type: text/html;charset=utf-8");
-$final=0;
 include("conexion.php");
+$ivares="";
+$suma="";
+$placas="";
 include("consultas.php");
 if (isset($_POST['moto'])) {
+    header("Content-Type: text/html;charset=utf-8");
     # code...
     $res=$_POST['moto'];
     $consulta = "SELECT imagen FROM moto WHERE id_moto = $res";
@@ -11,10 +13,8 @@ if (isset($_POST['moto'])) {
     $datos = mysql_fetch_array($imagen);
     $ruta = "php/imagenes/" . $datos['imagen'];
 }else{
-    $ruta=0;
-    $ivares=0;
-    $suma=0;
-    $placas=0;
+    $ruta="images/no disponible.jpg";
+    $final=0;
 }
 
 echo    "<div class='thumbnail col-md-6' style='width:260px; height:200px'>

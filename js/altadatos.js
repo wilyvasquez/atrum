@@ -529,7 +529,9 @@ function abrir()
 {
   var nombre = document.getElementById('nombre').value;
   var telefono = document.getElementById('telefono').value;
-if (window.fecha && nombre.length>=1 && telefono.length>=1) {
+  var moto = document.getElementById('moto').value;
+alert(moto);
+if (window.fecha && nombre.length>=1 && telefono.length>=1&&moto!=0) {
     var nombre = document.getElementById('nombre').value;
     var telefono = document.getElementById('telefono').value;
     var fecha = document.getElementById('fecha').value;
@@ -545,6 +547,8 @@ if (window.fecha && nombre.length>=1 && telefono.length>=1) {
     var final = document.getElementById('final').value;
     var articulos = document.getElementById('articulos').value;
     var parametro = document.getElementById('parametro').value;
+    var plazo = document.getElementById('plazo').value;
+    var placas = document.getElementById('costoempla').value;
 
     opciones = "toolbar=yes,scrollbars=yes,resizable=yes,_target"
     window.open("pdf.php?nombre="+nombre+
@@ -560,10 +564,28 @@ if (window.fecha && nombre.length>=1 && telefono.length>=1) {
                   "&enganche="+enganche+
                   "&suma="+suma+
                   "&final="+final+
+                  "&placas="+placas+
                   "&articulos="+articulos+
-                  "&parametro="+parametro
+                  "&parametro="+parametro+
+                  "&plazo="+plazo
                   ,opciones);
 }else{
       if (fecha==null) {alertify.error("Faltan Campos");}
+    }
 }
+
+function prueba()
+{
+    $.ajax({
+      data: null,
+      url: 'php/tabla_precios.php',
+      type: 'post',
+      beforeSend: function()
+      {
+      },
+      success: function(response)
+      {
+        $("#tablaprecios").html(response);
+      }
+    });
 }

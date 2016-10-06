@@ -43,10 +43,9 @@ function datoscotizador()
     }   
   }
 }
-function resultados(porcentaje,tiempo,moto,anio,credito)
+function resultados(porcentaje,tiempo,moto,anio,credito,placas)
 {
-
-  if(porcentaje.length >= 1 && credito.length >= 1 && moto.length >= 1 && credito.length >= 1) 
+  if(porcentaje.length >= 1 && credito.length >= 1 && moto.length >= 1 && placas.length >= 1) 
   {
     
     var par = 

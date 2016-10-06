@@ -1,5 +1,5 @@
 <?php
-      if (isset($_POST['moto'])) {
+      if (isset($_POST['moto'])&&$anio=$_POST['anio']&&$seguro=$_POST['seguro']&&$placas=$_POST['placas']&&$credito=$_POST['credito']&&$tiempo=$_POST['tiempo']) {
             # code...
       $moto=$_POST['moto'];
       $anio=$_POST['anio'];

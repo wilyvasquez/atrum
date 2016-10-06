@@ -1,6 +1,9 @@
 <?php
 include ("conexion.php");
-include ("consultas.php");
+$suma=0;
+if (isset($_POST['moto'])&&$_POST['anio']&&$_POST['credito']&&$_POST['parametro']) {
+  # code...
+  include ("consultas.php");
   $moto=$_POST['moto'];
       $anio=$_POST['anio'];
       $credito=$_POST['credito'];
@@ -42,9 +45,33 @@ include ("consultas.php");
     $articuloquin=$totalarticulo/24;
     $articulomes=$totalarticulo/12;
 
-		$totalsemana=$semanas+$segurosemanas+$articulosema;
-		$totalquincena=$quincenas+$seguroquincena+$articuloquin;
-		$totalmeses=$meses+$seguromeses+$articulomes;
+    $placasem=$placas/52;
+    $placasqui=$placas/24;
+    $placasmes=$placas/12;
+
+    $totalsemana=$semanas+$segurosemanas+$articulosema;
+    $totalquincena=$quincenas+$seguroquincena+$articuloquin;
+    $totalmeses=$meses+$seguromeses+$articulomes;
+}else{
+  $semanas=0;
+  $segurosemanas=0;
+  $articulosema=0;
+  $totalsemana=0;
+  $quincenas=0;
+  $seguroquincena=0;
+  $articuloquin=0;
+  $totalquincena=0;
+  $meses=0;
+  $seguromeses=0;
+  $articulomes=0;
+  $totalmeses=0;
+  $final=0;
+  $suma=0;
+  $totalarticulo=0;
+  $placasem=0;
+    $placasqui=0;
+    $placasmes=0;
+}
 	echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">
     	<script src="js/bootstrap-table.min.js"></script>';
 	echo "<table data-toggle='table' data-click-to-select='true' data-single-select='true'>
@@ -54,6 +81,7 @@ include ("consultas.php");
                       <th class='col-xs-1'>$ Vehiculo</th>
                       <th class='col-xs-1'>$ Seguro</th>
                       <th class='col-xs-1'>$ Accesorios</th>
+                      <th class='col-xs-1'>$ Placas</th>
                       <th class='col-md-1'>Total</th>
                   </td>
                 </thead>
@@ -63,6 +91,7 @@ include ("consultas.php");
                     <td>".round($semanas,2)."</td>
                     <td>".round($segurosemanas,2)."</td>
                     <td>".round($articulosema,2)."</td>
+                    <td>".round($placasem,2)."</td>
                     <td>".round($totalsemana,2)."</td>
                   </tr>
                   <tr>
@@ -70,6 +99,7 @@ include ("consultas.php");
                     <td>".round($quincenas,2)."</td>
                     <td>".round($seguroquincena,2)."</td>
                     <td>".round($articuloquin,2)."</td>
+                    <td>".round($placasqui,2)."</td>
                     <td>".round($totalquincena,2)."</td>
                   </tr>
                   <tr>
@@ -77,6 +107,7 @@ include ("consultas.php");
                     <td>".round($meses,2)."</td>
                     <td>".round($seguromeses,2)."</td>
                     <td>".round($articulomes,2)."</td>
+                    <td>".round($placasmes,2)."</td>
                     <td>".round($totalmeses,2)."</td>
                   </tr>
                 </tbody>
