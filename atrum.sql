@@ -113,12 +113,6 @@ CREATE TABLE crerebe
     FOREIGN KEY(ref_requisito) REFERENCES requisitos(id_requisito)ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(ref_beneficio) REFERENCES beneficios(id_beneficios)ON DELETE CASCADE ON UPDATE CASCADE
 );
-CREATE TABLE enganche
-(
-    id_enganche int not null AUTO_INCREMENT,
-    enganche int,
-    PRIMARY KEY (id_enganche)
-);
 CREATE TABLE credito_enganche
 (
     id_credito_enganche int not null AUTO_INCREMENT,
@@ -168,6 +162,12 @@ CREATE TABLE seguro_credito
     FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(ref_seguro) REFERENCES tipo_seguro(id_seguro)ON DELETE CASCADE ON UPDATE CASCADE
 );
+CREATE TABLE enganche
+(
+    id_enganche int not null AUTO_INCREMENT,
+    enganche int,
+    PRIMARY KEY (id_enganche)
+);
 CREATE TABLE anios
 (
     id_anios int not null AUTO_INCREMENT,
@@ -175,7 +175,15 @@ CREATE TABLE anios
     meses int,
     PRIMARY KEY (id_anios)
 );
-
+CREATE TABLE anios_enganche
+(
+    id_anios_enganche int not null AUTO_INCREMENT,
+    ref_anios int,
+    ref_enganche int,
+    PRIMARY KEY (id_anios_enganche),
+    FOREIGN KEY(ref_anios) REFERENCES anios(id_anios)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_enganche) REFERENCES enganche(id_enganche)ON DELETE CASCADE ON UPDATE CASCADE
+);
 CREATE TABLE anios_credito
 (
     id_anios_credito int not null AUTO_INCREMENT,

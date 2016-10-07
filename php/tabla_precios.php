@@ -1,6 +1,7 @@
 <?php
 include ("conexion.php");
 $suma=0;
+$totalarticulo=0;
 if (isset($_POST['moto'])&&$_POST['anio']&&$_POST['credito']&&$_POST['parametro']) {
   # code...
   include ("consultas.php");
@@ -27,31 +28,41 @@ if (isset($_POST['moto'])&&$_POST['anio']&&$_POST['credito']&&$_POST['parametro'
     $resultado = mysql_query($variable);  
     $credito1 = mysql_fetch_array($resultado);
     $credito = $credito1['tasa_base'];
+    $anual = $credito1['tasa_anual'];
     $apertura = $credito1['costo_apertura'];
-    $importe=12*$credito;
-    $final=($base*$importe)+$base;
+    // $importe=12*$credito;
+      if ($resanio>12) {
+        # code...
+        $importe=$resanio*($credito+($anual*$resulanio));
+        // echo $resulanio;
+      }else{
+      $importe=($resanio*$credito);       
+      }
+      $final=($base*$importe)+$base;
 
-    $semanas=$final/52;
-    $quincenas=$final/24;
-    $meses=$final/12;
+    $semanas=$final/$semana;
+    $quincenas=$final/$quincena;
+    $meses=$final/$resanio;
 
-    $segurosemanas=$suma/52;
-    $seguroquincena=$suma/24;
-    $seguromeses=$suma/12;
-    // echo $final;
-    $idnombre=$_POST['parametro'];
-    include ("precio_accesorio.php");
-    $articulosema=$totalarticulo/52;
-    $articuloquin=$totalarticulo/24;
-    $articulomes=$totalarticulo/12;
+    $segurosemanas=$suma/$semana;
+    $seguroquincena=$suma/$quincena;
+    $seguromeses=$suma/$resanio;
 
-    $placasem=$placas/52;
-    $placasqui=$placas/24;
-    $placasmes=$placas/12;
+  $idnombre=$_POST['parametro'];
+  include ("precio_accesorio.php");
+  $totaliva;
 
-    $totalsemana=$semanas+$segurosemanas+$articulosema;
-    $totalquincena=$quincenas+$seguroquincena+$articuloquin;
-    $totalmeses=$meses+$seguromeses+$articulomes;
+    $articulosema=$totaliva/$semana;
+    $articuloquin=$totaliva/$quincena;
+    $articulomes=$totaliva/$resanio;
+
+    $placasem=$placas/$semana;
+    $placasqui=$placas/$quincena;
+    $placasmes=$placas/$resanio;
+
+    $totalsemana=$semanas+$segurosemanas+$articulosema+$placasem;
+    $totalquincena=$quincenas+$seguroquincena+$articuloquin+$placasqui;
+    $totalmeses=$meses+$seguromeses+$articulomes+$placasmes;
 }else{
   $semanas=0;
   $segurosemanas=0;
@@ -67,14 +78,19 @@ if (isset($_POST['moto'])&&$_POST['anio']&&$_POST['credito']&&$_POST['parametro'
   $totalmeses=0;
   $final=0;
   $suma=0;
-  $totalarticulo=0;
+  $totaliva=0;
   $placasem=0;
     $placasqui=0;
     $placasmes=0;
 }
 	echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">
     	<script src="js/bootstrap-table.min.js"></script>';
-	echo "<table data-toggle='table' data-click-to-select='true' data-single-select='true'>
+  /*echo "<div id='toolbar' class='btn-group'>
+          <button type='button' onclick='datoscotizador();tablaprecio()' class='btn btn-info btn-xs'>
+              <i class='glyphicon glyphicon-refresh'></i>
+          </button>
+      </div>";*/
+	echo "<table data-toggle='table' data-click-to-select='true' data-single-select='true' data-toolbar='#toolbar'>
                 <thead>
                   <td>
                       <th class='col-xs-2'>Tiempo</th>
@@ -87,7 +103,7 @@ if (isset($_POST['moto'])&&$_POST['anio']&&$_POST['credito']&&$_POST['parametro'
                 </thead>
                 <tbody>
                   <tr>
-                    <td>SEMANAS (0)</td>
+                    <td>SEMANAS</td>
                     <td>".round($semanas,2)."</td>
                     <td>".round($segurosemanas,2)."</td>
                     <td>".round($articulosema,2)."</td>
@@ -95,7 +111,7 @@ if (isset($_POST['moto'])&&$_POST['anio']&&$_POST['credito']&&$_POST['parametro'
                     <td>".round($totalsemana,2)."</td>
                   </tr>
                   <tr>
-                    <td>QUINCENAS (0)</td>
+                    <td>QUINCENAS</td>
                     <td>".round($quincenas,2)."</td>
                     <td>".round($seguroquincena,2)."</td>
                     <td>".round($articuloquin,2)."</td>
@@ -103,7 +119,7 @@ if (isset($_POST['moto'])&&$_POST['anio']&&$_POST['credito']&&$_POST['parametro'
                     <td>".round($totalquincena,2)."</td>
                   </tr>
                   <tr>
-                    <td>MESES (0)</td>
+                    <td>MESES</td>
                     <td>".round($meses,2)."</td>
                     <td>".round($seguromeses,2)."</td>
                     <td>".round($articulomes,2)."</td>
@@ -115,6 +131,6 @@ if (isset($_POST['moto'])&&$_POST['anio']&&$_POST['credito']&&$_POST['parametro'
             <div style='display:none'>
               <input type='text' id='final' name='final' value='".$final."'>
             <input type='text' id='suma' name='suma' value='".$suma."'>
-            <input type='text' id='articulos' name='articulos' value='".$totalarticulo."'>
+            input type='text' id='articulos' name='articulos' value='".$totaliva."'>
             </div>";
 ?>

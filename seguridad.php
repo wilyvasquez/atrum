@@ -5,7 +5,6 @@ include("php/conexion.php");
 <?php
 	if(isset($_POST['pass'])&&isset($_POST['user']))
 	{
-		$_SESSION['pass'] = $_POST['pass'];
 		$pass=$_POST['pass'];
 		$user=$_POST['user'];
 		$query=mysql_query("SELECT * FROM password INNER JOIN usuario ON password.ref_usuario= usuario.id_usuario WHERE password.user='$user' AND password.pass='$pass'");
@@ -13,6 +12,7 @@ include("php/conexion.php");
 		$segu = mysql_fetch_array($query);
 	 	if($numrows!=0)
 		{	
+			$_SESSION['pass'] = $_POST['pass'];
 			if ($segu['permiso']==admin) {
 				# code...
 				header("Location: admin.php");		

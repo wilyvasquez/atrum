@@ -34,26 +34,29 @@ $requisitos="SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on
 $query = mysql_query($requisitos);
 $resultado = mysql_fetch_array($query);
 
+$tb=($tasa*$resanio)+1;
+$totalarti=($precio*$tb*1.16);
+
 if ($res1=='SEMANAS') {
 	# code...
-    $final=$_GET['final']/52;
-    $var2=$_GET['suma']/52;
-    $var3=$_GET['articulos']/52;
-    $var4=$_GET['placas']/52;
+    $final=$_GET['final']/$semana;
+    $var2=$_GET['suma']/$semana;
+    $var3=$_GET['articulos']/$semana;
+    $var4=$_GET['placas']/$semana;
 }
 if ($res1=='QUINCENAS') {
 	# code...
-    $final=$_GET['final']/24;
-    $var2=$_GET['suma']/24;
-    $var3=$_GET['articulos']/24;
-    $var4=$_GET['placas']/24;
+    $final=$_GET['final']/$quincena;
+    $var2=$_GET['suma']/$quincena;
+    $var3=$_GET['articulos']/$quincena;
+    $var4=$_GET['placas']/$quincena;
 }
 if ($res1=='MESES') {
 	# code...   
-    $final=$_GET['final']/12;
-    $var2=$_GET['suma']/12;
-    $var3=$_GET['articulos']/12;
-    $var4=$_GET['placas']/12;
+    $final=$_GET['final']/$resanio;
+    $var2=$_GET['suma']/$resanio;
+    $var3=$_GET['articulos']/$resanio;
+    $var4=$_GET['placas']/$resanio;
 }
 
         $pdf = new FPDF();
@@ -256,8 +259,12 @@ if ($res1=='MESES') {
 
 		$pdf->SetXY(95, 173);
 		$pdf->Cell(5, 6,'$', 0 , 1);
-
+		if ($descuento>0) {
+			# code...
 		$descuento=(($costo*$descuento)/100);
+		}else{
+			$descuento=$costo;			
+		}
 		$pdf->SetXY(100, 173);
 		$pdf->Cell(5, 6,$descuento, 0 , 1);
 
@@ -337,8 +344,10 @@ if ($res1=='MESES') {
 		$consult = mysql_query("SELECT * FROM accesorio where ref_usuario=$usuario");
 		$pdf->SetXY(170,193);
 		while($cantidad = mysql_fetch_array($consult)){
-			$pdf->Cell(60,5,'$'.$cantidad['total'],0,2);
-			$contador=$contador+$cantidad['total'];
+			$tem=($cantidad['total']*$tb);
+			$tem1=($tem*1.16)/$temporal;
+			$pdf->Cell(60,5,'$'.round($tem1,2),0,2);
+			$contador=round($contador+$tem1,2);
 		} 
 		/////////////////////////////////////////
 		$suma=0;

@@ -530,7 +530,7 @@ function abrir()
   var nombre = document.getElementById('nombre').value;
   var telefono = document.getElementById('telefono').value;
   var moto = document.getElementById('moto').value;
-alert(moto);
+// alert(moto);
 if (window.fecha && nombre.length>=1 && telefono.length>=1&&moto!=0) {
     var nombre = document.getElementById('nombre').value;
     var telefono = document.getElementById('telefono').value;
@@ -549,6 +549,7 @@ if (window.fecha && nombre.length>=1 && telefono.length>=1&&moto!=0) {
     var parametro = document.getElementById('parametro').value;
     var plazo = document.getElementById('plazo').value;
     var placas = document.getElementById('costoempla').value;
+    // alert(tiempo);
 
     opciones = "toolbar=yes,scrollbars=yes,resizable=yes,_target"
     window.open("pdf.php?nombre="+nombre+

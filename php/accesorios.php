@@ -2,7 +2,24 @@
  include("conexion.php");
  $contador=0;
  $totalarticulo=0;
+ $importe=0;
  $idnombre=$_POST['parametro'];
+ $tiempo=$_POST['tiempo'];
+ 	$anios="SELECT * FROM anios where id_anios=$tiempo";
+    $resulanios = mysql_query($anios);  
+    $aniores = mysql_fetch_array($resulanios);
+    $resanio = $aniores['meses'];
+
+ if (!empty($_POST['credito'])) {
+ 	# code...
+ 	$dito=$_POST['credito'];
+ 	$variable="SELECT * FROM tipo_credito where id_credito=$dito";
+    $resultado = mysql_query($variable);  
+    $credito1 = mysql_fetch_array($resultado);
+    $credito = $credito1['tasa_base'];
+    $importe=$resanio*$credito+1;
+
+ }
  if (!empty($_POST['id'])) {
  	# code...
  	$id=$_POST['id'];
@@ -33,7 +50,7 @@ echo "<table data-toggle='table'>
 		        <button type='button' class='btn btn-info btn-xs' data-toggle='modal' data-target='#myModal'>
 		        <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>
 		        </button>
-		        <button type='submit' class='btn btn-danger btn-xs' onclick='limpiar();tablaprecio()'>
+		        <button type='submit' class='btn btn-danger btn-xs' onclick='limpiar($idnombre);tablaprecio()'>
 		        <span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span>
 		        </button>
 	        </th>
@@ -50,12 +67,13 @@ echo "<table data-toggle='table'>
 		        <td>".$registro['cantidad']."</td>
 		        <td>".$registro['total']."</td>
 		        <td>
-			        <button type='button' onclick='bajas(".$registro['id_accesorio'].",".$idnombre.");tablaprecio()' class='btn btn-default btn-xs'>
+			        <button type='button' onclick='bajas(".$registro['id_accesorio'].",".$idnombre.",".$dito.",".$tiempo.")' class='btn btn-default btn-xs'>
 			        	<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>
 		        	</button>
 		        </td>
 	        </tr>
 	        ";}
+	        $totaac=$totalarticulo*$importe;
 	echo "
         </tbody>
     </table>
@@ -75,7 +93,7 @@ echo "<table data-toggle='table'>
 	    <label><h6>Costo</h6></label>        
 	    </div>
 	    <div class='col-md-3' style='margin-top:5px'>
-	    <input type='text' id='costoarti' name='costoarti' value='' class='form-control' onfocus='this.blur()'/>
+	    <input type='text' id='costoarti' name='costoarti' value='".round($totaac*1.16,2)."' class='form-control' onfocus='this.blur()'/>
     </div>
 		";
 ?>

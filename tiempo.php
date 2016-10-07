@@ -4,6 +4,7 @@
 	$resultado= mysql_query($consulta) or die (mysql_error());
 	?>
 	<?php
+	echo "<option value=''>Seleccionar</option>";
 	while($fila = mysql_fetch_array($resultado)){	
 				echo "<option value='".$fila['id_anios']."'>".$fila['anios']."</option>";
 		}

@@ -32,7 +32,7 @@ if (!empty($_POST['credito3'])) {
 	# code...
 	$credito3=$_POST['credito3'];
 	$enganche=$_POST['enganche'];
- 	mysql_query("INSERT INTO credito_enganche VALUES ('id','$credito3','$enganche')");
+ 	mysql_query("INSERT INTO anios_enganche VALUES ('id','$credito3','$enganche')");
 }
 if (!empty($_POST['credi'])) {
 	# code...

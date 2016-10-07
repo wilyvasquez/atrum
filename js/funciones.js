@@ -99,6 +99,7 @@ function funcionenganche(str)
       document.getElementById("porcentaje").innerHTML=xmlhttp.responseText;
       }
       }
+      // alert(str);
       xmlhttp.open("GET","enganche.php?c="+str,true);
       xmlhttp.send();
     }

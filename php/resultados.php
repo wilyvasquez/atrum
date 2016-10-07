@@ -11,6 +11,7 @@ if (isset($_POST['tiempo'])&&$_POST['anio']&&$_POST['porcentaje']) {
       $tiempo = mysql_fetch_array($result);
       $tiempore = $tiempo['anios'];
       $tiempomul = $tiempo['meses'];
+      $resulanio = $tiempo['anio'];
 
       $porce=$_POST['porcentaje'];
       $query="SELECT * FROM enganche where id_enganche=$porce";
@@ -29,17 +30,24 @@ if (isset($_POST['tiempo'])&&$_POST['anio']&&$_POST['porcentaje']) {
       $varvar = $apertura5['precio'];
       $iva=($varvar*0.16);
       $ivares=$iva+$varvar;
+      $porcentaje;
       $enganche=$ivares*($porcentaje/100);
-      // echo $_POST['porcentaje'];
       $base=$ivares-$enganche;
 
       $variable="SELECT * FROM tipo_credito where id_credito=$credito";
       $resultado = mysql_query($variable);  
       $credito1 = mysql_fetch_array($resultado);
       $credito = $credito1['tasa_base'];
+      $anual = $credito1['tasa_anual'];
       $apertura = $credito1['costo_apertura'];
-      $importe=($tiempomul*$credito);
+      if ($tiempomul>12) {
+      	# code...
+      	$importe=$tiempomul*($credito+($anual*$resulanio));
+      }else{
+      $importe=($tiempomul*$credito);      	
+      }
       $final=($base*$importe)+$base;
+      // echo $final;
 }else{
 	$tiempore=0;
 	$porcentaje=0;

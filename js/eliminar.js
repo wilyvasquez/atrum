@@ -132,10 +132,14 @@ function eliminarplaca()
       }
     });
 }
-function limpiar()
-{
+function limpiar(id)
+{   
+  var par = 
+    {
+      "idnombre" : id
+    };
     $.ajax({
-      data: null,
+      data: par,
       url: 'php/equipo/limpiar.php',
       type: 'post',
       beforeSend: function()

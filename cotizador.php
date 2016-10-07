@@ -9,7 +9,7 @@ include('seguridad.php');
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Suzuki</title>
 	<link rel="shortcut icon" sizes="57x57" href="images/favicon.png">
     <link rel="stylesheet" href="css/bootstrap-table.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@ include('seguridad.php');
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Cotizador</a></li>
-                        <li><a href="destroyer.php">Salir</a>                      
+                        <li><a href="destroyer.php?id=<?= $user ?>">Salir</a>                      
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -82,7 +82,7 @@ include('seguridad.php');
                     <div class="col-md-5">
                         <div><label for="">TIPO DE CREDITO</label></div>
                         <div>
-                            <select id="credito" name="credito" onchange="funcionseguro(this.value);funciontiempo(this.value);funcionenganche(this.value);costomoto(this.value);result(this.value);prueba(this.value)" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
+                            <select id="credito" name="credito" onchange="funcionseguro(this.value);funciontiempo(this.value);costomoto(this.value);result(this.value);prueba(this.value)" class="selectpicker" data-size="5" data-live-search="true" title="Choose one option">
                               <!-- <option value="">Seleccionar</option> -->
                               <?php include("php/credito.php") ?>
                             </select>
@@ -99,7 +99,7 @@ include('seguridad.php');
                     <div class="col-md-3">
                         <div><label for="">TIEMPO</label></div>
                         <div>
-                            <select id="tiempo" name="tiempo" onchange="costomoto(this.value);result(this.value);prueba(this.value)" class="form-control">
+                            <select id="tiempo" name="tiempo" onchange="costomoto(this.value);result(this.value);prueba(this.value);funcionenganche(this.value)" class="form-control">
                               <option value="">Seleccionar</option>
                             </select>
                         </div>
@@ -240,7 +240,7 @@ include('seguridad.php');
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button onclick="accesorios($('#accesorios').val(),$('#costoacce').val(),$('#cantidad').val(),$('#parametro').val());tablaprecio()" type="button" class="btn btn-info">Save</button>
+                                <button onclick="accesorios($('#accesorios').val(),$('#costoacce').val(),$('#cantidad').val(),$('#parametro').val(),$('#credito').val(),$('#tiempo').val());tablaprecio()" type="button" class="btn btn-info">Save</button>
                               </div>
                             </div><!-- /.modal-content -->
                           </div><!-- /.modal-dialog -->
@@ -289,7 +289,7 @@ include('seguridad.php');
         <div class="col-md-12">
             <div class="col-md-12"><h3><strong>PAGOS</strong></h3><hr></div>
             <div class="col-md-offset-1 col-md-6">
-                <center><label for="">PRECIOS</label></center>
+                <!-- <center><label for="">PRECIOS</label></center> -->
             <div id="tablaprecios">
                 <table data-toggle="table" data-click-to-select="true" data-single-select="true">
                 <thead>
@@ -329,6 +329,11 @@ include('seguridad.php');
                   </tr>
                 </tbody>
             </table>
+            </div><br>
+            <div>
+                <button type='button' onclick='tablaprecio()' class='btn btn-info btn-md'>
+                    <i class='glyphicon glyphicon-refresh'></i>
+                </button>
             </div>
         </div>
         <div>

@@ -25,6 +25,7 @@ function datoscotizador()
       type: 'post',
       beforeSend: function()
       {     
+        // alert(moto);
       },
       success: function(response)
       {
@@ -45,7 +46,8 @@ function datoscotizador()
 }
 function resultados(porcentaje,tiempo,moto,anio,credito,placas)
 {
-  if(porcentaje.length >= 1 && credito.length >= 1 && moto.length >= 1 && placas.length >= 1) 
+  // alert(porcentaje);
+  if(porcentaje.length >= 1 && credito.length >= 1 && moto.length >= 1 && placas.length >= 1 && tiempo >=1) 
   {
     
     var par = 
@@ -70,11 +72,11 @@ function resultados(porcentaje,tiempo,moto,anio,credito,placas)
     });
   }else{
     if (porcentaje.length<1) {
-      alertify.error("Falta campo Porcentaje");
+      alertify.error("Falta campo Tiempo");
     }
   }
 }
-function accesorios(accesorios,precio,cantidad,parametro)
+function accesorios(accesorios,precio,cantidad,parametro,credito,tiempo)
 {   
   if(accesorios.length >= 1 && precio.length >= 1 && cantidad.length >= 1) 
   {
@@ -83,7 +85,9 @@ function accesorios(accesorios,precio,cantidad,parametro)
       "accesorios" : accesorios,
       "precio" : precio,
       "cantidad" : cantidad,
-      "parametro" : parametro
+      "parametro" : parametro,
+      "credito" : credito,
+      "tiempo" : tiempo
     };
     $.ajax({
       data: par,
@@ -119,7 +123,7 @@ function tablaprecio()
   var porcentaje = document.getElementById('porcentaje').value;
   var tiempo = document.getElementById('tiempo').value;
   var parametro = document.getElementById('parametro').value;
-
+  // alertify.success("Faltan Campos");
   if(moto.length >= 1 && credito.length >= 1 && porcentaje.length >= 1 && placas.length >= 1) 
   {
     var par = 
@@ -173,12 +177,14 @@ function tiempo(credito)
 
   }
 }
-function bajas(id,parametro)
+function bajas(id,parametro,credito,tiempo)
 {    
     var par = 
     {
       "id" : id,
-      "parametro" : parametro
+      "parametro" : parametro,
+      "credito" : credito,
+      "tiempo" : tiempo
     };
     $.ajax({
       data: par,
@@ -186,6 +192,7 @@ function bajas(id,parametro)
       type: 'post',
       beforeSend: function()
       {    
+        // alert(credito);
       },
       success: function(response)
       {

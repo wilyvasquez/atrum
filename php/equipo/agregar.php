@@ -90,12 +90,12 @@
                 <button class="btn btn-info" onclick="unioncretiem()" type="submit" style="margin-top:26px">Enviar</button>
             </div>
         </div>
-        <div class="col-md-12"><h3><strong>CREDITO ENGANCHE</strong></h3><hr></div>
+        <div class="col-md-12"><h3><strong>TIEMPO ENGANCHE</strong></h3><hr></div>
         <div class="col-md-12">
             <div class="col-md-3">
-                <div><label for="">CREDITO</label></div>
+                <div><label for="">TIEMPO</label></div>
                 <select id="credito3" name="credito3" class="form-control">
-                  <?php include("../credito.php") ?>
+                  <?php include("../anios.php") ?>
                 </select>
             </div>
             <div class="col-md-3">

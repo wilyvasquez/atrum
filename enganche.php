@@ -1,6 +1,8 @@
 <?php
 	require ("php/conexion.php");
-	$consulta= "SELECT * FROM tipo_credito INNER JOIN credito_enganche on credito_enganche.ref_credito=tipo_credito.id_credito INNER JOIN enganche on enganche.id_enganche=credito_enganche.ref_enganche WHERE tipo_credito.id_credito='".$_GET['c']."'"; 
+	$anios=$_GET['c'];
+	$consulta= "SELECT * FROM anios INNER JOIN anios_enganche on anios_enganche.ref_anios=anios.id_anios INNER JOIN enganche on enganche.id_enganche=anios_enganche.ref_enganche 
+		WHERE anios.id_anios='".$anios."'"; 
 	$resultado= mysql_query($consulta) or die (mysql_error());
 	?>
 	<?php

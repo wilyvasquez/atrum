@@ -1,6 +1,7 @@
 <?php
 include("../conexion.php");
-mysql_query("DELETE FROM accesorio");
+$idnombre=$_POST['idnombre'];
+mysql_query("DELETE FROM accesorio where ref_usuario=$idnombre");
 $query='select * from accesorio';
 $result = mysql_query($query);
 echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">
