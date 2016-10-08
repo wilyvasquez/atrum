@@ -2,7 +2,7 @@
 include("../conexion.php");
 $idnombre=$_POST['idnombre'];
 mysql_query("DELETE FROM accesorio where ref_usuario=$idnombre");
-$query='select * from accesorio';
+$query='select * from accesorio where ref_usuario=$idnombre';
 $result = mysql_query($query);
 echo 	'<link rel="stylesheet" href="css/bootstrap-table.min.css">
     	<script src="js/bootstrap-table.min.js"></script>';
@@ -10,7 +10,7 @@ echo "<table data-toggle='table' data-pagination='true'
 	data-page-size='3'>
         <thead>
 	        <tr>
-	        <th class='col-xs-7' data-field='name'>Accesorios</th>
+	        <th class='col-xs-7' data-field='name'>Accesorioss</th>
 	        <th class='col-xs-1' data-field='stargazers_count'>Precio S/I.V.A</th>
 	        <th class='col-xs-1' data-field='forks_count'>Cantidad</th>
 	        <th class='col-xs-2' data-field='description'>Total</th>
@@ -22,7 +22,9 @@ echo "<table data-toggle='table' data-pagination='true'
 	        </tr>
         </thead>
         <tbody>
-        ";while ($registro = mysql_fetch_array($result)){
+        ";if (!empty($result)) {
+        	# code...
+        	while ($registro = mysql_fetch_array($result)){
 	echo "
 	        <tr>
 		        <td>".$registro['nombre_accesorio']."</td>
@@ -36,6 +38,7 @@ echo "<table data-toggle='table' data-pagination='true'
 		        </td>
 	        </tr>
 	        ";}
+        }
 
 	echo "
         </tbody>

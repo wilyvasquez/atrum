@@ -228,7 +228,7 @@ include('seguridad.php');
                                         <label>PRECIO</label>        
                                     </div>
                                     <div class="col-md-5" style="margin-top:5px">
-                                        <input type="text" id="costoacce" name="costoacce" value="" class="form-control" onkeypress="numeros()">
+                                        <input type="text" id="costoacce" name="costoacce" value="" class="form-control">
                                     </div>
                                     <div class="col-md-5" style="margin-top:5px">
                                         <label>CANTIDAD</label>        

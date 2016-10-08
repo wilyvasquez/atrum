@@ -156,37 +156,37 @@ if ($res1=='MESES') {
 		$pdf->Cell(15, 6, $moto['tipo_moto'], 0 , 1);/////////////// TIPO DE MOTO
 
 		$pdf->SetXY(135, 85);
-		$pdf->Cell(15, 6, $moto['motor'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['motor']), 0 , 1);
 
 		$pdf->SetXY(135, 90);
-		$pdf->Cell(15, 6, $moto['trasmision'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['trasmision']), 0 , 1);
 
 		$pdf->SetXY(135, 95);
-		$pdf->Cell(15, 6, $moto['tipo_motor'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['tipo_motor']), 0 , 1);
 
 		$pdf->SetXY(135, 100);
-		$pdf->Cell(15, 6, $moto['numero_cilindros'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['numero_cilindros']), 0 , 1);
 
 		$pdf->SetXY(135, 105);
-		$pdf->Cell(15, 6, $moto['diametro'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['diametro']), 0 , 1);
 
 		$pdf->SetXY(135, 110);
-		$pdf->Cell(15, 6, $moto['carrera'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['carrera']), 0 , 1);
 
 		$pdf->SetXY(135, 115);
-		$pdf->Cell(15, 6, $moto['desplazamiento'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['desplazamiento']), 0 , 1);
 
 		$pdf->SetXY(135, 120);
-		$pdf->Cell(15, 6, $moto['relacion_compresion'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['relacion_compresion']), 0 , 1);
 
 		$pdf->SetXY(135, 125);
-		$pdf->Cell(15, 6, $moto['sistema_lubricacion'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['sistema_lubricacion']), 0 , 1);
 
 		$pdf->SetXY(135, 130);
-		$pdf->Cell(15, 6, $moto['sistema_combustible'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['sistema_combustible']), 0 , 1);
 
 		$pdf->SetXY(135, 135);
-		$pdf->Cell(15, 6, $moto['sistema_arranque'], 0 , 1);
+		$pdf->Cell(15, 6, utf8_decode($moto['sistema_arranque']), 0 , 1);
 		/////////////////////////////////
 
 		$pdf->SetXY(15, 145);
@@ -306,7 +306,7 @@ if ($res1=='MESES') {
 		$pdf->SetXY(169, 178);
 		$pdf->Cell(5, 6,'$', 0 , 1);
 
-		$pdf->Image($ruta,15,90,65,40,'');
+		$pdf->Image($ruta,15,90,60,40,'');
 		////////////////////////////////////////
 		$usuario=$_GET['parametro'];
 		$consulta = mysql_query("SELECT * FROM accesorio where ref_usuario=$usuario");

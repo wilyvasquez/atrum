@@ -19,7 +19,7 @@ if (isset($_POST['moto'])) {
 
 echo    "<div class='thumbnail col-md-6' style='width:260px; height:200px'>
             <form action='' method='POST' enctype='multipart/form-data' >
-              <img src='".$ruta."' style='margin-top:10px'/>
+              <img src='".$ruta."' style='margin-top:10px' width='250' height='160'/>
             </form>
         </div>";
 echo    "<br><br>

@@ -7,7 +7,7 @@ include ("conexion.php");
 } else {
 
 	$permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
-	$limite_kb = 100;
+	$limite_kb = 200;
 
 	if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024){
 		
