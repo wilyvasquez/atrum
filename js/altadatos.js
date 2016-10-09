@@ -590,3 +590,18 @@ function prueba()
       }
     });
 }
+function openModal(){
+    $.ajax({
+      data: null,
+      url: 'php/modal.php',
+      type: 'post',
+      beforeSend: function()
+      {
+        alert();
+      },
+      success: function(response)
+      {
+        $("#modal").html(response);
+      }
+    });
+}       

@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Portfolio | Corlate</title>
+    <title>Suzuki</title>
+
+    <link rel="shortcut icon" sizes="57x57" href="images/favicon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -13,10 +13,7 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
+
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -103,6 +100,9 @@
             </div><!--/.container-->
         </nav><!--/nav-->    
     </header><!--/header--><!--/header-->
+        <div id="modal">
+            
+        </div>
     <section id="portfolio">
         <div class="container">
             <div class="center">
@@ -119,7 +119,7 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="images/slider/bg7.jpg" alt="">
+                                    <img class="slide-image" src="images/slider/moto.jpg" alt="">
                                 </div>
                                 <div class="item">
                                     <img class="slide-image" src="images/slider/urban.jpg" alt="">
@@ -143,121 +143,260 @@
         
 
             <ul class="portfolio-filter text-center">
-                <li><a class="btn btn-default active" href="#" data-filter="*">SCOOTER</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".bootstrap">URBANAS</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".html">TRABAJO</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".wordpress">DEPORTIVAS</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".html">CIUDAD</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".bootstrap">DOBLE PROPOSITO</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".html">BOULEVARD</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".wordpress">CROSS Y ENDURO</a></li>
+                <li><a class="btn btn-default active" href="motocicletas.php" data-filter=".scooter">SCOOTER</a></li>
+                <li><a class="btn btn-default" href="motocicletas.php" data-filter=".urbanas">URBANAS</a></li>
+                <li><a class="btn btn-default" href="motocicletas.php" data-filter=".trabajo">TRABAJO</a></li>
+                <li><a class="btn btn-default" href="motocicletas.php" data-filter=".deportivas">DEPORTIVAS</a></li>
+                <li><a class="btn btn-default" href="motocicletas.php" data-filter=".ciudad">CIUDAD</a></li>
+                <li><a class="btn btn-default" href="motocicletas.php" data-filter=".doble">DOBLE PROPOSITO</a></li>
+                <li><a class="btn btn-default" href="motocicletas.php" data-filter=".boulevard">BOULEVARD</a></li>
+                <li><a class="btn btn-default" href="motocicletas.php" data-filter=".cross">CROSS Y ENDURO</a></li>
             </ul><!--/#portfolio-filter-->
 
             <div class="row">
                 <div class="portfolio-items">
-                    <div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item1.png" alt="">
+                    <?php 
+                        include("php/conexion.php");
+                        $res='SCOOTERS';                            
+                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $imagen = mysql_query($consulta);
+                    ?>
+                    <?php 
+                    while ($datos = mysql_fetch_array($imagen)) { 
+                    $ruta = "php/imagenes/" . $datos['imagen'];
+                    $id = $datos['id_moto'];
+                    ?>
+                    <div class="portfolio-item scooter col-xs-12 col-sm-4 col-md-2">
+                        <div class="recent-work-wrap thumbnail" style="margin-left: 2px">
+                            <img class="img-responsive" src="<?= $ruta ?>">
                             <div class="overlay">
                                 <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>
-                    </div><!--/.portfolio-item-->
-
-                    <div class="portfolio-item joomla bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item2.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item2.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>          
-                    </div><!--/.portfolio-item-->
-
-                    <div class="portfolio-item bootstrap wordpress col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item3.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item3.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>        
-                    </div><!--/.portfolio-item-->
-
-                    <div class="portfolio-item joomla wordpress apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item4.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item4.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>           
-                    </div><!--/.portfolio-item-->
-          
-                    <div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item5.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item5.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>      
-                    </div><!--/.portfolio-item-->
-
-                    <div class="portfolio-item wordpress html apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item6.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item6.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div> 
-                            </div>
-                        </div>         
-                    </div><!--/.portfolio-item-->
-
-                    <div class="portfolio-item wordpress html col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item7.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item7.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                                    <font size="2"><?= $datos['modelo'] ?></font><br>
+                                    <font size="3">PRECIO: $12000</font>
+                                    <center><a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
+                                      <span class="fa fa-eye" aria-hidden="true"></span>
+                                    </a></center>
                                 </div> 
                             </div>
                         </div>          
                     </div><!--/.portfolio-item-->
-
-                    <div class="portfolio-item wordpress html bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="images/portfolio/recent/item8.png" alt="">
+                    <?php } ?>
+                    <?php 
+                        include("php/conexion.php");
+                        $res='URBANAS';                            
+                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $imagen = mysql_query($consulta);
+                    ?>
+                    <?php 
+                    while ($datos = mysql_fetch_array($imagen)) { 
+                    $ruta = "php/imagenes/" . $datos['imagen'];
+                    $id = $datos['id_moto'];
+                    // echo $tipo=$_GET['tipo'];
+                    ?>
+                    <div class="portfolio-item urbanas col-xs-12 col-sm-4 col-md-2">
+                        <div class="recent-work-wrap thumbnail" style="margin-left: 2px">
+                            <img class="img-responsive" src="<?= $ruta ?>">
                             <div class="overlay">
                                 <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item8.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                                    <font size="2"><?= $datos['modelo'] ?></font><br>
+                                    <font size="3">PRECIO: $12000</font>
+                                    <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
+                                      <span class="fa fa-eye" aria-hidden="true"></span>
+                                    </a>
                                 </div> 
                             </div>
                         </div>          
                     </div><!--/.portfolio-item-->
+                    <?php } ?>
+                    <?php 
+                        include("php/conexion.php");
+                        $res='MOTOCARRO';                            
+                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $imagen = mysql_query($consulta);
+                    ?>
+                    <?php 
+                    while ($datos = mysql_fetch_array($imagen)) { 
+                    $ruta = "php/imagenes/" . $datos['imagen'];
+                    $id = $datos['id_moto'];
+                    // echo $tipo=$_GET['tipo'];
+                    ?>
+                    <div class="portfolio-item motocarro col-xs-12 col-sm-4 col-md-2">
+                        <div class="recent-work-wrap thumbnail" style="margin-left: 2px">
+                            <img class="img-responsive" src="<?= $ruta ?>">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <font size="2"><?= $datos['modelo'] ?></font><br>
+                                    <font size="3">PRECIO: $12000</font>
+                                    <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
+                                      <span class="fa fa-eye" aria-hidden="true"></span>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>          
+                    </div><!--/.portfolio-item-->
+                    <?php } ?>
+                    <?php 
+                        include("php/conexion.php");
+                        $res='DOBLE PROPOSITO';                            
+                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $imagen = mysql_query($consulta);
+                    ?>
+                    <?php 
+                    while ($datos = mysql_fetch_array($imagen)) { 
+                    $ruta = "php/imagenes/" . $datos['imagen'];
+                    $id = $datos['id_moto'];
+                    // echo $tipo=$_GET['tipo'];
+                    ?>
+                    <div class="portfolio-item doble col-xs-12 col-sm-4 col-md-2">
+                        <div class="recent-work-wrap thumbnail" style="margin-left: 2px">
+                            <img class="img-responsive" src="<?= $ruta ?>">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <font size="2"><?= $datos['modelo'] ?></font><br>
+                                    <font size="3">PRECIO: $12000</font>
+                                    <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
+                                      <span class="fa fa-eye" aria-hidden="true"></span>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>          
+                    </div><!--/.portfolio-item-->
+                    <?php } ?>
+                    <?php 
+                        include("php/conexion.php");
+                        $res='TRABAJO';                            
+                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $imagen = mysql_query($consulta);
+                    ?>
+                    <?php 
+                    while ($datos = mysql_fetch_array($imagen)) { 
+                    $ruta = "php/imagenes/" . $datos['imagen'];
+                    $id = $datos['id_moto'];
+                    // echo $tipo=$_GET['tipo'];
+                    ?>
+                    <div class="portfolio-item trabajo col-xs-12 col-sm-4 col-md-2">
+                        <div class="recent-work-wrap thumbnail" style="margin-left: 2px">
+                            <img class="img-responsive" src="<?= $ruta ?>">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <font size="2"><?= $datos['modelo'] ?></font><br>
+                                    <font size="3">PRECIO: $12000</font>
+                                    <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
+                                      <span class="fa fa-eye" aria-hidden="true"></span>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>          
+                    </div><!--/.portfolio-item-->
+                    <?php } ?>
+                    <?php 
+                        include("php/conexion.php");
+                        $res='BOULEVARD';                            
+                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $imagen = mysql_query($consulta);
+                    ?>
+                    <?php 
+                    while ($datos = mysql_fetch_array($imagen)) { 
+                    $ruta = "php/imagenes/" . $datos['imagen'];
+                    $id = $datos['id_moto'];
+                    // echo $tipo=$_GET['tipo'];
+                    ?>
+                    <div class="portfolio-item boulevard col-xs-12 col-sm-4 col-md-2">
+                        <div class="recent-work-wrap thumbnail" style="margin-left: 2px">
+                            <img class="img-responsive" src="<?= $ruta ?>">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <font size="2"><?= $datos['modelo'] ?></font><br>
+                                    <font size="3">PRECIO: $12000</font>
+                                    <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
+                                      <span class="fa fa-eye" aria-hidden="true"></span>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>          
+                    </div><!--/.portfolio-item-->
+                    <?php } ?>
+                    <?php 
+                        include("php/conexion.php");
+                        $res='DEPORTIVAS (GSX-R)';                            
+                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $imagen = mysql_query($consulta);
+                    ?>
+                    <?php 
+                    while ($datos = mysql_fetch_array($imagen)) { 
+                    $ruta = "php/imagenes/" . $datos['imagen'];
+                    $id = $datos['id_moto'];
+                    // echo $tipo=$_GET['tipo'];
+                    ?>
+                    <div class="portfolio-item deportivas col-xs-12 col-sm-4 col-md-2">
+                        <div class="recent-work-wrap thumbnail" style="margin-left: 2px">
+                            <img class="img-responsive" src="<?= $ruta ?>">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <font size="2"><?= $datos['modelo'] ?></font><br>
+                                    <font size="3">PRECIO: $12000</font>
+                                    <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
+                                      <span class="fa fa-eye" aria-hidden="true"></span>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>          
+                    </div><!--/.portfolio-item-->
+                    <?php } ?>
+                    <?php 
+                        include("php/conexion.php");
+                        $res='ADVENTURA QUADS (KINGQUAD)';                            
+                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $imagen = mysql_query($consulta);
+                    ?>
+                    <?php 
+                    while ($datos = mysql_fetch_array($imagen)) { 
+                    $ruta = "php/imagenes/" . $datos['imagen'];
+                    $id = $datos['id_moto'];
+                    // echo $tipo=$_GET['tipo'];
+                    ?>
+                    <div class="portfolio-item ciudad col-xs-12 col-sm-4 col-md-2">
+                        <div class="recent-work-wrap thumbnail" style="margin-left: 2px">
+                            <img class="img-responsive" src="<?= $ruta ?>">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <font size="2"><?= $datos['modelo'] ?></font><br>
+                                    <font size="3">PRECIO: $12000</font>
+                                    <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
+                                      <span class="fa fa-eye" aria-hidden="true"></span>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>          
+                    </div><!--/.portfolio-item-->
+                    <?php } ?>
+                    <?php 
+                        include("php/conexion.php");
+                        $res='CROSS Y ENDURO';                            
+                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $imagen = mysql_query($consulta);
+                    ?>
+                    <?php 
+                    while ($datos = mysql_fetch_array($imagen)) { 
+                    $ruta = "php/imagenes/" . $datos['imagen'];
+                    $id = $datos['id_moto'];
+                    // echo $tipo=$_GET['tipo'];
+                    ?>
+                    <div class="portfolio-item cross col-xs-12 col-sm-4 col-md-2">
+                        <div class="recent-work-wrap thumbnail" style="margin-left: 2px">
+                            <img class="img-responsive" src="<?= $ruta ?>">
+                            <div class="overlay">
+                                <div class="recent-work-inner">
+                                    <font size="2"><?= $datos['modelo'] ?></font><br>
+                                    <font size="3">PRECIO: $12000</font>
+                                    <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
+                                      <span class="fa fa-eye" aria-hidden="true"></span>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>          
+                    </div><!--/.portfolio-item-->
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -348,6 +487,7 @@
     </footer><!--/#footer-->
 
     <script src="js/jquery.js"></script>
+    <script src="js/altadatos.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/jquery.isotope.min.js"></script>

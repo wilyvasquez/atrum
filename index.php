@@ -113,7 +113,7 @@
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
                                     <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
-                                    <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a>
+                                    <!-- <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a> -->
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
                                     <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
-                                    <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a>
+                                    <!-- <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a> -->
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
                                     <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
-                                    <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a>
+                                    <!-- <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a> -->
                                 </div>
                             </div>
                         </div>
@@ -160,7 +160,7 @@
         <div class="container">
            <div class="center wow fadeInDown">
                 <h2>Canales de Venta</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <p class="lead">Aceptamos tarjetas Banamex, Bancomer, Banorte y AmericanExpress <br> Contamos con sistema de apartado que te permite mantener el costo de tu Moto Suzuki</p>
             </div>
 
             <div class="row">
@@ -168,7 +168,7 @@
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-money"></i>
-                            <h2>Credito ISSSTE</h2>
+                            <h2><a href="#">Credito ISSSTE</a></h2>
                             <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
                         </div>
                     </div><!--/.col-md-4-->
