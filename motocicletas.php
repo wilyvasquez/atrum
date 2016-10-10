@@ -14,7 +14,6 @@
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -62,12 +61,11 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Suzuki</a></li>
                         <li class="active"><a href="motocicletas.php">Motocicletas</a></li>
-                        <li><a href="accesorios.php">Accesorios</a></li>                        
+                        <li><a href="accesorios.php">Accesorios</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portafolio <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Promociones</a></li>
-                                <!-- <li><a href="#">Eventos</a></li> -->
                                 <li><a href="nosotros.php">About Us</a></li>
                                 <li><a href="contacto.php">Contacto</a></li>
                             </ul>
@@ -75,34 +73,33 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <form action="cotizador.php" method="post">
+                                <div id="login">
+                                    <form action="cotizador.php" method="post">
                                     <center>
                                     <img class="img-circle" src="images/su.png" width="50px" height="50px" style="margin-top:5px">
                                     </center>
                                     <li style="margin-top:5px">
-                                        <input type="text" id="user"  class="form-control input" name="user" placeholder="Usuario" required/>
-                                        <!-- <label>Username</label><input name="user" type="text" > -->
+                                        <input type="text" id="user" onkeypress="letranumero()" class="form-control input" name="user" placeholder="Usuario" required/>
                                     </li>
                                     <li style="margin-top:5px">
-                                        <input type="password"  class="form-control input" name="pass" placeholder="Password" required/>
-                                        <!-- <label>Password</label><input name="password" type="password"> -->
+                                        <input type="password" onkeypress="letranumero()" class="form-control input" id="pass" name="pass" placeholder="Password" required/>
                                     </li>
                                     <li>
-                                        <div class="freeow freeow-top-right" style="margin-top:5px;margin-left:10px;margin-bottom:5px">
-                                            <input class="btn btn-default" name="login" type="submit" value="login">
+                                        <div id="freeow-tr" class="freeow freeow-top-right" style="margin-top:5px;margin-left:10px;margin-bottom:5px">
+                                            <input class="btn btn-default" name="login" type="submit" value="Aceptar">
                                         </div> 
                                     </li>   
                                 </form>
+                                </div>
                             </ul>
-                        </li> 
+                        </li>
                     </ul>
                 </div>
             </div><!--/.container-->
-        </nav><!--/nav-->    
-    </header><!--/header--><!--/header-->
-        <div id="modal">
-            
-        </div>
+        </nav><!--/nav-->
+        
+    </header><!--/header-->
+
     <section id="portfolio">
         <div class="container">
             <div class="center">

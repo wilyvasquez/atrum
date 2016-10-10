@@ -7,6 +7,7 @@
     <meta name="author" content="">
     <title>Suzuki</title>
     
+    <link rel="shortcut icon" sizes="57x57" href="images/favicon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
@@ -57,12 +58,11 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Suzuki</a></li>
                         <li><a href="motocicletas.php">Motocicletas</a></li>
-                        <li><a href="accesorios.php">Accesorios</a></li>                        
-                        <li class="dropdown active">
+                        <li><a href="accesorios.php">Accesorios</a></li>
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portafolio <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Promociones</a></li>
-                                <!-- <li><a href="#">Eventos</a></li> -->
                                 <li><a href="nosotros.php">About Us</a></li>
                                 <li class="active"><a href="contacto.php">Contacto</a></li>
                             </ul>
@@ -70,30 +70,31 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <form action="cotizador.php" method="post">
+                                <div id="login">
+                                    <form action="cotizador.php" method="post">
                                     <center>
                                     <img class="img-circle" src="images/su.png" width="50px" height="50px" style="margin-top:5px">
                                     </center>
                                     <li style="margin-top:5px">
-                                        <input type="text" id="user"  class="form-control input" name="user" placeholder="Usuario" required/>
-                                        <!-- <label>Username</label><input name="user" type="text" > -->
+                                        <input type="text" id="user" onkeypress="letranumero()" class="form-control input" name="user" placeholder="Usuario" required/>
                                     </li>
                                     <li style="margin-top:5px">
-                                        <input type="password"  class="form-control input" name="pass" placeholder="Password" required/>
-                                        <!-- <label>Password</label><input name="password" type="password"> -->
+                                        <input type="password" onkeypress="letranumero()" class="form-control input" id="pass" name="pass" placeholder="Password" required/>
                                     </li>
                                     <li>
-                                        <div class="freeow freeow-top-right" style="margin-top:5px;margin-left:10px;margin-bottom:5px">
-                                            <input class="btn btn-default" name="login" type="submit" value="login">
+                                        <div id="freeow-tr" class="freeow freeow-top-right" style="margin-top:5px;margin-left:10px;margin-bottom:5px">
+                                            <input class="btn btn-default" name="login" type="submit" value="Aceptar">
                                         </div> 
                                     </li>   
                                 </form>
+                                </div>
                             </ul>
-                        </li> 
+                        </li>
                     </ul>
                 </div>
             </div><!--/.container-->
-        </nav><!--/nav-->    
+        </nav><!--/nav-->
+        
     </header><!--/header-->
 
    <section id="contact-info">
@@ -123,10 +124,10 @@
                                 </address>
 
                                 <address>
-                                    <h5>Zonal Office</h5>
-                                    <p>1537 Flint Street <br>
-                                    Tumon, MP 96911</p>                                
-                                    <p>Phone:670-898-2847 <br>
+                                    <h5>Hypermotors S.A. de C.V.</h5>
+                                    <p>Boulevard Belisario Dominguez <br>
+                                    #1735, Col. Xamaipak</p>                                
+                                    <p>Phone:961-121-4394 Tuxtla Gutierrez Chiapas <br>
                                     Email Address:info@domain.com</p>
                                 </address>
                             </li>
@@ -134,20 +135,20 @@
 
                             <li class="col-sm-6">
                                 <address>
-                                    <h5>Zone#2 Office</h5>
-                                    <p>1537 Flint Street <br>
-                                    Tumon, MP 96911</p>
-                                    <p>Phone:670-898-2847 <br>
+                                    <h5>Atrum Motors S.A. de C.V.</h5>
+                                    <p>Laredo #838,Esq Av. Fidel <br>
+                                    Velazquez Y Lago de Chapala</p>
+                                    <p>Phone:2261-9035,2261-902 <br>
                                     Email Address:info@domain.com</p>
                                 </address>
 
-                                <address>
+                                <!-- <address>
                                     <h5>Zone#3 Office</h5>
                                     <p>1537 Flint Street <br>
                                     Tumon, MP 96911</p>
                                     <p>Phone:670-898-2847 <br>
                                     Email Address:info@domain.com</p>
-                                </address>
+                                </address> -->
                             </li>
                         </ul>
                     </div>
@@ -197,7 +198,7 @@
         </div><!--/.container-->
     </section><!--/#contact-page-->
 
-    <section id="bottom">
+    <!-- <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -213,8 +214,8 @@
                             <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Support</h3>
@@ -228,8 +229,8 @@
                             <li><a href="#">Billing system</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Developers</h3>
@@ -243,8 +244,8 @@
                             <li><a href="#">Article Writing</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Our Partners</h3>
@@ -258,10 +259,10 @@
                             <li><a href="#">Laboris</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div>/.col-md-3
             </div>
         </div>
-    </section><!--/#bottom-->
+    </section>/#bottom -->
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">

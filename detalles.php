@@ -65,12 +65,11 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Suzuki</a></li>
                         <li class="active"><a href="motocicletas.php">Motocicletas</a></li>
-                        <li><a href="accesorios.php">Accesorios</a></li>                        
+                        <li><a href="accesorios.php">Accesorios</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portafolio <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Promociones</a></li>
-                                <!-- <li><a href="#">Eventos</a></li> -->
                                 <li><a href="nosotros.php">About Us</a></li>
                                 <li><a href="contacto.php">Contacto</a></li>
                             </ul>
@@ -78,31 +77,32 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <form action="cotizador.php" method="post">
+                                <div id="login">
+                                    <form action="cotizador.php" method="post">
                                     <center>
                                     <img class="img-circle" src="images/su.png" width="50px" height="50px" style="margin-top:5px">
                                     </center>
                                     <li style="margin-top:5px">
-                                        <input type="text" id="user"  class="form-control input" name="user" placeholder="Usuario" required/>
-                                        <!-- <label>Username</label><input name="user" type="text" > -->
+                                        <input type="text" id="user" onkeypress="letranumero()" class="form-control input" name="user" placeholder="Usuario" required/>
                                     </li>
                                     <li style="margin-top:5px">
-                                        <input type="password"  class="form-control input" name="pass" placeholder="Password" required/>
-                                        <!-- <label>Password</label><input name="password" type="password"> -->
+                                        <input type="password" onkeypress="letranumero()" class="form-control input" id="pass" name="pass" placeholder="Password" required/>
                                     </li>
                                     <li>
-                                        <div class="freeow freeow-top-right" style="margin-top:5px;margin-left:10px;margin-bottom:5px">
-                                            <input class="btn btn-default" name="login" type="submit" value="login">
+                                        <div id="freeow-tr" class="freeow freeow-top-right" style="margin-top:5px;margin-left:10px;margin-bottom:5px">
+                                            <input class="btn btn-default" name="login" type="submit" value="Aceptar">
                                         </div> 
                                     </li>   
                                 </form>
+                                </div>
                             </ul>
-                        </li> 
+                        </li>
                     </ul>
                 </div>
             </div><!--/.container-->
-        </nav><!--/nav-->    
-    </header><!--/header--><!--/header-->
+        </nav><!--/nav-->
+        
+    </header><!--/header-->
     <?php
         include("php/conexion.php");
         $res=$_GET['id'];
@@ -144,7 +144,7 @@
             </div><!--/.row-->
          </div><!--/.blog-->
     </section><!--/#blog-->
-    <section id="bottom">
+    <!-- <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -160,8 +160,8 @@
                             <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Support</h3>
@@ -175,8 +175,8 @@
                             <li><a href="#">Billing system</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Developers</h3>
@@ -190,8 +190,8 @@
                             <li><a href="#">Article Writing</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Our Partners</h3>
@@ -205,23 +205,22 @@
                             <li><a href="#">Laboris</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div>/.col-md-3
             </div>
         </div>
-    </section><!--/#bottom-->
+    </section>/#bottom -->
 
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                    &copy;SuzukiOaxaca (951) 144 88 05.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="index.php">Suzuki</a></li>
+                        <li><a href="nosotros.php">About Us</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                 </div>
             </div>
