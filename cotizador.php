@@ -22,7 +22,7 @@ include('seguridad.php');
     <link rel="stylesheet" href="css/alertify.default.css" id="toggleCSS" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
 </head>
-<body>
+<body style="background-image: url(images/fondo2.png)">
 	<header id ="header">
         <div class="top-bar">
             <div class="container">

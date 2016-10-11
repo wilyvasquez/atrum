@@ -113,7 +113,7 @@
     ?>
     <section id="blog" class="container" style="background-image: url(images/fondo.png)">
         <div class="center">
-            <h2 style=" text-shadow: -5px -5px 5px #aaa"><?= $datos['modelo'] ?> ($ <?=$datos['precio'] ?>)</h2>
+            <h2 style=" text-shadow: -5px -5px 5px #aaa"><?= $datos['modelo'] ?> ($ <?=$datos['precio'] ?>) <?= $datos['anio'] ?></h2>
             <div class="row team-bar">
                     <div class="first-one-arrow hidden-xs">
                         <hr>
@@ -136,8 +136,8 @@
             <div class="row" >
                 <div class="col-md-12">
                     <div class="blog-item">
-                        <div class="thumbnail col-md-4"><br>
-                            <img class="img-responsive img-blog" src="<?= $ruta ?>" width="100%"/>
+                        <div class="col-md-4"><br>
+                            <img class="img-responsive img-blog" src="<?= $ruta ?>" width="100%" style=" box-shadow: -5px -5px 5px #aaa"/>
                         </div>
                         <div class="col-md-6" style="margin-left: 20px">
                             <h5><b>TIPO MOTOCICLETA:</b>
