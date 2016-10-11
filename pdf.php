@@ -11,7 +11,7 @@ $segurosemanas=0;
 $seguroquincena=0;
 $seguromeses=0;
 
-include ('fpdf/fpdf.php');
+include ('fpdf.php');
 include("php/conexion.php");
 include("php/consultas_pdf.php");
 $id = $_GET['moto'];

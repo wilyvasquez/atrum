@@ -111,8 +111,8 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                    <h1 class="animation animated-item-1">DOBLE PROPÓSITO V-STROM 650 ABS</h1>
+                                    <h2 class="animation animated-item-2">Convierte las calles en la puerta de salida para la aventura...</h2>
                                     <!-- <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a> -->
                                 </div>
                             </div>
@@ -125,8 +125,8 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                    <h1 class="animation animated-item-1">Suzuki GSX-1300R Hayabusa</h1>
+                                    <h2 class="animation animated-item-2">Considerada como una de las más veloces del mundo y de mayor aceleración estrictamente de serie...</h2>
                                     <!-- <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a> -->
                                 </div>
                             </div>
@@ -139,8 +139,8 @@
                         <div class="row slide-margin">
                             <div class="col-sm-6">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                                    <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                    <h1 class="animation animated-item-1">CROSS Y ENDURO RMX-450Z</h1>
+                                    <h2 class="animation animated-item-2">Precisa, ligera, delgada, potente, con todo el equipo necesario pra Enduro...</h2>
                                     <!-- <a class="btn-slide animation animated-item-3" href="#">Leer Mas</a> -->
                                 </div>
                             </div>
@@ -156,6 +156,130 @@
             <i class="fa fa-chevron-right"></i>
         </a>
     </section><!--/#main-slider-->
+    <div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Requisitos Credito ISSSTE</h4>
+              </div>
+              <div class="modal-body">
+                <p>1.-Copia Credencial IFE (INE).</p>
+                <p>2.-Dos Ultimos talones de pago.</p>
+                <p>3.-Dos referencias personales.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="suzucredit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Requisitos SUZUCREDIT</h4>
+              </div>
+              <div class="modal-body">
+                <p>1.-Copia Credencial IFE (INE).</p>
+                <p>2.-Dos Comprobantes de domicilio original y copia.</p>
+                <p>3.-Comprobante de ingresos.</p>
+                <p>4.-Croquis de vivienda.</p>
+                <p>5.-Dos referencias no familiares.</p>
+                <p>6.-Aval si el caso lo requiere.</p>
+                <p>7.-Autorizacion para buro de credito.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="casa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Requisitos Credito Casa</h4>
+              </div>
+              <div class="modal-body">
+                <p>1.-Copia Credencial IFE (INE).</p>
+                <p>2.-Dos Comprobantes de domicilio original y copia.</p>
+                <p>3.-Comprobante de ingresos.</p>
+                <p>4.-Croquis de vivienda.</p>
+                <p>5.-Dos referencias no familiares.</p>
+                <p>6.-Aval si el caso lo requiere.</p>
+                <p>7.-Autorizacion para buro de credito.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="stpeidceo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Requisitos STPEIDCEO</h4>
+              </div>
+              <div class="modal-body">
+                <p>1.-Copia Credencial IFE (INE).</p>
+                <p>2.-Credencial del sindicalizado o carta compromiso del mismo.</p>
+                <p>3.-Dos comprobantes de domicilio.</p>
+                <p>4.-Recibos de nominados (2 ultimas quincenas).</p>
+                <p>5.-Pago de afiliacion.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="paribas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Requisitos BNP Paribas</h4>
+              </div>
+              <div class="modal-body">
+                <p>1.-Copia Credencial IFE (INE).</p>
+                <p>2.-Dos Comprobantes de domicilio original y copia.</p>
+                <p>3.-Estado de cuente de 3 meses.</p>
+                <p>5.-Dos referencias no familiares.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="fonacot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Requisitos FONACOT</h4>
+              </div>
+              <div class="modal-body">
+                <p>1.-Copia Credencial IFE (INE).</p>
+                <p>2.-Dos Comprobantes de domicilio original y copia.</p>
+                <p>3.-Dos ultimos talones de pago.</p>
+                <p>4.-Dos referencias no familiares original y copia.</p>
+                <p>5.-Estar afiliado a la empresa con FONACOT.</p>
+                <p>6.-Tener minimo un año en la empresa.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
     <section id="feature" >
         <div class="container">
            <div class="center wow fadeInDown">
@@ -168,47 +292,47 @@
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-money"></i>
-                            <h2><a href="#">Credito ISSSTE</a></h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                            <h2><a data-toggle="modal" data-target="#myModal" href="#myModal" style="color:#000000">Credito ISSSTE</a></h2>
+                            <h3>Atrum en coordinacion con el ISSSTE te ofrece el mejor credito.</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-credit-card"></i>
-                            <h2>BNP Paribas</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                            <h2><a data-toggle="modal" data-target="#paribas" href="#paribas" style="color:#000000">BNP Paribas</a></h2>
+                            <h3>Financiamiento para motocicletas de gran cilindrada.</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-motorcycle" aria-hidden="true"></i>
-                            <h2>Suzucredit</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                            <h2><a data-toggle="modal" data-target="#suzucredit" href="#suzucredit" style="color:#000000">Suzucredit</a></h2>
+                            <h3>Te apoya a adquirir tu motocicleta SUZUKI con garantiade 2 años.</h3>
                         </div>
                     </div><!--/.col-md-4-->
                 
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-home"></i>
-                            <h2>Credito Casa</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                            <h2><a data-toggle="modal" data-target="#casa" href="#casa" style="color:#000000">Credito Casa</a></h2>
+                            <h3>Menor plazo, sin pago de apertura.</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-users"></i>
-                            <h2>Credinomina STPEIDCEO</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                            <h2><a data-toggle="modal" data-target="#stpeidceo" href="#stpeidceo" style="color:#000000">Credinomina STPEIDCEO</a></h2>
+                            <h3>Tu credito en cualquiera de nuestro modelos.</h3>
                         </div>
                     </div><!--/.col-md-4-->
 
                     <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <i class="fa fa-usd"></i>
-                            <h2>FONACOT</h2>
+                            <h2><a data-toggle="modal" data-target="#fonacot" href="#fonacot" style="color:#000000">FONACOT</a></h2>
                             <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
                         </div>
                     </div><!--/.col-md-4-->
