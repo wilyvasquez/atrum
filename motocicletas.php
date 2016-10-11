@@ -59,7 +59,7 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Suzuki</a></li>
+                        <li><a href="index.php">Atrum</a></li>
                         <li class="active"><a href="motocicletas.php">Motocicletas</a></li>
                         <li><a href="accesorios.php">Accesorios</a></li>
                         <li class="dropdown">
@@ -155,7 +155,7 @@
                     <?php 
                         include("php/conexion.php");
                         $res='SCOOTERS';                            
-                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.tipo_moto='$res'";
                         $imagen = mysql_query($consulta);
                     ?>
                     <?php 
@@ -169,7 +169,8 @@
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <font size="2"><?= $datos['modelo'] ?></font><br>
-                                    <font size="3">PRECIO: $12000</font>
+                                    <font size="2">AÑO: <?= $datos['anio'] ?></font><br>
+                                    <font size="2">PRECIO:$ <?= $datos['precio'] ?></font>
                                     <center><a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
                                       <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a></center>
@@ -181,7 +182,7 @@
                     <?php 
                         include("php/conexion.php");
                         $res='URBANAS';                            
-                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.tipo_moto='$res'";
                         $imagen = mysql_query($consulta);
                     ?>
                     <?php 
@@ -196,7 +197,8 @@
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <font size="2"><?= $datos['modelo'] ?></font><br>
-                                    <font size="3">PRECIO: $12000</font>
+                                    <font size="2">AÑO: <?= $datos['anio'] ?></font><br>
+                                    <font size="2">PRECIO:$ <?= $datos['precio'] ?></font>
                                     <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
                                       <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a>
@@ -208,7 +210,7 @@
                     <?php 
                         include("php/conexion.php");
                         $res='MOTOCARRO';                            
-                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.tipo_moto='$res'";
                         $imagen = mysql_query($consulta);
                     ?>
                     <?php 
@@ -223,7 +225,8 @@
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <font size="2"><?= $datos['modelo'] ?></font><br>
-                                    <font size="3">PRECIO: $12000</font>
+                                    <font size="2">AÑO: <?= $datos['anio'] ?></font><br>
+                                    <font size="2">PRECIO:$ <?= $datos['precio'] ?></font>
                                     <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
                                       <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a>
@@ -235,7 +238,7 @@
                     <?php 
                         include("php/conexion.php");
                         $res='DOBLE PROPOSITO';                            
-                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.tipo_moto='$res'";
                         $imagen = mysql_query($consulta);
                     ?>
                     <?php 
@@ -250,7 +253,8 @@
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <font size="2"><?= $datos['modelo'] ?></font><br>
-                                    <font size="3">PRECIO: $12000</font>
+                                    <font size="2">AÑO: <?= $datos['anio'] ?></font><br>
+                                    <font size="2">PRECIO:$ <?= $datos['precio'] ?></font>
                                     <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
                                       <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a>
@@ -262,7 +266,7 @@
                     <?php 
                         include("php/conexion.php");
                         $res='TRABAJO';                            
-                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.tipo_moto='$res'";
                         $imagen = mysql_query($consulta);
                     ?>
                     <?php 
@@ -277,7 +281,8 @@
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <font size="2"><?= $datos['modelo'] ?></font><br>
-                                    <font size="3">PRECIO: $12000</font>
+                                    <font size="2">AÑO: <?= $datos['anio'] ?></font><br>
+                                    <font size="2">PRECIO:$ <?= $datos['precio'] ?></font>
                                     <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
                                       <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a>
@@ -289,7 +294,7 @@
                     <?php 
                         include("php/conexion.php");
                         $res='BOULEVARD';                            
-                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.tipo_moto='$res'";
                         $imagen = mysql_query($consulta);
                     ?>
                     <?php 
@@ -304,7 +309,8 @@
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <font size="2"><?= $datos['modelo'] ?></font><br>
-                                    <font size="3">PRECIO: $12000</font>
+                                    <font size="2">AÑO: <?= $datos['anio'] ?></font><br>
+                                    <font size="2">PRECIO:$ <?= $datos['precio'] ?></font>
                                     <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
                                       <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a>
@@ -316,7 +322,7 @@
                     <?php 
                         include("php/conexion.php");
                         $res='DEPORTIVAS (GSX-R)';                            
-                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.tipo_moto='$res'";
                         $imagen = mysql_query($consulta);
                     ?>
                     <?php 
@@ -331,7 +337,8 @@
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <font size="2"><?= $datos['modelo'] ?></font><br>
-                                    <font size="3">PRECIO: $12000</font>
+                                    <font size="2">AÑO: <?= $datos['anio'] ?></font><br>
+                                    <font size="2">PRECIO:$ <?= $datos['precio'] ?></font>
                                     <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
                                       <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a>
@@ -343,7 +350,7 @@
                     <?php 
                         include("php/conexion.php");
                         $res='ADVENTURA QUADS (KINGQUAD)';                            
-                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.tipo_moto='$res'";
                         $imagen = mysql_query($consulta);
                     ?>
                     <?php 
@@ -358,7 +365,8 @@
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <font size="2"><?= $datos['modelo'] ?></font><br>
-                                    <font size="3">PRECIO: $12000</font>
+                                    <font size="2">AÑO: <?= $datos['anio'] ?></font><br>
+                                    <font size="2">PRECIO:$ <?= $datos['precio'] ?></font>
                                     <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
                                       <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a>
@@ -370,7 +378,7 @@
                     <?php 
                         include("php/conexion.php");
                         $res='CROSS Y ENDURO';                            
-                        $consulta = "SELECT * FROM moto WHERE tipo_moto='$res'";
+                        $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.tipo_moto='$res'";
                         $imagen = mysql_query($consulta);
                     ?>
                     <?php 
@@ -385,7 +393,8 @@
                             <div class="overlay">
                                 <div class="recent-work-inner">
                                     <font size="2"><?= $datos['modelo'] ?></font><br>
-                                    <font size="3">PRECIO: $12000</font>
+                                    <font size="2">AÑO: <?= $datos['anio'] ?></font><br>
+                                    <font size="2">PRECIO:$ <?= $datos['precio'] ?></font>
                                     <a class="btn btn-danger" href="detalles.php?id=<?= $datos['id_moto'] ?>" role="button">Detalles !
                                       <span class="fa fa-eye" aria-hidden="true"></span>
                                     </a>

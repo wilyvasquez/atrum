@@ -306,7 +306,7 @@ if ($res1=='MESES') {
 		$pdf->SetXY(169, 178);
 		$pdf->Cell(5, 6,'$', 0 , 1);
 
-		$pdf->Image($ruta,15,90,60,40,'');
+		$pdf->Image($ruta,15,90,63,50,'');
 		////////////////////////////////////////
 		$usuario=$_GET['parametro'];
 		$consulta = mysql_query("SELECT * FROM accesorio where ref_usuario=$usuario");

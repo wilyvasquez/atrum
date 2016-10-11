@@ -63,7 +63,7 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Suzuki</a></li>
+                        <li><a href="index.php">Atrum</a></li>
                         <li class="active"><a href="motocicletas.php">Motocicletas</a></li>
                         <li><a href="accesorios.php">Accesorios</a></li>
                         <li class="dropdown">
@@ -106,110 +106,72 @@
     <?php
         include("php/conexion.php");
         $res=$_GET['id'];
-        $consulta = "SELECT * FROM moto WHERE id_moto=$res";
+       $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.id_moto=$res";
         $imagen = mysql_query($consulta);
         $datos = mysql_fetch_array($imagen);
         $ruta = "php/imagenes/" . $datos['imagen'];
     ?>
-    <section id="blog" class="container" >
+    <section id="blog" class="container" style="background-image: url(images/fondo.png)">
         <div class="center">
-            <h2><?= $datos['modelo'] ?></h2>
-            <hr>
+            <h2 style=" text-shadow: -5px -5px 5px #aaa"><?= $datos['modelo'] ?> ($ <?=$datos['precio'] ?>)</h2>
+            <div class="row team-bar">
+                    <div class="first-one-arrow hidden-xs">
+                        <hr>
+                    </div>
+                    <div class="first-arrow hidden-xs">
+                        <hr> <i class="fa fa-angle-up"></i>
+                    </div>
+                    <div class="second-arrow hidden-xs">
+                        <hr> <i class="fa fa-angle-down"></i>
+                    </div>
+                    <div class="third-arrow hidden-xs">
+                        <hr> <i class="fa fa-angle-up"></i>
+                    </div>
+                    <div class="fourth-arrow hidden-xs">
+                        <hr> <i class="fa fa-angle-down"></i>
+                    </div>
+                </div>
         </div>
         <div class="">
-            <div class="row">
+            <div class="row" >
                 <div class="col-md-12">
-                    <p class="lead">PRECIO:</p>
                     <div class="blog-item">
                         <div class="thumbnail col-md-4"><br>
-                            <img class="img-responsive img-blog" src="<?= $ruta ?>" width="100%"/>                         
+                            <img class="img-responsive img-blog" src="<?= $ruta ?>" width="100%"/>
                         </div>
                         <div class="col-md-6" style="margin-left: 20px">
-                            <h5><b>TIPO MOTOCICLETA:</b><?= $datos['tipo_moto'] ?>
-                            <h5><b>MODELO:</b> <?= $datos['modelo'] ?></h5>
-                            <h5><b>MOTOR:</b> <?= $datos['motor'] ?></h5>
-                            <h5><b>TRASMISION:</b> <?= $datos['trasmision'] ?></h5>
-                            <h5><b>TIPO DE MOTOR:</b> <?= $datos['tipo_motor'] ?></h5>
-                            <h5><b>NUMERO DE CILINDROS:</b> <?= $datos['numero_cilindros'] ?></h5>
-                            <h5><b>DIAMETRO:</b> <?= $datos['diametro'] ?></h5>
-                            <h5><b>CARRERA:</b> <?= $datos['carrera'] ?></h5>
-                            <h5><b>DESPLAZAMIENTO:</b> <?= $datos['desplazamiento'] ?></h5>
-                            <h5><b>RELACION COMPRESION:</b> <?= $datos['relacion_compresion'] ?></h5>
-                            <h5><b>SISTEMA LUBRICACION:</b> <?= $datos['sistema_lubricacion'] ?></h5>
-                            <h5><b>SISTEMA COMBUSTIBLE:</b> <?= $datos['sistema_combustible'] ?></h5>
-                            <h5><b>SISTEMA DE ARRANQUE:</b> <?= $datos['sistema_arranque'] ?></h5>
+                            <h5><b>TIPO MOTOCICLETA:</b>
+                                <font style="margin-left: 60px"><?= $datos['tipo_moto'] ?></font></h5>
+                            <h5><b>MODELO:</b>
+                                <font style="margin-left: 133px"><?= $datos['modelo'] ?></font></h5>
+                            <h5><b>MOTOR:</b>
+                                <font style="margin-left: 142px"><?= $datos['motor'] ?></font></h5>
+                            <h5><b>TRASMISION:</b> 
+                                <font style="margin-left: 109px"><?= $datos['trasmision'] ?></font></h5>
+                            <h5><b>TIPO DE MOTOR:</b>
+                                <font style="margin-left: 86px"><?= $datos['tipo_motor'] ?></font></h5>
+                            <h5><b>NUMERO DE CILINDROS:</b>
+                                <font style="margin-left: 32px"><?= $datos['numero_cilindros'] ?></font></h5>
+                            <h5><b>DIAMETRO:</b>
+                                <font style="margin-left: 124px"><?= $datos['diametro'] ?></font></h5>
+                            <h5><b>CARRERA:</b>
+                                <font style="margin-left: 135px"><?= $datos['carrera'] ?></font></h5>
+                            <h5><b>DESPLAZAMIENTO:</b>
+                                <font style="margin-left: 72px"><?= $datos['desplazamiento'] ?></font></h5>
+                            <h5><b>RELACION COMPRESION:</b>
+                                <font style="margin-left: 30px"><?= $datos['relacion_compresion'] ?></font></h5>
+                            <h5><b>SISTEMA LUBRICACION:</b>
+                                <font style="margin-left: 42px"><?= $datos['sistema_lubricacion'] ?></font></h5>
+                            <h5><b>SISTEMA COMBUSTIBLE:</b>
+                                <font style="margin-left: 40px"><?= $datos['sistema_combustible'] ?></font></h5>
+                            <h5><b>SISTEMA DE ARRANQUE:</b>
+                                <font style="margin-left: 39px"><?= $datos['sistema_arranque'] ?></font></h5>
                         </div>
                     </div><!--/.blog-item-->
                 </div><!--/.col-md-8-->  
             </div><!--/.row-->
          </div><!--/.blog-->
     </section><!--/#blog-->
-    <!-- <section id="bottom">
-        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">We are hiring</a></li>
-                            <li><a href="#">Meet the team</a></li>
-                            <li><a href="#">Copyright</a></li>
-                            <li><a href="#">Terms of use</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                            <li><a href="#">Contact us</a></li>
-                        </ul>
-                    </div>    
-                </div>/.col-md-3
-    
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Refund policy</a></li>
-                            <li><a href="#">Ticket system</a></li>
-                            <li><a href="#">Billing system</a></li>
-                        </ul>
-                    </div>    
-                </div>/.col-md-3
-    
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Email Marketing</a></li>
-                            <li><a href="#">Plugin Development</a></li>
-                            <li><a href="#">Article Writing</a></li>
-                        </ul>
-                    </div>    
-                </div>/.col-md-3
-    
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
-                        <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>
-                            <li><a href="#">Exercitation</a></li>
-                            <li><a href="#">Ullamco</a></li>
-                            <li><a href="#">Laboris</a></li>
-                        </ul>
-                    </div>    
-                </div>/.col-md-3
-            </div>
-        </div>
-    </section>/#bottom -->
-
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">

@@ -56,7 +56,7 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Suzuki</a></li>
+                        <li><a href="index.php">Atrum</a></li>
                         <li><a href="motocicletas.php">Motocicletas</a></li>
                         <li><a href="accesorios.php">Accesorios</a></li>
                         <li class="dropdown">
