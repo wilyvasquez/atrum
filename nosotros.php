@@ -202,15 +202,15 @@
                 </div>
 
                 <div class="row clearfix">
-                    <div class="col-md-4 col-sm-6"> 
+                    <div class="col-md-offset-4 col-sm-6"> 
                         <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                             <div class="media">
                                 <div class="pull-left">
                                     <a href="#"><img class="media-object" src="images/man1.jpg" alt=""></a>
                                 </div>
                                 <div class="media-body">
-                                    <h4>Jhon Doe</h4>
-                                    <h5>Founder and CEO</h5>
+                                    <h4>MIGUEL ANGEL LUJAN CORRO</h4>
+                                    <h5>Fundador y CEO</h5>
                                     <!-- <ul class="tag clearfix">
                                         <li class="btn"><a href="#">Web</a></li>
                                         <li class="btn"><a href="#">Ui</a></li>
@@ -230,31 +230,31 @@
                     </div><!--/.col-lg-4 -->
                     
                     
-                    <div class="col-md-4 col-sm-6 col-md-offset-2"> 
-                        <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <a href="#"><img class="media-object" src="images/man2.jpg" alt=""></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4>Jhon Doe</h4>
-                                    <h5>Founder and CEO</h5>
-                                    <!-- <ul class="tag clearfix">
-                                        <li class="btn"><a href="#">Web</a></li>
-                                        <li class="btn"><a href="#">Ui</a></li>
-                                        <li class="btn"><a href="#">Ux</a></li>
-                                        <li class="btn"><a href="#">Photoshop</a></li>
-                                    </ul> -->
-                                    <ul class="social_icons">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li> 
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div><!--/.media -->
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                        </div>
-                    </div><!--/.col-lg-4 -->                    
+                    <!-- <div class="col-md-4 col-sm-6 col-md-offset-2"> 
+                                           <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                                               <div class="media">
+                                                   <div class="pull-left">
+                                                       <a href="#"><img class="media-object" src="images/man2.jpg" alt=""></a>
+                                                   </div>
+                                                   <div class="media-body">
+                                                       <h4>Jhon Doe</h4>
+                                                       <h5>Founder and CEO</h5>
+                                                       <ul class="tag clearfix">
+                                                           <li class="btn"><a href="#">Web</a></li>
+                                                           <li class="btn"><a href="#">Ui</a></li>
+                                                           <li class="btn"><a href="#">Ux</a></li>
+                                                           <li class="btn"><a href="#">Photoshop</a></li>
+                                                       </ul>
+                                                       <ul class="social_icons">
+                                                           <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                           <li><a href="#"><i class="fa fa-twitter"></i></a></li> 
+                                                           <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                       </ul>
+                                                   </div>
+                                               </div>/.media
+                                               <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                           </div>
+                                       </div>/.col-lg-4  -->                   
                 </div> <!--/.row -->
                 <div class="row team-bar">
                     <div class="first-one-arrow hidden-xs">
@@ -331,7 +331,7 @@
         </div><!--/.container-->
     </section><!--/about-us-->
     
-    <section id="bottom">
+    <!-- <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -347,8 +347,8 @@
                             <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Support</h3>
@@ -362,8 +362,8 @@
                             <li><a href="#">Billing system</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Developers</h3>
@@ -377,8 +377,8 @@
                             <li><a href="#">Article Writing</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Our Partners</h3>
@@ -392,10 +392,10 @@
                             <li><a href="#">Laboris</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div>/.col-md-3
             </div>
         </div>
-    </section><!--/#bottom-->
+    </section>/#bottom -->
     <footer id="footer" class="midnight-blue" style="margin-top:10px">
         <div class="container">
             <div class="row">

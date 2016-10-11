@@ -333,7 +333,7 @@
                         <div class="feature-wrap">
                             <i class="fa fa-usd"></i>
                             <h2><a data-toggle="modal" data-target="#fonacot" href="#fonacot" style="color:#000000">FONACOT</a></h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                            <h3>Tu mejor credito si estas afiliado en FONACOT.</h3>
                         </div>
                     </div><!--/.col-md-4-->
                 </div><!--/.services-->

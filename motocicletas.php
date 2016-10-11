@@ -399,7 +399,7 @@
         </div>
     </section><!--/#portfolio-item-->
     
-    <section id="bottom">
+    <!-- <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -415,8 +415,8 @@
                             <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Support</h3>
@@ -430,8 +430,8 @@
                             <li><a href="#">Billing system</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Developers</h3>
@@ -445,8 +445,8 @@
                             <li><a href="#">Article Writing</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
-
+                </div>/.col-md-3
+    
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Our Partners</h3>
@@ -460,10 +460,10 @@
                             <li><a href="#">Laboris</a></li>
                         </ul>
                     </div>    
-                </div><!--/.col-md-3-->
+                </div>/.col-md-3
             </div>
         </div>
-    </section><!--/#bottom-->
+    </section>/#bottom -->
 
     <footer id="footer" class="midnight-blue">
         <div class="container">

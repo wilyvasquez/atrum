@@ -60,8 +60,8 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Suzuki</a></li>
-                        <li class="active"><a href="motocicletas.php">Motocicletas</a></li>
-                        <li><a href="accesorios.php">Accesorios</a></li>
+                        <li><a href="motocicletas.php">Motocicletas</a></li>
+                        <li class="active"><a href="accesorios.php">Accesorios</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portafolio <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
