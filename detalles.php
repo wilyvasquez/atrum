@@ -138,7 +138,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeft">
-                    <div class="feature-image">
+                    <div class="feature-image" style="margin-top: 100px">
                         <img class="img-responsive" src="http://themewinter.com/html/dart/multipage/images/feature-mock.png" alt="feature img" width="500px" height="7000" />
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="col-sm-6 wow fadeInRight">
                     <div class="feature-wrapper">
                         <div class="feature-content-wrapper">
-                            <h2>SCOOTER LET'S</h2>
+                            <b><h2>SCOOTER LET'S URBANA L6 ($ 23450.00)</h2></b>
                             <p>La mas ligera de su segmento</p>
 
                             <div class="feature-box clearfix">
@@ -408,109 +408,6 @@
         </div><!--/ Container end -->
     </section><!-- Portfolio end -->
 
-    <!-- Blog & Service -->
-  <!--   <section id="blog-service">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                  <div class='text-center'>
-                      <h2 class="title wow bounceIn"><span>Latest Post &amp; Services</span></h2>
-                  </div>
-              </div>
-  
-              Blog start
-              <div class="col-md-6 wow slideInLeft">
-                  <div class="row">
-                      <div class="col-sm-6 col-xs-6">
-                          <div class="media recent-post">
-                              <img src="images/img.png" alt="blog" />
-                                  <div class="blog-date">
-                                      <span class="date">15
-                                          <span>feb</span>
-                                      </span>
-                                  </div>
-                              <div class="media-body post-body">
-                                  <h3><a href="#">Harmony from the blog heart</a></h3>
-                                  <p class="post-meta">
-                                      <span class="post-meta-author"><a href="#">Posted by: Tatania Lu</a></span>
-                                      <span class="post-meta-comments"><a href="#">16 comments</a></span>
-                                  </p>
-                                  <div class="post-excerpt">
-                                  <p>Quisque sed metus at justo vestibulum congue at et arcu. Maecen pellentesque lobortis ante. Vestibulum quam cursus eget augue purus</p>
-                                  <a href="#" class="read-more">Read More <i class="fa fa fa-long-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>end media
-                      </div>/ end col-sm-6
-                      <div class="col-sm-6 col-xs-6">
-                          <div class="media recent-post">
-                              <img src="images/img.png" alt="img" />
-                                  <div class="blog-date">
-                                      <span class="date">25
-                                          <span>May</span>
-                                      </span>
-                                  </div>
-                              <div class="media-body post-body">
-                                  <h3><a href="#">Harmony from the blog heart</a></h3>
-                                  <p class="post-meta">
-                                      <span class="post-meta-author"><a href="#">Posted by: Tatania Lu</a></span>
-                                      <span class="post-meta-comments"><a href="#">16 comments</a></span>
-                                  </p>
-                                  <div class="post-excerpt">
-                                  <p>Quisque sed metus at justo vestibulum congue at et arcu. Maecen pellentesque lobortis ante. Vestibulum quam cursus eget augue purus</p>
-                                  <a href="#" class="read-more">Read More <i class="fa fa fa-long-arrow-right"></i></a>
-                                  </div>
-                              </div>
-                          </div>end media
-                      </div>/ end col-sm-6
-                  </div>Row end
-              </div>Blog end
-  
-              Services start
-              <div class="col-md-6 wow slideInRight">
-                  Toggle start
-                  <div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                      <h4 class="panel-title"> 
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Web Application Design </a> 
-                      </h4>
-                      </div>
-                      <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                          <p>Aliquam mattis ultricies dolor ac vulputate. Pellentesque lectus tellus, varius vitae est et, ullamcorper porttitor urna. Praesent tristique tempor erat quis tincidunt. Sed elementum porta ullamcorper.</p> <p>Cras mattis dui ac elit sollicitudin, eu rutrum quam pharetra. Etiam consectetur nunc vitae nibh egestas scelerisque. Nam sed auctor eros, et euismod leo. Integer ut fringilla nunc. Donec eget lacus lobortis, aliquam nulla ultricies, cursus libero.</p>
-                        </div>
-                      </div>
-                    </div>/ Panel 1 end
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                      <h4 class="panel-title">
-                      <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo"> Search Enginee Optimization </a>
-                      </h4>
-                      </div>
-                      <div id="collapseTwo" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <p>Pellentesque tincidunt sagittis velit vel tristique. Etiam pellentesque consequat odio in dictum. Nunc sed viverra nunc. commodo nisi in, lacinia luctus augue. Nunc rutrum eleifend </p>
-                        </div>
-                      </div>
-                    </div>/ Panel 2 end
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                      <h4 class="panel-title">
-                      <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree"> Business Development &amp; Marketing </a> 
-                      </h4>
-                      </div>
-                      <div id="collapseThree" class="panel-collapse collapse">
-                        <div class="panel-body">
-                          <p>Pellentesque tincidunt sagittis velit vel tristique. Etiam pellentesque consequat odio in dictum. Nunc sed viverra nunc. commodo nisi in, lacinia luctus augue. Nunc rutrum eleifend </p>
-                        </div>
-                      </div>
-                    </div>/ Panel 3 end
-                  </div>Toggle end
-              </div>Services end
-          </div>/ row end
-      </div>/ Container end
-  </section> -->
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
