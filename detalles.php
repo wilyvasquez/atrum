@@ -136,8 +136,8 @@
             <div class="row" >
                 <div class="col-md-12">
                     <div class="blog-item">
-                        <div class="col-md-4"><br>
-                            <img class="img-responsive img-blog" src="<?= $ruta ?>" width="100%" style=" box-shadow: -5px -5px 5px #aaa"/>
+                        <div class="thumbnail col-md-4"><br>
+                            <img class="img-responsive img-blog" src="<?= $ruta ?>" width="100%"/>
                         </div>
                         <div class="col-md-6" style="margin-left: 20px">
                             <h5><b>TIPO MOTOCICLETA:</b>

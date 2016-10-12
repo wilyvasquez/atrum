@@ -145,7 +145,7 @@
                 </div>
                 <div class="col-md-6">
                     <h2>VISION</h2>
-                    <p class="lead">Somos una empresa enfocada al servicio, por lo que innovamos constantemente para exceder los estándares establecidos. Nuestravisión es a largo plazo, ya que la relación con nuestros clientes no termina con la venta de una motocicleta, justamente en ese momento es cuando comienza.</p>
+                    <p class="lead">Somos una empresa enfocada al servicio, por lo que innovamos constantemente para exceder los estándares establecidos. Nuestra visión es a largo plazo, ya que la relación con nuestros clientes no termina con la venta de una motocicleta, justamente en ese momento es cuando comienza.</p>
                 </div>
                 <div class="center wow fadeInDown">
                     <h2>OBJETIVO</h2>
