@@ -1,5 +1,5 @@
 <?php
-$credito=$_GET['credito'];
+$credit=$_GET['credito'];
 $moto=$_GET['moto'];
 $moto1=$_GET['moto'];
 $idmoto=$_GET['moto'];
@@ -35,7 +35,7 @@ $tiemanios=$_GET['tiempo'];
         $temporal=$semana;
       }
 
-  $query="SELECT * FROM tipo_credito where id_credito=$credito";
+  $query="SELECT * FROM tipo_credito where id_credito=$credit";
     $resul = mysql_query($query);  
     $res = mysql_fetch_array($resul);
     $credito = $res['nombre_credito'];
@@ -51,10 +51,15 @@ $tiemanios=$_GET['tiempo'];
     $moto = mysql_fetch_array($resul1);
     // $moto = $moto['nombre_credito'];
 
+    if (!empty($seguro)) {
+      # code...
     $query2="SELECT * FROM tipo_seguro where id_seguro=$seguro";
     $resul2 = mysql_query($query2);  
     $seguro = mysql_fetch_array($resul2);
     $res = $seguro['tipo_seguro'];
+    }else{
+      $res=0;
+    }
 
 
     $query4 = "SELECT * FROM moto_anio_precio INNER JOIN moto ON moto.id_moto= moto_anio_precio.ref_moto INNER JOIN anio_moto on anio_moto.id_anio_moto= moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto= moto_anio_precio.ref_precio WHERE moto_anio_precio.ref_moto=$moto1 AND moto_anio_precio.ref_anio=$anio";
@@ -63,8 +68,13 @@ $tiemanios=$_GET['tiempo'];
       $anio = $apertura['anio'];
       $precio = $apertura['precio'];
 
-    $query="SELECT * FROM moto INNER JOIN moto_seguro ON moto_seguro.ref_moto= moto.id_moto INNER JOIN tipo_seguro ON  tipo_seguro.id_seguro=moto_seguro.ref_seguro WHERE moto.id_moto=$idmoto AND tipo_seguro.id_seguro=$idseguro";
+    if (!empty($idseguro)) {
+      # code...
+      $query="SELECT * FROM moto INNER JOIN moto_seguro ON moto_seguro.ref_moto= moto.id_moto INNER JOIN tipo_seguro ON  tipo_seguro.id_seguro=moto_seguro.ref_seguro WHERE moto.id_moto=$idmoto AND tipo_seguro.id_seguro=$idseguro";
       $reseguro = mysql_query($query);  
       $var = mysql_fetch_array($reseguro);
       $resul = $var['precio_seguro'];
+    }else{
+      $resul=0;
+    }
 ?>

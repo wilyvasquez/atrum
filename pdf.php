@@ -30,9 +30,10 @@ $con1 = mysql_query($con);
 $con2 = mysql_fetch_array($con1);
 $con3 = $con2['contador'];
 
-$requisitos="SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito='$credito'";
-$query = mysql_query($requisitos);
-$resultado = mysql_fetch_array($query);
+// $requisitos="SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito='$credito'";
+
+// $query = mysql_query($requisitos);
+// $resultado = mysql_fetch_array($query);
 
 $tb=($tasa*$resanio)+1;
 $totalarti=($precio*$tb*1.16);
@@ -383,7 +384,7 @@ if ($res1=='MESES') {
 
 		$pdf->SetXY(10, 238);
 		$pdf->Cell(5, 6, 'REQUISITOS:', 0 , 1);
-		$resultado = mysql_query("SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito=8");
+		$resultado = mysql_query("SELECT requisito FROM tipo_credito INNER JOIN crerequi on crerequi.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerequi.ref_requisito WHERE tipo_credito.id_credito=$credit");
 		$pdf->SetFont('Arial','',7);
 		$pdf->SetXY(10,243);
 		while($papel = mysql_fetch_array($resultado)){
@@ -405,7 +406,7 @@ if ($res1=='MESES') {
 
 		$pdf->SetXY(115, 238);
 		$pdf->Cell(5, 6, 'BENEFICIOS:', 0 , 1);
-		$resultado = mysql_query("SELECT requisito,beneficios FROM tipo_credito INNER JOIN crerebe on crerebe.ref_credito= tipo_credito.id_credito INNER JOIN requisitos ON requisitos.id_requisito= crerebe.ref_requisito INNER JOIN beneficios ON beneficios.id_beneficios= crerebe.ref_beneficio WHERE tipo_credito.id_credito=9");
+		$resultado = mysql_query("SELECT beneficios FROM tipo_credito INNER JOIN crebeni on crebeni.ref_credito= tipo_credito.id_credito INNER JOIN beneficios ON beneficios.id_beneficios= crebeni.ref_beneficio WHERE tipo_credito.id_credito='$credit'");
 		$pdf->SetFont('Arial','',7);
 		$pdf->SetXY(115,243);
 		while($papel = mysql_fetch_array($resultado)){

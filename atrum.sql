@@ -102,16 +102,23 @@ CREATE TABLE beneficios
     beneficios varchar(255),
     PRIMARY KEY (id_beneficios)
 );
-CREATE TABLE crerebe
+CREATE TABLE crebeni
 (
-    id_crerebe int not null AUTO_INCREMENT,
+    id_crebeni int not null AUTO_INCREMENT,
+    ref_credito int,
+    ref_beneficio int,
+    PRIMARY KEY (id_crebeni),
+    FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(ref_beneficio) REFERENCES beneficios(id_beneficios)ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE crerequi
+(
+    id_crerequi int not null AUTO_INCREMENT,
     ref_credito int,
     ref_requisito int,
-    ref_beneficio int,
-    PRIMARY KEY (id_crerebe),
+    PRIMARY KEY (id_crerequi),
     FOREIGN KEY(ref_credito) REFERENCES tipo_credito(id_credito)ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY(ref_requisito) REFERENCES requisitos(id_requisito)ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY(ref_beneficio) REFERENCES beneficios(id_beneficios)ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY(ref_requisito) REFERENCES requisito(id_requisito)ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE credito_enganche
 (

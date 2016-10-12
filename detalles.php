@@ -7,21 +7,16 @@
 
     <link rel="shortcut icon" sizes="57x57" href="images/favicon.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/prettyPhoto.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
     <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
 </head><!--/head-->
 <body>
 
@@ -58,7 +53,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img width="110" height="60" src="images/suzuki.png" alt="logo"></a>
+                    <a class="" href="index.php"><img width="110" height="60" src="images/suzuki.png" alt="logo"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
@@ -103,75 +98,419 @@
         </nav><!--/nav-->
         
     </header><!--/header-->
-    <?php
-        include("php/conexion.php");
-        $res=$_GET['id'];
-       $consulta = "SELECT * FROM moto INNER JOIN moto_anio_precio on moto_anio_precio.ref_moto=moto.id_moto INNER JOIN anio_moto on anio_moto.id_anio_moto=moto_anio_precio.ref_anio INNER JOIN precio_moto on precio_moto.id_precio_moto=moto_anio_precio.ref_precio WHERE moto.id_moto=$res";
-        $imagen = mysql_query($consulta);
-        $datos = mysql_fetch_array($imagen);
-        $ruta = "php/imagenes/" . $datos['imagen'];
-    ?>
-    <section id="blog" class="container" style="background-image: url(images/fondo.png)">
-        <div class="center">
-            <h2 style=" text-shadow: -5px -5px 5px #aaa"><?= $datos['modelo'] ?> ($ <?=$datos['precio'] ?>) <?= $datos['anio'] ?></h2>
-            <div class="row team-bar">
-                    <div class="first-one-arrow hidden-xs">
-                        <hr>
+    <div class="body-inner">
+    <section id="service" class="wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <div class="service-content">
+                        <a href="#."><span class="service-icon"><i class="fa fa-cogs img-circle wow flipInX"></i></span></a>
+                        <h3>Transmision Automatica</h3>
+                        <p>Para una condicion tan sencilla como acelerar y frenar.</p>
                     </div>
-                    <div class="first-arrow hidden-xs">
-                        <hr> <i class="fa fa-angle-up"></i>
+                </div><!--/ End first service -->
+                <div class="col-md-3 col-sm-3">
+                    <div class="service-content">
+                        <a href="#."><span class="service-icon"><i class="fa fa-thumbs-o-up img-circle wow flipInX"></i></span></a>
+                        <h3>Faro de Halogeno</h3>
+                        <p>Ofrece una luz potente para mayor visibilidad y vida util.</p>
                     </div>
-                    <div class="second-arrow hidden-xs">
-                        <hr> <i class="fa fa-angle-down"></i>
+                </div><!--/ End 2nd service -->
+                <div class="col-md-3 col-sm-3">
+                    <div class="service-content">
+                        <a href="#."><span class="service-icon"><i class="fa fa-motorcycle img-circle wow flipInX"></i></span></a>
+                        <h3>Gancho de Seguridad</h3>
+                        <p>Ayuda a transportar cosas con tan solo colgar en la moto.ffad00.</p>
                     </div>
-                    <div class="third-arrow hidden-xs">
-                        <hr> <i class="fa fa-angle-up"></i>
+                </div><!--/ End 3rd service -->
+                <div class="col-md-3 col-sm-3">
+                    <div class="service-content last">
+                        <a href="#."><span class="service-icon"><i class="fa fa-wrench img-circle wow flipInX"></i></span></a>
+                        <h3>Cerradura con cubierta magnetica</h3>
+                        <p>Podras sentir seguridad al dejar tu moto estacionada.</p>
                     </div>
-                    <div class="fourth-arrow hidden-xs">
-                        <hr> <i class="fa fa-angle-down"></i>
+                </div><!--/ End 4th service -->
+            </div>
+        </div>
+    </section><!-- Service box end -->
+
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                    <div class="feature-image">
+                        <img class="img-responsive" src="http://themewinter.com/html/dart/multipage/images/feature-mock.png" alt="feature img" width="500px" height="7000" />
                     </div>
                 </div>
-        </div>
-        <div class="">
-            <div class="row" >
+
+                <div class="col-sm-6 wow fadeInRight">
+                    <div class="feature-wrapper">
+                        <div class="feature-content-wrapper">
+                            <h2>SCOOTER LET'S</h2>
+                            <p>La mas ligera de su segmento</p>
+
+                            <div class="feature-box clearfix">
+                                <div class="feature-icon pull-left">
+                                    <i class="fa fa-cogs"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h3>Motor</h3>
+                                    <p>On the other hand, we denounce with righteo.</p>
+                                </div>
+                            </div>
+                            <div class="feature-box clearfix">
+                                <div class="feature-icon pull-left">
+                                    <i class="fa fa-tachometer"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h3>TRASMISION</h3>
+                                    <p>On the other hand, we denounce with righteo.</p>
+                                </div>
+                            </div>
+                            <div class="feature-box clearfix">
+                                <div class="feature-icon pull-left">
+                                    <i class="fa fa-ioxhost"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h3>TIPO DE MOTOR</h3>
+                                    <p>On the other hand, we denounce with righteo.</p>
+                                </div>
+                            </div>
+                            <div class="feature-box clearfix">
+                                <div class="feature-icon pull-left">
+                                    <i class="fa fa-bars"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h3>NUMERO DE CILINDROS</h3>
+                                    <p>On the other hand, we denounce with righteo.</p>
+                                </div>
+                            </div>
+                            <div class="feature-box clearfix">
+                                <div class="feature-icon pull-left">
+                                    <i class="fa fa-arrows-h"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h3>DIAMETRO</h3>
+                                    <p>On the other hand, we denounce with righteo.</p>
+                                </div>
+                            </div>
+                            <div class="feature-box clearfix">
+                                <div class="feature-icon pull-left">
+                                    <i class="fa fa-road"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h3>CARRERA</h3>
+                                    <p>On the other hand, we denounce with righteo.</p>
+                                </div>
+                            </div>
+                            <div class="feature-box clearfix">
+                                <div class="feature-icon pull-left">
+                                    <i class="fa fa-fire-extinguisher"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h3>SISTEMA DE LUBRICACION</h3>
+                                    <p>On the other hand, we denounce with righteo.</p>
+                                </div>
+                            </div>
+                            <div class="feature-box clearfix">
+                                <div class="feature-icon pull-left">
+                                    <i class="fa fa-tint"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h3>SISTEMA DE COMBUSTIBLE</h3>
+                                    <p>On the other hand, we denounce with righteo.</p>
+                                </div>
+                            </div>
+                            <div class="feature-box clearfix">
+                                <div class="feature-icon pull-left">
+                                    <i class="fa fa-repeat"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h3>SISTEMA DE ARRANQUE</h3>
+                                    <p>On the other hand, we denounce with righteo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Features right side end -->
+            </div><!-- Row end -->
+        </div><!-- Container end -->
+    </section> <!-- Features end -->
+
+    <!-- Portfolio start -->
+    <section id="portfolio">
+        <div class="container">
+          <div class="row wow bounceIn">
                 <div class="col-md-12">
-                    <div class="blog-item">
-                        <div class="thumbnail col-md-4"><br>
-                            <img class="img-responsive img-blog" src="<?= $ruta ?>" width="100%"/>
+                    <div class='text-center'>
+                        <h2 class="title"><span>Galeria Motocicleta</span></h2>
+                    </div>
+                </div>
+          </div><!--/ Title row end -->
+          <div class='row wow fadeInUp'>
+            <div class='col-lg-12'>
+              <div class="carousel slide" id="portfolio-carousel">
+                <div class="carousel-inner">
+                    <div class="item  active">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 col-md-3">   
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <span>
+                                                <a data-rel="prettyPhoto" href="images/portfolio/img.png">
+                                                    <i class="fa fa-search"></i>              
+                                                </a>
+                                                <a href="portfolio-item.html" class=""><i class="fa fa-link"></i></a>
+                                            </span>
+                                            <h3>Creative Vision</h3>
+                                            <p>Effektive is more than your average agency.</p>
+                                        </div>
+                                    </div>
+                                    <img src="images/img.png" alt="portfolio">
+                                </div>
+                            </div>          
+                            <div class="col-xs-6 col-sm-3 col-md-3">   
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <span>
+                                                <a data-rel="prettyPhoto" href="images/img.png">
+                                                    <i class="fa fa-search"></i>              
+                                                </a>
+                                                <a href="portfolio-item.html" class=""><i class="fa fa-link"></i></a>
+                                            </span>
+                                            <h3>Sunlight Shine</h3>
+                                            <p>Effektive is more than your average agency.</p>
+                                        </div>
+                                    </div>
+                                    <img src="images/img.png" alt="portfolio">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">   
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <span>
+                                                <a data-rel="prettyPhoto" href="images/img.png">
+                                                    <i class="fa fa-search"></i>              
+                                                </a>
+                                                <a href="portfolio-item.html" class=""><i class="fa fa-link"></i></a>
+                                            </span>
+                                            <h3>All Quiet Western</h3>
+                                            <p>Effektive is more than your average agency.</p>
+                                        </div>
+                                    </div>
+                                    <img src="images/img.png" alt="portfolio">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">   
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <span>
+                                                <a data-rel="prettyPhoto" href="images/img.png">
+                                                    <i class="fa fa-search"></i>              
+                                                </a>
+                                                <a href="portfolio-item.html" class=""><i class="fa fa-link"></i></a>
+                                            </span>
+                                            <h3>The GodFather</h3>
+                                            <p>Effektive is more than your average agency.</p>
+                                        </div>
+                                    </div>
+                                    <img src="images/img.png" alt="portfolio">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6" style="margin-left: 20px">
-                            <h5><b>TIPO MOTOCICLETA:</b>
-                                <font style="margin-left: 60px"><?= $datos['tipo_moto'] ?></font></h5>
-                            <h5><b>MODELO:</b>
-                                <font style="margin-left: 133px"><?= $datos['modelo'] ?></font></h5>
-                            <h5><b>MOTOR:</b>
-                                <font style="margin-left: 142px"><?= $datos['motor'] ?></font></h5>
-                            <h5><b>TRASMISION:</b> 
-                                <font style="margin-left: 109px"><?= $datos['trasmision'] ?></font></h5>
-                            <h5><b>TIPO DE MOTOR:</b>
-                                <font style="margin-left: 86px"><?= $datos['tipo_motor'] ?></font></h5>
-                            <h5><b>NUMERO DE CILINDROS:</b>
-                                <font style="margin-left: 32px"><?= $datos['numero_cilindros'] ?></font></h5>
-                            <h5><b>DIAMETRO:</b>
-                                <font style="margin-left: 124px"><?= $datos['diametro'] ?></font></h5>
-                            <h5><b>CARRERA:</b>
-                                <font style="margin-left: 135px"><?= $datos['carrera'] ?></font></h5>
-                            <h5><b>DESPLAZAMIENTO:</b>
-                                <font style="margin-left: 72px"><?= $datos['desplazamiento'] ?></font></h5>
-                            <h5><b>RELACION COMPRESION:</b>
-                                <font style="margin-left: 30px"><?= $datos['relacion_compresion'] ?></font></h5>
-                            <h5><b>SISTEMA LUBRICACION:</b>
-                                <font style="margin-left: 42px"><?= $datos['sistema_lubricacion'] ?></font></h5>
-                            <h5><b>SISTEMA COMBUSTIBLE:</b>
-                                <font style="margin-left: 40px"><?= $datos['sistema_combustible'] ?></font></h5>
-                            <h5><b>SISTEMA DE ARRANQUE:</b>
-                                <font style="margin-left: 39px"><?= $datos['sistema_arranque'] ?></font></h5>
+                    </div><!--/ Item active end -->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 col-md-3">   
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <span>
+                                                <a data-rel="prettyPhoto" href="images/img.png">
+                                                    <i class="fa fa-search"></i>              
+                                                </a>
+                                                <a href="#" class=""><i class="fa fa-link"></i></a>
+                                            </span>
+                                            <h3>Creative Vision</h3>
+                                            <p>Effektive is more than your average agency.</p>
+                                        </div>
+                                    </div>
+                                    <img src="images/img.png" alt="portfolio">
+                                </div>
+                            </div>          
+                            <div class="col-xs-6 col-sm-3 col-md-3">   
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <span>
+                                                <a data-rel="prettyPhoto" href="images/img.png">
+                                                    <i class="fa fa-search"></i>              
+                                                </a>
+                                                <a href="#" class=""><i class="fa fa-link"></i></a>
+                                            </span>
+                                            <h3>Creative Vision</h3>
+                                            <p>Effektive is more than your average agency.</p>
+                                        </div>
+                                    </div>
+                                    <img src="images/img.png" alt="portfolio">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">   
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <span>
+                                                <a data-rel="prettyPhoto" href="images/img.png">
+                                                    <i class="fa fa-search"></i>              
+                                                </a>
+                                                <a href="#" class=""><i class="fa fa-link"></i></a>
+                                            </span>
+                                            <h3>Creative Vision</h3>
+                                            <p>Effektive is more than your average agency.</p>
+                                        </div>
+                                    </div>
+                                    <img src="images/img.png" alt="portfolio">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">   
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <span>
+                                                <a data-rel="prettyPhoto" href="images/img.png">
+                                                    <i class="fa fa-search"></i>              
+                                                </a>
+                                                <a href="#" class=""><i class="fa fa-link"></i></a>
+                                            </span>
+                                            <h3>Creative Vision</h3>
+                                            <p>Effektive is more than your average agency.</p>
+                                        </div>
+                                    </div>
+                                    <img src="images/img.png" alt="portfolio">
+                                </div>
+                            </div>
                         </div>
-                    </div><!--/.blog-item-->
-                </div><!--/.col-md-8-->  
-            </div><!--/.row-->
-         </div><!--/.blog-->
-    </section><!--/#blog-->
+                    </div><!--/ Item end -->
+                </div><!-- Carousel inner end -->
+
+                <div class="dart-carousel-controller">
+                    <a data-slide="prev" href="#portfolio-carousel" class="left"><i class="fa fa-chevron-left"></i></a>
+                    <a data-slide="next" href="#portfolio-carousel" class="right"><i class="fa fa-chevron-right"></i></a>
+                </div><!-- Controller end -->
+
+              </div><!-- Carousel end -->                          
+            </div><!-- Main Col end -->
+          </div><!--/ Main row end -->
+        </div><!--/ Container end -->
+    </section><!-- Portfolio end -->
+
+    <!-- Blog & Service -->
+  <!--   <section id="blog-service">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class='text-center'>
+                      <h2 class="title wow bounceIn"><span>Latest Post &amp; Services</span></h2>
+                  </div>
+              </div>
+  
+              Blog start
+              <div class="col-md-6 wow slideInLeft">
+                  <div class="row">
+                      <div class="col-sm-6 col-xs-6">
+                          <div class="media recent-post">
+                              <img src="images/img.png" alt="blog" />
+                                  <div class="blog-date">
+                                      <span class="date">15
+                                          <span>feb</span>
+                                      </span>
+                                  </div>
+                              <div class="media-body post-body">
+                                  <h3><a href="#">Harmony from the blog heart</a></h3>
+                                  <p class="post-meta">
+                                      <span class="post-meta-author"><a href="#">Posted by: Tatania Lu</a></span>
+                                      <span class="post-meta-comments"><a href="#">16 comments</a></span>
+                                  </p>
+                                  <div class="post-excerpt">
+                                  <p>Quisque sed metus at justo vestibulum congue at et arcu. Maecen pellentesque lobortis ante. Vestibulum quam cursus eget augue purus</p>
+                                  <a href="#" class="read-more">Read More <i class="fa fa fa-long-arrow-right"></i></a>
+                                  </div>
+                              </div>
+                          </div>end media
+                      </div>/ end col-sm-6
+                      <div class="col-sm-6 col-xs-6">
+                          <div class="media recent-post">
+                              <img src="images/img.png" alt="img" />
+                                  <div class="blog-date">
+                                      <span class="date">25
+                                          <span>May</span>
+                                      </span>
+                                  </div>
+                              <div class="media-body post-body">
+                                  <h3><a href="#">Harmony from the blog heart</a></h3>
+                                  <p class="post-meta">
+                                      <span class="post-meta-author"><a href="#">Posted by: Tatania Lu</a></span>
+                                      <span class="post-meta-comments"><a href="#">16 comments</a></span>
+                                  </p>
+                                  <div class="post-excerpt">
+                                  <p>Quisque sed metus at justo vestibulum congue at et arcu. Maecen pellentesque lobortis ante. Vestibulum quam cursus eget augue purus</p>
+                                  <a href="#" class="read-more">Read More <i class="fa fa fa-long-arrow-right"></i></a>
+                                  </div>
+                              </div>
+                          </div>end media
+                      </div>/ end col-sm-6
+                  </div>Row end
+              </div>Blog end
+  
+              Services start
+              <div class="col-md-6 wow slideInRight">
+                  Toggle start
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                      <h4 class="panel-title"> 
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Web Application Design </a> 
+                      </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                          <p>Aliquam mattis ultricies dolor ac vulputate. Pellentesque lectus tellus, varius vitae est et, ullamcorper porttitor urna. Praesent tristique tempor erat quis tincidunt. Sed elementum porta ullamcorper.</p> <p>Cras mattis dui ac elit sollicitudin, eu rutrum quam pharetra. Etiam consectetur nunc vitae nibh egestas scelerisque. Nam sed auctor eros, et euismod leo. Integer ut fringilla nunc. Donec eget lacus lobortis, aliquam nulla ultricies, cursus libero.</p>
+                        </div>
+                      </div>
+                    </div>/ Panel 1 end
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                      <h4 class="panel-title">
+                      <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo"> Search Enginee Optimization </a>
+                      </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>Pellentesque tincidunt sagittis velit vel tristique. Etiam pellentesque consequat odio in dictum. Nunc sed viverra nunc. commodo nisi in, lacinia luctus augue. Nunc rutrum eleifend </p>
+                        </div>
+                      </div>
+                    </div>/ Panel 2 end
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                      <h4 class="panel-title">
+                      <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree"> Business Development &amp; Marketing </a> 
+                      </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>Pellentesque tincidunt sagittis velit vel tristique. Etiam pellentesque consequat odio in dictum. Nunc sed viverra nunc. commodo nisi in, lacinia luctus augue. Nunc rutrum eleifend </p>
+                        </div>
+                      </div>
+                    </div>/ Panel 3 end
+                  </div>Toggle end
+              </div>Services end
+          </div>/ row end
+      </div>/ Container end
+  </section> -->
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
